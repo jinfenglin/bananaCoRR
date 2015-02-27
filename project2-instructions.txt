@@ -1,0 +1,97 @@
+Project 2 instructions:
+
+
+The goal of this project is to develop a coreference resolution system, using the following classifier and datasets. 
+
+
+**Classifier**:
+
+The maxent classifier that you can use for this project is here:
+
+/home/j/clp/chinese/bin/mallet-maxent-classifier.sh
+
+You're also free to use other classifiers if you think you can get better performance. 
+
+**Data**:
+
+The data you will need can be found here:
+
+/home/j/xuen/teaching/cosi137/spring-2015/projects/project2/data
+
+coref-trainset.gold: used to train the maxent classifier
+
+coref-devset.gold: used to tune your classifiers
+coref-devset.notag: same as 'coref-devset.gold' but with the answers stripped, used as input
+ 
+coref-testset.gold: used to report your results
+coref-testset.notag: same as 'coref-testset.gold' but with the answers stripped, used as input
+
+postagged-files: files in this directory are used to extract contextual features. These files maintain the original document structure as well as the POS tags for each token. The training, development and test sets contain pointers to these files.
+
+
+I didn't prepare the parsed files, but if you want to parse the data and extract features (and I recommend that you do), you can use the Charniak parser:
+
+/home/j/clp/chinese/bin/charniak-parse.sh <INPUT_FILE>
+
+The INPUT_FILE to the Charniak parser should be formated as follows:
+
+<s> The dog loves John </s>
+<s> I like ice cream. </s>
+<s> Who knew the world would come to this? </s>
+
+The output looks like this if everything works correctly:
+
+(S1 (S (NP (DT The) (NN dog)) (VP (VBZ loves) (NP (NNP John)))))
+
+(S1 (S (NP (PRP I)) (VP (VBP like) (NP (NN ice) (NN cream))) (. .)))
+
+(S1 (SBARQ (WHNP (WP Who)) (SQ (VBD knew) (NP (DT the) (NN world)) (VP (MD would) (VP (VB come) (PP (TO to) (NP (DT this)))))) (. ?)))
+
+You can use a tree reader such as the one in nltk to generate tree structures and extract features.
+
+**Evaluation**:
+
+There is an evaluation script here:
+
+/home/j/clp/teaching/cosi137/spring-2015/projects/project2/coref-evaluator.py
+
+**Task**: 
+
+Your main job is to extract the most effective features possible for the classifiers to get the best accuracy possible. 
+
+
+Sample training feature format:
+
+yes apposition=false med=11 alias=false
+no med=6 f1=false f2=false
+no med=13 alias=false apposition=false
+no med=8 alias=false apposition=false
+no med=9 alias=false apposition=false
+
+
+Sample testing feature format:
+
+med=9 alias=false apposition=false
+med=12 alias=false apposition=false
+med=13 alias=false apposition=false
+med=4 alias=false apposition=false
+
+Note that the difference between training and testing features are that the former has answer keys as the first element of each training instance while the latter doesn't. Each line is a training/testing instance.
+
+**Using the classifer**:
+
+Training:
+
+mallet-maxent-classifier.sh -train  -model=$basedir/models/coref-head-model -gold=coref-trainset-features.txt
+
+where 'coref-trainset-features.txt' is file that contains the training features 
+
+Testing:
+
+mallet-maxent-classifier.sh -classify  -model=$basedir/models/coref-head-model -input=coref-devset-features.txt > coref-devset.tagged
+
+where 'coref-devset-feature.py' is the file that contains the testing features.
+
+Evaluation:
+
+coref-evaluator.py coref-devset.gold coref-devset.tagged
