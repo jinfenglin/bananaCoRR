@@ -22,22 +22,20 @@ emptyline_pattern = re.compile(r'^\s*$')
 for gline in goldfh.readlines():
     if not emptyline_pattern.match(gline):
         parts = gline.split()
-        #print parts
-        gold_tag_list.append(parts[0])
+        # print parts[-1]
+        gold_tag_list.append(parts[-1])
 
 
 for tline in testfh.readlines():
     if not emptyline_pattern.match(tline):
-        parts = tline.split()
-        #print parts
+        parts = tline.split("\t")
+        # print parts[0]
         test_tag_list.append(parts[0])
 
 test_total = 0
 gold_total = 0
 correct = 0
 
-#print gold_tag_list
-#print test_tag_list
 
 for i in range(len(gold_tag_list)):
     if gold_tag_list[i] != 'no':
@@ -46,6 +44,10 @@ for i in range(len(gold_tag_list)):
         test_total += 1
     if gold_tag_list[i] != 'no' and gold_tag_list[i] == test_tag_list[i]:
         correct += 1
+
+print gold_total
+print test_total
+print correct
 
 
 precision = float(correct) / test_total
