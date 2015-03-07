@@ -22,7 +22,9 @@ import document_reader
 
 PROJECT_PATH = os.getcwd()
 DATA_PATH = os.path.join(PROJECT_PATH, "data")
-RAW_DATA_PATH = os.path.join(DATA_PATH, "postagged-files")
+POS_DATA_PATH = os.path.join(DATA_PATH, "postagged")
+RAW_DATA_PATH = os.path.join(DATA_PATH, "rawtext")
+DEPPARSE_DATA_PATH = os.path.join(DATA_PATH, "depparsed")
 
 RES_PATH = os.path.join(PROJECT_PATH, "resources")
 DICT_PATH = os.path.join(RES_PATH, "dicts")
@@ -96,6 +98,7 @@ class FeatureTagger():
         # self.populate_dict()
 
     def is_coref(self):
+        """return gold standard labels for each pairs"""
         coref = []
         for p in self.pairs:
             if p[2] is True:
