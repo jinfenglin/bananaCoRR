@@ -55,12 +55,13 @@ class FeatureTagger():
         # 1. take no parameters
         # (use self.pairs)
         # 2. return a list or an iterable which has len of # number of tokens
-        self.feature_functions = [self.i_pronoun,
-                                  self.j_pronoun,
-                                  self.only_i_pronoun,
-                                  self.only_j_pronoun,
-                                  self.string_match_no_articles,
-                                  self.string_contains_no_articles]
+        self.feature_functions = [  self.i_pronoun,
+                                    self.j_pronoun,
+                                    self.only_i_pronoun,
+                                    self.only_j_pronoun,
+                                    self.string_match_no_articles,
+                                    self.string_contains_no_articles,
+                                    self.yago_ontology]
 
     def read_data(self, input_filename):
         """load sentences from data file"""
@@ -311,6 +312,62 @@ class FeatureTagger():
                 values.append(name + f)
         return values
 
+    def score_similarity(self, set1, set2, numeric=False):
+        total1 = len(set1)
+        total2 = len(set2)
+        total = total1 + total2
+        similarity_count = 0
+        for item in set1:
+            if item in set2:
+                similarity_count += 1
+        if numeric:
+            return similarity_count*2/total
+        else:
+            if similarity_count >= total/2:
+                return "most"
+            elif similarity_count >= total/2:
+                return "some"
+            elif similarity_count > 0:
+                return "few"
+            else:
+                return "none"
+        
+
+    def yago_ontology(self):
+        name = "yago_ontology="
+        values = []
+        i_words = self.get_i_words()
+        j_words = self.get_j_words()
+        
+        for i in range(len(i_words)):
+            search1 = i_words[i].join("_").lower()
+            search2 = j_words[i].join("_").lower()
+            result1 = None
+            result2 = None
+            found1 = False
+            found2 = False
+            i = 1
+
+            while not (found1 and found2):
+                if i > 8:
+                    break
+                entity_dict = pickle.load(open("entity_dict" + str(i) + ".p", "rb"))
+                if search1 in entity_dict:
+                    result1 = entity_dict[search1]
+                    found1 = True
+                if search2 in entity_dict:
+                    result2 = entity_dict[search2]
+                    found2 = True
+                entity_dict = {}
+                gc.collect()
+                i += 1
+                
+            if result1 == None or result2 == None:
+                values.append(name + "no data")
+            else:
+                values.append(name + str(self.score_similarity(result1, result2)))
+                
+        return values
     
 '''
     def only_j_pronoun(tuple1, tuple2):
