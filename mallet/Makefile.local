@@ -1,0 +1,35 @@
+.exclusions: FORCE
+	rm -f $@
+	echo src/edu/umass/cs/mallet/users >$@
+	echo src/edu/umass/cs/mallet/lib/unpack >>$@
+	echo src/edu/umass/cs/mallet/base/extract >> $@
+	echo src/junit >> $@
+
+.distfiles: FORCE .exclusions
+	rm -f $@
+	echo .emacs.mallet HACKING LICENSE Makefile OTHER-SIMILAR-SOFTWARE.html README.html TODO > $@
+	find src -name '*.java' | grep -v -f .exclusions >> $@
+	echo lib/*.jar lib/Makefile lib/mallet.logging.properties >> $@
+
+distsnap: .distfiles
+	echo mallet-`date +%Y%m%d` > .fname
+	rm -rf `cat .fname`
+	mkdir `cat .fname`
+	cp -pl --parents `cat .distfiles` `cat .fname`
+	tar -chvf `cat .fname`.tar `cat .fname`
+	rm -f `cat .fname`.tar.gz
+	gzip -9 `cat .fname`.tar
+	rm -rf `cat .fname` .fname
+
+
+strip-first-comment:
+	perl -0777 -i.bak -p -e 's,^/\*[^\*]*\*/,,sm' `find src/edu -name '*.java'`
+
+prepend-license-comment:
+	find src/edu -name '*.java' | xargs --max-args=1 bin/prepend-license.sh
+
+web:
+	scp README.html mccallum@loki:public_html/mallet/index.html
+	scp  OTHER-SIMILAR-SOFTWARE.html mccallum@loki:public_html/mallet
+
+FORCE:
