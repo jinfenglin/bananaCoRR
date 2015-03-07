@@ -90,13 +90,13 @@ class FeatureTagger():
                 try:
                     assert j_words == r.get_words(j_line, j_start, j_end)
                 except AssertionError:
-                    print "mismatch of I at {} {} {}-{}, raw: {}, train: {}".format(
+                    print "mismatch of I at {} {} {}-{}, raw: {}, input: {}".format(
                         filename, j_line, j_start, j_end,
                         r.get_words(j_line, j_start, j_end), j_words)
                 try:
                     assert i_words == r.get_words(i_line, i_start, i_end)
                 except AssertionError:
-                    print "mismatch of I at {} {} {}-{}, raw: {}, train: {}".format(
+                    print "mismatch of I at {} {} {}-{}, raw: {}, input: {}".format(
                         filename, i_line, i_start, i_end,
                         r.get_words(i_line, i_start, i_end), i_words)
                 self.pairs.append(pair)
