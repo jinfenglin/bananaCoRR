@@ -55,12 +55,12 @@ class FeatureTagger():
         # 1. take no parameters
         # (use self.pairs)
         # 2. return a list or an iterable which has len of # number of tokens
-        self.feature_functions = [  self.i_pronoun, 
-                                    self.j_pronoun,
-                                    self.only_i_pronoun,
-                                    self.only_j_pronoun,
-                                    self.string_match_no_articles,
-                                    self.string_contains_no_articles]
+        self.feature_functions = [self.i_pronoun,
+                                  self.j_pronoun,
+                                  self.only_i_pronoun,
+                                  self.only_j_pronoun,
+                                  self.string_match_no_articles,
+                                  self.string_contains_no_articles]
 
     def read_data(self, input_filename):
         """load sentences from data file"""
@@ -108,12 +108,13 @@ class FeatureTagger():
     def is_coref(self):
         """return gold standard labels for each pairs"""
         coref = []
-        for p in self.pairs:
-            if p[2] is True:
-                coref.append('yes')
-            else:
-                coref.append('no')
-        return coref
+        return [p[2] for p in self.pairs]
+        # for p in self.pairs:
+        #     if p[2] :
+        #         coref.append('yes')
+        #     else:string_match_no_articles=false	string_contains_no_articles=true
+        #         coref.append('no')
+        # return coref
 
     def get_i_words(self):
         """Return list of i words"""
