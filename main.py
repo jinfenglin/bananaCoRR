@@ -37,8 +37,8 @@ class FeatureTagger():
 
     def __init__(self):
         # pairs is a list that looks like
-        # [0:(words_i, poss_i), 1:ner_i,
-        #  2:(words_j, poss_j), 3:ner_j,
+        # [0:(words_i, poss_i, ner_i),
+        #  1:(words_j, poss_j, ner_j),
         #  additional info, ...]
         """
         additional info
@@ -65,6 +65,7 @@ class FeatureTagger():
     def read_data(self, input_filename):
         """load sentences from data file"""
         self.pairs = []
+        cur_filename = None
         with open(os.path.join(DATA_PATH, input_filename)) as in_file:
             for line in in_file:
                 filename, i_line, i_start, i_end, i_ner, i_word, j_line, j_start,\
@@ -74,7 +75,9 @@ class FeatureTagger():
                 i_words = i_word.split("_")
                 j_words = j_word.split("_")
 
-                r = document_reader.reader(filename)
+                if cur_filename != filename:
+                    r = document_reader.reader(filename)
+                    cur_filename = filename
                 i_pos = r.get_pos(i_line, i_start, i_end)
                 j_pos = r.get_pos(j_line, j_start, j_end)
                 pair = [
@@ -83,17 +86,17 @@ class FeatureTagger():
                     # info on j
                     (j_words, j_pos, j_ner),
                     # additional info
-                    coref, i_line == j_line]
+                    coref.strip(), i_line == j_line]
                 try:
                     assert j_words == r.get_words(j_line, j_start, j_end)
                 except AssertionError:
-                    print "error of I at {} {} {}-{}, raw: {}, train: {}".format(
+                    print "mismatch of I at {} {} {}-{}, raw: {}, train: {}".format(
                         filename, j_line, j_start, j_end,
                         r.get_words(j_line, j_start, j_end), j_words)
                 try:
                     assert i_words == r.get_words(i_line, i_start, i_end)
                 except AssertionError:
-                    print "error of I at {} {} {}-{}, raw: {}, train: {}".format(
+                    print "mismatch of I at {} {} {}-{}, raw: {}, train: {}".format(
                         filename, i_line, i_start, i_end,
                         r.get_words(i_line, i_start, i_end), i_words)
                 self.pairs.append(pair)
@@ -122,17 +125,15 @@ class FeatureTagger():
 
     def get_i_poss(self):
         """Return list of pos tags of i words"""
-        poss = []
-        for p in self.pairs:
-            poss.extend(p[0][1])
-        return poss
+        return [p[0][1] for p in self.pairs]
 
     def get_j_poss(self):
         """Return list of pos tags of j words"""
-        poss = []
-        for p in self.pairs:
-            poss.extend(p[1][1])
-        return poss
+        return [p[1][0] for p in self.pairs]
+        # poss = []
+        # for p in self.pairs:
+        #     poss.extend(p[1][1])
+        # return poss
 
     def get_i_ners(self):
         """Return list of ner tag of i words"""
@@ -230,57 +231,49 @@ class FeatureTagger():
     def i_pronoun(self):
         name, t, f = "i_pronoun=", "true", "false"
         values = []
-        for pos in self.get_i_poss():
-            if pos.startswith("PRP"):
-                values.append(name + t)
-            else:
-                values.append(name + f)
+        for poss in self.get_i_poss():
+            for pos in poss:
+                if pos.startswith("PRP"):
+                    values.append(name + t)
+                else:
+                    values.append(name + f)
         return values
 
     def j_pronoun(self):
         name, t, f = "j_pronoun=", "true", "false"
         values = []
-        for pos in self.get_j_poss():
-            if pos.startswith("PRP"):
-                values.append(name + t)
-            else:
-                values.append(name + f)
+        for poss in self.get_j_poss():
+            for pos in poss:
+                if pos.startswith("PRP"):
+                    values.append(name + t)
+                else:
+                    values.append(name + f)
         return values
 
     def only_j_pronoun(self):
         name, t, f = "only_j_pronoun=", "true", "false"
         values = []
-        i_tags = self.get_i_poss()
-        j_tags = self.get_j_poss()
-        for i in range(len(i_tags)):
-            if i_tags[i].startswith("PRP"):
-                values.append(name + f)
+        for bools in zip(self.i_pronoun(), self.j_pronoun()):
+            if bools[0].endswith("false") and bools[1].endswith("true"):
+                values.append(name + t)
             else:
-                if j_tags[i].startswith("PRP"):
-                    values.append(name + t)
-                else:
-                    values.append(name + f)
+                values.append((name + f))
         return values
         
     def only_i_pronoun(self):
         name, t, f = "only_i_pronoun=", "true", "false"
         values = []
-        i_tags = self.get_i_poss()
-        j_tags = self.get_j_poss()
-        for i in range(len(i_tags)):
-            if j_tags[i].startswith("PRP"):
-                values.append(name + f)
+        for bools in zip(self.i_pronoun(), self.j_pronoun()):
+            if bools[1].endswith("false") and bools[0].endswith("true"):
+                values.append(name + t)
             else:
-                if i_tags[i].startswith("PRP"):
-                    values.append(name + t)
-                else:
-                    values.append(name + f)
+                values.append((name + f))
         return values
-        
+
     def remove_articles(self, words, tags):
         return_string = ""
         for i in range(len(words)):
-            if tag[i] != "DT":
+            if tags[i] != "DT":
                 return_string += words[i]
         return return_string
         
@@ -289,8 +282,8 @@ class FeatureTagger():
         values = []
         i_words = self.get_i_words()
         j_words = self.get_j_words()
-        i_tags = self.get_i_words()
-        j_tags = self.get_j_words()
+        i_tags = self.get_i_poss()
+        j_tags = self.get_j_poss()
         for i in range(len(i_words)):
             comparator_i = self.remove_articles(i_words[i], i_tags[i])
             comparator_j = self.remove_articles(j_words[i], j_tags[i])
@@ -305,13 +298,13 @@ class FeatureTagger():
         values = []
         i_words = self.get_i_words()
         j_words = self.get_j_words()
-        i_tags = self.get_i_words()
-        j_tags = self.get_j_words()
+        i_tags = self.get_i_poss()
+        j_tags = self.get_j_poss()
         for i in range(len(i_words)):
             comparator_i = self.remove_articles(i_words[i], i_tags[i])
             comparator_j = self.remove_articles(j_words[i], j_tags[i])
-            if comparator_i.contains(comparator_j) or \
-               comparator_j.contains(comparator_i):
+            if comparator_i in comparator_j or \
+               comparator_j in comparator_i:
                 values.append(name + t)
             else:
                 values.append(name + f)
@@ -535,7 +528,7 @@ if __name__ == '__main__':
     parser.add_argument(
         "-i",
         help="name of train set file",
-        default=os.path.join(PROJECT_PATH, 'dataset', 'train.gold')
+        default=os.path.join(PROJECT_PATH, 'data', 'coref-trainset.gold')
     )
     parser.add_argument(
         "-t",
@@ -554,10 +547,10 @@ if __name__ == '__main__':
         try:
             target = input(
                 "enter a test file name with its path\n"
-                + "(relative or full, default: dataset/dev.raw): ")
+                + "(relative or full, default: data/coref-testset.notag): ")
         # if imput is empty
         except SyntaxError:
-            target = "dataset/coref.testset.notag"
+            target = "coref-testset.notag"
     else:
         target = args.t
     cor.classify(target)

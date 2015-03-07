@@ -29,7 +29,7 @@ class reader(object):
         super(reader, self).__init__()
         self.filename = filename
         self.sentences = []
-        self.stanford_dependency = self.load_dep_parse
+        self.stanford_dependency = self.load_dep_parse()
         self.process_file(filename)
 
     def process_file(self, filename):
@@ -50,7 +50,6 @@ class reader(object):
                 outf.write(" ".join(sent))
                 outf.write("\n")
 
-    @property
     def load_dep_parse(self):
         sents = []
         with open(os.path.join(main.DEPPARSE_DATA_PATH,
@@ -59,15 +58,23 @@ class reader(object):
             for line in parse:
                 if line == "\n":
                     sents.append(sent)
-                    print len(sent)
                     sent = {}
                 else:
-                    m = re.match(r"^(.+)\((.+)-([0-9]+), (.+)-([0-9]+)\)", line)
+                    m = re.match(r"^(.+)\((.+)-([0-9']+), (.+)-([0-9']+)\)", line)
+                    if m is None:
+                        print "REGEX ERROR: ", line
+                        continue
                     rel = m.groups()[0]
                     gov = m.groups()[1]
-                    gov_idx = int(m.groups()[2]) - 1
+                    gov_idx = m.groups()[2]
+                    if gov_idx.endswith("'"):
+                        gov_idx = gov_idx[:-1]
+                    gov_idx = int(gov_idx) - 1
                     dep = m.groups()[3]
-                    dep_idx = int(m.groups()[4]) - 1
+                    dep_idx = m.groups()[4]
+                    if dep_idx.endswith("'"):
+                        dep_idx = dep_idx[:-1]
+                    dep_idx = int(dep_idx) - 1
 
                     try:
                         sent[gov_idx][1][rel].append((dep_idx, dep))
