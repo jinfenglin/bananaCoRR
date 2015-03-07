@@ -55,7 +55,12 @@ class FeatureTagger():
         # 1. take no parameters
         # (use self.pairs)
         # 2. return a list or an iterable which has len of # number of tokens
-        self.feature_functions = [self.i_pronoun, self.j_pronoun]
+        self.feature_functions = [  self.i_pronoun, 
+                                    self.j_pronoun,
+                                    self.only_i_pronoun,
+                                    self.only_j_pronoun,
+                                    self.string_match_no_articles,
+                                    self.string_contains_no_articles]
 
     def read_data(self, input_filename):
         """load sentences from data file"""
@@ -242,6 +247,77 @@ class FeatureTagger():
                 values.append(name + f)
         return values
 
+    def only_j_pronoun(self):
+        name, t, f = "only_j_pronoun=", "true", "false"
+        values = []
+        i_tags = self.get_i_poss()
+        j_tags = self.get_j_poss()
+        for i in range(len(i_tags)):
+            if i_tags[i].startswith("PRP"):
+                values.append(name + f)
+            else:
+                if j_tags[i].startswith("PRP"):
+                    values.append(name + t)
+                else:
+                    values.append(name + f)
+        return values
+        
+    def only_i_pronoun(self):
+        name, t, f = "only_i_pronoun=", "true", "false"
+        values = []
+        i_tags = self.get_i_poss()
+        j_tags = self.get_j_poss()
+        for i in range(len(i_tags)):
+            if j_tags[i].startswith("PRP"):
+                values.append(name + f)
+            else:
+                if i_tags[i].startswith("PRP"):
+                    values.append(name + t)
+                else:
+                    values.append(name + f)
+        return values
+        
+    def remove_articles(self, words, tags):
+        return_string = ""
+        for i in range(len(words)):
+            if tag[i] != "DT":
+                return_string += words[i]
+        return return_string
+        
+    def string_match_no_articles(self):
+        name, t, f = "string_match_no_articles=", "true", "false"
+        values = []
+        i_words = self.get_i_words()
+        j_words = self.get_j_words()
+        i_tags = self.get_i_words()
+        j_tags = self.get_j_words()
+        for i in range(len(i_words)):
+            comparator_i = self.remove_articles(i_words[i], i_tags[i])
+            comparator_j = self.remove_articles(j_words[i], j_tags[i])
+            if comparator_i == comparator_j:
+                values.append(name + t)
+            else:
+                values.append(name + f)
+        return values
+        
+    def string_contains_no_articles(self):
+        name, t, f = "string_contains_no_articles=", "true", "false"
+        values = []
+        i_words = self.get_i_words()
+        j_words = self.get_j_words()
+        i_tags = self.get_i_words()
+        j_tags = self.get_j_words()
+        for i in range(len(i_words)):
+            comparator_i = self.remove_articles(i_words[i], i_tags[i])
+            comparator_j = self.remove_articles(j_words[i], j_tags[i])
+            if comparator_i.contains(comparator_j) or \
+               comparator_j.contains(comparator_i):
+                values.append(name + t)
+            else:
+                values.append(name + f)
+        return values
+
+    
 '''
     def only_j_pronoun(tuple1, tuple2):
         if get_pos(tuple2) == 'PRP' and not get_pos(tuple1) == 'PRP':
