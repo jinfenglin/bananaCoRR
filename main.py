@@ -12,7 +12,6 @@ import subprocess
 import sys
 import gc
 import cPickle as pickle
-from nltk.stem.lancaster import LancasterStemmer
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -34,7 +33,6 @@ RES_PATH = os.path.join(PROJECT_PATH, "resources")
 DICT_PATH = os.path.join(RES_PATH, "dicts")
 FREQ_PATH = os.path.join(RES_PATH, "freqCounts")
 CLUSTER_PATH = os.path.join(RES_PATH, "clusters")
-YAGO_PATH = os.path.join(RES_PATH, "yago")
 
 
 class FeatureTagger():
@@ -55,6 +53,7 @@ class FeatureTagger():
         # dicts will store name dictionaries
         self.dicts = {}
         self.org_suffixes = []
+        self.populate_dict()
 
         # all feature_functions should
         # 1. take no parameters
@@ -66,13 +65,7 @@ class FeatureTagger():
                                     self.only_j_pronoun,
                                     self.string_match_no_articles,
                                     self.string_contains_no_articles,
-                                    self.str_stem_match,
-                                    self.pro_str_match,
-                                    self.pn_str_match,
-                                    self.pn_str_contains,
-                                    self.words_str_match,
-                                    self.yago_ontology
-                                 ]
+                                    self.yago_ontology]
 
     def read_data(self, input_filename):
         """load sentences from data file"""
@@ -115,7 +108,6 @@ class FeatureTagger():
 
         print self.pairs[0]
         # self.populate_freq(300)
-        # self.populate_dict()
 
     def is_coref(self):
         """return gold standard labels for each pairs"""
@@ -143,10 +135,6 @@ class FeatureTagger():
     def get_j_poss(self):
         """Return list of pos tags of j words"""
         return [p[1][0] for p in self.pairs]
-        # poss = []
-        # for p in self.pairs:
-        #     poss.extend(p[1][1])
-        # return poss
 
     def get_i_ners(self):
         """Return list of ner tag of i words"""
@@ -174,14 +162,11 @@ class FeatureTagger():
     def get_features(self, train=True):
         """traverse function list and get all values in a dictionary"""
         features = collections.defaultdict(list)
-        # unigram is the only default feature
-        # for i, (w_index, word) in enumerate(self.tokens()):
-        #     features[i] = [w_index, word]
 
-        # add gold bio tags while training
+        # add gold tags while training
         if train:
             self.feature_functions.insert(0, self.is_coref)
-        # traverse functions
+        # traverse function list
         # note that all function should take no parameter and return an iterable
         # which has length of the number of total tokens
         for fn in self.feature_functions:
@@ -195,19 +180,23 @@ class FeatureTagger():
 
     def populate_dict(self):
         """Populate dictionaries using external files"""
-        for filename in filter(lambda x: x.endswith(".dict"), os.listdir(DICT_PATH)):
-            dict_type = filename.split(".")[0]
-            self.dicts[dict_type] = []
-            with open(os.path.join(DICT_PATH, filename)) as d:
-                for line in d:
-                    if line != "\n":
-                        self.dicts[dict_type].append(line.strip().lower())
+        # currently yago data only
+
+        with open(os.path.join("resources", "yago", "yago_entries.p"), "rb") as pjar:
+            self.dicts["yago"] = pickle.load(pjar)
+        # for filename in filter(lambda x: x.endswith(".dict"), os.listdir(DICT_PATH)):
+        #     dict_type = filename.split(".")[0]
+        #     self.dicts[dict_type] = []
+        #     with open(os.path.join(DICT_PATH, filename)) as d:
+        #         for line in d:
+        #             if line != "\n":
+        #                 self.dicts[dict_type].append(line.strip().lower())
             # now load up useful suffix dict
-            if dict_type == "org":  # only organization names have useful suffixes
-                with open(os.path.join(DICT_PATH, dict_type + ".suff")) as suff:
-                    for line in suff:
-                        if line != "\n":
-                            self.org_suffixes.append(line.strip().lower())
+            # if dict_type == "org":  # only organization names have useful suffixes
+            #     with open(os.path.join(DICT_PATH, dict_type + ".suff")) as suff:
+            #         for line in suff:
+            #             if line != "\n":
+            #                 self.org_suffixes.append(line.strip().lower())
 
     def in_dict(self, typ):
         """See each token is in a certain dictionary"""
@@ -275,7 +264,7 @@ class FeatureTagger():
             else:
                 values.append(name + f)
         return values
-        
+
     def only_i_pronoun(self):
         """Checks if only the first entity is a pronoun, and not the second"""
         name, t, f = "only_i_pronoun=", "true", "false"
@@ -294,7 +283,7 @@ class FeatureTagger():
             if tags[i] != "DT":
                 return_string += words[i]
         return return_string
-        
+
     def string_match_no_articles(self):
         """Checks to see if two entities match exactly, without articles"""
         name, t, f = "string_match_no_articles=", "true", "false"
@@ -311,7 +300,7 @@ class FeatureTagger():
             else:
                 values.append(name + f)
         return values
-        
+
     def string_contains_no_articles(self):
         """Checks if one entities is contained in another, without articles"""
         name, t, f = "string_contains_no_articles=", "true", "false"
@@ -330,7 +319,8 @@ class FeatureTagger():
                 values.append(name + f)
         return values
 
-    def score_similarity(self, set1, set2, numeric=False):
+    @staticmethod
+    def score_jaccard(set1, set2, numeric=False):
         """A simple similiarity metric between two sets"""
         total1 = len(set1)
         total2 = len(set2)
@@ -349,143 +339,112 @@ class FeatureTagger():
             elif similarity_count > 0:
                 return "few"
             else:
-                return "none"      
-
-    def make_hash(self, string):
-        hashed = ""
-        for c in string:
-            if len(hashed) > 1:
-                return hashed
-            else: 
-                if c.isalpha():
-                    hashed += c
-        while len(hashed) < 2:
-            hashed += "_"
-        return hashed
+                return "none"
 
     def yago_ontology(self):
         """Uses the yago ontology to calculate the similarity between entities"""
         name = "yago_ontology="
         values = []
+
         i_words = self.get_i_words()
         j_words = self.get_j_words()
-        
-        for i in range(len(i_words)):
-            search1 = "_".join(i_words[i]).lower()
-            search2 = "_".join(j_words[i]).lower()
-            result1 = None
-            result2 = None
-            name1 = self.make_hash(search1)
-            name2 = self.make_hash(search2)
-            
-            print name1
-            print os.path.join(YAGO_PATH, name1)
-            entity_dict = pickle.load(open(os.path.join(YAGO_PATH, name1),"rb"))
-            if search1 in entity_dict:
-                result1 = entity_dict[search1]
-            entity_dict = pickle.load(open(os.path.join(YAGO_PATH, name2),"rb"))
-            gc.collect()
-            if search2 in entity_dict:
-                result2 = entity_dict[search1]
-            entity_dict = None
-            gc.collect()
-                
-            if result1 == None or result2 == None:
-                values.append(name + "no_data")
+        i_ners = self.get_i_ners()
+        j_ners = self.get_j_ners()
+
+        def retrieve_yago(queries, person):
+            attribs = []
+            for q in queries:
+                if person:
+                    yago_name = self.dicts['yago'].get(q)
+                else:
+                    yago_name = [q.lower()]
+                if yago_name is not None:
+                    for name in yago_name:
+                        yago_d = load_yago(yago_hash(name))
+                        try:
+                            attribs.extend(yago_d[name])
+                        except KeyError:
+                            pass
+
+            return attribs
+
+        def load_yago(filename):
+            yago_path = os.path.join(PROJECT_PATH, "resources", "yago")
+            yago_dict = {}
+            with open(os.path.join(yago_path, filename)) as yago_file:
+                for line in yago_file:
+                    entry, attribs = line.split(": ")
+                    attribs = attribs[2:-2].split("', '")
+                    try:
+                        yago_dict[entry].extend(attribs)
+                    except KeyError:
+                        yago_dict[entry] = attribs
+            return yago_dict
+
+        def yago_hash(string):
+            hashed = ""
+            for c in string.lower():
+                if len(hashed) > 1:
+                    return hashed
+                else:
+                    if c.isalpha():
+                        hashed += c
+            while len(hashed) < 2:
+                hashed += "_"
+            return hashed
+
+        for instance in range(len(i_words)):
+            # get queries for i word
+            if i_ners[instance] == "PER":
+                i_queries = i_words[instance]
+                result1 = retrieve_yago(i_queries, person=True)
             else:
-                values.append(name + str(self.score_similarity(result1, result2)))
-                
-        return values
-        
-    def str_stem_match(self):
-        """Stem first, and then check string match"""
-        name, t, f = "str_stem_match=", "true", "false"
-        values = []
-        st = LancasterStemmer()
-        i_words = self.get_i_words()
-        j_words = self.get_j_words()
-        i_tags = self.get_i_poss()
-        j_tags = self.get_j_poss()
-        for i in range(len(i_words)):
-            comparator_i = st.stem(self.remove_articles(i_words[i], i_tags[i]))
-            comparator_j = st.stem(self.remove_articles(j_words[i], j_tags[i]))
-            if comparator_i == comparator_j:
-                values.append(name + t)
+                i_queries = ["_".join(i_words[instance])]
+                result1 = retrieve_yago(i_queries, person=False)
+
+            # get queries for j word
+            if j_ners[instance] == "PER":
+                j_queries = j_words[instance]
+                result2 = retrieve_yago(j_queries, person=True)
             else:
-                values.append(name + f)
-        return values
-    
-    def pro_str_match(self):
-        """Check if both entities are pronouns and they both match"""
-        name, t, f = "pro_str_match=", "true", "false"
-        values = []
-        i_words = self.get_i_words()
-        j_words = self.get_j_words()
-        pro_bools = zip(self.i_pronoun(), self.j_pronoun())
-        for i in range(len(i_words)):
-            if pro_bools[i][0].endswith("true")  \
-            and pro_bools[i][1].endswith("true") \
-            and i_words[i] == j_words[i]:
-                values.append(name + t)
+                j_queries = ["_".join(j_words[instance])]
+                result2 = retrieve_yago(j_queries, person=False)
+
+            if instance < 5:
+                print "{}: {}".format(i_words[instance], result1)
+                print "{}: {}".format(j_words[instance], result2)
+
+            if result1 == [] or result2 == []:
+                values.append(name + "no data")
             else:
-                values.append(name + f)
+                values.append(name + str(self.score_jaccard(result1, result2)))
+
         return values
-        
-    def pn_str_match(self):
-        """Check if both entities are proper nouns and they both match"""
-        name, t, f = "pn_str_match=", "true", "false"
-        values = []
-        i_words = self.get_i_words()
-        j_words = self.get_j_words()
-        i_tags = self.get_i_poss()
-        j_tags = self.get_j_poss()
-        for i in range(len(i_words)):
-            i_nnps = [tag for tag in i_tags[i] if tag.startswith("NNP")]
-            j_nnps = [tag for tag in j_tags[i] if tag.startswith("NNP")]
-            if len(i_nnps) > 0 and len(j_nnps) > 0 \
-            and " ".join(i_words[i]) == " ".join(j_words[i]):
-                values.append(name + t)
-            else:
-                values.append(name + f)
-        return values
-        
-    def pn_str_contains(self):
-        """Check if both entities are proper nouns and one contains the other"""
-        name, t, f = "pn_str_contains=", "true", "false"
-        values = []
-        i_words = self.get_i_words()
-        j_words = self.get_j_words()
-        i_tags = self.get_i_poss()
-        j_tags = self.get_j_poss()
-        for i in range(len(i_words)):
-            i_nnps = [tag for tag in i_tags[i] if tag.startswith("NNP")]
-            j_nnps = [tag for tag in j_tags[i] if tag.startswith("NNP")]
-            i_string = " ".join(i_words[i])
-            j_string = " ".join(j_words[i])
-            if len(i_nnps) > 0 and len(j_nnps) > 0 \
-            and (i_string.contains(j_string) or j_string.contains(i_string)):
-                values.append(name + t)
-            else:
-                values.append(name + f)
-        return values
-    
-    def words_str_match(self):
-        """Check if both entities are not pronouns and they both match"""
-        name, t, f = "words_str_match=", "true", "false"
-        values = []
-        i_words = self.get_i_words()
-        j_words = self.get_j_words()
-        pro_bools = zip(self.i_pronoun(), self.j_pronoun())
-        for i in range(len(i_words)):
-            if pro_bools[i][0].endswith("false")  \
-            and pro_bools[i][1].endswith("false") \
-            and " ".join(i_words[i]) == " ".join(j_words[i]):
-                values.append(name + t)
-            else:
-                values.append(name + f)
-        return values
-    
+
 '''
+    def str_stem_match(str1, str2):
+        st = LancasterStemmer()
+        str1 = st.stem(remove_articulate(str1))
+        str2 = st.stem(remove_articulate(str2))
+        return str1 == str2
+
+
+    def pro_str(tuple1, tuple2):
+        if get_pos(tuple1) != 'PRP*' or get_pos(tuple2) != 'PRP*':
+            return False
+        return str_match(get_word(tuple1), get_word(tuple2))
+
+
+    def pn_str(tuple1, tuple2):
+        if get_pos(tuple1) != 'NNP*' or get_pos(tuple2) != 'NNP*':
+            return False
+        return str_match(get_word(tuple1), get_word(tuple2))
+
+
+    def words_str(tuple1, tuple2):
+        pass
+
+
     # TODO which one?
     def PN_STR(tuple1, tuple2):
         if get_pos(tuple1) != 'PRP*' or get_pos(tuple2) != 'PRP*':
