@@ -12,7 +12,7 @@ import subprocess
 import sys
 import gc
 import cPickle as pickle
-from nltk import LancasterStemmer
+from nltk.stem.lancaster import LancasterStemmer
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -34,6 +34,7 @@ RES_PATH = os.path.join(PROJECT_PATH, "resources")
 DICT_PATH = os.path.join(RES_PATH, "dicts")
 FREQ_PATH = os.path.join(RES_PATH, "freqCounts")
 CLUSTER_PATH = os.path.join(RES_PATH, "clusters")
+YAGO_PATH = os.path.join(RES_PATH, "yago")
 
 
 class FeatureTagger():
@@ -54,7 +55,6 @@ class FeatureTagger():
         # dicts will store name dictionaries
         self.dicts = {}
         self.org_suffixes = []
-        self.populate_dict()
 
         # all feature_functions should
         # 1. take no parameters
@@ -74,8 +74,10 @@ class FeatureTagger():
                                     #self.yago_ontology,
                                     self.j_definite,
                                     self.j_demonstrative,
-                                    self.word_overlap
-                                 ]
+                                    self.word_overlap,
+                                    self.both_proper,
+                                    self.both_diff_proper
+        ]
 
     def read_data(self, input_filename):
         """load sentences from data file"""
@@ -83,7 +85,7 @@ class FeatureTagger():
         cur_filename = None
         with open(os.path.join(DATA_PATH, input_filename)) as in_file:
             for line in in_file:
-                filename, i_line, i_start, i_end, i_ner, i_word, j_line, j_start,\
+                filename, i_line, i_start, i_end, i_ner, i_word, j_line, j_start, \
                 j_end, j_ner, j_word, coref = line.split(" ")
 
                 # split underscored words
@@ -118,6 +120,7 @@ class FeatureTagger():
 
         print self.pairs[0]
         # self.populate_freq(300)
+        # self.populate_dict()
 
     def is_coref(self):
         """return gold standard labels for each pairs"""
@@ -145,6 +148,10 @@ class FeatureTagger():
     def get_j_poss(self):
         """Return list of pos tags of j words"""
         return [p[1][0] for p in self.pairs]
+        # poss = []
+        # for p in self.pairs:
+        #     poss.extend(p[1][1])
+        # return poss
 
     def get_i_ners(self):
         """Return list of ner tag of i words"""
@@ -173,10 +180,10 @@ class FeatureTagger():
         """traverse function list and get all values in a dictionary"""
         features = collections.defaultdict(list)
 
-        # add gold tags while training
+        # add gold bio tags while training
         if train:
             self.feature_functions.insert(0, self.is_coref)
-        # traverse function list
+        # traverse functions
         # note that all function should take no parameter and return an iterable
         # which has length of the number of total tokens
         for fn in self.feature_functions:
@@ -194,13 +201,13 @@ class FeatureTagger():
 
         with open(os.path.join("resources", "yago", "yago_entries.p"), "rb") as pjar:
             self.dicts["yago"] = pickle.load(pjar)
-        # for filename in filter(lambda x: x.endswith(".dict"), os.listdir(DICT_PATH)):
-        #     dict_type = filename.split(".")[0]
-        #     self.dicts[dict_type] = []
-        #     with open(os.path.join(DICT_PATH, filename)) as d:
-        #         for line in d:
-        #             if line != "\n":
-        #                 self.dicts[dict_type].append(line.strip().lower())
+            # for filename in filter(lambda x: x.endswith(".dict"), os.listdir(DICT_PATH)):
+            #     dict_type = filename.split(".")[0]
+            #     self.dicts[dict_type] = []
+            #     with open(os.path.join(DICT_PATH, filename)) as d:
+            #         for line in d:
+            #             if line != "\n":
+            #                 self.dicts[dict_type].append(line.strip().lower())
             # now load up useful suffix dict
             # if dict_type == "org":  # only organization names have useful suffixes
             #     with open(os.path.join(DICT_PATH, dict_type + ".suff")) as suff:
@@ -323,14 +330,13 @@ class FeatureTagger():
             comparator_i = self.remove_articles(i_words[i], i_tags[i])
             comparator_j = self.remove_articles(j_words[i], j_tags[i])
             if comparator_i in comparator_j or \
-               comparator_j in comparator_i:
+                            comparator_j in comparator_i:
                 values.append(name + t)
             else:
                 values.append(name + f)
         return values
 
-    @staticmethod
-    def score_jaccard(set1, set2, numeric=False):
+    def score_jaccard(self, set1, set2, numeric=False):
         """A simple similiarity metric between two sets"""
         total1 = len(set1)
         total2 = len(set2)
@@ -350,6 +356,18 @@ class FeatureTagger():
                 return "few"
             else:
                 return "none"
+
+    def make_hash(self, string):
+        hashed = ""
+        for c in string:
+            if len(hashed) > 1:
+                return hashed
+            else:
+                if c.isalpha():
+                    hashed += c
+        while len(hashed) < 2:
+            hashed += "_"
+        return hashed
 
     def yago_ontology(self):
         """Uses the yago ontology to calculate the similarity between entities"""
@@ -464,7 +482,6 @@ class FeatureTagger():
                 values.append(name + f)
         return values
 
-
     def pn_str_match(self):
         """Check if both entities are proper nouns and they both match"""
         name, t, f = "pn_str_match=", "true", "false"
@@ -496,13 +513,12 @@ class FeatureTagger():
             j_nnps = [tag for tag in j_tags[i] if tag.startswith("NNP")]
             i_string = " ".join(i_words[i])
             j_string = " ".join(j_words[i])
-        if len(i_nnps) > 0 and len(j_nnps) > 0 \
-                and (i_string.contains(j_string) or j_string.contains(i_string)):
-            values.append(name + t)
-        else:
-            values.append(name + f)
+            if len(i_nnps) > 0 and len(j_nnps) > 0 \
+                    and (j_string in i_string or i_string in j_string):
+                values.append(name + t)
+            else:
+                values.append(name + f)
         return values
-
 
     def words_str_match(self):
         """Check if both entities are not pronouns and they both match"""
@@ -520,49 +536,6 @@ class FeatureTagger():
                 values.append(name + f)
         return values
 
-    '''
-    # TODO which one?
-    def PN_STR(tuple1, tuple2):
-        if get_pos(tuple1) != 'PRP*' or get_pos(tuple2) != 'PRP*':
-            return False
-        return str_match(get_word(tuple1), get_word(tuple2))
-
-
-    def both_are(pron1, pron2, str):
-        if pron1 == str and pron2 == str:
-            return True
-        else:
-            return False
-
-
-    def word_overlap(tuple1, tuple2):
-        s1 = set(get_word(tuple1).split())
-        s2 = set(get_word(tuple2).split())
-        if set(s1).intersection(s2):
-            return True
-        else:
-            return False
-
-
-    def pn_substr(tuple1, tuple2):
-        if both_are(get_pos(tuple1), get_pos(tuple2), 'PPN*'):
-            if get_word(tuple1) in get_word(tuple2) or get_word(tuple2) in get_word(
-                    tuple1):
-                return True
-        else:
-            return False
-
-
-    def j_definite(tuple1, tuple2):
-        pass
-
-
-    def j_indefinite(tuple1, tuple2):
-        pass
-
-
-    def j_demonstrative(tuple1, tuple2):
-
     def j_definite(self):
         """Check if second entity is a definite NP"""
         name, t, f = "j_definite=", "true", "false"
@@ -573,25 +546,24 @@ class FeatureTagger():
             else:
                 values.append(name + f)
         return values
-        
+
     def j_indefinite(self):
         """Check if second entity is an indefinite NP.
         Without apositive???"""
->>>>>>> 05a91736d8018a6a861604464fc91c371ccf4a0d
         pass
-    
+
     def j_demonstrative(self):
         """Check if second entity is a demonstrative NP"""
         name, t, f = "j_demonstrative=", "true", "false"
         values = []
-        demons = set(["these", "those", "this", "that"])
+        demons = {"these", "those", "this", "that"}
         for words in self.get_j_words():
             if words[0].lower() in demons:
                 values.append(name + t)
             else:
                 values.append(name + f)
         return values
-        
+
     def word_overlap(self):
         """Check if entities have any words in common"""
         name, t, f = "word_overlap=", "true", "false"
@@ -606,22 +578,67 @@ class FeatureTagger():
             else:
                 values.append(name + f)
         return values
-            
+
+    def both_proper(self):
+        """Check if both entities are proper nouns"""
+        name, t, f = "both_proper=", "true", "false"
+        values = []
+        i_words = self.get_i_words()
+        j_words = self.get_j_words()
+        i_tags = self.get_i_poss()
+        j_tags = self.get_j_poss()
+        for i in range(len(i_words)):
+            i_nnps = [tag for tag in i_tags[i] if tag.startswith("NNP")]
+            j_nnps = [tag for tag in j_tags[i] if tag.startswith("NNP")]
+            if len(i_nnps) > 0 and len(j_nnps) > 0:
+                values.append(name + t)
+            else:
+                values.append(name + f)
+        return values
+
+    def both_diff_proper(self):
+        """Check if both entities are proper nouns and no words match"""
+        name, t, f = "both_diff_proper=", "true", "false"
+        values = []
+        i_words = self.get_i_words()
+        j_words = self.get_j_words()
+        i_tags = self.get_i_poss()
+        j_tags = self.get_j_poss()
+        for i in range(len(i_words)):
+            i_nnps = [tag for tag in i_tags[i] if tag.startswith("NNP")]
+            j_nnps = [tag for tag in j_tags[i] if tag.startswith("NNP")]
+            i_set = set(word.lower() for word in i_words[i])
+            j_set = set(word.lower() for word in j_words[i])
+            if len(i_nnps) > 0 and len(j_nnps) > 0 and \
+                            len(i_set.intersection(j_set)) == 0:
+                values.append(name + t)
+            else:
+                values.append(name + f)
+        return values
+
+    def acronym_match(self):
+        """Check lexically if one entity is an acronym of the other"""
+        name, t, f = "acronym_match=", "true", "false"
+        values = []
+        i_words = self.get_i_words()
+        j_words = self.get_j_words()
+        for i in range(len(i_words)):
+            i_string = "".join([word[0] for word in i_words])
+            j_string = "".join([word[0] for word in j_words])
+            if i_string == j_words[0] or j_string == i_words[0]:
+                values.append(name + t)
+            else:
+                values.append(name + f)
+        return values
+
+
+'''
     def num_agr(tuple1, tuple2):
         pass
 
 
     def gen_agr(tuple1, tuple2):
         pass
-
-
-    def both_proper(tuple1, tuple2):
-        pass
-
-
-    def both_diff_proper(tuple1, tuple2):
-        pass
-
 
     def alias_date(tuple1, tuple2):
         pass
