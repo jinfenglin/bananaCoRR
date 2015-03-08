@@ -12,6 +12,7 @@ import subprocess
 import sys
 import gc
 import cPickle as pickle
+from nltk.stem.lancaster import LancasterStemmer
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -64,7 +65,12 @@ class FeatureTagger():
                                     self.only_j_pronoun,
                                     self.string_match_no_articles,
                                     self.string_contains_no_articles,
-                                    self.yago_ontology]
+                                    self.str_stem_match,
+                                    self.pro_str_match,
+                                    self.pn_str_match,
+                                    self.pn_str_contains,
+                                    self.words_str_match
+                                 ]
 
     def read_data(self, input_filename):
         """load sentences from data file"""
@@ -379,31 +385,96 @@ class FeatureTagger():
                 values.append(name + str(self.score_similarity(result1, result2)))
                 
         return values
+        
+    def str_stem_match(self):
+        """Stem first, and then check string match"""
+        name, t, f = "str_stem_match=", "true", "false"
+        values = []
+        st = LancasterStemmer()
+        i_words = self.get_i_words()
+        j_words = self.get_j_words()
+        i_tags = self.get_i_poss()
+        j_tags = self.get_j_poss()
+        for i in range(len(i_words)):
+            comparator_i = st.stem(self.remove_articles(i_words[i], i_tags[i]))
+            comparator_j = st.stem(self.remove_articles(j_words[i], j_tags[i]))
+            if comparator_i == comparator_j:
+                values.append(name + t)
+            else:
+                values.append(name + f)
+        return values
+    
+    def pro_str_match(self):
+        """Check if both entities are pronouns and they both match"""
+        name, t, f = "pro_str_match=", "true", "false"
+        values = []
+        i_words = self.get_i_words()
+        j_words = self.get_j_words()
+        pro_bools = zip(self.i_pronoun(), self.j_pronoun())
+        for i in range(len(i_words)):
+            if pro_bools[i][0].endswith("true")  \
+            and pro_bools[i][1].endswith("true") \
+            and i_words[i] == j_words[i]:
+                values.append(name + t)
+            else:
+                values.append(name + f)
+        return values
+        
+    def pn_str_match(self):
+        """Check if both entities are proper nouns and they both match"""
+        name, t, f = "pn_str_match=", "true", "false"
+        values = []
+        i_words = self.get_i_words()
+        j_words = self.get_j_words()
+        i_tags = self.get_i_poss()
+        j_tags = self.get_j_poss()
+        for i in range(len(i_words)):
+            i_nnps = [tag for tag in i_tags[i] if tag.startswith("NNP")]
+            j_nnps = [tag for tag in j_tags[i] if tag.startswith("NNP")]
+            if len(i_nnps) > 0 and len(j_nnps) > 0 \
+            and i_words[i].join() == j_words[i].join():
+                values.append(name + t)
+            else:
+                values.append(name + f)
+        return values
+        
+    def pn_str_contains(self):
+        """Check if both entities are proper nouns and one contains the other"""
+        name, t, f = "pn_str_contains=", "true", "false"
+        values = []
+        i_words = self.get_i_words()
+        j_words = self.get_j_words()
+        i_tags = self.get_i_poss()
+        j_tags = self.get_j_poss()
+        for i in range(len(i_words)):
+            i_nnps = [tag for tag in i_tags[i] if tag.startswith("NNP")]
+            j_nnps = [tag for tag in j_tags[i] if tag.startswith("NNP")]
+            i_string = i_words[i].join()
+            j_string = j_words[i].join()
+            if len(i_nnps) > 0 and len(j_nnps) > 0 \
+            and (i_string.contains(j_string) or j_string.contains(i_string)):
+                values.append(name + t)
+            else:
+                values.append(name + f)
+        return values
+    
+    def words_str_match(self):
+        """Check if both entities are not pronouns and they both match"""
+        name, t, f = "words_str_match=", "true", "false"
+        values = []
+        i_words = self.get_i_words()
+        j_words = self.get_j_words()
+        pro_bools = zip(self.i_pronoun(), self.j_pronoun())
+        for i in range(len(i_words)):
+            if pro_bools[i][0].endswith("false")  \
+            and pro_bools[i][1].endswith("false") \
+            and i_words[i].join() == j_words[i].join():
+                values.append(name + t)
+            else:
+                values.append(name + f)
+        return values
     
 '''
-    def str_stem_match(str1, str2):
-        st = LancasterStemmer()
-        str1 = st.stem(remove_articulate(str1))
-        str2 = st.stem(remove_articulate(str2))
-        return str1 == str2
-
-
-    def pro_str(tuple1, tuple2):
-        if get_pos(tuple1) != 'PRP*' or get_pos(tuple2) != 'PRP*':
-            return False
-        return str_match(get_word(tuple1), get_word(tuple2))
-
-
-    def pn_str(tuple1, tuple2):
-        if get_pos(tuple1) != 'NNP*' or get_pos(tuple2) != 'NNP*':
-            return False
-        return str_match(get_word(tuple1), get_word(tuple2))
-
-
-    def words_str(tuple1, tuple2):
-        pass
-
-
     # TODO which one?
     def PN_STR(tuple1, tuple2):
         if get_pos(tuple1) != 'PRP*' or get_pos(tuple2) != 'PRP*':
