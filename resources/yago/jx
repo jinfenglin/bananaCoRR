@@ -1,0 +1,8 @@
+jxd: ['yagolegalactor', 'yagopermanentlylocatedentity', 'abstraction', 'group', 'company', 'social_group', 'yagolegalactorgeo', 'organization', 'electronics_company', 'institution']
+jxplorer: ['yagopermanentlylocatedentity', 'code', 'psychological_feature', 'service', 'communication', 'act', 'abstraction', 'writing', 'written_communication', 'coding_system', 'activity', 'work', 'event', 'software']
+j/xfs: ['physical_entity', 'object', 'system', 'artifact', 'whole', 'instrumentality']
+j._x._williams: ['physical_entity', 'yagolegalactor', 'living_people', 'producer', 'living_thing', 'creator', 'whole', 'object', 'person', 'yagolegalactorgeo', 'film_maker', 'film_director', 'causal_agent', 'american_film_directors', 'organism']
+jxta: ['direction', 'code', 'protocol', 'communication', 'abstraction', 'writing', 'written_communication', 'coding_system', 'rule', 'message', 'software']
+jx: ['orifice', 'kernel', 'whole', 'plant_part', 'body_part', 'object', 'natural_object', 'passage', 'thing', 'part', 'physical_entity', 'os', 'structure']
+jx_holdings: ['yagolegalactor', 'yagopermanentlylocatedentity', 'abstraction', 'group', 'company', 'social_group', 'yagolegalactorgeo', 'organization', 'institution']
+j_xaverre: ['yagolegalactor', 'yagopermanentlylocatedentity', 'abstraction', 'group', 'social_group', 'yagolegalactorgeo', 'musical_organization', 'organization']

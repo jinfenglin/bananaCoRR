@@ -1,0 +1,7 @@
+.bq: ['abstraction', 'attribute', 'environment', 'sphere', 'state', 'situation']
+bqb_líneas_aéreas: ['yagolegalactor', 'yagopermanentlylocatedentity', 'abstraction', 'group', 'business', 'social_group', 'airlines_of_uruguay', 'carrier', 'airline', 'enterprise', 'yagolegalactorgeo', 'organization', 'line']
+b&q: ['yagolegalactor', 'yagopermanentlylocatedentity', 'abstraction', 'group', 'companies_established_in_1969', 'company', 'social_group', 'yagolegalactorgeo', 'organization', 'home_improvement_companies_of_the_united_kingdom', 'institution']
+bqp: ['abstraction', 'group', 'class', 'collection']
+béquignol: ['assortment', 'abstraction', 'group', 'collection']
+bāqer_khān: ['physical_entity', 'yagolegalactor', 'politician', 'people_from_tabriz', 'living_thing', 'whole', 'object', 'person', 'yagolegalactorgeo', 'causal_agent', 'organism', 'leader']
+bqe_software_inc: ['yagolegalactor', 'companies_established_in_1995', 'abstraction', 'group', 'company', 'yagopermanentlylocatedentity', 'social_group', 'yagolegalactorgeo', 'organization', 'institution']

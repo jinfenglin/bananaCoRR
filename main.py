@@ -265,7 +265,7 @@ class FeatureTagger():
             if bools[0].endswith("false") and bools[1].endswith("true"):
                 values.append(name + t)
             else:
-                values.append((name + f))
+                values.append(name + f)
         return values
         
     def only_i_pronoun(self):
@@ -276,7 +276,7 @@ class FeatureTagger():
             if bools[1].endswith("false") and bools[0].endswith("true"):
                 values.append(name + t)
             else:
-                values.append((name + f))
+                values.append(name + f)
         return values
 
     def remove_articles(self, words, tags):

@@ -1,0 +1,6 @@
+y: ['vowel_letters', 'physical_entity', 'abstraction', 'object', 'communication', 'creation', 'artifact', 'writing', 'written_communication', 'matter', 'letter', 'text', 'representation', 'document', 'whole']
+y: ['yagopermanentlylocatedentity', 'abstraction', 'connection_games', 'psychological_feature', 'board_games', 'parlor_game', 'act', 'game', 'contest', 'activity', 'social_event', 'event', 'board_game']
+yö: ['yagolegalactor', 'yagopermanentlylocatedentity', 'abstraction', 'group', 'social_group', 'yagolegalactorgeo', 'musical_organization', 'organization']
+y.: ['album', 'physical_entity', 'medium', 'bebe_(entertainer)_albums', 'object', 'artifact', 'whole', 'instrumentality']
+y?: ['event', 'morpheme', 'yagopermanentlylocatedentity', 'abstraction', 'psychological_feature', 'entertainment', 'introduction', 'act', 'show', 'language_unit', 'change_of_state', 'diversion', 'part', 'relation', 'activity', 'action', '2002_australian_television_series_endings', 'ending', 'beginning', 'nine_network_shows', 'change']
+y: ['album', 'physical_entity', 'medium', 'rhino_records_albums', 'object', 'artifact', 'the_pop_group_albums', 'whole', 'radar_records_albums', 'instrumentality']

@@ -1,0 +1,8 @@
+pxp: ['physical_entity', 'yagolegalactor', 'living_thing', 'whole', 'object', 'person', 'yagolegalactorgeo', 'causal_agent', 'organism']
+pxg: ['announcement', 'abstraction', 'communication', 'program', 'statement', 'message']
+pxes: ['abstraction', 'cognition', 'arrangement', 'psychological_feature', 'distribution', 'structure']
+p-xylene: ['physical_entity', 'abstraction', 'substance', 'material', 'organic_compound', 'chemical', 'matter', 'part', 'alkylbenzene', 'compound', 'relation']
+px_domain: ['physical_entity', 'environment', 'abstraction', 'substance', 'macromolecule', 'sphere', 'attribute', 'material', 'molecule', 'organic_compound', 'chemical', 'matter', 'state', 'part', 'relation', 'compound', 'protein_domains', 'situation', 'protein', 'thing', 'unit']
+.pxn: ['communication', 'information', 'abstraction', 'message', 'format']
+px_index: ['information', 'abstraction', 'index', 'stock_index', 'communication', 'message', 'fact']
+pêxung: ['physical_entity', 'yagopermanentlylocatedentity', 'object', 'yagogeoentity', 'region', 'geographical_area', 'site', 'location', 'tract', 'yagolegalactorgeo']

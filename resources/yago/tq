@@ -1,0 +1,8 @@
+tq: ['physical_entity', 'yagopermanentlylocatedentity', 'facility', 'broadcasting_station', 'object', 'yagogeoentity', 'artifact', 'station', 'television_station', 'whole']
+tq-mi_mine: ['physical_entity', 'yagopermanentlylocatedentity', 'yagogeoentity', 'excavation', 'object', 'mine', 'artifact', 'whole']
+tq: ['physical_entity', 'yagolegalactor', 'living_people', 'object', 'living_thing', 'artist', 'whole', 'creator', 'person', 'yagolegalactorgeo', 'causal_agent', 'organism', 'people_from_compton,_california']
+tqibuli_district: ['physical_entity', 'yagopermanentlylocatedentity', 'district', 'yagogeoentity', 'region', 'object', 'location', 'yagolegalactorgeo']
+tq_postcode_area: ['physical_entity', 'yagopermanentlylocatedentity', 'yagogeoentity', 'region', 'object', 'area', 'location', 'yagolegalactorgeo']
+tú_quieres_volver: ['sarah_brightman_songs', 'abstraction', 'auditory_communication', 'song', 'communication', 'musical_composition', 'music']
+tquarchal_district: ['physical_entity', 'yagopermanentlylocatedentity', 'district', 'yagogeoentity', 'region', 'object', 'location', 'yagolegalactorgeo']
+túquerres: ['physical_entity', 'yagopermanentlylocatedentity', 'object', 'district', 'yagogeoentity', 'urban_area', 'administrative_district', 'populated_places_in_the_nari\xc3\xb1o_department', 'geographical_area', 'municipality', 'site', 'location', 'tract', 'yagolegalactorgeo', 'region']

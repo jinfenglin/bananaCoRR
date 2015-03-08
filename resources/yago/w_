@@ -1,0 +1,8 @@
+w: ['physical_entity', 'abstraction', 'object', 'communication', 'creation', 'artifact', 'writing', 'written_communication', 'matter', 'letter', 'text', 'representation', 'document', 'whole']
+w: ['musical_duos', 'abstraction', 'digit', 'definite_quantity', 'couple', 'measure', 'japanese_idol_groups', 'number', 'japanese_girl_groups', 'japanese_pop_music_groups', 'integer', 'group', 'two']
+w: ['physical_entity', 'product', 'medium', 'fashion_magazines', 'object', 'creation', 'artifact', 'print_media', 'magazine', 'publication', 'press', 'monthly_magazines', 'work', 'whole', 'instrumentality']
+w: ['album', 'physical_entity', 'medium', 'planningtorock_albums', 'object', 'artifact', 'dfa_records_albums', 'whole', 'instrumentality']
+wé: ['physical_entity', 'yagopermanentlylocatedentity', 'object', 'yagogeoentity', 'island', 'region', 'geographical_area', 'site', 'land', 'populated_places_in_new_caledonia', 'location', 'tract', 'yagolegalactorgeo']
+w: ['physical_entity', 'yagopermanentlylocatedentity', 'yagogeoentity', 'object', 'way', 'line', 'whole', 'road']
+w: ['album', 'physical_entity', 'medium', 'object', 'artifact', 'wanessa_albums', 'whole', 'instrumentality']
+w.: ['show', 'creation', 'event', 'films_directed_by_oliver_stone', 'american_biographical_films', 'american_political_drama_films', 'movie', 'films_about_fraternities_and_sororities', 'lions_gate_entertainment_films', 'psychological_feature', 'social_event', 'product', 'abstraction', 'object', 'artifact', 'films_about_presidents_of_the_united_states', 'films_about_elections', 'physical_entity', 'yagopermanentlylocatedentity', 'films_about_george_w._bush', '2008_films', 'english-language_films', 'whole']

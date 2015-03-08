@@ -1,0 +1,8 @@
+xkl: ['yagolegalactor', 'yagopermanentlylocatedentity', 'abstraction', 'group', 'company', 'social_group', 'yagolegalactorgeo', 'organization', 'institution']
+xkcd: ['wit', 'communication', 'message', 'comic_strip', 'cartoon']
+xkill: ['abstraction', 'cognition', 'idea', 'content', 'plan', 'psychological_feature']
+x_key: ['physical_entity', 'object', 'artifact', 'key', 'device', 'whole', 'instrumentality']
+xkoto: ['yagolegalactor', 'yagopermanentlylocatedentity', 'abstraction', 'group', 'company', 'social_group', 'yagolegalactorgeo', 'organization', 'institution']
+x_keyboard_extension: ['time_interval', 'pause', 'code', 'extension', 'communication', 'abstraction', 'writing', 'delay', 'written_communication', 'coding_system', 'measure', 'software']
+xk: ['physical_entity', 'object', 'system', 'artifact', 'whole', 'instrumentality']
+xkms: ['direction', 'abstraction', 'protocol', 'cryptography_standards', 'communication', 'rule', 'standard', 'measure', 'message', 'system_of_measurement', 'xml-based_standards']
