@@ -74,7 +74,9 @@ class FeatureTagger():
                                     #self.yago_ontology,
                                     self.j_definite,
                                     self.j_demonstrative,
-                                    self.word_overlap
+                                    self.word_overlap,
+                                    self.both_proper,
+                                    self.both_diff_proper
                                  ]
 
     def read_data(self, input_filename):
@@ -530,7 +532,60 @@ class FeatureTagger():
             else:
                 values.append(name + f)
         return values
+        
+    def both_proper(self):
+        """Check if both entities are proper nouns"""
+        name, t, f = "both_proper=", "true", "false"
+        values = []
+        i_words = self.get_i_words()
+        j_words = self.get_j_words()
+        i_tags = self.get_i_poss()
+        j_tags = self.get_j_poss()
+        for i in range(len(i_words)):
+            i_nnps = [tag for tag in i_tags[i] if tag.startswith("NNP")]
+            j_nnps = [tag for tag in j_tags[i] if tag.startswith("NNP")]
+            if len(i_nnps) > 0 and len(j_nnps) > 0:
+                values.append(name + t)
+            else:
+                values.append(name + f)
+        return values
+        
+    def both_diff_proper(self):
+        """Check if both entities are proper nouns and no words match"""
+        name, t, f = "both_diff_proper=", "true", "false"
+        values = []
+        i_words = self.get_i_words()
+        j_words = self.get_j_words()
+        i_tags = self.get_i_poss()
+        j_tags = self.get_j_poss()
+        for i in range(len(i_words)):
+            i_nnps = [tag for tag in i_tags[i] if tag.startswith("NNP")]
+            j_nnps = [tag for tag in j_tags[i] if tag.startswith("NNP")]
+            i_set = set(word.lower() for word in i_words[i])
+            j_set = set(word.lower() for word in j_words[i])
+            if len(i_nnps) > 0 and len(j_nnps) > 0 and \
+            len(i_set.intersection(j_set)) == 0:
+                values.append(name + t)
+            else:
+                values.append(name + f)
+        return values
+    
+    def acronym_match(self):
+        """Check lexically if one entity is an acronym of the other"""
+        name, t, f = "acronym_match=", "true", "false"
+        values = []
+        i_words = self.get_i_words()
+        j_words = self.get_j_words()
+        for i in range(len(i_words)):
+            i_string = "".join([word[0] for word in i_words])
+            j_string = "".join([word[0] for word in j_words])
+            if i_string == j_words[0] or j_string = i_words[0]:
+                values.append(name + t)
+            else:
+                values.append(name + f)
+        return values
             
+    
 '''
     def num_agr(tuple1, tuple2):
         pass
@@ -538,15 +593,6 @@ class FeatureTagger():
 
     def gen_agr(tuple1, tuple2):
         pass
-
-
-    def both_proper(tuple1, tuple2):
-        pass
-
-
-    def both_diff_proper(tuple1, tuple2):
-        pass
-
 
     def alias_date(tuple1, tuple2):
         pass
