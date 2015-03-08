@@ -3,12 +3,15 @@
 
 """
 This program is to:
-
+Use various feature functions to train a MALLET MaxEnt model to classify whether
+entities in a text are coreferent or not.
 """
 import collections
 import re
 import subprocess
 import sys
+import gc
+import cPickle as pickle
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -231,6 +234,7 @@ class FeatureTagger():
     st = LancasterStemmer()
 
     def i_pronoun(self):
+        """Is the first entity a pronoun"""
         name, t, f = "i_pronoun=", "true", "false"
         values = []
         for poss in self.get_i_poss():
@@ -242,6 +246,7 @@ class FeatureTagger():
         return values
 
     def j_pronoun(self):
+        """Is the second entity a pronoun"""
         name, t, f = "j_pronoun=", "true", "false"
         values = []
         for poss in self.get_j_poss():
@@ -253,6 +258,7 @@ class FeatureTagger():
         return values
 
     def only_j_pronoun(self):
+        """Checks if only the second entity is a pronoun, and not the first"""
         name, t, f = "only_j_pronoun=", "true", "false"
         values = []
         for bools in zip(self.i_pronoun(), self.j_pronoun()):
@@ -263,6 +269,7 @@ class FeatureTagger():
         return values
         
     def only_i_pronoun(self):
+        """Checks if only the first entity is a pronoun, and not the second"""
         name, t, f = "only_i_pronoun=", "true", "false"
         values = []
         for bools in zip(self.i_pronoun(), self.j_pronoun()):
@@ -273,6 +280,7 @@ class FeatureTagger():
         return values
 
     def remove_articles(self, words, tags):
+        """Removes any articles from a list of words and a list of their tags"""
         return_string = ""
         for i in range(len(words)):
             if tags[i] != "DT":
@@ -280,6 +288,7 @@ class FeatureTagger():
         return return_string
         
     def string_match_no_articles(self):
+        """Checks to see if two entities match exactly, without articles"""
         name, t, f = "string_match_no_articles=", "true", "false"
         values = []
         i_words = self.get_i_words()
@@ -296,6 +305,7 @@ class FeatureTagger():
         return values
         
     def string_contains_no_articles(self):
+        """Checks if one entities is contained in another, without articles"""
         name, t, f = "string_contains_no_articles=", "true", "false"
         values = []
         i_words = self.get_i_words()
@@ -313,6 +323,7 @@ class FeatureTagger():
         return values
 
     def score_similarity(self, set1, set2, numeric=False):
+        """A simple similiarity metric between two sets"""
         total1 = len(set1)
         total2 = len(set2)
         total = total1 + total2
@@ -330,10 +341,10 @@ class FeatureTagger():
             elif similarity_count > 0:
                 return "few"
             else:
-                return "none"
-        
+                return "none"      
 
     def yago_ontology(self):
+        """Uses the yago ontology to calculate the similarity between entities"""
         name = "yago_ontology="
         values = []
         i_words = self.get_i_words()
@@ -370,31 +381,6 @@ class FeatureTagger():
         return values
     
 '''
-    def only_j_pronoun(tuple1, tuple2):
-        if get_pos(tuple2) == 'PRP' and not get_pos(tuple1) == 'PRP':
-            return True
-        else:
-            return False
-
-
-    def only_i_pronoun(tuple1, tuple2):
-        if get_pos(tuple1) == 'PRP' and not get_pos(tuple2) == 'PRP':
-            return True
-        else:
-            return False
-
-
-    def remove_articulate(str, ban_list=("a", "an", "the", "this", "that", "those",
-                                         "these")):
-        for word in ban_list:
-            str.replace(word, "")
-        return str.trim()
-
-
-    def str_match(str1, str2):
-        return remove_articulate(str1) == remove_articulate(str2)
-
-
     def str_stem_match(str1, str2):
         st = LancasterStemmer()
         str1 = st.stem(remove_articulate(str1))
