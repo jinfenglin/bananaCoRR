@@ -71,7 +71,10 @@ class FeatureTagger():
                                     self.pn_str_match,
                                     self.pn_str_contains,
                                     self.words_str_match,
-                                    self.yago_ontology
+                                    #self.yago_ontology,
+                                    self.j_definite,
+                                    self.j_demonstrative,
+                                    self.word_overlap
                                  ]
 
     def read_data(self, input_filename):
@@ -485,51 +488,50 @@ class FeatureTagger():
                 values.append(name + f)
         return values
     
+    def j_definite(self):
+        """Check if second entity is a definite NP"""
+        name, t, f = "j_definite=", "true", "false"
+        values = []
+        for words in self.get_j_words():
+            if words[0].lower() == "the":
+                values.append(name + t)
+            else:
+                values.append(name + f)
+        return values
+        
+    def j_indefinite(self):
+        """Check if second entity is an indefinite NP.
+        Without apositive???"""
+        pass
+    
+    def j_demonstrative(self):
+        """Check if second entity is a demonstrative NP"""
+        name, t, f = "j_demonstrative=", "true", "false"
+        values = []
+        demons = set(["these", "those", "this", "that"])
+        for words in self.get_j_words():
+            if words[0].lower() in demons:
+                values.append(name + t)
+            else:
+                values.append(name + f)
+        return values
+        
+    def word_overlap(self):
+        """Check if entities have any words in common"""
+        name, t, f = "word_overlap=", "true", "false"
+        values = []
+        i_words = self.get_i_words()
+        j_words = self.get_j_words()
+        for i in range(len(i_words)):
+            i_set = set(word.lower() for word in i_words[i])
+            j_set = set(word.lower() for word in j_words[i])
+            if len(i_set.intersection(j_set)) > 0:
+                values.append(name + t)
+            else:
+                values.append(name + f)
+        return values
+            
 '''
-    # TODO which one?
-    def PN_STR(tuple1, tuple2):
-        if get_pos(tuple1) != 'PRP*' or get_pos(tuple2) != 'PRP*':
-            return False
-        return str_match(get_word(tuple1), get_word(tuple2))
-
-
-    def both_are(pron1, pron2, str):
-        if pron1 == str and pron2 == str:
-            return True
-        else:
-            return False
-
-
-    def word_overlap(tuple1, tuple2):
-        s1 = set(get_word(tuple1).split())
-        s2 = set(get_word(tuple2).split())
-        if set(s1).intersection(s2):
-            return True
-        else:
-            return False
-
-
-    def pn_substr(tuple1, tuple2):
-        if both_are(get_pos(tuple1), get_pos(tuple2), 'PPN*'):
-            if get_word(tuple1) in get_word(tuple2) or get_word(tuple2) in get_word(
-                    tuple1):
-                return True
-        else:
-            return False
-
-
-    def j_definite(tuple1, tuple2):
-        pass
-
-
-    def j_indefinite(tuple1, tuple2):
-        pass
-
-
-    def j_demonstrative(tuple1, tuple2):
-        pass
-
-
     def num_agr(tuple1, tuple2):
         pass
 
@@ -576,21 +578,6 @@ class FeatureTagger():
 
     def contains_pn(tuple1, tuple2):
         pass
-
-
-    class feature_functions:
-        def __init__(self, list):
-            self.tuple_1 = list[0]
-            self.tuple_2 = list[1]
-            self.feature_name_list = list[2:]
-            for feature_fn in self.feature_name_list:
-                feature_fn(self.tuple_1, self.tuple_2)
-
-
-if __name__ == '__main__':
-    ff = feature_functions(
-        [('foo', 'vb', 'foo'), ('bar', 'np', 'bar'), i_pronoun, j_pronoun])
-
 '''
 
 
