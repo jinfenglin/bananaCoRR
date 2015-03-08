@@ -34,6 +34,7 @@ RES_PATH = os.path.join(PROJECT_PATH, "resources")
 DICT_PATH = os.path.join(RES_PATH, "dicts")
 FREQ_PATH = os.path.join(RES_PATH, "freqCounts")
 CLUSTER_PATH = os.path.join(RES_PATH, "clusters")
+YAGO_PATH = os.path.join(RES_PATH, "yago")
 
 
 class FeatureTagger():
@@ -69,7 +70,8 @@ class FeatureTagger():
                                     self.pro_str_match,
                                     self.pn_str_match,
                                     self.pn_str_contains,
-                                    self.words_str_match
+                                    self.words_str_match,
+                                    self.yago_ontology
                                  ]
 
     def read_data(self, input_filename):
@@ -349,6 +351,18 @@ class FeatureTagger():
             else:
                 return "none"      
 
+    def make_hash(self, string):
+        hashed = ""
+        for c in string:
+            if len(hashed) > 1:
+                return hashed
+            else: 
+                if c.isalpha():
+                    hashed += c
+        while len(hashed) < 2:
+            hashed += "_"
+        return hashed
+
     def yago_ontology(self):
         """Uses the yago ontology to calculate the similarity between entities"""
         name = "yago_ontology="
@@ -357,30 +371,27 @@ class FeatureTagger():
         j_words = self.get_j_words()
         
         for i in range(len(i_words)):
-            search1 = i_words[i].join("_").lower()
-            search2 = j_words[i].join("_").lower()
+            search1 = "_".join(i_words[i]).lower()
+            search2 = "_".join(j_words[i]).lower()
             result1 = None
             result2 = None
-            found1 = False
-            found2 = False
-            i = 1
-
-            while not (found1 and found2):
-                if i > 8:
-                    break
-                entity_dict = pickle.load(open("entity_dict" + str(i) + ".p", "rb"))
-                if search1 in entity_dict:
-                    result1 = entity_dict[search1]
-                    found1 = True
-                if search2 in entity_dict:
-                    result2 = entity_dict[search2]
-                    found2 = True
-                entity_dict = {}
-                gc.collect()
-                i += 1
+            name1 = self.make_hash(search1)
+            name2 = self.make_hash(search2)
+            
+            print name1
+            print os.path.join(YAGO_PATH, name1)
+            entity_dict = pickle.load(open(os.path.join(YAGO_PATH, name1),"rb"))
+            if search1 in entity_dict:
+                result1 = entity_dict[search1]
+            entity_dict = pickle.load(open(os.path.join(YAGO_PATH, name2),"rb"))
+            gc.collect()
+            if search2 in entity_dict:
+                result2 = entity_dict[search1]
+            entity_dict = None
+            gc.collect()
                 
             if result1 == None or result2 == None:
-                values.append(name + "no data")
+                values.append(name + "no_data")
             else:
                 values.append(name + str(self.score_similarity(result1, result2)))
                 
@@ -432,7 +443,7 @@ class FeatureTagger():
             i_nnps = [tag for tag in i_tags[i] if tag.startswith("NNP")]
             j_nnps = [tag for tag in j_tags[i] if tag.startswith("NNP")]
             if len(i_nnps) > 0 and len(j_nnps) > 0 \
-            and i_words[i].join() == j_words[i].join():
+            and " ".join(i_words[i]) == " ".join(j_words[i]):
                 values.append(name + t)
             else:
                 values.append(name + f)
@@ -449,8 +460,8 @@ class FeatureTagger():
         for i in range(len(i_words)):
             i_nnps = [tag for tag in i_tags[i] if tag.startswith("NNP")]
             j_nnps = [tag for tag in j_tags[i] if tag.startswith("NNP")]
-            i_string = i_words[i].join()
-            j_string = j_words[i].join()
+            i_string = " ".join(i_words[i])
+            j_string = " ".join(j_words[i])
             if len(i_nnps) > 0 and len(j_nnps) > 0 \
             and (i_string.contains(j_string) or j_string.contains(i_string)):
                 values.append(name + t)
@@ -468,7 +479,7 @@ class FeatureTagger():
         for i in range(len(i_words)):
             if pro_bools[i][0].endswith("false")  \
             and pro_bools[i][1].endswith("false") \
-            and i_words[i].join() == j_words[i].join():
+            and " ".join(i_words[i]) == " ".join(j_words[i]):
                 values.append(name + t)
             else:
                 values.append(name + f)
