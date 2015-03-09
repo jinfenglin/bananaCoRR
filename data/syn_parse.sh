@@ -1,9 +1,9 @@
 #! /bin/bash
 
-rm depparsed/*
+rm synparsed/*
 cd rawtext
 for f in *; do
-    ././../lib/stanford-parser/lexparser_collapsed.sh \
+    ../../lib/stanford-parser/lexparser_phrasestructure.sh \
         "$f" > ../synparsed/"$f".psparse
     echo "$f"
 done
