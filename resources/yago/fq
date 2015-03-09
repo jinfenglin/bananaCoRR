@@ -1,8 +1,0 @@
-Şəfəq,_goranboy: ['physical_entity', 'yagopermanentlylocatedentity', 'object', 'district', 'yagogeoentity', 'region', 'geographical_area', 'administrative_district', 'site', 'location', 'tract', 'yagolegalactorgeo']
-fqn-fcn_union: ['yagolegalactor', 'yagopermanentlylocatedentity', 'abstraction', 'group', 'social_group', 'yagolegalactorgeo', 'organization']
-Şəfəqli: ['physical_entity', 'yagopermanentlylocatedentity', 'object', 'district', 'yagogeoentity', 'region', 'geographical_area', 'administrative_district', 'site', 'location', 'tract', 'yagolegalactorgeo']
-fq_magazine: ['physical_entity', 'product', 'creation', 'publication', 'object', 'artifact', 'print_media', 'magazine', 'medium', 'press', 'work', 'whole', 'instrumentality']
-Şəfəq,_beylagan: ['physical_entity', 'yagopermanentlylocatedentity', 'object', 'district', 'yagogeoentity', 'region', 'geographical_area', 'administrative_district', 'site', 'location', 'tract', 'yagolegalactorgeo']
-fquih_ben_salah: ['physical_entity', 'yagopermanentlylocatedentity', 'object', 'yagogeoentity', 'region', 'geographical_area', 'site', 'location', 'tract', 'yagolegalactorgeo']
-fúquene: ['physical_entity', 'yagopermanentlylocatedentity', 'object', 'district', 'yagogeoentity', 'administrative_district', 'region', 'geographical_area', 'municipality', 'site', 'location', 'populated_places_in_the_cundinamarca_department', 'tract', 'yagolegalactorgeo', 'urban_area']
-f._q._story_neighborhood_historic_district: ['physical_entity', 'yagopermanentlylocatedentity', 'district', 'area', 'region', 'object', 'vicinity', 'neighborhoods_in_phoenix,_arizona', 'location', 'yagolegalactorgeo', 'yagogeoentity', 'section']

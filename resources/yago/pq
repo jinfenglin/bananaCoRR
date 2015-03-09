@@ -1,8 +1,0 @@
-pqm: ['physical_entity', 'yagolegalactor', 'living_thing', 'whole', 'object', 'person', 'yagolegalactorgeo', 'causal_agent', 'organism']
-(p,q)_shuffle: ['yagopermanentlylocatedentity', 'abstraction', 'happening', 'psychological_feature', 'variation', 'substitution', 'event', 'change']
-pqcc: ['physical_entity', 'yagolegalactor', 'writer', 'living_thing', 'whole', 'object', 'person', 'communicator', 'yagolegalactorgeo', 'causal_agent', 'organism', 'compiler']
-pqasso: ['yagolegalactor', 'foundation', 'yagopermanentlylocatedentity', 'abstraction', 'group', 'financial_institution', 'social_group', 'yagolegalactorgeo', 'organization', 'institution', 'charity']
-pq_monthly: ['physical_entity', 'product', 'medium', 'magazines_established_in_2012', 'magazines_published_in_oregon', 'object', 'publication', 'creation', 'artifact', 'print_media', 'magazine', 'american_online_magazines', 'press', 'american_monthly_magazines', 'work', 'whole', 'instrumentality']
-pq_international: ['physical_entity', 'product', 'creation', 'publication', 'object', 'artifact', 'print_media', 'magazine', 'medium', 'press', 'work', 'whole', 'instrumentality']
-p._q._phan: ['creator', 'migrant', 'vietnamese_composers', 'composer', 'traveler', 'winner', 'yagolegalactor', 'living_people', 'object', 'musicians_of_vietnamese_descent', 'living_thing', 'vietnamese_emigrants_to_the_united_states', 'musician', 'causal_agent', 'gambler', 'emigrant', 'physical_entity', 'prize_winner', 'artist', 'organism', 'person', 'yagolegalactorgeo', 'rome_prize_winners', 'whole']
-pqube: ['firm', 'publisher', 'yagopermanentlylocatedentity', 'abstraction', 'group', 'business', 'yagolegalactor', 'company', 'social_group', 'enterprise', 'yagolegalactorgeo', 'organization', 'institution']

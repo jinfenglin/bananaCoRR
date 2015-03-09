@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 
-BASEDIR=mallet_maxent
+BASEDIR=lib/mallet_maxent
 
 # Mallet maxent classifier
 #new Mallet:
@@ -9,7 +9,7 @@ BASEDIR=mallet_maxent
 #MALLET_LIB=$MALLET_HOME/lib
 
 #old mallet
-MALLET_HOME=mallet/
+MALLET_HOME=lib/mallet/
 MALLET_LIB=$MALLET_HOME/lib
 
 export JAVA=/usr/bin/java

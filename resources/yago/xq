@@ -1,7 +1,0 @@
-xqd_card: ['physical_entity', 'medium', 'object', 'storage_medium', 'artifact', 'whole', 'instrumentality']
-xqf: ['program', 'code', 'written_communication', 'communication', 'abstraction', 'writing', 'application', 'coding_system', 'software', 'browser']
-xquery_api_for_java: ['code', 'communication', 'request', 'abstraction', 'writing', 'written_communication', 'coding_system', 'message', 'software']
-xquic: ['fictional_character', 'goddess', 'lunar_goddesses', 'spiritual_being', 'ability', 'imagination', 'cognition', 'creativity', 'content', 'imaginary_being', 'maya_goddesses', 'abstraction', 'psychological_feature', 'deity', 'belief']
-xquery_update_facility: ['abstraction', 'system_of_measurement', 'standard', 'measure']
-x'qala'_l-bahar: ['announcement', 'abstraction', 'communication', 'program', 'statement', 'message']
-xquery: ['programming_language', 'abstraction', 'language', 'communication', 'query_languages', 'source_language', 'standard', 'command_language', 'artificial_language', 'measure', 'world_wide_web_consortium_standards', 'system_of_measurement']

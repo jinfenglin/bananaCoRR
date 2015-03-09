@@ -1,8 +1,0 @@
-z/journal: ['physical_entity', 'product', 'creation', 'publication', 'object', 'artifact', 'print_media', 'magazine', 'medium', 'press', 'work', 'whole', 'instrumentality']
-zájezdec: ['physical_entity', 'yagopermanentlylocatedentity', 'object', 'yagogeoentity', 'region', 'geographical_area', 'location', 'village', 'yagolegalactorgeo', 'settlement']
-zjevení: ['album', 'physical_entity', 'medium', 'root_albums', 'object', 'artifact', 'whole', 'instrumentality']
-zjarr_e_ftohtë: ['abstraction', 'auditory_communication', 'song', 'communication', 'musical_composition', 'music', 'eurovision_songs_of_albania']
-zj_theorem: ['abstraction', 'group', 'communication', 'proposition', 'statement', 'theorem', 'theorems_in_group_theory', 'message']
-zájezd: ['physical_entity', 'yagopermanentlylocatedentity', 'object', 'district', 'yagogeoentity', 'region', 'geographical_area', 'administrative_district', 'location', 'village', 'yagolegalactorgeo', 'settlement']
-zújar: ['physical_entity', 'city', 'yagopermanentlylocatedentity', 'object', 'district', 'yagogeoentity', 'municipality', 'region', 'geographical_area', 'administrative_district', 'site', 'populated_places_in_the_province_of_granada', 'location', 'tract', 'yagolegalactorgeo', 'urban_area']
-zōjō-ji: ['building', 'physical_entity', 'yagopermanentlylocatedentity', 'yagogeoentity', 'object', 'artifact', 'buildings_and_structures_in_tokyo', 'place_of_worship', 'whole', 'temple', 'structure']

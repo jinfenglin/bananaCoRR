@@ -1,6 +1,0 @@
-qxd: ['communication', 'information', 'abstraction', 'message', 'format']
-.qxd: ['abstraction', 'group', 'string', 'extension', 'sequence', 'ordering', 'series', 'arrangement']
-qx: ['physical_entity', 'product', 'medium', 'publications_established_in_1992', 'publication', 'object', 'creation', 'artifact', 'print_media', 'magazine', 'press', 'weekly_magazines', 'work', 'whole', 'instrumentality']
-qüxü: ['physical_entity', 'yagopermanentlylocatedentity', 'object', 'district', 'yagogeoentity', 'region', 'geographical_area', 'administrative_district', 'site', 'location', 'tract', 'yagolegalactorgeo']
-qüxü_county: ['physical_entity', 'yagopermanentlylocatedentity', 'yagogeoentity', 'region', 'object', 'county', 'location', 'yagolegalactorgeo']
-qx: ['physical_entity', 'swedish_magazines', 'publications_established_in_1995', 'publication', 'object', 'creation', 'product', 'artifact', 'print_media', 'magazine', 'medium', 'press', 'monthly_magazines', 'work', 'whole', 'instrumentality']

@@ -1,4 +1,0 @@
-qgc: ['yagolegalactor', 'yagopermanentlylocatedentity', 'group', 'company', 'social_group', 'yagolegalactorgeo', 'organization', 'institution']
-q-go: ['yagolegalactor', 'yagopermanentlylocatedentity', 'group', 'company', 'social_group', 'yagolegalactorgeo', 'organization', 'institution']
-q-gaussian_distribution: ['probability_distributions_with_non-finite_variance', 'abstraction', 'cognition', 'arrangement', 'psychological_feature', 'distribution', 'structure']
-q-games: ['yagolegalactor', 'yagopermanentlylocatedentity', 'abstraction', 'group', 'video_game_companies_of_japan', 'company', 'social_group', 'organization', 'yagolegalactorgeo', 'companies_established_in_2001', 'institution']

@@ -1,8 +1,0 @@
-yxtaholm_castle: ['building', 'physical_entity', 'yagopermanentlylocatedentity', 'dwelling', 'palace', 'yagogeoentity', 'house', 'housing', 'object', 'artifact', 'mansion', 'whole', 'structure']
-yxa: ['coding_system', 'communication', 'writing', 'written_communication', 'code', 'software']
-yxskaftkälen: ['physical_entity', 'yagopermanentlylocatedentity', 'object', 'yagogeoentity', 'region', 'geographical_area', 'site', 'populated_places_in_j\xc3\xa4mtland_county', 'location', 'tract', 'yagolegalactorgeo']
-yxlan: ['physical_entity', 'yagopermanentlylocatedentity', 'land', 'yagogeoentity', 'island', 'object']
-yxsmedsgränd: ['physical_entity', 'yagopermanentlylocatedentity', 'thoroughfare', 'yagogeoentity', 'object', 'artifact', 'street', 'way', 'whole', 'road']
-yx_energi: ['yagolegalactor', 'retail_companies_of_norway', 'abstraction', 'group', 'company', 'yagopermanentlylocatedentity', 'social_group', 'yagolegalactorgeo', 'organization', 'institution']
-yxy_building_blocks: ['physical_entity', 'polyamides', 'material', 'abstraction', 'polyester', 'polyamide', 'synthetic_resin', 'polymers', 'furan', 'organic_compound', 'resin', 'chemical', 'matter', 'substance', 'part', 'relation', 'compound', 'polyesters', 'polymer']
-yxta_maya_murray: ['physical_entity', 'communicator', 'living_people', 'object', 'living_thing', 'yagolegalactor', 'whole', 'california_lawyers', 'educator', 'professional', 'person', 'people_from_los_angeles,_california', 'adult', 'lawyer', 'writers_of_young_adult_literature', 'yagolegalactorgeo', 'causal_agent', 'novelist', 'writer', 'organism', 'legal_educators']

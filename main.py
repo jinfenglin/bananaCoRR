@@ -85,8 +85,9 @@ class FeatureTagger():
                                    self.both_diff_proper,
                                    self.ner_tag_match,
                                    self.distance_sent,
-                                   self.i_precedes_j
-        ]
+                                   self.i_precedes_j,
+                                   self.number_agree
+                                   ]
 
     def read_data(self, input_filename):
         """load sentences from data file"""
@@ -724,6 +725,45 @@ class FeatureTagger():
                     values.append(name + self.T)
                 else:
                     values.append(name + self.F)
+        return values
+
+    @staticmethod
+    def get_head(words, tags):
+        cur = ()
+        for word, tag in zip(words, tags):
+            if tag.startswith(("NN", "PR", "CD")):
+                cur = (word, tag)
+            elif tag == "IN":
+                return cur
+        return cur
+
+    def number_agree(self):
+        name = "number_agree="
+        values = []
+
+        def is_plural(word, pos):
+            if pos in plural_tags:
+                return True
+            elif pos.startswith("PRP") and word.lower() in plural_pronouns:
+                return True
+            else:
+                return False
+
+        i_words = self.get_i_words()
+        i_tags = self.get_i_poss()
+        j_words = self.get_j_words()
+        j_tags = self.get_j_poss()
+
+        plural_tags = ("NNS", "NNPS")
+        plural_pronouns = ("we", "they", "you", "theirs", "themsleves",
+                           "ourselves", "our", "ours", "their")
+
+        for num, _ in enumerate(i_words):
+            if is_plural(self.get_head(i_words, i_tags))\
+                    == is_plural(self.get_head(j_words, j_tags)):
+                values.append(name + self.T)
+            else:
+                values.append(name + self.F)
         return values
 
 '''
