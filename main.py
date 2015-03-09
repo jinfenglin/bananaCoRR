@@ -57,7 +57,7 @@ class FeatureTagger():
         # dicts will store name dictionaries
         self.dicts = {}
         self.org_suffixes = []
-        self.populate_dict()
+        # self.populate_dict()
 
         # all feature_functions should
         # 1. take no parameters
@@ -83,7 +83,9 @@ class FeatureTagger():
                                    # self.i_proper_j_pronoun,               # hurts
                                    self.both_proper,
                                    self.both_diff_proper,
-                                   self.ner_tag_match
+                                   self.ner_tag_match,
+                                   self.distance_sent,
+                                   self.i_precedes_j
         ]
 
     def read_data(self, input_filename):
@@ -106,11 +108,18 @@ class FeatureTagger():
                 j_pos = r.get_pos(j_line, j_start, j_end)
                 pair = [
                     # info on i
-                    (i_words, i_pos, i_ner),
+                    (i_words, i_pos, i_ner,
+                     int(i_line),
+                     (int(i_start), int(i_end))),  # idx 0
                     # info on j
-                    (j_words, j_pos, j_ner),
+                    (j_words, j_pos, j_ner,
+                     int(j_line),
+                     (int(j_start), int(j_end))),  # 1
                     # additional info
-                    coref.strip(), i_line == j_line]
+                    coref.strip(),                                      # 2
+                    i_line == j_line,                                   # 3
+                    filename                                            # 4
+                ]
                 try:
                     assert j_words == r.get_words(j_line, j_start, j_end)
                 except AssertionError:
@@ -582,12 +591,14 @@ class FeatureTagger():
     def j_indefinite(self):
         """Check if second entity is an indefinite NP.
         Without apositive???"""
+        # TODO implement
         pass
 
     def j_demonstrative(self):
         """Check if second entity is a demonstrative NP"""
         name = "j_demonstrative="
         values = []
+        # TODO are these all?
         demons = {"these", "those", "this", "that"}
         for words in self.get_j_words():
             if words[0].lower() in demons:
@@ -696,6 +707,40 @@ class FeatureTagger():
                 values.append(name + self.F)
         return values
 
+    def distance_sent(self):
+        """Returns the number of sentences between two mentions"""
+        name = "dist_sent="
+        values = []
+        i_sents = [p[0][3] for p in self.pairs]
+        j_sents = [p[1][3] for p in self.pairs]
+        for num, i_sent in enumerate(i_sents):
+            dist = i_sent - j_sents[num]
+            values.append(name + str(dist))
+        return values
+
+    def i_precedes_j(self):
+        """True if i precedes j in document"""
+        name = "i_precedes="
+        values = []
+
+        i_sents = [p[0][3] for p in self.pairs]
+        i_offset = [p[0][4] for p in self.pairs]
+        j_sents = [p[1][3] for p in self.pairs]
+        j_offset = [p[1][4] for p in self.pairs]
+
+        for i in range(len(self.pairs)):
+            if i_sents[i] < j_sents[i]:
+                values.append(name + self.T)
+            elif i_sents[i] > j_sents[i]:
+                values.append(name + self.F)
+            # if i and j are in the same sentence
+            else:
+                # end of i < start of j --> i precedes
+                if i_offset[i][1] <= j_offset[i][0]:
+                    values.append(name + self.T)
+                else:
+                    values.append(name + self.F)
+        return values
 
 '''
     def num_agr(tuple1, tuple2):
