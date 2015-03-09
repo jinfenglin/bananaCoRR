@@ -58,3 +58,6 @@ target/
 **/.idea/
 /local.properties
 **/*.iml
+
+# result files are re-generated everytime
+result/

@@ -164,7 +164,7 @@ class FeatureTagger():
 
     def get_j_poss(self):
         """Return list of pos tags of j words"""
-        return [p[1][0] for p in self.pairs]
+        return [p[1][1] for p in self.pairs]
 
     def get_i_ners(self):
         """Return list of ner tag of i words"""
@@ -729,22 +729,34 @@ class FeatureTagger():
 
     @staticmethod
     def get_head(words, tags):
+        print words, tags
         cur = ()
         for word, tag in zip(words, tags):
-            if tag.startswith(("NN", "PR", "CD")):
+            print word, tag
+            if tag.startswith(("NN", "PR", "CD", "JJ")):
                 cur = (word, tag)
             elif tag == "IN":
-                return cur
-        return cur
+                if cur == ():
+                    print cur
+                    return (word, tag)
+                else:
+                    print cur
+                    return cur
+        if cur == ():
+            print cur
+            return (words[-1], tags[-1])
+        else:
+            print cur
+            return cur
 
     def number_agree(self):
         name = "number_agree="
         values = []
 
-        def is_plural(word, pos):
-            if pos in plural_tags:
+        def is_plural(word_pos):
+            if word_pos[1] in plural_tags:
                 return True
-            elif pos.startswith("PRP") and word.lower() in plural_pronouns:
+            elif word_pos[1].startswith("PRP") and word_pos[0].lower() in plural_pronouns:
                 return True
             else:
                 return False
@@ -758,9 +770,9 @@ class FeatureTagger():
         plural_pronouns = ("we", "they", "you", "theirs", "themsleves",
                            "ourselves", "our", "ours", "their")
 
-        for num, _ in enumerate(i_words):
-            if is_plural(self.get_head(i_words, i_tags))\
-                    == is_plural(self.get_head(j_words, j_tags)):
+        for num in range(len(i_words)):
+            if is_plural(self.get_head(i_words[num], i_tags[num]))\
+                    == is_plural(self.get_head(j_words[num], j_tags[num])):
                 values.append(name + self.T)
             else:
                 values.append(name + self.F)
