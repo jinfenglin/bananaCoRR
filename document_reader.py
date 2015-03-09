@@ -28,19 +28,25 @@ class reader(object):
     def __init__(self, filename):
         super(reader, self).__init__()
         self.filename = filename
-        self.sentences = []
-        self.stanford_dependency = self.load_dep_parse()
-        self.process_file(filename)
+        self.tokenized_sents = []
+        self.depparsed_sents = []
+        self.process_file()
 
-    def process_file(self, filename):
-        with open(os.path.join(main.POS_DATA_PATH, filename + ".raw.pos")) as document:
+    def process_file(self):
+        self.tokenized_sents = self.tokenize_sent()
+        # self.depparsed_sents = self.load_dep_parse()
+
+    def tokenize_sent(self):
+        sents = []
+        with open(os.path.join(main.POS_DATA_PATH, self.filename + ".raw.pos")) as document:
             for line in document:
                 if line != "\n":
-                    self.sentences.append(self.tokenize(line))
+                    sents.append(self.tokenize(line))
+        return sents
 
     def get_all_sents(self):
         sents = []
-        for sent in self.sentences:
+        for sent in self.tokenized_sents:
             sents.append([w for w, _ in sent])
         return sents
 
@@ -112,7 +118,7 @@ class reader(object):
             start = int(start)
         if not isinstance(end, int):
             end = int(end)
-        return self.sentences[sent][start:end]
+        return self.tokenized_sents[sent][start:end]
 
     def get_words(self, sent, start, end):
         return [w for w, _ in self.get_tokens(sent, start, end)]
@@ -120,7 +126,10 @@ class reader(object):
     def get_pos(self, sent, start, end):
         return [p for _, p in self.get_tokens(sent, start, end)]
 
+    def get_dependents(self, sent, start, end):
+        return self.depparsed_sents[sent]
+
 if __name__ == '__main__':
     r = reader("APW20001001.2021.0521.head.coref")
-    pprint.pprint(r.stanford_dependency)
+    pprint.pprint(r.depparsed_sents)
 

@@ -108,12 +108,13 @@ class FeatureTagger():
                 j_pos = r.get_pos(j_line, j_start, j_end)
                 pair = [
                     # info on i
-                    (i_words, i_pos, i_ner,
+                    (i_words,                   # list
+                     i_pos,                     # list
+                     i_ner,                     # str
                      int(i_line),
                      (int(i_start), int(i_end))),  # idx 0
                     # info on j
-                    (j_words, j_pos, j_ner,
-                     int(j_line),
+                    (j_words, j_pos, j_ner, int(j_line),
                      (int(j_start), int(j_end))),  # 1
                     # additional info
                     coref.strip(),                                      # 2
@@ -441,12 +442,13 @@ class FeatureTagger():
         name = "yago_ontology="
         values = []
 
-        # YAGO dict is sooo huge, we need to memoize
+        # YAGO dict is soooooooooooooo huge, we need to memoize
         results = {}
 
         i_words = self.get_i_words()
         j_words = self.get_j_words()
-        # refer to yago dict for only proper nouns
+        # make it refer to yago dict for only proper nouns
+        # otherwise, the program will refer YAGO for very common nouns like 'leader'
         i_pns = self.i_proper_noun()
         j_pns = self.j_proper_noun()
         i_ners = self.get_i_ners()
@@ -465,24 +467,6 @@ class FeatureTagger():
             else:
                 result2 = []
 
-            # get queries for i word, check if i mention i is person
-            # if i_ners[instance] == "PER":
-            #     i_queries = tuple(i_words[instance])
-            #     result1 = retrieve_yago(i_queries, person=True)
-            # else:
-            #     i_queries = ("_".join(i_words[instance]))
-            #     result1 = retrieve_yago(i_queries, person=False)
-            #
-            # get queries for j word, also check if it's person
-            # if j_ners[instance] == "PER":
-            #     j_queries = tuple(j_words[instance])
-            #     result2 = retrieve_yago(j_queries, person=True)
-            # else:
-            #     j_queries = ["_".join(j_words[instance])]
-            #     result2 = retrieve_yago(j_queries, person=False)
-
-            # print "YAGO doing ", instance
-            # return jaccard score
             if result1 == [] or result2 == []:
                 values.append(name + "no data")
             else:
