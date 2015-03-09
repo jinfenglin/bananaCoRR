@@ -80,12 +80,16 @@ with open(YAGO_PATH, "r") as f, open("log.txt", "w") as log:
 print len(entity_set)
 entity_dict = {}
 for entity in entity_set:
+    if entity_dict.get(entity):
+        entity_dict[entity].append(entity)
+    else:
+        entity_dict[entity] = [entity]
     for token in entity.split("_"):
-        try: 
+        try:
             entity_dict[token].append(entity)
         except KeyError:
-            entity_dict[token] = []
-            entity_dict[token].append(entity)
+            entity_dict[token] = [entity]
+
 print len(entity_dict.keys())
 
 with open('yago_entries.p', "wb") as picklejar:

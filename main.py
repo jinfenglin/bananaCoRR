@@ -7,12 +7,12 @@ Use various feature functions to train a MALLET MaxEnt model to classify whether
 entities in a text are coreferent or not.
 """
 import collections
-import re
 import subprocess
 import sys
-import gc
 import cPickle as pickle
+
 from nltk.stem.lancaster import LancasterStemmer
+
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -50,33 +50,40 @@ class FeatureTagger():
         2: corefer - bool (None for test data)
         3: in_same_sent - bool
         """
+        self.T = 'true'
+        self.F = 'false'
         self.pairs = None
 
         # dicts will store name dictionaries
         self.dicts = {}
         self.org_suffixes = []
+        self.populate_dict()
 
         # all feature_functions should
         # 1. take no parameters
         # (use self.pairs)
         # 2. return a list or an iterable which has len of # number of tokens
-        self.feature_functions = [  self.i_pronoun,
-                                    self.j_pronoun,
-                                    self.only_i_pronoun,
-                                    self.only_j_pronoun,
-                                    self.string_match_no_articles,
-                                    self.string_contains_no_articles,
-                                    self.str_stem_match,
-                                    self.pro_str_match,
-                                    self.pn_str_match,
-                                    self.pn_str_contains,
-                                    self.words_str_match,
-                                    #self.yago_ontology,
-                                    self.j_definite,
-                                    self.j_demonstrative,
-                                    self.word_overlap,
-                                    self.both_proper,
-                                    self.both_diff_proper
+        self.feature_functions = [ self.i_pronoun,
+                                   self.j_pronoun,
+                                   self.only_i_pronoun,
+                                   self.only_j_pronoun,
+                                   self.string_match_no_articles,
+                                   self.string_contains_no_articles,
+                                   self.str_stem_match,                     # WOW
+                                   self.pro_str_match,
+                                   self.pn_str_match,
+                                   self.pn_str_contains,
+                                   self.words_str_match,
+                                   # self.yago_ontology,
+                                   self.j_definite,
+                                   self.j_demonstrative,
+                                   self.word_overlap,
+                                   self.i_proper_noun,
+                                   self.j_proper_noun,
+                                   # self.i_proper_j_pronoun,               # hurts
+                                   self.both_proper,
+                                   self.both_diff_proper,
+                                   self.ner_tag_match
         ]
 
     def read_data(self, input_filename):
@@ -120,7 +127,6 @@ class FeatureTagger():
 
         print self.pairs[0]
         # self.populate_freq(300)
-        # self.populate_dict()
 
     def is_coref(self):
         """return gold standard labels for each pairs"""
@@ -148,10 +154,6 @@ class FeatureTagger():
     def get_j_poss(self):
         """Return list of pos tags of j words"""
         return [p[1][0] for p in self.pairs]
-        # poss = []
-        # for p in self.pairs:
-        #     poss.extend(p[1][1])
-        # return poss
 
     def get_i_ners(self):
         """Return list of ner tag of i words"""
@@ -170,11 +172,6 @@ class FeatureTagger():
             features = self.get_features(train)
             for tok_index in range(len(features)):
                 outf.write("\t".join(features[tok_index]) + "\n")
-                # try:
-                #     if features[tok_index+1][0] == "0":
-                #         outf.write("\n")
-                # except KeyError:
-                #     pass
 
     def get_features(self, train=True):
         """traverse function list and get all values in a dictionary"""
@@ -183,6 +180,7 @@ class FeatureTagger():
         # add gold bio tags while training
         if train:
             self.feature_functions.insert(0, self.is_coref)
+            
         # traverse functions
         # note that all function should take no parameter and return an iterable
         # which has length of the number of total tokens
@@ -201,19 +199,6 @@ class FeatureTagger():
 
         with open(os.path.join("resources", "yago", "yago_entries.p"), "rb") as pjar:
             self.dicts["yago"] = pickle.load(pjar)
-            # for filename in filter(lambda x: x.endswith(".dict"), os.listdir(DICT_PATH)):
-            #     dict_type = filename.split(".")[0]
-            #     self.dicts[dict_type] = []
-            #     with open(os.path.join(DICT_PATH, filename)) as d:
-            #         for line in d:
-            #             if line != "\n":
-            #                 self.dicts[dict_type].append(line.strip().lower())
-            # now load up useful suffix dict
-            # if dict_type == "org":  # only organization names have useful suffixes
-            #     with open(os.path.join(DICT_PATH, dict_type + ".suff")) as suff:
-            #         for line in suff:
-            #             if line != "\n":
-            #                 self.org_suffixes.append(line.strip().lower())
 
     def in_dict(self, typ):
         """See each token is in a certain dictionary"""
@@ -249,48 +234,62 @@ class FeatureTagger():
 
     def i_pronoun(self):
         """Is the first entity a pronoun"""
-        name, t, f = "i_pronoun=", "true", "false"
+        name = "i_pronoun="
         values = []
-        for poss in self.get_i_poss():
-            for pos in poss:
-                if pos.startswith("PRP"):
-                    values.append(name + t)
-                else:
-                    values.append(name + f)
+        poss = self.get_i_poss()
+        for pos in poss:
+            if len(pos) == 1 and pos[0].startswith("PRP"):
+                values.append(name + self.T)
+            else:
+                values.append(name + self.F)
+
         return values
 
     def j_pronoun(self):
         """Is the second entity a pronoun"""
-        name, t, f = "j_pronoun=", "true", "false"
+        name = "j_pronoun="
         values = []
-        for poss in self.get_j_poss():
-            for pos in poss:
-                if pos.startswith("PRP"):
-                    values.append(name + t)
-                else:
-                    values.append(name + f)
+        poss = self.get_j_poss()
+        for pos in poss:
+            if len(pos) == 1 and pos[0].startswith("PRP"):
+                values.append(name + self.T)
+            else:
+                values.append(name + self.F)
+
         return values
+
 
     def only_j_pronoun(self):
         """Checks if only the second entity is a pronoun, and not the first"""
-        name, t, f = "only_j_pronoun=", "true", "false"
+        name = "only_j_pronoun="
         values = []
         for bools in zip(self.i_pronoun(), self.j_pronoun()):
             if bools[0].endswith("false") and bools[1].endswith("true"):
-                values.append(name + t)
+                values.append(name + self.T)
             else:
-                values.append(name + f)
+                values.append(name + self.F)
         return values
 
     def only_i_pronoun(self):
         """Checks if only the first entity is a pronoun, and not the second"""
-        name, t, f = "only_i_pronoun=", "true", "false"
+        name = "only_i_pronoun="
         values = []
         for bools in zip(self.i_pronoun(), self.j_pronoun()):
             if bools[1].endswith("false") and bools[0].endswith("true"):
-                values.append(name + t)
+                values.append(name + self.T)
             else:
-                values.append(name + f)
+                values.append(name + self.F)
+        return values
+    
+    def ner_tag_match(self):
+        """true if two mentions share same ber tag"""
+        name = "ner_tag_match="
+        values = []
+        for tags in zip(self.get_i_ners(), self.get_j_ners()):
+            if tags[0] == tags[1]:
+                values.append(name + self.T)
+            else:
+                values.append(name + self.F)
         return values
 
     def remove_articles(self, words, tags):
@@ -303,7 +302,7 @@ class FeatureTagger():
 
     def string_match_no_articles(self):
         """Checks to see if two entities match exactly, without articles"""
-        name, t, f = "string_match_no_articles=", "true", "false"
+        name = "string_match_no_articles="
         values = []
         i_words = self.get_i_words()
         j_words = self.get_j_words()
@@ -313,14 +312,14 @@ class FeatureTagger():
             comparator_i = self.remove_articles(i_words[i], i_tags[i])
             comparator_j = self.remove_articles(j_words[i], j_tags[i])
             if comparator_i == comparator_j:
-                values.append(name + t)
+                values.append(name + self.T)
             else:
-                values.append(name + f)
+                values.append(name + self.F)
         return values
 
     def string_contains_no_articles(self):
         """Checks if one entities is contained in another, without articles"""
-        name, t, f = "string_contains_no_articles=", "true", "false"
+        name = "string_contains_no_articles="
         values = []
         i_words = self.get_i_words()
         j_words = self.get_j_words()
@@ -331,9 +330,9 @@ class FeatureTagger():
             comparator_j = self.remove_articles(j_words[i], j_tags[i])
             if comparator_i in comparator_j or \
                             comparator_j in comparator_i:
-                values.append(name + t)
+                values.append(name + self.T)
             else:
-                values.append(name + f)
+                values.append(name + self.F)
         return values
 
     def score_jaccard(self, set1, set2, numeric=False):
@@ -357,46 +356,53 @@ class FeatureTagger():
             else:
                 return "none"
 
-    def make_hash(self, string):
-        hashed = ""
-        for c in string:
-            if len(hashed) > 1:
-                return hashed
-            else:
-                if c.isalpha():
-                    hashed += c
-        while len(hashed) < 2:
-            hashed += "_"
-        return hashed
-
     def yago_ontology(self):
         """Uses the yago ontology to calculate the similarity between entities"""
-        name = "yago_ontology="
-        values = []
 
-        i_words = self.get_i_words()
-        j_words = self.get_j_words()
-        i_ners = self.get_i_ners()
-        j_ners = self.get_j_ners()
+        def yago_query(words, person):
+            # print "QUERIED: ", words
+            # if person:
+            #     if len(words) > 1:
+            #         result = retrieve_yago(words + ["_".join(words)], person)
+            #     else:
+            #         result = retrieve_yago(words, person)
+            # else:
+            result = retrieve_yago("_".join(words).lower(), person)
 
-        def retrieve_yago(queries, person):
-            attribs = []
-            for q in queries:
-                if person:
-                    yago_name = self.dicts['yago'].get(q)
-                else:
-                    yago_name = [q.lower()]
+            return result
+
+        def retrieve_yago(query, person):
+            """get yago attribute list"""
+            # print "querying: ", query
+            attribs = set()
+            if query in results.keys():
+                # print "MEMO!"
+                attribs = results[query]
+            else:
+                # print "CUR_SET: ", attribs
+                # if querying person name, also query for each token
+                # (eg> Barack Obama should be retrieved by querying Obama only)
+                # if person:
+                #     yago_name = self.dicts['yago'].get(query)
+                #     print "FULL_NAMES from CUR_Q {}: {}".format(query, yago_name)
+                # otherwise, just use a singleton of full name
+                # else:
+                yago_name = [query.lower()]
                 if yago_name is not None:
                     for name in yago_name:
+                        # print "HASHED: ", yago_hash(name)
                         yago_d = load_yago(yago_hash(name))
                         try:
-                            attribs.extend(yago_d[name])
+                            # print "ATTRIBS_TO_ADD: ", yago_d[name]
+                            attribs.update(yago_d[name])
                         except KeyError:
                             pass
-
+                results[query] = attribs
+            # print "result: ", attribs
             return attribs
 
         def load_yago(filename):
+            """Load up a relevant yago file, given a hashed name"""
             yago_path = os.path.join(PROJECT_PATH, "resources", "yago")
             yago_dict = {}
             with open(os.path.join(yago_path, filename)) as yago_file:
@@ -410,6 +416,7 @@ class FeatureTagger():
             return yago_dict
 
         def yago_hash(string):
+            """Take the first two alphabetic character of a string"""
             hashed = ""
             for c in string.lower():
                 if len(hashed) > 1:
@@ -421,27 +428,52 @@ class FeatureTagger():
                 hashed += "_"
             return hashed
 
+        # main part of this feature function
+        name = "yago_ontology="
+        values = []
+
+        # YAGO dict is sooo huge, we need to memoize
+        results = {}
+
+        i_words = self.get_i_words()
+        j_words = self.get_j_words()
+        # refer to yago dict for only proper nouns
+        i_pns = self.i_proper_noun()
+        j_pns = self.j_proper_noun()
+        i_ners = self.get_i_ners()
+        j_ners = self.get_j_ners()
         for instance in range(len(i_words)):
-            # get queries for i word
-            if i_ners[instance] == "PER":
-                i_queries = i_words[instance]
-                result1 = retrieve_yago(i_queries, person=True)
+            # print "TARGETS: ", i_words[instance], i_pronouns[instance], \
+            #     j_words[instance], j_pronouns[instance]
+            if i_pns[instance].endswith("true"):
+                # print "QUERYING I: ", i_words[instance]
+                result1 = yago_query(i_words[instance], i_ners[instance] == "PER")
             else:
-                i_queries = ["_".join(i_words[instance])]
-                result1 = retrieve_yago(i_queries, person=False)
-
-            # get queries for j word
-            if j_ners[instance] == "PER":
-                j_queries = j_words[instance]
-                result2 = retrieve_yago(j_queries, person=True)
+                result1 = []
+            if j_pns[instance].endswith("true"):
+                # print "QUERYING J: ", j_words[instance]
+                result2 = yago_query(j_words[instance], j_ners[instance] == "PER")
             else:
-                j_queries = ["_".join(j_words[instance])]
-                result2 = retrieve_yago(j_queries, person=False)
+                result2 = []
 
-            if instance < 5:
-                print "{}: {}".format(i_words[instance], result1)
-                print "{}: {}".format(j_words[instance], result2)
+            # get queries for i word, check if i mention i is person
+            # if i_ners[instance] == "PER":
+            #     i_queries = tuple(i_words[instance])
+            #     result1 = retrieve_yago(i_queries, person=True)
+            # else:
+            #     i_queries = ("_".join(i_words[instance]))
+            #     result1 = retrieve_yago(i_queries, person=False)
+            #
+            # get queries for j word, also check if it's person
+            # if j_ners[instance] == "PER":
+            #     j_queries = tuple(j_words[instance])
+            #     result2 = retrieve_yago(j_queries, person=True)
+            # else:
+            #     j_queries = ["_".join(j_words[instance])]
+            #     result2 = retrieve_yago(j_queries, person=False)
 
+            # print "YAGO doing ", instance
+            # return jaccard score
             if result1 == [] or result2 == []:
                 values.append(name + "no data")
             else:
@@ -450,7 +482,7 @@ class FeatureTagger():
 
     def str_stem_match(self):
         """Stem first, and then check string match"""
-        name, t, f = "str_stem_match=", "true", "false"
+        name = "str_stem_match="
         values = []
         st = LancasterStemmer()
         i_words = self.get_i_words()
@@ -461,14 +493,14 @@ class FeatureTagger():
             comparator_i = st.stem(self.remove_articles(i_words[i], i_tags[i]))
             comparator_j = st.stem(self.remove_articles(j_words[i], j_tags[i]))
             if comparator_i == comparator_j:
-                values.append(name + t)
+                values.append(name + self.T)
             else:
-                values.append(name + f)
+                values.append(name + self.F)
         return values
 
     def pro_str_match(self):
         """Check if both entities are pronouns and they both match"""
-        name, t, f = "pro_str_match=", "true", "false"
+        name = "pro_str_match="
         values = []
         i_words = self.get_i_words()
         j_words = self.get_j_words()
@@ -477,14 +509,14 @@ class FeatureTagger():
             if pro_bools[i][0].endswith("true") \
                     and pro_bools[i][1].endswith("true") \
                     and i_words[i] == j_words[i]:
-                values.append(name + t)
+                values.append(name + self.T)
             else:
-                values.append(name + f)
+                values.append(name + self.F)
         return values
 
     def pn_str_match(self):
         """Check if both entities are proper nouns and they both match"""
-        name, t, f = "pn_str_match=", "true", "false"
+        name = "pn_str_match="
         values = []
         i_words = self.get_i_words()
         j_words = self.get_j_words()
@@ -495,14 +527,14 @@ class FeatureTagger():
             j_nnps = [tag for tag in j_tags[i] if tag.startswith("NNP")]
             if len(i_nnps) > 0 and len(j_nnps) > 0 \
                     and " ".join(i_words[i]) == " ".join(j_words[i]):
-                values.append(name + t)
+                values.append(name + self.T)
             else:
-                values.append(name + f)
+                values.append(name + self.F)
         return values
 
     def pn_str_contains(self):
         """Check if both entities are proper nouns and one contains the other"""
-        name, t, f = "pn_str_contains=", "true", "false"
+        name = "pn_str_contains="
         values = []
         i_words = self.get_i_words()
         j_words = self.get_j_words()
@@ -515,14 +547,14 @@ class FeatureTagger():
             j_string = " ".join(j_words[i])
             if len(i_nnps) > 0 and len(j_nnps) > 0 \
                     and (j_string in i_string or i_string in j_string):
-                values.append(name + t)
+                values.append(name + self.T)
             else:
-                values.append(name + f)
+                values.append(name + self.F)
         return values
 
     def words_str_match(self):
         """Check if both entities are not pronouns and they both match"""
-        name, t, f = "words_str_match=", "true", "false"
+        name = "words_str_match="
         values = []
         i_words = self.get_i_words()
         j_words = self.get_j_words()
@@ -531,20 +563,20 @@ class FeatureTagger():
             if pro_bools[i][0].endswith("false") \
                     and pro_bools[i][1].endswith("false") \
                     and " ".join(i_words[i]) == " ".join(j_words[i]):
-                values.append(name + t)
+                values.append(name + self.T)
             else:
-                values.append(name + f)
+                values.append(name + self.F)
         return values
 
     def j_definite(self):
         """Check if second entity is a definite NP"""
-        name, t, f = "j_definite=", "true", "false"
+        name = "j_definite="
         values = []
         for words in self.get_j_words():
             if words[0].lower() == "the":
-                values.append(name + t)
+                values.append(name + self.T)
             else:
-                values.append(name + f)
+                values.append(name + self.F)
         return values
 
     def j_indefinite(self):
@@ -554,19 +586,19 @@ class FeatureTagger():
 
     def j_demonstrative(self):
         """Check if second entity is a demonstrative NP"""
-        name, t, f = "j_demonstrative=", "true", "false"
+        name = "j_demonstrative="
         values = []
         demons = {"these", "those", "this", "that"}
         for words in self.get_j_words():
             if words[0].lower() in demons:
-                values.append(name + t)
+                values.append(name + self.T)
             else:
-                values.append(name + f)
+                values.append(name + self.F)
         return values
 
     def word_overlap(self):
         """Check if entities have any words in common"""
-        name, t, f = "word_overlap=", "true", "false"
+        name = "word_overlap="
         values = []
         i_words = self.get_i_words()
         j_words = self.get_j_words()
@@ -574,31 +606,64 @@ class FeatureTagger():
             i_set = set(word.lower() for word in i_words[i])
             j_set = set(word.lower() for word in j_words[i])
             if len(i_set.intersection(j_set)) > 0:
-                values.append(name + t)
+                values.append(name + self.T)
             else:
-                values.append(name + f)
+                values.append(name + self.F)
         return values
+
+    def i_proper_noun(self):
+        """Check if the first mention is a proper noun"""
+        name = "i_proper="
+        values = []
+        tags = self.get_i_poss()
+        for i in range(len(tags)):
+            nnps = [tag for tag in tags[i] if tag.startswith("NNP")]
+            if len(nnps) == len(tags[i]):
+                # print i, " found NNP at first loc"
+                values.append(name + self.T)
+            else:
+                values.append(name + self.F)
+        return values
+
+    def j_proper_noun(self):
+        """Check if the first mention is a proper noun"""
+        name = "j_proper="
+        values = []
+        tags = self.get_j_poss()
+        for i in range(len(tags)):
+            nnps = [tag for tag in tags[i] if tag.startswith("NNP")]
+            if len(nnps) == len(tags[i]):
+                values.append(name + self.T)
+            else:
+                values.append(name + self.F)
+        return values
+
+    def i_proper_j_pronoun(self):
+        name = "i_pn_i_pro="
+        values = []
+        for bools in zip(self.i_proper_noun(), self.j_pronoun()):
+            if bools[0].endswith("true") and bools[1].endswith("true"):
+                values.append(name + self.T)
+            else:
+                values.append(name + self.F)
+        return values
+
 
     def both_proper(self):
         """Check if both entities are proper nouns"""
-        name, t, f = "both_proper=", "true", "false"
+        name = "both_proper="
         values = []
-        i_words = self.get_i_words()
-        j_words = self.get_j_words()
-        i_tags = self.get_i_poss()
-        j_tags = self.get_j_poss()
-        for i in range(len(i_words)):
-            i_nnps = [tag for tag in i_tags[i] if tag.startswith("NNP")]
-            j_nnps = [tag for tag in j_tags[i] if tag.startswith("NNP")]
-            if len(i_nnps) > 0 and len(j_nnps) > 0:
-                values.append(name + t)
+
+        for bools in zip(self.i_proper_noun(), self.j_proper_noun()):
+            if bools[0].endswith("true") and bools[1].endswith("true"):
+                values.append(name + self.T)
             else:
-                values.append(name + f)
+                values.append(name + self.F)
         return values
 
     def both_diff_proper(self):
         """Check if both entities are proper nouns and no words match"""
-        name, t, f = "both_diff_proper=", "true", "false"
+        name = "both_diff_proper="
         values = []
         i_words = self.get_i_words()
         j_words = self.get_j_words()
@@ -611,14 +676,14 @@ class FeatureTagger():
             j_set = set(word.lower() for word in j_words[i])
             if len(i_nnps) > 0 and len(j_nnps) > 0 and \
                             len(i_set.intersection(j_set)) == 0:
-                values.append(name + t)
+                values.append(name + self.T)
             else:
-                values.append(name + f)
+                values.append(name + self.F)
         return values
 
     def acronym_match(self):
         """Check lexically if one entity is an acronym of the other"""
-        name, t, f = "acronym_match=", "true", "false"
+        name = "acronym_match="
         values = []
         i_words = self.get_i_words()
         j_words = self.get_j_words()
@@ -626,9 +691,9 @@ class FeatureTagger():
             i_string = "".join([word[0] for word in i_words])
             j_string = "".join([word[0] for word in j_words])
             if i_string == j_words[0] or j_string == i_words[0]:
-                values.append(name + t)
+                values.append(name + self.T)
             else:
-                values.append(name + f)
+                values.append(name + self.F)
         return values
 
 
