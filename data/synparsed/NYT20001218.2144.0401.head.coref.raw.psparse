@@ -34,7 +34,7 @@
     (: ;)
     (S
       (S
-        (NP (NNP (ATTN) (NNP .:) (NNP N.Y) (NNP .,) (NNP Md) (NNP .,) (NNP France) (NNP )))
+        (NP (NNP [ATTN) (NNP .:) (NNP N.Y) (NNP .,) (NNP Md) (NNP .,) (NNP France) (NNP ]))
         (ADJP (JJ &LR)))
       (: ;)
       (S

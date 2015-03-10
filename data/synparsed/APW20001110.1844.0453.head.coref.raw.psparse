@@ -14,7 +14,8 @@
     (NP
       (NP (NNP AMSTERDAM))
       (, ,)
-      (NP (NNP Netherlands) (NNP (AP) (NNP ))))
+      (NP (NNP Netherlands) (NNP [AP) (NNP ])))
+    (: -)
     (S
       (NP (DT A) (JJ Palestinian) (NN terrorist))
       (VP (VBD began)

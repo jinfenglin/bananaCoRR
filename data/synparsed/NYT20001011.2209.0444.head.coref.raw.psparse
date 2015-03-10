@@ -776,8 +776,8 @@
                                           (WHNP (WP Who))
                                           (S
                                             (NP (NNP Killed) (NNP John) (NNP Lennon) ('' ''))
-                                            (VP (VBD (Villard)
-                                              (NP (NNP Books) (NNP ).)))))))))))))))))))))))))
+                                            (VP (VBD [Villard)
+                                              (NP (NNP Books) (NNP ].)))))))))))))))))))))))))
 
 (ROOT
   (S

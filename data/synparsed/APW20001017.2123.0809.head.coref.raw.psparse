@@ -17,27 +17,30 @@
     (. .)))
 
 (ROOT
-  (S
-    (NP (JJ (AP) (JJ )) (CD Two) (JJ spacewalking) (NNS astronauts))
-    (VP
-      (VP (VBD clamped)
-        (NP (NN power) (NN equipment))
-        (PP (IN onto)
-          (NP
-            (NP (DT the) (JJ international) (NN space) (NN station))
-            (PP (IN on)
-              (NP (NNP Tuesday))))))
-      (CC and)
+  (FRAG
+    (NP (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP (CD Two) (JJ spacewalking) (NNS astronauts))
       (VP
-        (ADVP (RB inadvertently))
-        (VBD added)
-        (PP (TO to)
-          (NP
-            (NP (DT the) (NN collection))
-            (PP (IN of)
-              (NP (NN junk) (NN whizzing)))))
-        (PP (IN around)
-          (NP (NNP Earth)))))
+        (VP (VBD clamped)
+          (NP (NN power) (NN equipment))
+          (PP (IN onto)
+            (NP
+              (NP (DT the) (JJ international) (NN space) (NN station))
+              (PP (IN on)
+                (NP (NNP Tuesday))))))
+        (CC and)
+        (VP
+          (ADVP (RB inadvertently))
+          (VBD added)
+          (PP (TO to)
+            (NP
+              (NP (DT the) (NN collection))
+              (PP (IN of)
+                (NP (NN junk) (NN whizzing)))))
+          (PP (IN around)
+            (NP (NNP Earth))))))
     (. .)))
 
 (ROOT
@@ -136,33 +139,35 @@
     (. .)))
 
 (ROOT
-  (NP
-    (NP (DT The) (JJ main) (NN purpose))
-    (PP (IN of)
+  (S
+    (NP
       (NP
-        (NP
-          (NP (NNP Tuesday) (POS 's))
-          (NN spacewalk))
-        (UCP
-          (NP (DT the)
-            (ADJP (JJ third)
-              (PP (IN in)
-                (SBAR (IN as)
-                  (S
-                    (NP (JJ many) (NNS days))
-                    (VP (VBD was)
-                      (S
-                        (VP (TO to)
-                          (VP (VB mount)
-                            (NP (CD two) (NN power) (NNS converters))
-                            (PP (IN on)
-                              (NP
-                                (NP (DT the) (NN space) (NN station) (POS 's))
-                                (JJ new) (NN aluminum)))))))))))
-            (NN framework))
-          (, ,)
-          (CC or)
-          (ADJP (JJ truss)))))
+        (NP (DT The) (JJ main) (NN purpose))
+        (PP (IN of)
+          (NP
+            (NP (NNP Tuesday) (POS 's))
+            (NN spacewalk))))
+      (: -)
+      (NP
+        (NP (DT the) (JJ third))
+        (PP (IN in)
+          (NP
+            (QP (RB as) (JJ many))
+            (NNS days))))
+      (: -))
+    (VP (VBD was)
+      (S
+        (VP (TO to)
+          (VP (VB mount)
+            (NP (CD two) (NN power) (NNS converters))
+            (PP (IN on)
+              (NP
+                (NP
+                  (NP (DT the) (NN space) (NN station) (POS 's))
+                  (JJ new) (NN aluminum) (NN framework))
+                (, ,)
+                (CC or)
+                (NP (NNS truss))))))))
     (. .)))
 
 (ROOT
@@ -219,17 +224,19 @@
                 (SBAR (IN once)
                   (S
                     (NP
-                      (NP (DT a) (NN pair))
-                      (PP (IN of)
-                        (NP
-                          (NP (JJ solar) (NNS wings))
-                          (VP (VBG stretching)
-                            (PP
-                              (NP (CD 240) (NNS feet))
-                              (IN from)
-                              (NP (NN tip)))
-                            (PP (TO to)
-                              (NP (NN tip)))))))
+                      (NP
+                        (NP (DT a) (NN pair))
+                        (PP (IN of)
+                          (NP (JJ solar) (NNS wings))))
+                      (PRN (: -)
+                        (VP (VBG stretching)
+                          (PP
+                            (NP (CD 240) (NNS feet))
+                            (IN from)
+                            (NP (NN tip)))
+                          (PP (TO to)
+                            (NP (NN tip))))
+                        (: -)))
                     (VP (VBP are)
                       (VP (VBN installed)
                         (PP (IN during)
@@ -398,6 +405,9 @@
               (PP (IN in)
                 (NP (RB early) (NNP November))))))))
     (. .)))
+
+(ROOT
+  (INTJ (UH -)))
 
 (ROOT
   (PP (IN On)

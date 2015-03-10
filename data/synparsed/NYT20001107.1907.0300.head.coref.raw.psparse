@@ -60,17 +60,20 @@
     (: ;)))
 
 (ROOT
-  (S
+  (X
     (NP (NNP NEW) (NNP YORK))
-    (ADVP (RB Never))
-    (VP (VB mind)
-      (NP
-        (NP (DT those) (NNS points))
-        (PP (IN of)
-          (NP
-            (NP (JJ light) (DT a) (JJ former) (NN president))
-            (VP (VBN talked)
-              (PP (IN about)))))))
+    (: -)
+    (FRAG
+      (VP
+        (ADVP (RB Never))
+        (VB mind)
+        (NP
+          (NP (DT those) (NNS points))
+          (PP (IN of)
+            (NP
+              (NP (JJ light) (DT a) (JJ former) (NN president))
+              (VP (VBN talked)
+                (PP (IN about))))))))
     (. .)))
 
 (ROOT

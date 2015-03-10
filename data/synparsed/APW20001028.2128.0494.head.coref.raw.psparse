@@ -10,26 +10,29 @@
   (NP (NNP Baghdad) (NNP Airport) (NNP Sanctions) (NNP Lifted)))
 
 (ROOT
-  (S
-    (NP (NNP BAGHDAD) (, ,) (NNP Iraq) (JJ (AP) (NN )) (NNP Saddam) (NNP International) (NNP Airport))
-    (VP (VBD was)
-      (ADJP (JJR busier))
-      (PP (IN than)
-        (NP (JJ usual) (NNP Saturday)))
-      (PP (IN with)
-        (NP
-          (NP (DT the) (JJS largest) (NN movement))
-          (PP (IN of)
-            (NP (NNS planes)))))
-      (SBAR (IN since)
-        (S
-          (NP (DT the) (NNP United) (NNPS States))
-          (VP (VBD imposed)
-            (NP (NNS sanctions))
-            (PP (IN on)
-              (NP (NNP Iraq)))
-            (PP (IN in)
-              (NP (CD 1990)))))))
+  (NP
+    (NP (NNP BAGHDAD) (, ,) (NNP Iraq) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP (NNP Saddam) (NNP International) (NNP Airport))
+      (VP (VBD was)
+        (ADJP (JJR busier))
+        (PP (IN than)
+          (NP (JJ usual) (NNP Saturday)))
+        (PP (IN with)
+          (NP
+            (NP (DT the) (JJS largest) (NN movement))
+            (PP (IN of)
+              (NP (NNS planes)))))
+        (SBAR (IN since)
+          (S
+            (NP (DT the) (NNP United) (NNPS States))
+            (VP (VBD imposed)
+              (NP (NNS sanctions))
+              (PP (IN on)
+                (NP (NNP Iraq)))
+              (PP (IN in)
+                (NP (CD 1990))))))))
     (. .)))
 
 (ROOT

@@ -10,36 +10,35 @@
   (NP (NNP S.Korea) (NNP Workers) (NNP Decry) (NNP Restructuring)))
 
 (ROOT
-  (S
-    (ADVP (RB SEOUL))
-    (, ,)
-    (NP (NNP South) (NNP Korea) (NNP (AP) (NNP )) (CD Two) (JJ major)
-      (ADJP (NNP South) (JJ Korean))
-      (NN labor) (NNS groups))
-    (VP (VBD rallied)
-      (NP
+  (NP
+    (NP (NNP SEOUL) (, ,) (NNP South) (NNP Korea) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP (CD Two) (JJ major) (NNP South) (JJ Korean) (NN labor) (NNS groups))
+      (VP (VBD rallied)
         (NP
-          (QP (RB about) (CD 15,000))
-          (NNS workers))
-        (PP (IN in)
-          (NP (JJ central) (NNP Seoul))))
-      (PP (IN on)
-        (NP (NNP Sunday)))
-      (S
-        (VP (TO to)
-          (VP (VB protest)
-            (NP
-              (NP (NN government) (JJ -led) (JJ corporate) (NN restructuring))
-              (SBAR
-                (S
-                  (NP (PRP they))
-                  (VP (VBP fear)
-                    (SBAR
-                      (S
-                        (VP (MD will)
-                          (VP (VB lead)
-                            (PP (TO to)
-                              (NP (JJ mass) (NNS layoffs)))))))))))))))
+          (NP
+            (QP (RB about) (CD 15,000))
+            (NNS workers))
+          (PP (IN in)
+            (NP (JJ central) (NNP Seoul))))
+        (PP (IN on)
+          (NP (NNP Sunday)))
+        (S
+          (VP (TO to)
+            (VP (VB protest)
+              (NP
+                (NP (NN government) (JJ -led) (JJ corporate) (NN restructuring))
+                (SBAR
+                  (S
+                    (NP (PRP they))
+                    (VP (VBP fear)
+                      (SBAR
+                        (S
+                          (VP (MD will)
+                            (VP (VB lead)
+                              (PP (TO to)
+                                (NP (JJ mass) (NNS layoffs))))))))))))))))
     (. .)))
 
 (ROOT

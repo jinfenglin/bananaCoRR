@@ -13,14 +13,14 @@
     (NP (NNP Bar))))
 
 (ROOT
-  (S
+  (FRAG
+    (NP (NNP DENVER) (NNP [AP) (NNP ]))
+    (: -)
     (S
-      (NP (NNP DENVER) (NNP (AP))
-      (VP (VBZ ))
-        (NP (DT The) (NNP Denver) (NNS Broncos))))
-    (CC and)
-    (S
-      (NP (DT the) (NNP NFL))
+      (NP
+        (NP (DT The) (NNP Denver) (NNS Broncos))
+        (CC and)
+        (NP (DT the) (NNP NFL)))
       (VP (VBP want)
         (S
           (NP (DT a) (JJ commercial) (JJ real) (NN estate) (NN agent))

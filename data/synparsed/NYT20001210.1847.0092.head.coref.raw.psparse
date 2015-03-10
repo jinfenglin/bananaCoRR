@@ -52,7 +52,7 @@
     (. .)))
 
 (ROOT
-  (S
+  (S (: -)
     (NP (EX There))
     (VP (VBP are)
       (NP
@@ -390,13 +390,16 @@
               (NP
                 (NP
                   (NP
-                    (NP (DT the) (NN township) (POS 's))
-                    (NNP Board))
-                  (PP (IN of)
                     (NP
-                      (NP (NNP Trustees) (NNP Stremlow))
-                      (PP (IN as)
-                        (NP (NN supervisor))))))
+                      (NP (DT the) (NN township) (POS 's))
+                      (NNP Board))
+                    (PP (IN of)
+                      (NP (NNP Trustees))))
+                  (: -)
+                  (NP
+                    (NP (NNP Stremlow))
+                    (PP (IN as)
+                      (NP (NN supervisor)))))
                 (CC and)
                 (NP
                   (NP (NNP Larson))

@@ -30,7 +30,7 @@
 
 (ROOT
   (FRAG
-    (NP (NNP (EDS))
+    (NP (NNP [EDS))
     (: :)
     (S
       (NP (DT This) (NN article))
@@ -90,7 +90,7 @@
                   (CC or)
                   (CD 888-346-9867))
                 (NP
-                  (NP (NNP .)) (NNP &QL))
+                  (NP (NNP .]) (NNP &QL))
                   (: ;)
                   (NP (NNP &UR))
                   (: ;))
@@ -289,29 +289,30 @@
 
 (ROOT
   (S
-    (NP (NNP Public) (NNS companies))
-    (VP (VBP have)
-      (S
-        (VP (TO to)
-          (VP (VB report)
-            (NP (JJ gross) (NNS margins))
-            (NP
-              (NP (DT the) (NN money))
-              (SBAR
-                (S
-                  (NP (PRP they))
-                  (VP (VBP take)
-                    (PRT (RP in))
-                    (SBAR (IN after)
-                      (S
-                        (NP
-                          (NP (DT the) (NNS costs))
-                          (PP (IN of)
-                            (S
-                              (VP (VBG making)
-                                (NP (PRP$ their) (NNS goods))))))
-                        (VP (VBP are)
-                          (VP (VBN deducted)))))))))))))
+    (S
+      (NP (NNP Public) (NNS companies))
+      (VP (VBP have)
+        (S
+          (VP (TO to)
+            (VP (VB report)
+              (NP (JJ gross) (NNS margins)))))))
+    (: -)
+    (S
+      (NP
+        (NP (DT the) (NN money))
+        (SBAR
+          (S
+            (NP (PRP they))
+            (VP (VBP take)
+              (PP (IN in) (IN after)
+                (NP
+                  (NP (DT the) (NNS costs))
+                  (PP (IN of)
+                    (S
+                      (VP (VBG making)
+                        (NP (PRP$ their) (NNS goods)))))))))))
+      (VP (VBP are)
+        (VP (VBN deducted))))
     (. .)))
 
 (ROOT
@@ -368,7 +369,7 @@
 
 (ROOT
   (S
-    (NP (NN (By) (NN contrast))
+    (NP (NN [By) (NN contrast))
     (, ,)
     (NP
       (NP (JJ gross) (NNS margins))
@@ -380,7 +381,7 @@
       (ADVP (RB rarely))
       (VBP rise)
       (PP (IN above)
-        (NP (CD 45) (NN percent) (NNS .)))))))
+        (NP (CD 45) (NN percent) (NNS .]))))))
 
 (ROOT
   (S (CC And)
@@ -432,7 +433,7 @@
     (NP
       (NP (DT The) (JJS finest) (NN leather))
       (PP (IN from)
-        (NP (DT an) (JJ Italian) (NN (only) (NN !)))))
+        (NP (DT an) (JJ Italian) (NN [only) (NN !]))))
     (ADVP (RB tannery))
     (VP (VBZ costs)
       (NP

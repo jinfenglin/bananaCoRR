@@ -27,7 +27,7 @@
 
 (ROOT
   (NP
-    (NP (NNP (ART) (NNP ADV))
+    (NP (NNP [ART) (NNP ADV))
     (: :)
     (S
       (NP (NNP Photo) (NNP NYT12))
@@ -52,7 +52,7 @@
                   (CC or)
                   (CD 888-346-9867))
                 (NP
-                  (NP (NNP .)) (NNP &QL))
+                  (NP (NNP .]) (NNP &QL))
                   (: ;)
                   (NP (NNP &UR))
                   (: ;))
@@ -78,47 +78,49 @@
 
 (ROOT
   (S
-    (S
-      (NP (NNP LONGBOAT) (NNP KEY))
-      (, ,)
-      (NP
-        (NAC (NNP Fla.)
-          (PP (IN As)
-            (NP (NNP Vice) (NNP President) (NNP Al) (NNP Gore))))
-        (NNS fends))
-      (ADVP (RB off))
-      (VP (VBD intensified)
-        (SBAR
-          (S
-            (NP
-              (NP (NNS attacks))
-              (PP (IN on)
-                (NP
-                  (NP (PRP$ his) (NN credibility))
-                  (, ,)
-                  (NP (PRP$ his) (NN campaign))
-                  (CC and)
-                  (NP (JJ Democratic) (NNS surrogates)))))
-            (VP (VBP are)
-              (VP (VBG planning)
-                (NP (DT a) (NNS multimedia) (NN offensive))
-                (NP (DT this) (NN week))
-                (SBAR (IN that)
-                  (S
-                    (VP (VBZ assails)
-                      (NP
-                        (NP (NNP Bush))
-                        (PP (IN for)
-                          (NP
+    (NP (NNP LONGBOAT) (NNP KEY))
+    (, ,)
+    (SBAR
+      (X
+        (NP (NNP Fla.))
+        (: -)
+        (PP (IN As)
+          (NP (NNP Vice) (NNP President) (NNP Al) (NNP Gore))))
+      (S
+        (NP (NNS fends))
+        (ADVP (RB off))
+        (VP (VBD intensified)
+          (SBAR
+            (S
+              (NP
+                (NP (NNS attacks))
+                (PP (IN on)
+                  (NP
+                    (NP (PRP$ his) (NN credibility))
+                    (, ,)
+                    (NP (PRP$ his) (NN campaign))
+                    (CC and)
+                    (NP (JJ Democratic) (NNS surrogates)))))
+              (VP (VBP are)
+                (VP (VBG planning)
+                  (NP (DT a) (NNS multimedia) (NN offensive))
+                  (NP (DT this) (NN week))
+                  (SBAR (IN that)
+                    (S
+                      (VP (VBZ assails)
+                        (NP
+                          (NP (NNP Bush))
+                          (PP (IN for)
                             (NP
-                              (NP (PRP$ his) (NN record))
-                              (PP (IN in)
-                                (NP (NNP Texas))))
-                            (CC and)
-                            (NP
-                              (NP (PRP$ his) (JJ occasional) (NN slips))
-                              (PP (IN of)
-                                (NP (DT the) (NN tongue))))))))))))))))
+                              (NP
+                                (NP (PRP$ his) (NN record))
+                                (PP (IN in)
+                                  (NP (NNP Texas))))
+                              (CC and)
+                              (NP
+                                (NP (PRP$ his) (JJ occasional) (NN slips))
+                                (PP (IN of)
+                                  (NP (DT the) (NN tongue)))))))))))))))))
     (, ,)
     (NP (NNP Gore) (NNS aides))
     (VP (VBD said)
@@ -331,42 +333,43 @@
 
 (ROOT
   (S
-    (ADVP (RB Similarly))
-    (, ,)
-    (NP
-      (NP (NNP Mark) (NNP D.) (NNP Fabiani))
+    (S
+      (ADVP (RB Similarly))
       (, ,)
       (NP
-        (NP (NNP Gore) (POS 's))
-        (JJ deputy) (NN campaign) (NN manager))
-      (, ,))
-    (VP (VBD told)
-      (NP
-        (NP (NNP CNN) (POS 's))
-        (NNP ``Late) (NNP Edition) ('' ''))
-      (NP (NNP Sunday))
-      (SBAR (IN that)
-        (S
-          (NP (NNP Bush))
-          (VP (VBZ ``was)
-            (ADJP (JJ incoherent)
-              (SBAR
+        (NP (NNP Mark) (NNP D.) (NNP Fabiani))
+        (, ,)
+        (NP
+          (NP (NNP Gore) (POS 's))
+          (JJ deputy) (NN campaign) (NN manager))
+        (, ,))
+      (VP (VBD told)
+        (NP
+          (NP (NNP CNN) (POS 's))
+          (NNP ``Late) (NNP Edition) ('' ''))
+        (NP (NNP Sunday))
+        (SBAR (IN that)
+          (S
+            (NP (NNP Bush))
+            (VP (VBZ ``was)
+              (ADJP (JJ incoherent)))))))
+    (: -)
+    (S
+      (NP (PRP he))
+      (VP (VBD was)
+        (ADJP (JJ babbling) ('' '')
+          (PP (IN in)
+            (S
+              (VP (VBG trying)
                 (S
-                  (NP (PRP he))
-                  (VP (VBD was)
-                    (ADJP (JJ babbling) ('' '')
-                      (PP (IN in)
-                        (S
-                          (VP (VBG trying)
-                            (S
-                              (VP (TO to)
-                                (VP (VB explain)
-                                  (NP (PRP$ his) (JJ own) (JJ tax-cut) (NN proposal))
-                                  (PP (IN at)
-                                    (NP
-                                      (NP (DT a) (NNP Saturday) (NN campaign) (NN stop))
-                                      (PP (IN in)
-                                        (NP (NNP Florida))))))))))))))))))))
+                  (VP (TO to)
+                    (VP (VB explain)
+                      (NP (PRP$ his) (JJ own) (JJ tax-cut) (NN proposal))
+                      (PP (IN at)
+                        (NP
+                          (NP (DT a) (NNP Saturday) (NN campaign) (NN stop))
+                          (PP (IN in)
+                            (NP (NNP Florida))))))))))))))
     (. .)))
 
 (ROOT
@@ -611,9 +614,10 @@
     (. .)))
 
 (ROOT
-  (SINV
-    (VP (VBZ (STORY))
-    (NP (NNP CAN) (NNP END) (NNP HERE) (NNP OPTIONAL) (NNP MATERIAL) (NNP FOLLOWS) (NNP )))))
+  (NP
+    (NP (NNP [STORY) (NNP CAN) (NNP END) (NNP HERE))
+    (: -)
+    (NP (NNP OPTIONAL) (NNP MATERIAL) (NNP FOLLOWS) (NNP ]))))
 
 (ROOT
   (S

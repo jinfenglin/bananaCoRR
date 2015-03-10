@@ -31,15 +31,15 @@
     (NP (NNP &UR))
     (: ;)
     (NP
-      (NP (JJ (The) (NN Week))
+      (NP (JJ [The) (NN Week))
       (PP (IN in)
-        (NP (NNP Review) (NNP )) (NNP &LR)))
+        (NP (NNP Review) (NNP ]) (NNP &LR)))
       (: ;)
       (NP (NNP &QL))
       (: ;)
       (NP (NNP &UR))
       (: ;)
-      (NP (NNP (NOTE) (NNP TO) (NNP INTERNATIONAL) (NNP CLIENTS))
+      (NP (NNP [NOTE) (NNP TO) (NNP INTERNATIONAL) (NNP CLIENTS))
       (: :)
       (PP (IN For)
         (NP
@@ -72,7 +72,7 @@
                 (PP (IN for)
                   (NP (NNS details)
                     (CC and)
-                    (NNS prices) (NN (Phone)))
+                    (NNS prices) (NN [Phone)))
                 (: :)
                 (NP
                   (NP
@@ -81,19 +81,19 @@
                 (: ;)
                 (NP (NNP FAX))
                 (: :)
-                (NP (CD 47-42-80-44) (JJ ).) (NNP Latin) (NNP American) (NNS points))
+                (NP (CD 47-42-80-44) (JJ ].) (NNP Latin) (NNP American) (NNS points))
                 (: :)
                 (NP
                   (NP (NN contact))
-                  (NP (DT the) (NNP Los) (NNP Angeles) (NN office) (NN (Phone)))
+                  (NP (DT the) (NNP Los) (NNP Angeles) (NN office) (NN [Phone)))
                 (: :)
                 (NP (CD 310-996-0075))
                 (: ;)
                 (NP (NNP FAX))
                 (: :)
-                (NP (CD 310-996-0089) (JJ )) (NNS &QL))
+                (NP (CD 310-996-0089) (JJ ]) (NNS &QL))
                 (: ;)
-                (NP (NNP (ART) (NNP ADV))
+                (NP (NNP [ART) (NNP ADV))
                 (: :)
                 (NP (NNP Graphic)))))
           (VP (VBZ is)
@@ -118,7 +118,7 @@
                 (CC or)
                 (CD 888-346-9867))
               (NP
-                (NP (NNP .)) (NNP &LR))
+                (NP (NNP .]) (NNP &LR))
                 (: ;)
                 (S
                   (S
@@ -225,30 +225,36 @@
   (S (CC But)
     (NP (DT the) (JJ national) (NN election))
     (VP (VBD was)
-      (ADJP (RB so) (JJ close)
-        (PP (IN because)
-          (NP (JJ several) (JJ large) (NNS groups) (NNS voters))))
-      (PP (IN under)
-        (NP
+      (ADJP (RB so) (JJ close))
+      (SBAR (IN because)
+        (S
           (NP
-            (NP (CD 65))
-            (, ,)
-            (NP (NNS independents))
-            (, ,)
-            (NP
-              (NP (NNS voters))
-              (PP (IN from)
-                (NP (DT the) (NN Midwest))))
-            (CC and)
-            (NP (DT the) (NN West)))
-          (CC and)
-          (NP
-            (NP (NNS suburbanites))
-            (VP (VBN divided)
-              (NP (PRP$ their) (NNS votes))
-              (ADVP (RB almost) (RB evenly))
-              (PP (IN between)
-                (NP (DT the) (CD two) (JJ major) (NNS candidates))))))))
+            (NP (JJ several) (JJ large) (NNS groups))
+            (PRN (: -)
+              (NP
+                (NP
+                  (NP (NNS voters))
+                  (PP (IN under)
+                    (NP (CD 65))))
+                (, ,)
+                (NP
+                  (NP (NNS independents))
+                  (, ,)
+                  (NP
+                    (NP (NNS voters))
+                    (PP (IN from)
+                      (NP (DT the) (NN Midwest)))))
+                (CC and)
+                (NP
+                  (NP (DT the) (NN West))
+                  (CC and)
+                  (NP (NNS suburbanites))))
+              (: -)))
+          (VP (VBD divided)
+            (NP (PRP$ their) (NNS votes))
+            (ADVP (RB almost) (RB evenly))
+            (PP (IN between)
+              (NP (DT the) (CD two) (JJ major) (NNS candidates)))))))
     (. .)))
 
 (ROOT
@@ -266,11 +272,11 @@
                 (VP (VBG leaving)
                   (NP (DT the) (NNS polls))
                   (S
-                    (VP (VBG (including)
+                    (VP (VBG [including)
                       (NP
                         (NP (DT those))
                         (PP (IN in)
-                          (NP (NNP Florida) (NNP ),)))))))))))))
+                          (NP (NNP Florida) (NNP ],)))))))))))))
     (VP (VBZ shows)
       (SBAR
         (WHADVP (WRB how))

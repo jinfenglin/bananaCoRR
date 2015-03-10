@@ -11,26 +11,29 @@
 
 (ROOT
   (S
-    (NP (NNP ABIDJAN))
-    (PRN (, ,)
-      (S
-        (NP (NNP Ivory) (NNP Coast) (NNP (AP) (NNP )) (NNP Long))
-        (VP (VBZ processions)
-          (PP
-            (PP (IN of)
-              (NP
-                (NP (NNS cars))
-                (, ,)
-                (VP (VBN plastered)
+    (NP
+      (NP (NNP ABIDJAN))
+      (, ,)
+      (NP
+        (NP (NNP Ivory) (NNP Coast) (NNP [AP) (NNP ]))
+        (: -)
+        (NP
+          (NP (JJ Long) (NNS processions))
+          (PP (IN of)
+            (NP
+              (NP (NNS cars))
+              (, ,)
+              (VP (VBN plastered)
+                (PP
                   (PP (IN with)
                     (NP
                       (NP (NNS candidates) (POS '))
-                      (NNS posters))))))
-            (CC and)
-            (PP (IN with)
-              (NP
-                (NP (NNS horns))
-                (VP (VBG blaring)))))))
+                      (NNS posters)))
+                  (CC and)
+                  (PP (IN with)
+                    (NP
+                      (NP (NNS horns))
+                      (VP (VBG blaring))))))))))
       (, ,))
     (VP (VBD paraded)
       (PP (IN through)
@@ -116,13 +119,15 @@
   (S
     (NP
       (NP (JJS Most) (NNS candidates))
+      (: -)
       (PP (VBG including)
         (NP
           (NP (DT those))
           (PP (IN from)
             (NP
               (NP (DT the) (NN country) (POS 's))
-              (CD two) (JJS largest) (JJ political) (NNS parties))))))
+              (CD two) (JJS largest) (JJ political) (NNS parties)))))
+      (: -))
     (VP (VBD were)
       (VP (VBN excluded)
         (PP (IN from)

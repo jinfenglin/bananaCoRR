@@ -17,16 +17,14 @@
 (ROOT
   (S
     (NP
-      (NP (NNP WARREN) (, ,) (NNP Mich.) (NNP (AP) (NNP )))
-      (SBAR
-        (S
-          (NP (DT A) (NN drug))
-          (VP (VBP suspect)
-            (S
-              (VP (VBG being)
-                (VP (VBN booked)
-                  (PP (IN at)
-                    (NP (NN police) (NNS headquarters))))))))))
+      (NP (NNP WARREN) (, ,) (NNP Mich.) (NNP [AP) (NNP ]))
+      (: -)
+      (NP
+        (NP (DT A) (NN drug) (NN suspect))
+        (VP (VBG being)
+          (VP (VBN booked)
+            (PP (IN at)
+              (NP (NN police) (NNS headquarters)))))))
     (VP
       (VP (VBD shot)
         (NP (DT a) (JJ veteran) (NN detective))

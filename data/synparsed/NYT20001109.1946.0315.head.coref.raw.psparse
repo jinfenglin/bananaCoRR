@@ -57,42 +57,45 @@
     (: ;)))
 
 (ROOT
-  (S
+  (FRAG
+    (NP (NNP WASHINGTON))
+    (: -)
     (S
-      (NP (NNP WASHINGTON) (NNP Ralph) (NNP Nader))
-      (VP (MD may) (RB not)
-        (VP (VB be)
-          (VP (VBG feeling)
-            (NP (DT any) (NNS regrets))
-            (PP (IN about)
-              (NP (PRP$ his) (NNP Green) (NNP Party) (JJ presidential) (NN campaign)))))))
-    (, ,)
-    (CC but)
-    (S
-      (NP
-        (NP (DT some) (NNS visitors))
-        (PP (TO to)
-          (NP
-            (NP (DT the) (NN chat) (NN room))
-            (PP (IN on)
-              (NP
-                (NP (NNS Nader2000.org))
-                (, ,)
+      (S
+        (NP (NNP Ralph) (NNP Nader))
+        (VP (MD may) (RB not)
+          (VP (VB be)
+            (VP (VBG feeling)
+              (NP (DT any) (NNS regrets))
+              (PP (IN about)
+                (NP (PRP$ his) (NNP Green) (NNP Party) (JJ presidential) (NN campaign)))))))
+      (, ,)
+      (CC but)
+      (S
+        (NP
+          (NP (DT some) (NNS visitors))
+          (PP (TO to)
+            (NP
+              (NP (DT the) (NN chat) (NN room))
+              (PP (IN on)
                 (NP
-                  (NP (NNP Nader) (POS 's))
-                  (JJ official) (NN campaign) (NN website))
-                (, ,))))))
-      (VP (VBD sounded)
-        (SBAR (RB as) (IN if)
-          (S
-            (NP (DT a) (JJ bad) (NN hangover))
-            (VP (VBD had)
-              (VP (VBN come)
-                (S
-                  (VP (VBG crashing)
-                    (PRT (RP down))
-                    (PP (IN on)
-                      (NP (PRP them)))))))))))
+                  (NP (NNS Nader2000.org))
+                  (, ,)
+                  (NP
+                    (NP (NNP Nader) (POS 's))
+                    (JJ official) (NN campaign) (NN website))
+                  (, ,))))))
+        (VP (VBD sounded)
+          (SBAR (RB as) (IN if)
+            (S
+              (NP (DT a) (JJ bad) (NN hangover))
+              (VP (VBD had)
+                (VP (VBN come)
+                  (S
+                    (VP (VBG crashing)
+                      (PRT (RP down))
+                      (PP (IN on)
+                        (NP (PRP them))))))))))))
     (. .)))
 
 (ROOT
@@ -184,13 +187,15 @@
     (NP (PRP I))
     (VP (VBP 'm)
       (NP
-        (NP (DT a) (NN member))
-        (PP (IN of)
-          (NP
-            (NP (DT the) (JJ green) (NN movement))
-            (NP (DT a) (NN movement)))))
-      (PP (IN without)
-        (NP (NNP Ralph) (NNP Nader) (NNP .''))))))
+        (NP
+          (NP (DT a) (NN member))
+          (PP (IN of)
+            (NP (DT the) (JJ green) (NN movement))))
+        (: -)
+        (NP
+          (NP (DT a) (NN movement))
+          (PP (IN without)
+            (NP (NNP Ralph) (NNP Nader) (NNP .''))))))))
 
 (ROOT
   (S
@@ -441,7 +446,7 @@
 (ROOT
   (S (`` ``)
     (NP (NNP Gore))
-    (VP (VBP (despite)
+    (VP (VBP [despite)
       (SBAR
         (WHNP (WP what))
         (S
@@ -450,7 +455,7 @@
             (VP (VBD said)
               (SBAR
                 (S
-                  (NP (NNP )))
+                  (NP (NNP ]))
                   (VP (VBZ is)
                     (ADVP (RB NOT))
                     (NP
@@ -528,16 +533,18 @@
           (QP (RB about) (CD 5))
           (NN percent))
         (PP (IN of)
-          (NP (DT the) (NN vote))))
-      (ADVP (RB enough)
-        (S
-          (VP (TO to)
-            (VP (VB cause)
+          (NP
+            (NP (DT the) (NN vote))
+            (: -)
+            (ADJP (JJ enough)
               (S
-                (NP (DT some) (NNP Nader) (NNS voters))
                 (VP (TO to)
-                  (VP (VB feel)
-                    (NP (JJ morning-after) (NNS qualms))))))))))
+                  (VP (VB cause)
+                    (S
+                      (NP (DT some) (NNP Nader) (NNS voters))
+                      (VP (TO to)
+                        (VP (VB feel)
+                          (NP (JJ morning-after) (NNS qualms)))))))))))))
     (. .)))
 
 (ROOT
@@ -581,6 +588,7 @@
                           (S
                             (VP (VBG winning)
                               (NP (DT the) (NN presidency))
+                              (: -)
                               (S
                                 (VP (VBG suggesting)
                                   (SBAR (IN that)
@@ -994,19 +1002,21 @@
                   (S
                     (NP (PRP$ his) (NNS supporters))
                     (VP (VBD had)
-                      (VP (VBN expected)
-                        (S
-                          (ADJP (JJ due)))))))))))))
-    (, ,)
-    (NP (PRP she))
-    (VP (VBD said) (, ,)
+                      (VP (VBN expected)))))))))))
+    (: -)
+    (S
       (S
-        (VP (TO to)
-          (VP (VB ``scare)
-            (NP (NNS tactics))
-            ('' '')
-            (PP (IN by)
-              (NP (DT the) (NNPS Democrats)))))))
+        (ADJP (JJ due)))
+      (, ,)
+      (NP (PRP she))
+      (VP (VBD said) (, ,)
+        (S
+          (VP (TO to)
+            (VP (VB ``scare)
+              (NP (NNS tactics))
+              ('' '')
+              (PP (IN by)
+                (NP (DT the) (NNPS Democrats))))))))
     (. .)))
 
 (ROOT

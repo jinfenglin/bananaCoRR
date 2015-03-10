@@ -10,28 +10,31 @@
   (NP (NNP Koetter) (NNP Accepts) (NNP ASU) (NNP Coaching) (NNP Job)))
 
 (ROOT
-  (S
-    (NP
-      (NP (NNP PHOENIX) (NNP (AP) (NNP )) (NNP Boise) (NNP State) (NN coach) (NNP Dirk) (NNP Koetter))
-      (, ,)
-      (SBAR
-        (WHNP (WP who))
-        (S
-          (ADVP
-            (NP (RB just) (DT a) (NN day))
-            (RBR earlier))
-          (VP (VBD was)
-            (ADVP (RB reportedly))
-            (VP (VBN headed)
-              (PP (IN for)
-                (NP (NNP Oklahoma) (NNP State)))))))
-      (, ,))
-    (VP (VBZ has)
-      (VP (VBN agreed)
-        (PP (TO to)
-          (NP (DT a) (NN contract)))
-        (PP (TO to)
-          (NP (NN coach) (NNP Arizona) (NNP State)))))
+  (FRAG
+    (NP (NNP PHOENIX) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP
+        (NP (NNP Boise) (NNP State) (NN coach) (NNP Dirk) (NNP Koetter))
+        (, ,)
+        (SBAR
+          (WHNP (WP who))
+          (S
+            (ADVP
+              (NP (RB just) (DT a) (NN day))
+              (RBR earlier))
+            (VP (VBD was)
+              (ADVP (RB reportedly))
+              (VP (VBN headed)
+                (PP (IN for)
+                  (NP (NNP Oklahoma) (NNP State)))))))
+        (, ,))
+      (VP (VBZ has)
+        (VP (VBN agreed)
+          (PP (TO to)
+            (NP (DT a) (NN contract)))
+          (PP (TO to)
+            (NP (NN coach) (NNP Arizona) (NNP State))))))
     (. .)))
 
 (ROOT
@@ -59,9 +62,9 @@
 
 (ROOT
   (S
-    (NP (NNP (CST))
+    (NP (NNP [CST))
     (VP
-      (VP (VBD ))
+      (VP (VBD ])
         (NP (NN tonight))
         (SBAR (IN that)
           (S

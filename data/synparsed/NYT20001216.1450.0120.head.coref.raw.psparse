@@ -54,24 +54,27 @@
     (: ;)))
 
 (ROOT
-  (S
+  (NP
+    (NP (NNP BOSTON))
+    (: -)
     (NP
-      (NP (NNP BOSTON) (NNP Michael) (NNP McNamara) (POS 's))
-      (NN ambulance))
-    (VP (VBD took)
       (NP
-        (NP (DT the) (NN call))
-        (: :)
-        (NP
-          (NP (DT an) (JJ 89-year-old) (NN woman))
-          (PP (IN with)
-            (NP
-              (NP (NN cancer))
-              (, ,)
-              (NP (JJ abdominal) (NN pain))
-              (, ,)
-              (ADVP (RB possibly))
-              (NP (DT a) (JJ broken) (NN hip))))))
+        (NP (NNP Michael) (NNP McNamara) (POS 's))
+        (NN ambulance))
+      (SBAR
+        (S
+          (VP (VBD took)
+            (NP (DT the) (NN call))))))
+    (: :)
+    (NP
+      (NP (DT an) (JJ 89-year-old) (NN woman))
+      (PP (IN with)
+        (NP (NN cancer))))
+    (, ,)
+    (NP (JJ abdominal) (NN pain))
+    (, ,)
+    (NP
+      (NP (RB possibly) (DT a) (JJ broken) (NN hip))
       (PP (IN after)
         (NP (DT a) (NN fall))))
     (. .)))

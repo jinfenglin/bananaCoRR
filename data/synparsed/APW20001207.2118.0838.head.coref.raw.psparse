@@ -10,35 +10,38 @@
   (NP (NNP Ancient) (NNP Bird) (NNP Fuels) (NNP Dinosaur) (NNP Debate)))
 
 (ROOT
-  (S
+  (FRAG
+    (NP (NNP WASHINGTON) (NNP [AP) (NNP ]))
+    (: -)
     (S
-      (NP (NNP WASHINGTON) (NNP (AP) (NNP )) (NNP Fossil))
-      (VP (VBZ remains)
-        (PP (IN of)
-          (NP (DT a) (CD 120) (JJ million-year-old) (NN bird)))
-        (PP (IN with)
-          (NP
-            (NP (JJ unique) (NNS feathers))
-            (VP (VBN cast)
-              (ADVP (NN doubt))
-              (PP (IN on)
-                (NP
-                  (NP (DT the) (NN theory))
-                  (PP (IN of)
-                    (NP
-                      (NP (NNS birds))
-                      (VP (VBG evolving)
-                        (PP (IN from)
-                          (NP (NNS dinosaurs)))))))))))))
-    (PRN (, ,)
       (S
+        (S
+          (NP (NNP Fossil))
+          (VP (VBZ remains)
+            (PP (IN of)
+              (NP (DT a) (CD 120) (JJ million-year-old) (NN bird)))
+            (PP (IN with)
+              (NP
+                (NP (JJ unique) (NNS feathers))
+                (VP (VBN cast)
+                  (ADVP (NN doubt))
+                  (PP (IN on)
+                    (NP
+                      (NP (DT the) (NN theory))
+                      (PP (IN of)
+                        (NP
+                          (NP (NNS birds))
+                          (VP (VBG evolving)
+                            (PP (IN from)
+                              (NP (NNS dinosaurs)))))))))))))
+        (, ,)
         (NP (DT some) (NNS experts))
         (VP (VBP say)))
-      (, ,))
-    (CC but)
-    (S
-      (NP (NNS others))
-      (VP (VBP disagree)))
+      (, ,)
+      (CC but)
+      (S
+        (NP (NNS others))
+        (VP (VBP disagree))))
     (. .)))
 
 (ROOT
@@ -53,30 +56,31 @@
               (S
                 (NP
                   (NP (NNP Protopteryx))
+                  (: -)
                   (PP (IN from)
                     (NP
                       (NP (DT a) (NN group))
                       (PP (IN of)
-                        (NP (VBG flying) (NNS animals))))))
-                (VP (VBD called)
-                  (SBAR
-                    (S
-                      (NP (NNP Enantiornithine))
-                      (VP (VBZ includes)
                         (NP
-                          (NP (NNS feathers))
-                          (SBAR
-                            (WHNP (WDT that))
-                            (S
-                              (VP (VBP are)
-                                (ADJP (JJ ``different)
-                                  (PP (IN from)
-                                    (NP
-                                      (NP (DT those))
-                                      (PP (IN of)
-                                        (NP (DT all) (JJ other) (JJ known) (NN fossil)
-                                          (CC and)
-                                          (JJ modern) (NNS feathers) (NN .''))))))))))))))))))))))
+                          (NP (VBG flying) (NNS animals))
+                          (VP (VBN called)
+                            (NP (NNP Enantiornithine)))))))
+                  (: -))
+                (VP (VBZ includes)
+                  (NP
+                    (NP (NNS feathers))
+                    (SBAR
+                      (WHNP (WDT that))
+                      (S
+                        (VP (VBP are)
+                          (ADJP (JJ ``different)
+                            (PP (IN from)
+                              (NP
+                                (NP (DT those))
+                                (PP (IN of)
+                                  (NP (DT all) (JJ other) (JJ known) (NN fossil)
+                                    (CC and)
+                                    (JJ modern) (NNS feathers) (NN .'')))))))))))))))))))
 
 (ROOT
   (S
@@ -969,6 +973,9 @@
     (VP (VBD said)
       (NP (NNP Holtz)))
     (. .)))
+
+(ROOT
+  (INTJ (UH -)))
 
 (ROOT
   (PP (IN On)

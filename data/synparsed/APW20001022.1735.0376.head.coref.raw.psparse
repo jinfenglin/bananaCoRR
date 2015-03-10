@@ -12,39 +12,37 @@
     (VP (VBN Buried))))
 
 (ROOT
-  (S
-    (ADVP (RB ROME))
-    (, ,)
-    (NP (NNP Italy) (NNP (AP))
-    (VP (VBZ ))
+  (NP
+    (NP (NNP ROME) (, ,) (NNP Italy) (NNP [AP) (NNP ]))
+    (: -)
+    (NP
       (NP (DT A) (JJ little) (NN mountain) (NN village))
       (PP (IN in)
+        (NP (JJ northern) (NNP Italy)))
+      (VP (VBN buried)
         (NP
-          (NP (JJ northern) (NNP Italy))
-          (VP (VBN buried)
+          (NP (CD five) (NNS victims))
+          (PP (IN of)
             (NP
-              (NP (CD five) (NNS victims))
-              (PP (IN of)
-                (NP
-                  (NP
-                    (NP (JJ last) (NN week) (POS 's))
-                    (JJ devastating) (JJ high) (NN water))
-                  (CC and)
-                  (NP (NNS mudslides)))))
-            (PP (IN on)
-              (NP (NNP Sunday)))
-            (, ,)
-            (NP
-              (NP (DT the) (NN day))
-              (SBAR
-                (S
-                  (NP
-                    (NP (DT a) (NN state))
-                    (PP (IN of)
-                      (NP (NN emergency))))
-                  (ADVP (RB finally))
-                  (VP (VBD ran)
-                    (PRT (RP out))))))))))
+              (NP
+                (NP (JJ last) (NN week) (POS 's))
+                (JJ devastating) (JJ high) (NN water))
+              (CC and)
+              (NP (NNS mudslides)))))
+        (PP (IN on)
+          (NP (NNP Sunday)))
+        (, ,)
+        (NP
+          (NP (DT the) (NN day))
+          (SBAR
+            (S
+              (NP
+                (NP (DT a) (NN state))
+                (PP (IN of)
+                  (NP (NN emergency))))
+              (ADVP (RB finally))
+              (VP (VBD ran)
+                (PRT (RP out))))))))
     (. .)))
 
 (ROOT
@@ -161,23 +159,26 @@
     (PP (IN Among)
       (NP (PRP them)))
     (, ,)
-    (NP
-      (NP (JJ double) (NNS losses))
-      (PP (IN for)
-        (NP (CD two))))
-    (VP (VBD families)
-      (NP (DT a) (NN father)
-        (CC and)
-        (NN son))
-      (PP (IN in)
+    (VP (VB double)
+      (NP
         (NP
-          (NP (CD one))
-          (, ,)
-          (NP (DT a) (NN mother))
-          (CC and)
-          (NP (NN daughter))))
-      (PP (IN in)
-        (NP (DT another))))
+          (NP (NNS losses))
+          (PP (IN for)
+            (NP (CD two) (NNS families))))
+        (: -)
+        (NP
+          (NP (DT a) (NN father)
+            (CC and)
+            (NN son))
+          (PP (IN in)
+            (NP (CD one))))
+        (, ,)
+        (NP
+          (NP (DT a) (NN mother)
+            (CC and)
+            (NN daughter))
+          (PP (IN in)
+            (NP (DT another))))))
     (. .)))
 
 (ROOT

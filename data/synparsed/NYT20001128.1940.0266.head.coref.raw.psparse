@@ -37,11 +37,11 @@
     (NP
       (NP (NNP &QL))
       (: ;)
-      (NP (NNP (EDS)))
+      (NP (NNP [EDS)))
     (: :)
     (NP
       (NP (DT no) (NN byline))
-      (NP (NNP )) (NNP &QL)))
+      (NP (NNP ]) (NNP &QL)))
     (: ;)
     (NP
       (NP (NNP &UR))
@@ -57,35 +57,38 @@
     (: ;)))
 
 (ROOT
-  (S
-    (NP
-      (NP (NNP NEW) (NNP YORK) (NNP National) (NNP Geographic))
-      (CC and)
+  (FRAG
+    (NP (NNP NEW) (NNP YORK))
+    (: -)
+    (S
       (NP
-        (NP (DT the) (NN television) (NN production) (NN unit))
-        (PP (IN of)
-          (NP (DT The) (NNP New) (NNP York) (NNP Times)))))
-    (VP (VBP have)
-      (VP (VBN agreed)
-        (S
-          (VP (TO to)
-            (VP (VB collaborate)
-              (PP (IN on)
-                (NP
-                  (NP (DT a) (JJ weekly) (NN science) (NN program))
-                  (SBAR
-                    (WHNP (WDT that))
-                    (S
-                      (VP (MD will)
-                        (VP (VB be)
-                          (VP (VBN shown)
-                            (PP (IN on)
-                              (NP
-                                (NP (NNP National) (NNP Geographic) (POS 's))
-                                (VBG coming) (NN cable) (NN channel))))))))))
-              (PP (VBG beginning)
-                (PP (IN in)
-                  (NP (NNP June)))))))))
+        (NP (NNP National) (NNP Geographic))
+        (CC and)
+        (NP
+          (NP (DT the) (NN television) (NN production) (NN unit))
+          (PP (IN of)
+            (NP (DT The) (NNP New) (NNP York) (NNP Times)))))
+      (VP (VBP have)
+        (VP (VBN agreed)
+          (S
+            (VP (TO to)
+              (VP (VB collaborate)
+                (PP (IN on)
+                  (NP
+                    (NP (DT a) (JJ weekly) (NN science) (NN program))
+                    (SBAR
+                      (WHNP (WDT that))
+                      (S
+                        (VP (MD will)
+                          (VP (VB be)
+                            (VP (VBN shown)
+                              (PP (IN on)
+                                (NP
+                                  (NP (NNP National) (NNP Geographic) (POS 's))
+                                  (VBG coming) (NN cable) (NN channel))))))))))
+                (PP (VBG beginning)
+                  (PP (IN in)
+                    (NP (NNP June))))))))))
     (. .)))
 
 (ROOT

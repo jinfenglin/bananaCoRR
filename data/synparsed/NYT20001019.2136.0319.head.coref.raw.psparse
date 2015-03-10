@@ -119,27 +119,27 @@
           (S
             (NP (NNP Letterman))
             (VP (VBD had)
-              (NP
-                (NP (DT a) (NN surprise))
-                (PP
-                  (PP (IN for)
-                    (NP
-                      (NP (NN anyone))
-                      (SBAR
-                        (WHNP (WP who))
-                        (S
-                          (VP (VBD was)
-                            (VP (VBG expecting)
-                              (NP
-                                (NP (DT a) (JJ normal) (NN night))
-                                (PP (IN of)
-                                  (NP (NN comedy))))))))))
-                  (CC and)
-                  (PP (IN from)
-                    (NP
-                      (NP (DT the) (NN look))
-                      (PP (IN of)
-                        (NP (PRP it))))))))))))
+              (NP (DT a) (NN surprise))
+              (PP
+                (PP (IN for)
+                  (NP
+                    (NP (NN anyone))
+                    (SBAR
+                      (WHNP (WP who))
+                      (S
+                        (VP (VBD was)
+                          (VP (VBG expecting)
+                            (NP
+                              (NP (DT a) (JJ normal) (NN night))
+                              (PP (IN of)
+                                (NP (NN comedy))))))))))
+                (: -)
+                (CC and)
+                (PP (IN from)
+                  (NP
+                    (NP (DT the) (NN look))
+                    (PP (IN of)
+                      (NP (PRP it)))))))))))
     (, ,)
     (NP (NNP Bush))
     (VP (VBD was)

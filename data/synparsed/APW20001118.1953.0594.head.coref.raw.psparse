@@ -10,20 +10,23 @@
   (NP (NNP Callers) (NNP Admonish) (NNP Ventura)))
 
 (ROOT
-  (S
-    (NP
-      (NP (NNP ST.) (NNP PAUL) (NNP (AP) (NNP )) (NNP Gov.) (NNP Jesse) (NNP Ventura) (POS 's))
-      (JJ weekly) (NN radio) (NN show))
-    (VP (VBZ has)
-      (VP (VBN been)
-        (VP (VBN flooded)
-          (PP (IN with)
-            (NP
-              (NP (NNS calls))
-              (PP (IN about)
-                (NP (PRP$ his) (JJ new) (JJ part-time) (NN job)))))
-          (PP (IN as)
-            (NP (DT a) (NN football) (NN commentator))))))
+  (FRAG
+    (NP (NNP ST.) (NNP PAUL) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP
+        (NP (NNP Gov.) (NNP Jesse) (NNP Ventura) (POS 's))
+        (JJ weekly) (NN radio) (NN show))
+      (VP (VBZ has)
+        (VP (VBN been)
+          (VP (VBN flooded)
+            (PP (IN with)
+              (NP
+                (NP (NNS calls))
+                (PP (IN about)
+                  (NP (PRP$ his) (JJ new) (JJ part-time) (NN job)))))
+            (PP (IN as)
+              (NP (DT a) (NN football) (NN commentator)))))))
     (. .)))
 
 (ROOT
@@ -49,22 +52,24 @@
 
 (ROOT
   (S
-    (NP (NNS Others))
-    (VP (VBD said)
-      (NP
+    (S
+      (NP (NNS Others))
+      (VP (VBD said)
         (NP (PRP$ his) (NN association))
         (PP (IN with)
-          (NP (DT the) (NNP XFL))))
-      (NP
-        (NP
-          (NP (DT a) (JJ rough-and-tumble) (NN league))
-          (VP (VBN organized)
-            (PP (IN by)
-              (NP
-                (NP (NNP NBC))
-                (CC and)
-                (NP (DT the) (NNP World) (NNP Wrestling) (NNP Federation) (NNP degraded))))))
-        (NP (PRP$ his) (NN office))))
+          (NP (DT the) (NNP XFL)))))
+    (: -)
+    (S
+      (NP (DT a) (JJ rough-and-tumble) (NN league))
+      (VP (VBN organized)
+        (PP (IN by)
+          (NP
+            (NP
+              (NP (NNP NBC))
+              (CC and)
+              (NP (DT the) (NNP World) (NNP Wrestling) (NNP Federation)))
+            (: -) (JJ degraded)
+            (NP (PRP$ his) (NN office))))))
     (. .)))
 
 (ROOT
@@ -136,8 +141,8 @@
         (VP (VB fit)
           (PP (IN in)
             (NP
-              (NP (NNP (Ventura) (POS 's))
-              (JJ )) (JJ political) (NN philosophy))))))
+              (NP (NNP [Ventura) (POS 's))
+              (JJ ]) (JJ political) (NN philosophy))))))
     (CC and)
     (S
       (NP (PRP it))

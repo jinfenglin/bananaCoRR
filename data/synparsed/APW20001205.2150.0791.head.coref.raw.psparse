@@ -10,41 +10,42 @@
   (NP (NNP Nokia) (NNP Extends) (NNP Annual) (NNP Growth) (NNP Forecast)))
 
 (ROOT
-  (S
-    (NP
-      (NP (NNP HELSINKI) (, ,) (NNP Finland) (NNP (AP) (NNP )) (NNP Nokia))
-      (SBAR
-        (S
-          (NP (NNS shares))
-          (VP (VBD jumped)
-            (NP (RB nearly) (CD 16) (NN percent))
-            (NP (NNP Tuesday))
-            (SBAR (IN after)
-              (S
-                (NP (DT the) (NN company))
-                (VP
-                  (VP (VBD extended)
+  (NP
+    (NP (NNP HELSINKI) (, ,) (NNP Finland) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP (NNP Nokia) (NNS shares))
+      (VP (VBD jumped)
+        (NP (RB nearly) (CD 16) (NN percent))
+        (NP (NNP Tuesday))
+        (SBAR (IN after)
+          (S
+            (NP (DT the) (NN company))
+            (VP
+              (VP (VBD extended)
+                (NP
+                  (NP (PRP$ its) (NNS targets))
+                  (PP (IN of)
                     (NP
-                      (NP (PRP$ its) (NNS targets))
-                      (PP (IN of)
-                        (NP
-                          (QP (IN up) (TO to) (CD 35))
-                          (NN percent))))
-                    (NP
-                      (NP (JJ annual) (NN revenue) (NN growth))
-                      (PP (IN into)
-                        (NP (CD 2003)))))
-                  (CC and)
-                  (VP (VBD said)
+                      (QP (IN up) (TO to) (CD 35))
+                      (NN percent))))
+                (NP
+                  (NP (JJ annual) (NN revenue) (NN growth))
+                  (PP (IN into)
+                    (NP (CD 2003)))))
+              (CC and)
+              (VP (VBD said)
+                (SBAR
+                  (S
                     (NP
                       (NP (PRP$ its) (NN share))
                       (PP (IN of)
-                        (NP (DT the) (JJ cellular) (NN phone) (NN market))))))))))))
-    (VP (VBD was)
-      (ADVP (RB now)
-        (NP
-          (QP (JJR more) (IN than) (CD 30))
-          (NN percent))))
+                        (NP (DT the) (JJ cellular) (NN phone) (NN market))))
+                    (VP (VBD was)
+                      (ADVP (RB now)
+                        (NP
+                          (QP (JJR more) (IN than) (CD 30))
+                          (NN percent))))))))))))
     (. .)))
 
 (ROOT

@@ -15,34 +15,33 @@
   (NP (NNP Economic) (NNP Growth) (NNP Slows) (NNP Sharply)))
 
 (ROOT
-  (S
+  (NP
+    (NP (NNP WASHINGTON) (NNP [AP) (NNP ]))
+    (: -)
     (S
-      (NP (NNP WASHINGTON) (NNP (AP))
-      (VP (VBD ))
-        (SBAR
-          (S
-            (NP (DT The) (NNP U.S.) (NN economy))
-            (VP (VBD slowed)
-              (ADVP (RB sharply))
-              (PP (TO to)
+      (S
+        (NP (DT The) (NNP U.S.) (NN economy))
+        (VP (VBD slowed)
+          (ADVP (RB sharply))
+          (PP (TO to)
+            (NP
+              (NP (DT an) (JJ annual) (NN growth) (NN rate))
+              (PP (IN of)
                 (NP
-                  (NP (DT an) (JJ annual) (NN growth) (NN rate))
-                  (PP (IN of)
-                    (NP
-                      (QP (RB just) (CD 2.2))
-                      (NN percent)))))
-              (PP (IN in)
-                (NP
-                  (NP (DT the) (NN summer))
-                  (, ,)
-                  (NP
-                    (NP (DT the) (JJS weakest) (NN performance))
-                    (PP (IN in)
-                      (NP (CD four) (NNS years)))))))))))
-    (, ,)
-    (NP (DT the) (NN government))
-    (VP (VBD said)
-      (NP (NNP Thursday)))
+                  (QP (RB just) (CD 2.2))
+                  (NN percent)))))
+          (PP (IN in)
+            (NP
+              (NP (DT the) (NN summer))
+              (, ,)
+              (NP
+                (NP (DT the) (JJS weakest) (NN performance))
+                (PP (IN in)
+                  (NP (CD four) (NNS years))))))))
+      (, ,)
+      (NP (DT the) (NN government))
+      (VP (VBD said)
+        (NP (NNP Thursday))))
     (. .)))
 
 (ROOT
@@ -64,32 +63,35 @@
   (S
     (NP (DT The) (NNP Commerce) (NNP Department))
     (VP (VBD said)
-      (NP (DT the) (JJ third) (NN quarter) (NN increase))
-      (PP (IN in)
-        (NP
-          (NP (DT the) (JJ gross) (JJ domestic) (NN product))
-          (SBAR
-            (S
+      (SBAR
+        (S
+          (NP
+            (NP
+              (NP (DT the) (JJ third) (NN quarter) (NN increase))
+              (PP (IN in)
+                (NP (DT the) (JJ gross) (JJ domestic) (NN product))))
+            (: -)
+            (NP
               (NP
-                (NP
-                  (NP (DT the) (NN economy) (POS 's))
-                  (JJ total) (NN output))
-                (PP (IN of)
-                  (NP (NNS goods)
-                    (CC and)
-                    (NNS services))))
-              (VP (VBD was)
-                (ADJP
-                  (ADJP (RB even) (JJR weaker))
-                  (SBAR (IN than)
-                    (S
-                      (ADVP (RB previously))
-                      (VP (VBN believed)
-                        (PP (IN as)
-                          (NP
-                            (NP (DT the) (NN trade) (NN deficit))
-                            (VP (VBN deteriorated)
-                              (ADVP (RBR further)))))))))))))))
+                (NP (DT the) (NN economy) (POS 's))
+                (JJ total) (NN output))
+              (PP (IN of)
+                (NP (NNS goods)
+                  (CC and)
+                  (NNS services))))
+            (: -))
+          (VP (VBD was)
+            (ADJP
+              (ADJP (RB even) (JJR weaker))
+              (SBAR (IN than)
+                (S
+                  (ADVP (RB previously))
+                  (VP (VBN believed)
+                    (PP (IN as)
+                      (NP
+                        (NP (DT the) (NN trade) (NN deficit))
+                        (VP (VBN deteriorated)
+                          (ADVP (RBR further)))))))))))))
     (. .)))
 
 (ROOT

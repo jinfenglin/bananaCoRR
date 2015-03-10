@@ -14,42 +14,43 @@
     (VP (VBD Deadlock))))
 
 (ROOT
-  (S
-    (ADVP (RB NICE))
-    (PRN (, ,)
-      (S
-        (NP (NNP France) (NNP (AP))
-        (VP (VBD ))
-          (NP (CD One))
-          (PP (IN after)
-            (NP (DT another)))
-          (, ,)
-          (ADVP (RB late)
-            (PP (IN into)
-              (NP (DT the) (NN night))))))
-      (, ,))
+  (NP
+    (NP (NNP NICE) (, ,) (NNP France) (NNP [AP) (NNP ]))
+    (: -)
     (NP
-      (NP (DT the) (NNS leaders))
-      (PP (IN of)
-        (NP (NNP Europe))))
-    (VP (VBD filed)
-      (PP (IN into)
+      (NP (CD One))
+      (PP (IN after)
         (NP
-          (NP (DT a) (JJ small) (, ,) (JJ windowless) (NN room))
-          (PP (IN for)
-            (NP (JJ private) (NNS chats)))))
-      (PP (IN with)
-        (NP
-          (NP (NNP French) (NNP President) (NNP Jacques) (NNP Chirac))
-          (SBAR
-            (WHNP (WDT that))
-            (S
-              (VP (MD could)
-                (VP (VB determine)
+          (NP (DT another))
+          (, ,)
+          (VP
+            (ADVP (RB late)
+              (PP (IN into)
+                (NP
+                  (NP (DT the) (NN night))
+                  (, ,)
                   (NP
-                    (NP (DT the) (NN future))
+                    (NP (DT the) (NNS leaders))
                     (PP (IN of)
-                      (NP (DT the) (NNP European) (NNP Union)))))))))))
+                      (NP (NNP Europe)))))))
+            (VBN filed)
+            (PP (IN into)
+              (NP
+                (NP (DT a) (JJ small) (, ,) (JJ windowless) (NN room))
+                (PP (IN for)
+                  (NP (JJ private) (NNS chats)))))
+            (PP (IN with)
+              (NP
+                (NP (NNP French) (NNP President) (NNP Jacques) (NNP Chirac))
+                (SBAR
+                  (WHNP (WDT that))
+                  (S
+                    (VP (MD could)
+                      (VP (VB determine)
+                        (NP
+                          (NP (DT the) (NN future))
+                          (PP (IN of)
+                            (NP (DT the) (NNP European) (NNP Union))))))))))))))
     (. .)))
 
 (ROOT
@@ -103,20 +104,22 @@
             (VP (VB send)
               (NP (PRP them))
               (NP
-                (NP (DT a) (NN draft) (NNP Treaty))
-                (PP (IN of)
-                  (S
-                    (VP (VBG Nice)
-                      (NP (DT a) (NN blueprint))
-                      (PP (IN for)
-                        (S
-                          (VP (VBG running)
+                (NP
+                  (NP (DT a) (NN draft) (NNP Treaty))
+                  (PP (IN of)
+                    (NP (NNP Nice))))
+                (: -)
+                (NP
+                  (NP (DT a) (NN blueprint))
+                  (PP (IN for)
+                    (S
+                      (VP (VBG running)
+                        (NP
+                          (NP (DT the) (NN bloc))
+                          (PP (IN of)
                             (NP
-                              (NP (DT the) (NN bloc))
-                              (PP (IN of)
-                                (NP
-                                  (QP (CD 370) (CD million))
-                                  (NNS people))))))))))))))
+                              (QP (CD 370) (CD million))
+                              (NNS people))))))))))))
         (SBAR (IN as)
           (S
             (NP (PRP it))
@@ -162,15 +165,14 @@
                 (S
                   (VP (VBZ is)
                     (ADJP (JJ necessary))))))))))
-    (CC but)
-    (S
-      (NP (NN nobody))
-      (VP (VBZ thinks)
-        (SBAR
-          (S
-            (VP (MD will)
-              (VP (VB be)
-                (ADJP (JJ easy))))))))
+    (: -)
+    (S (CC but)
+      (NP
+        (NP (NN nobody))
+        (VP (VBZ thinks)))
+      (VP (MD will)
+        (VP (VB be)
+          (ADJP (JJ easy)))))
     (. .)))
 
 (ROOT
@@ -358,12 +360,14 @@
             (NP (NNP France) (POS 's))
             (NN corner))
           (PP (IN in)
+            (NP (DT a) (NN fight))))
+        (PP (IN with)
+          (NP
+            (NP (NNP Germany))
+            (: -)
             (NP
-              (NP (DT a) (NN fight))
-              (PP (IN with)
-                (NP
-                  (NP (NNP Germany) (DT the) (NN summit) (POS 's))
-                  (NN knottiest) (NN problem))))))))
+              (NP (DT the) (NN summit) (POS 's))
+              (JJ knottiest) (NN problem))))))
     (. .)))
 
 (ROOT
@@ -663,27 +667,27 @@
     (NP (DT A) (NN compromise))
     (ADVP (RB also))
     (VP (VBD seemed)
-      (ADJP (JJ likely))
+      (ADVP (RB likely))
       (PP (IN on)
-        (NP
-          (NP (DT another) (JJ central) (NN issue))
-          (VP (VBG replacing)
-            (NP (JJ unanimous) (NN voting))
-            (PP (IN with)
-              (NP
-                (NP (NN majority) (NNS decisions))
-                (PP (IN on)
-                  (NP
-                    (NP (DT a) (NN number))
-                    (PP (IN of)
-                      (NP (NNS issues))))))))))
-      (, ,)
-      (PP (VBG including)
-        (NP
-          (UCP (NN transport)
-            (CC and)
-            (JJ environmental))
-          (NN protection))))
+        (NP (DT another) (JJ central) (NN issue)))
+      (: -)
+      (S
+        (VP (VBG replacing)
+          (NP (JJ unanimous) (NN voting))
+          (PP (IN with)
+            (NP (NN majority) (NNS decisions)))
+          (PP (IN on)
+            (NP
+              (NP (DT a) (NN number))
+              (PP (IN of)
+                (NP (NNS issues)))
+              (, ,)
+              (PP (VBG including)
+                (NP
+                  (UCP (NN transport)
+                    (CC and)
+                    (JJ environmental))
+                  (NN protection))))))))
     (. .)))
 
 (ROOT
@@ -721,13 +725,14 @@
       (SBAR (IN that)
         (S
           (NP
-            (NP (NNS hours))
-            (RRC
-              (ADVP (RB possibly))
-              (NP
+            (NP
+              (NP (NNS hours))
+              (PRN (: -)
+                (ADVP (RB possibly))
                 (NP (NNS days))
-                (PP (IN of)
-                  (NP (JJ grueling) (NNS negotiations))))))
+                (: -)))
+            (PP (IN of)
+              (NP (JJ grueling) (NNS negotiations))))
           (VP (VBD were)
             (ADJP (JJ likely))
             (ADVP (RB still))

@@ -15,8 +15,8 @@
 (ROOT
   (S
     (S
-      (NP (NNP WASHINGTON) (NNP (AP))
-      (VP (VBZ ))
+      (NP (NNP WASHINGTON) (NNP [AP))
+      (VP (VBZ ]) (: -)
         (S
           (NP (DT All))
           (ADJP (RB else))
@@ -42,6 +42,7 @@
             (VP (VBN offered)
               (PP (IN by)
                 (NP (NNP Microsoft)))
+              (: -)
               (NP
                 (NP (DT the) (NN one))
                 (SBAR
@@ -410,6 +411,7 @@
         (VP (VB interact)
           (PP (IN with)
             (NP (NNS others))))
+        (: -)
         (CC or)
         (VP (VB decide)
           (S (RB not)
@@ -444,15 +446,17 @@
           (S
             (VP (VBZ runs)
               (NP
-                (NP (DT the) (CD two))
-                (PP
-                  (NP (JJ leading) (VBG messaging) (NNS services) (NNP ICQ)
-                    (CC and)
-                    (NNP AIM))
-                  (PP (IN with)
-                    (NP
-                      (QP (CD 140) (CD million))
-                      (NNS users))))))))))
+                (NP
+                  (NP (DT the) (CD two) (JJ leading) (NN messaging) (NNS services))
+                  (PRN (: -)
+                    (NP (NNP ICQ)
+                      (CC and)
+                      (NNP AIM))
+                    (: -)))
+                (PP (IN with)
+                  (NP
+                    (QP (CD 140) (CD million))
+                    (NNS users)))))))))
     (. .)))
 
 (ROOT
@@ -649,12 +653,13 @@
                               (VP (VBP have)
                                 (VP (VBN emerged)
                                   (PP (IN in)
-                                    (NP (DT the) (JJ e-mail) (NN world)))))))))))))
-              (, ,)
-              (PP (IN like)
-                (S
-                  (VP (VBG spamming)
-                    (NP (JJ unwanted) (NN junk) (NNS messages))))))))))
+                                    (NP (DT the) (JJ e-mail) (NN world)))
+                                  (, ,)
+                                  (PP (IN like)
+                                    (S
+                                      (VP (VBG spamming))))
+                                  (: -)
+                                  (NP (JJ unwanted) (NN junk) (NNS messages)))))))))))))))))
     (. .)))
 
 (ROOT
@@ -733,9 +738,13 @@
           (NP (DT the) (JJ recent) (NN demise))
           (PP (IN of)
             (NP
-              (NP (CD two) (JJ instant) (JJ messaging) (NNS competitors) (NN iCAST))
-              (CC and)
-              (NP (NNP Tribal) (NNP Voice))))))
+              (NP (CD two) (JJ instant) (NN messaging) (NNS competitors))
+              (: -)
+              (NP
+                (NP (NN iCAST))
+                (CC and)
+                (NP (NNP Tribal) (NNP Voice)))
+              (: -)))))
       (PP (IN as)
         (NP (NN evidence)))
       (SBAR (IN that)
@@ -864,6 +873,9 @@
                                 (NP (NNP ,'') (NNP Park))
                                 (VP (VBD said))))))))))))))))
     (. .)))
+
+(ROOT
+  (INTJ (UH -)))
 
 (ROOT
   (PP (IN On)

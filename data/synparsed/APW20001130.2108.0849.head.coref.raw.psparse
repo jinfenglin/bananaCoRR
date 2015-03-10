@@ -15,41 +15,44 @@
 (ROOT
   (S
     (S
-      (NP (NNP LONDON) (NNP (AP) (NNP )))
+      (NP (NNP LONDON) (NNP [AP))
+      (VP (VBZ ])))
+    (: -)
+    (S
       (PP (IN After)
-        (NP (CD three)))
-      (VP (VBZ defeats)
-        (PP (IN in)
-          (NP
-            (NP (DT the) (NNP House))
-            (PP (IN of)
-              (NP (NNPS Lords)))))))
-    (, ,)
-    (NP
-      (NP (NNP Britain) (POS 's))
-      (NNP Labor) (NN government))
-    (VP (VBD resorted)
-      (PP (TO to)
         (NP
-          (ADJP (RB rarely) (JJ used))
-          (NNS powers)))
-      (NP (NNP Thursday))
-      (S
-        (VP (TO to)
-          (VP (VB pass)
-            (NP (NN legislation))
-            (S
-              (VP (VBG lowering)
-                (NP
-                  (NP (DT the) (NN age))
-                  (PP (IN of)
-                    (NP
-                      (NP (NN consent))
-                      (PP (IN for)
-                        (NP (NNS homosexuals))))))
-                (PP (IN from)
+          (NP (CD three) (NNS defeats))
+          (PP (IN in)
+            (NP
+              (NP (DT the) (NNP House))
+              (PP (IN of)
+                (NP (NNPS Lords)))))))
+      (, ,)
+      (NP
+        (NP (NNP Britain) (POS 's))
+        (NNP Labor) (NN government))
+      (VP (VBD resorted)
+        (PP (TO to)
+          (NP
+            (ADJP (RB rarely) (JJ used))
+            (NNS powers)))
+        (NP (NNP Thursday))
+        (S
+          (VP (TO to)
+            (VP (VB pass)
+              (NP (NN legislation))
+              (S
+                (VP (VBG lowering)
                   (NP
-                    (QP (CD 18) (TO to) (CD 16))))))))))
+                    (NP (DT the) (NN age))
+                    (PP (IN of)
+                      (NP
+                        (NP (NN consent))
+                        (PP (IN for)
+                          (NP (NNS homosexuals))))))
+                  (PP (IN from)
+                    (NP
+                      (QP (CD 18) (TO to) (CD 16)))))))))))
     (. .)))
 
 (ROOT

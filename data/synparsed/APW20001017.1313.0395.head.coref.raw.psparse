@@ -10,10 +10,13 @@
   (NP (NNP Congress) (NNP Library) (NNP Honors) (NNP Cartoonist)))
 
 (ROOT
-  (S
-    (NP (NNP WASHINGTON) (NNP (AP) (NNP )) (NNP Herbert) (NNP Lawrence) (NNP Block))
-    (VP (VBZ is) (RB not)
-      (ADJP (JJ subtle)))
+  (FRAG
+    (NP (NNP WASHINGTON) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP (NNP Herbert) (NNP Lawrence) (NNP Block))
+      (VP (VBZ is) (RB not)
+        (ADJP (JJ subtle))))
     (. .)))
 
 (ROOT
@@ -32,11 +35,13 @@
         (S
           (NP
             (NP (NNP Block))
+            (: -)
             (VP
               (ADVP (RBR better))
               (VBN known)
               (PP (IN as)
-                (NP (NNP Herblock)))))
+                (NP (NNP Herblock))))
+            (: -))
           (VP (VBZ has)
             (VP (VBN plied)
               (PP (IN for)
@@ -342,30 +347,32 @@
 
 (ROOT
   (S
-    (NP
-      (NP (PRP He))
-      (CC and)
-      (NP (DT the) (NN library)))
-    (VP (VBP agree)
-      (SBAR (IN that)
-        (S
-          (VP (VBD was)
-            (NP
-              (NP (DT the) (NN origin))
-              (PP (IN of)
-                (NP (DT the) (NN word) (NN ``with))))))))
-    (NP
-      (NP (DT no) (NN thought))
-      (PP (IN of)
-        (S
-          (VP (VBG creating)
-            (NP
-              (NP (DT a) (JJ new) (NN term))
-              (SBAR
-                (S
-                  (NP (NNP ,'') (NNP Herblock))
-                  (VP (VBD wrote)
-                    (ADVP (RB later))))))))))
+    (S
+      (NP
+        (NP (PRP He))
+        (CC and)
+        (NP (DT the) (NN library)))
+      (VP (VBP agree)
+        (SBAR (IN that)
+          (S
+            (VP (VBD was)
+              (NP
+                (NP (DT the) (NN origin))
+                (PP (IN of)
+                  (NP (DT the) (NN word)))))))))
+    (: -)
+    (S
+      (S
+        (VP (VB ``with)
+          (NP
+            (NP (DT no) (NN thought))
+            (PP (IN of)
+              (S
+                (VP (VBG creating)
+                  (NP (DT a) (JJ new) (NN term))))))))
+      (NP (NNP ,'') (NNP Herblock))
+      (VP (VBD wrote)
+        (ADVP (RB later))))
     (. .)))
 
 (ROOT
@@ -693,9 +700,12 @@
   (S
     (NP
       (NP (PRP$ His) (JJ first) (NN cartoon))
-      (PP (IN for)
-        (NP (DT the) (NNP News)))
-      (NP (NNP April) (CD 24) (, ,) (CD 1929)))
+      (UCP
+        (PP (IN for)
+          (NP (DT the) (NNP News))
+          (: -))
+        (NP (NNP April) (CD 24) (, ,) (CD 1929))
+        (: -)))
     (VP (VBD blasted)
       (NP (DT the) (NN timber) (NN industry)))
     (. .)))

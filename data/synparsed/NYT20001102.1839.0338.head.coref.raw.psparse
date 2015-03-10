@@ -387,46 +387,47 @@
 
 (ROOT
   (S
-    (NP (DT The) (NNS exchanges))
-    (VP
-      (VP (VBD avoided)
-        (NP (JJ real) (NN competition))
-        (PP (IN for)
-          (NP (NNS years))))
-      (, ,)
-      (CC and)
+    (S
+      (NP (DT The) (NNS exchanges))
       (VP
-        (ADVP (RB then))
-        (VBD began)
-        (S
-          (VP (TO to)
-            (VP (VB compete)
-              (PP (IN on)
+        (VP (VBD avoided)
+          (NP (JJ real) (NN competition))
+          (PP (IN for)
+            (NP (NNS years))))
+        (, ,)
+        (CC and)
+        (VP
+          (ADVP (RB then))
+          (VBD began)
+          (S
+            (VP (TO to)
+              (VP (VB compete)
+                (PP (IN on)
+                  (NP
+                    (NP (DT the) (NN basis))
+                    (PP (IN of)
+                      (S
+                        (VP (VBG kicking)
+                          (PRT (RP back))
+                          (NP (NN money)))))))))))))
+    (: -)
+    (S
+      (NP (DT the) (JJ polite) (NN term))
+      (VP (VBZ is)
+        (ADJP (JJ ``payment)
+          (PP (IN for)
+            (NP
+              (NP (NN order) (NN flow))
+              ('' '') (: -)
+              (PP (TO to)
                 (NP
-                  (NP (DT the) (NN basis))
-                  (PP (IN of)
+                  (NP (NNS brokers))
+                  (SBAR
+                    (WHNP (WP who))
                     (S
-                      (VP (VBG kicking)
-                        (PRT (RP back))
-                        (NP
-                          (NP (NN money))
-                          (SBAR
-                            (S
-                              (NP (DT the) (JJ polite) (NN term))
-                              (VP (VBZ is)
-                                (ADJP (JJ ``payment)
-                                  (PP (IN for)
-                                    (NP (NN order) (NN flow))))))))))))))))
-        ('' '')
-        (PP (TO to)
-          (NP
-            (NP (NNS brokers))
-            (SBAR
-              (WHNP (WP who))
-              (S
-                (VP (VBP send)
-                  (PP (IN in)
-                    (NP (NN customer) (NNS orders))))))))))
+                      (VP (VBP send)
+                        (PP (IN in)
+                          (NP (NN customer) (NNS orders)))))))))))))
     (. .)))
 
 (ROOT

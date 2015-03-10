@@ -16,21 +16,25 @@
             (NP (NNP Texas) (NNPS Rangers))))))))
 
 (ROOT
-  (S
-    (S
-      (NP
-        (NP (NNP ARLINGTON) (, ,) (NNP Texas) (NNP (AP) (NNP )) (CD One))
-        (PP (IN of)
-          (NP
-            (NP (NN baseball) (POS 's))
-            (JJS biggest) (JJ free-agent) (NNS prizes)))))
+  (NP
+    (NP (NNP ARLINGTON))
     (, ,)
-    (NP (NNP Alex) (NNP Rodriguez))
-    (VP (VBZ is)
-      (VP (VBG getting)
-        (NP (JJ red-carpet) (NN treatment))
-        (PP (IN from)
-          (NP (DT the) (NNP Texas) (NNPS Rangers)))))
+    (NP (NNP Texas) (NNP [AP) (NNP ]))
+    (: -)
+    (NP
+      (NP (CD One))
+      (PP (IN of)
+        (NP
+          (NP (NN baseball) (POS 's))
+          (JJS biggest) (JJ free-agent) (NNS prizes))))
+    (, ,)
+    (S
+      (NP (NNP Alex) (NNP Rodriguez))
+      (VP (VBZ is)
+        (VP (VBG getting)
+          (NP (JJ red-carpet) (NN treatment))
+          (PP (IN from)
+            (NP (DT the) (NNP Texas) (NNPS Rangers))))))
     (. .)))
 
 (ROOT
@@ -341,31 +345,34 @@
     (NP (DT Some))
     (ADVP (RB even))
     (VP (VBP have)
-      (NP
-        (NP (DT a) (NN neighborhood))
-        (SBAR
-          (S
-            (NP
-              (NP (DT the) (JJ fashionable) (NNP Dallas) (NN suburb))
-              (PP (IN of)
-                (NP (NNP Highland) (NNP Park))))
-            (VP (VBD picked)
-              (PRT (RP out))
-              (PP (IN for)
-                (NP (NNP Rodriguez))))))))
+      (S
+        (NP
+          (NP (DT a) (NN neighborhood))
+          (: -)
+          (NP
+            (NP (DT the) (JJ fashionable) (NNP Dallas) (NN suburb))
+            (PP (IN of)
+              (NP (NNP Highland) (NNP Park))))
+          (: -))
+        (VP (VBN picked)
+          (PRT (RP out))
+          (PP (IN for)
+            (NP (NNP Rodriguez))))))
     (. .)))
 
 (ROOT
   (S
     (NP
-      (NP (NNS Neighbors))
-      (PP (IN of)
+      (NP
+        (NP (NNS Neighbors))
+        (PP (IN of)
+          (NP (CD one) (JJ available) (NN residence))))
+      (: -)
+      (NP
+        (NP (DT a) (JJ five-bedroom) (NN spread) (NN worth))
         (NP
-          (NP (CD one) (JJ available) (NN residence))
-          (NP
-            (NP (DT a) (JJ five-bedroom) (NN spread) (NN worth))
-            (NP
-              (QP (CD $11.95) (CD million)))))))
+          (QP (CD $11.95) (CD million))))
+      (: -))
     (VP (MD would)
       (VP (VB include)
         (NP

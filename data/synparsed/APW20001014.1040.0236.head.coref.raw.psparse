@@ -15,46 +15,45 @@
           (VP (VBG Meeting)))))))
 
 (ROOT
-  (S
-    (NP (NNP UNITED) (NNP NATIONS) (NNP (AP))
-    (VP (VBD ))
-      (SBAR
-        (S
-          (NP (DT The) (NNP General) (NNP Assembly))
-          (VP (VBZ is)
-            (VP (VBN expected)
-              (S
-                (VP (TO to)
-                  (VP (VB hold)
-                    (NP (DT an) (NN emergency) (NN meeting))
-                    (NP (JJ next) (NN week))
-                    (PP (IN on)
-                      (NP (DT the) (NNP Middle) (NNP East)))
-                    (S
-                      (VP (TO to)
-                        (VP (VB consider)
-                          (NP
-                            (NP (DT a) (NN resolution))
-                            (SBAR
-                              (WHNP (WDT that))
-                              (S
-                                (VP (MD would)
-                                  (VP (VB condemn)
-                                    (NP
-                                      (NP (JJ ``excessive) (NN use))
-                                      (PP (IN of)
-                                        (NP (NN force)))))))))))))))))))
-      ('' '')
-      (PP (IN by)
-        (NP (JJ Israeli) (NNS soldiers)))
-      (, ,)
-      (PP (VBG according)
-        (PP (TO to)
-          (NP
-            (NP (DT a) (NN draft))
-            (VP (VBN obtained)
-              (PP (IN by)
-                (NP (DT The) (NNP Associated) (NNP Press))))))))
+  (FRAG
+    (NP (NNP UNITED) (NNP NATIONS) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP (DT The) (NNP General) (NNP Assembly))
+      (VP (VBZ is)
+        (VP (VBN expected)
+          (S
+            (VP (TO to)
+              (VP (VB hold)
+                (NP (DT an) (NN emergency) (NN meeting))
+                (NP (JJ next) (NN week))
+                (PP (IN on)
+                  (NP (DT the) (NNP Middle) (NNP East)))
+                (S
+                  (VP (TO to)
+                    (VP (VB consider)
+                      (NP
+                        (NP (DT a) (NN resolution))
+                        (SBAR
+                          (WHNP (WDT that))
+                          (S
+                            (VP (MD would)
+                              (VP (VB condemn)
+                                (NP
+                                  (NP (JJ ``excessive) (NN use))
+                                  (PP (IN of)
+                                    (NP (NN force))))
+                                ('' '')
+                                (PP (IN by)
+                                  (NP (JJ Israeli) (NNS soldiers))))))))))))))
+          (, ,)
+          (PP (VBG according)
+            (PP (TO to)
+              (NP
+                (NP (DT a) (NN draft))
+                (VP (VBN obtained)
+                  (PP (IN by)
+                    (NP (DT The) (NNP Associated) (NNP Press))))))))))
     (. .)))
 
 (ROOT
@@ -239,45 +238,50 @@
 
 (ROOT
   (S
-    (NP
-      (NP (DT The) (JJ Palestinian) (NN representative))
-      (, ,)
-      (NP (NNP Nasser) (NNP Al-Kidwa))
-      (, ,))
-    (VP (VBD had)
-      (ADVP (RB originally))
-      (VP (VBN requested)
-        (NP
-          (NP (DT an) (NN emergency) (NN meeting))
-          (PP (IN of)
-            (NP (DT the) (NNP Security) (NNP Council)))
-          (S
-            (VP (TO to)
-              (VP (VB adopt)
-                (NP (DT a) (JJ new) (NN resolution))))))
+    (S
+      (NP
+        (NP (DT The) (JJ Palestinian) (NN representative))
         (, ,)
-        (S
-          (VP (VBG saying)
-            (NP (JJ Israeli) (NN rocket) (NNS attacks))
-            (PP (IN on)
-              (NP (JJ Palestinian) (NN command) (NNS centers)))
-            (NP (NNP Thursday) (CD retaliation))
-            (SBAR (IN for)
-              (S
+        (NP (NNP Nasser) (NNP Al-Kidwa))
+        (, ,))
+      (VP (VBD had)
+        (ADVP (RB originally))
+        (VP (VBN requested)
+          (NP
+            (NP (DT an) (NN emergency) (NN meeting))
+            (PP (IN of)
+              (NP (DT the) (NNP Security) (NNP Council)))
+            (S
+              (VP (TO to)
+                (VP (VB adopt)
+                  (NP (DT a) (JJ new) (NN resolution))))))
+          (, ,)
+          (S
+            (VP (VBG saying)
+              (NP (JJ Israeli) (NN rocket) (NNS attacks))
+              (PP (IN on)
+                (NP (JJ Palestinian) (NN command) (NNS centers)))
+              (NP (NNP Thursday)))))))
+    (: -)
+    (S
+      (NP
+        (NP (NN retaliation))
+        (PP (IN for)
+          (NP
+            (NP (DT the) (JJ brutal) (NN lynching))
+            (PP (IN of)
+              (NP (CD two) (JJ Israeli) (NNS soldiers))))))
+      (: -)
+      (VP (VBD were)
+        (ADJP (JJ ``tantamount)
+          (PP (TO to)
+            (NP
+              (NP (DT the) (NN declaration))
+              (PP (IN of)
                 (NP
-                  (NP (DT the) (JJ brutal) (NN lynching))
-                  (PP (IN of)
-                    (NP (CD two) (JJ Israeli) (NNS soldiers))))
-                (VP (VBD were)
-                  (ADJP (JJ ``tantamount)
-                    (PP (TO to)
-                      (NP
-                        (NP (DT the) (NN declaration))
-                        (PP (IN of)
-                          (NP
-                            (NP (DT an) (JJ overall) (NN war))
-                            (PP (IN against)
-                              (NP (DT the) (JJ entire) (JJ Palestinian) (NNS people) (NN .'')))))))))))))))))
+                  (NP (DT an) (JJ overall) (NN war))
+                  (PP (IN against)
+                    (NP (DT the) (JJ entire) (JJ Palestinian) (NNS people) (NN .''))))))))))))
 
 (ROOT
   (S (CC But)
@@ -372,7 +376,8 @@
             (NP (NN force))
             ('' '')
             (PP (IN against)
-              (NP (DT the) (NNPS Palestinians))))))
+              (NP (DT the) (NNPS Palestinians)))
+            (: -))))
       (PP (IN without)
         (S
           (VP (VBG naming)

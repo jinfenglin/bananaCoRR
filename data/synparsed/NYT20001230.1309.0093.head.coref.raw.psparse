@@ -53,57 +53,64 @@
     (: ;)))
 
 (ROOT
-  (S
-    (S
-      (ADVP (RB SEATTLE))
-      (NP
-        (NP (DT The) (NNS answers))
-        (PP (TO to)
-          (NP (DT the) (CD three))))
-      (ADVP (RBS most) (RB commonly))
-      (VP (VBD asked)
-        (NP (NNS questions))
-        (PP (IN at)
-          (NP (DT the) (NNP Woodland) (NNP Park) (NNP Zoo)))
-        (PP (IN in)
-          (NP (NNP Seattle)))))
-    (NP (DT these) (NNS days))
-    (VP (VBP are) (: :)
-      (NP
-        (NP (CD one))
-        (, ,)
+  (NP
+    (NP (NNP SEATTLE))
+    (: -)
+    (NP
+      (NP (DT The) (NNS answers))
+      (PP (TO to)
         (NP
-          (NP (CD 235) (NNS pounds))
-          (: ;)
-          (NP
-            (NP (CD two))
-            (, ,)
+          (NP (DT the) (CD three) (JJS most))
+          (VP
+            (ADVP (RB commonly))
+            (VBN asked)
             (NP
-              (NP (CD 22) (NNS months))
-              (NP
+              (NP (NNS questions))
+              (PP (IN at)
                 (NP
-                  (ADJP (JJ (the) (JJS longest))
-                  (NN pregnancy))
-                (PP (IN of)
-                  (NP
-                    (NP (DT any) (NN mammal))
-                    (PP (IN in)
-                      (NP (DT the) (NN world)
-                        (QP (CD );) (CD three))))))))))
-        (, ,)
-        (NP (JJ natural) (NN insemination))
-        (, ,)
-        (SBAR (IN after)
-          (S
-            (NP (PRP$ her) (JJ 8,800-pound) (NN mother))
-            (VP (VBD was)
-              (VP (VBN transported)
-                (NP (CD 2,000) (NNS miles))
-                (PP (IN for)
-                  (NP
-                    (NP (DT a) (NN tryst))
-                    (PP (IN in)
-                      (NP (NNP Missouri)))))))))))
+                  (NP (DT the) (NNP Woodland) (NNP Park) (NNP Zoo))
+                  (PP (IN in)
+                    (NP (NNP Seattle)))))
+              (SBAR
+                (S
+                  (NP (DT these) (NNS days))
+                  (VP (VBP are)))))))))
+    (: :)
+    (NP
+      (NP (CD one))
+      (, ,)
+      (NP (CD 235) (NNS pounds)))
+    (: ;)
+    (NP
+      (NP (CD two))
+      (, ,)
+      (NP
+        (NP (CD 22) (NNS months))
+        (NP
+          (NP
+            (ADJP (JJ [the) (JJS longest))
+            (NN pregnancy))
+          (PP (IN of)
+            (NP
+              (NP (DT any) (NN mammal))
+              (PP (IN in)
+                (NP (DT the) (NN world)
+                  (QP (CD ];) (CD three)))))))))
+    (, ,)
+    (NP
+      (NP (JJ natural) (NN insemination))
+      (, ,)
+      (SBAR (IN after)
+        (S
+          (NP (PRP$ her) (JJ 8,800-pound) (NN mother))
+          (VP (VBD was)
+            (VP (VBN transported)
+              (NP (CD 2,000) (NNS miles))
+              (PP (IN for)
+                (NP
+                  (NP (DT a) (NN tryst))
+                  (PP (IN in)
+                    (NP (NNP Missouri))))))))))
     (. .)))
 
 (ROOT
@@ -145,24 +152,28 @@
               (VP (TO to)
                 (VP (VB wait)
                   (NP
-                    (QP (RB as) (JJ long) (IN as) (CD two))
-                    (NNS hours))
-                  (NP (RB yes))))))
-          (, ,)
-          (S
-            (ADVP (RB often)
-              (PP (IN in)
-                (NP
-                  (NP (DT the) (NN rain))
+                    (NP
+                      (QP (RB as) (JJ long) (IN as) (CD two))
+                      (NNS hours))
+                    (PRN (: -)
+                      (FRAG
+                        (INTJ (UH yes))
+                        (, ,)
+                        (ADVP (RB often)))))
+                  (PP (IN in)
+                    (NP (DT the) (NN rain)))
                   (PP (IN at)
                     (NP
-                      (NP (DT this) (NN time))
-                      (PP (IN of)
-                        (NP (NN year))))))))
-            (VP (TO to)
-              (VP (VB look)
-                (PP (IN at)
-                  (NP (PRP her)))))))))
+                      (NP
+                        (NP (DT this) (NN time))
+                        (PP (IN of)
+                          (NP (NN year))))
+                      (: -)
+                      (S
+                        (VP (TO to)
+                          (VP (VB look)
+                            (PP (IN at)
+                              (NP (PRP her)))))))))))))))
     (. .)))
 
 (ROOT

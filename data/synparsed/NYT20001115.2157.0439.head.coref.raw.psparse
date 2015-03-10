@@ -90,8 +90,8 @@
           (S
             (VP (VBG calling)
               (NP
-                (NP (CD (888))
-                (ADJP (JJ ))
+                (NP (CD [888))
+                (ADJP (JJ ])
                   (NP (CD 603-1036)
                     (CC or)
                     (CD 212-556-4204)))))))))
@@ -99,7 +99,7 @@
 
 (ROOT
   (NP
-    (NP (CD (NYT37) (NNP )) (NNP CAMBRIDGE))
+    (NP (CD [NYT37) (NNP ]) (NNP CAMBRIDGE))
     (, ,)
     (NP (NNP Mass))
     (. .)))
@@ -202,12 +202,12 @@
 
 (ROOT
   (SINV
-    (VP (VBP (Michael))
-    (NP (NNP Quan) (NNP New) (NNP York) (NNP Times) (NNP )))))
+    (VP (VBP [Michael))
+    (NP (NNP Quan) (NNP New) (NNP York) (NNP Times) (NNP ]))))
 
 (ROOT
   (NP
-    (NP (CD (NYT36) (NNP )) (NNP UNDATED))
+    (NP (CD [NYT36) (NNP ]) (NNP UNDATED))
     (: --)
     (NP (NNP Nov))
     (. .)))
@@ -247,8 +247,8 @@
   (NP
     (NP
       (NP
-        (QP (CD 1) (CD ))))
-      (NP (DT The) (NNP Gamer) (NNP PC) (CD 2) (NNP )) (NNP Gaming) (NN sound) (NN system) (CD 3) (NNP )) (NNP Game) (NNP console) (CD 4) (NNP )) (NNP Online) (NN fishing) (NN reel) (CD 5) (NNP )) (NNP Voice) (NN controller)))
+        (QP (CD 1) (CD ])))
+      (NP (DT The) (NNP Gamer) (NNP PC) (CD 2) (NNP ]) (NNP Gaming) (NN sound) (NN system) (CD 3) (NNP ]) (NNP Game) (NNP console) (CD 4) (NNP ]) (NNP Online) (NN fishing) (NN reel) (CD 5) (NNP ]) (NNP Voice) (NN controller)))
     (: ;)
     (NP
       (NP (NN Chip))
@@ -270,12 +270,12 @@
 
 (ROOT
   (FRAG
-    (ADVP (RB (Tony))
-    (NP (NNP Cenicola) (NNP New) (NNP York) (NNP Times) (NNP )))))
+    (ADVP (RB [Tony))
+    (NP (NNP Cenicola) (NNP New) (NNP York) (NNP Times) (NNP ]))))
 
 (ROOT
   (NP
-    (NP (CD (NYT35) (NNP )) (NNP UNDATED))
+    (NP (CD [NYT35) (NNP ]) (NNP UNDATED))
     (: --)
     (NP (NNP Nov))
     (. .)))
@@ -349,26 +349,26 @@
     (X
       (X
         (NP
-          (NP (CD 1) (NNP )) (NNP Organizer))
+          (NP (CD 1) (NNP ]) (NNP Organizer))
           (PP (IN with)
             (NP (JJ built-in) (NN camera))))
         (NP (CD 2))
         (NP
-          (NP (NNP )) (NNP Digital) (NN music) (NN player) (NNP 3) (NNP )) (NNP Drawing))
-          (NP (NN tablet) (CD 4) (NNP )) (NNP Music))))
+          (NP (NNP ]) (NNP Digital) (NN music) (NN player) (NNP 3) (NNP ]) (NNP Drawing))
+          (NP (NN tablet) (CD 4) (NNP ]) (NNP Music))))
       (NP (NN system) (CD 5)))
     (NP
-      (NP (NNP )) (NNP Robots))
+      (NP (NNP ]) (NNP Robots))
       (SBAR (IN that)
         (SINV
           (VP (VBP see)
-            (NP (CD 6) (NNP )) (NNP Learning) (NNP blocks) (CD 7,8) (NNP )) (NNP Educational) (NNS toys))
-            (ADVP (RB (Tony)))
-          (NP (NNP Cenicola) (NNP New) (NNP York) (NNP Times) (NNP ))))))))
+            (NP (CD 6) (NNP ]) (NNP Learning) (NNP blocks) (CD 7,8) (NNP ]) (NNP Educational) (NNS toys))
+            (ADVP (RB [Tony)))
+          (NP (NNP Cenicola) (NNP New) (NNP York) (NNP Times) (NNP ])))))))
 
 (ROOT
   (NP
-    (NP (CD (NYT34) (NNP )) (NNP WASHINGTON))
+    (NP (CD [NYT34) (NNP ]) (NNP WASHINGTON))
     (: --)
     (NP (NNP Nov))
     (. .)))
@@ -496,7 +496,7 @@
     (. .)))
 
 (ROOT
-  (NP (NNP (Justin) (NNP Lane) (NNP New) (NNP York) (NNP Times) (NNP ))))
+  (NP (NNP [Justin) (NNP Lane) (NNP New) (NNP York) (NNP Times) (NNP ])))
 
 (ROOT
   (NP

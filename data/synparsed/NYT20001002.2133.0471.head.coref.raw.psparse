@@ -285,20 +285,23 @@
 (ROOT
   (S (CC But)
     (PP (IN over)
+      (NP
+        (NP (CD 23) (NN postseason) (NNS games))
+        (PP (IN in)
+          (NP (PRP$ his) (NN career)))))
+    (PRN (: -)
       (S
-        (NP (CD 23) (NN postseason))
-        (ADVP (NNS games)
-          (PP (IN in)
-            (NP (PRP$ his)
-              (NX
-                (NP (NN career) (CD 20))
-                (PP (IN with)
-                  (NP (DT the) (NNPS Pirates)))))
-            (ADVP
-              (NP (RB nearly) (DT a) (NN decade))
-              (RB ago)))
-          (PP (IN in)
-            (NP (CD three))))
+        (NP
+          (NP (CD 20))
+          (PP (IN with)
+            (NP
+              (NP (DT the) (NNPS Pirates))
+              (PP
+                (ADVP
+                  (NP (RB nearly) (DT a) (NN decade))
+                  (RB ago))
+                (IN in)
+                (NP (CD three))))))
         (VP (VBG losing)
           (NP
             (NP (NNP National) (NNP League) (NNP Championship) (NNP Series))
@@ -310,16 +313,17 @@
               (PP (IN in)
                 (NP (DT a) (CD 1997) (NN division) (NN series) (NN sweep)))))
           (PP (IN by)
-            (NP (DT the) (NNP Florida) (NNPS Marlins))))))
+            (NP (DT the) (NNP Florida) (NNPS Marlins)))))
+      (: -))
     (NP (NNS Bonds))
     (VP (VBZ has)
       (VP (VBN batted)
         (NP
-          (QP (RB only) (CD .200) (CD (16)))
+          (QP (RB only) (CD .200) (CD [16)))
         (PP (IN for)
           (NP
             (NP
-              (NP (CD 80) (NNS )))
+              (NP (CD 80) (NNS ]))
               (PP (IN with)
                 (NP
                   (QP (RB only) (CD one))
@@ -347,7 +351,7 @@
     (NP
       (NP (CD two))
       (PP (IN against)
-        (NP (DT the) (NNP Atlanta) (NNPS Braves) (NN (in)))
+        (NP (DT the) (NNP Atlanta) (NNPS Braves) (NN [in)))
       (SBAR
         (WHNP (WDT which))
         (S
@@ -360,15 +364,15 @@
                 (CD .261)))
             (PP (IN in)
               (NP
-                (NP (CD '92) (NNS )))
+                (NP (CD '92) (NNS ]))
                 (CC and)
                 (NP (CD one))))
             (PP (IN against)
               (NP
-                (NP (DT the) (NNP Cincinnati) (NNP Reds) (CD (.167))
+                (NP (DT the) (NNP Cincinnati) (NNP Reds) (CD [.167))
                 (PP (IN in)
                   (NP
-                    (QP (CD '90) (CD ),))
+                    (QP (CD '90) (CD ],))
                     (PRP$ his) (JJ overall) (NN average)))))))))
     (VP (VBD was)
       (NP (CD .191)))
@@ -430,10 +434,10 @@
     (NP (NNP Babe) (NNP Ruth))
     (VP (VBD batted)
       (NP
-        (NP (CD .118) (NN (two))
+        (NP (CD .118) (NN [two))
         (PP (IN for)
           (NP
-            (NP (CD 17) (NNS )))
+            (NP (CD 17) (NNS ]))
             (PP (IN in)
               (NP (DT the) (JJ five-game) (NNP 1922) (NNP World) (NNP Series))))))
       (SBAR (IN that)
@@ -556,10 +560,10 @@
           (NP
             (NP (JJ such) (JJ prestigious) (NNS names))
             (PP (IN as)
-              (NP (NNP Stan) (NNP Musial) (NNPS ('40s) (NNP ),) (NNP Ted) (NNP Williams) (NNPS ('50s) (NNP ),) (NNP Willie) (NNP Mays) (NNPS ('60s) (NNP ),) (NNP Pete) (NNP Rose) (NNP ('70s) (NNP ))
+              (NP (NNP Stan) (NNP Musial) (NNPS ['40s) (NNP ],) (NNP Ted) (NNP Williams) (NNPS ['50s) (NNP ],) (NNP Willie) (NNP Mays) (NNPS ['60s) (NNP ],) (NNP Pete) (NNP Rose) (NNP ['70s) (NNP ])
                 (CC and)
-                (NNP Mike) (NNP Schmidt) (NNS ('80s))))
-          (ADJP (JJ ).))
+                (NNP Mike) (NNP Schmidt) (NNS ['80s))))
+          (ADJP (JJ ].))
           (PP (IN In)
             (NP
               (NP (CD 10) (NNS years))
@@ -570,21 +574,23 @@
     (, ,)
     (NP (PRP he))
     (VP (VBD received)
-      (NP (DT the) (JJS most) (NNS points))
-      (NP (CD 1,895))
-      (, ,)
-      (ADVP
-        (ADVP
-          (QP (RB nearly) (CD 500))
-          (RBR more))
-        (PP (IN than)
+      (NP
+        (NP (DT the) (JJS most) (NNS points))
+        (: -)
+        (NP
+          (NP (CD 1,895))
+          (, ,)
           (NP
-            (NP (DT the) (JJ next) (JJS highest) (NN vote-getter))
-            (, ,)
-            (NP
-              (NP (NNP Frank) (NNP Thomas))
-              (PP (IN of)
-                (NP (DT the) (NNP Chicago) (NNP White) (NNPS Sox))))))))
+            (QP (RB nearly) (CD 500))
+            (JJR more))))
+      (PP (IN than)
+        (NP
+          (NP (DT the) (JJ next) (JJS highest) (NN vote-getter))
+          (, ,)
+          (NP
+            (NP (NNP Frank) (NNP Thomas))
+            (PP (IN of)
+              (NP (DT the) (NNP Chicago) (NNP White) (NNPS Sox)))))))
     (. .)))
 
 (ROOT

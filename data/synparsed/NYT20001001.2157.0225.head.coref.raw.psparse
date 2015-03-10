@@ -154,24 +154,23 @@
     (NP (DT a) (JJ prime) (NN battleground))
     (VP (MD will)
       (VP (VB be)
-        (NP
-          (NP (DT the) (JJ constitutional) (NN allocation))
+        (NP (DT the) (JJ constitutional) (NN allocation))
+        (PP
           (PP (IN of)
+            (NP (NN power)))
+          (: -)
+          (PP (IN between)
             (NP
-              (NP (NN power))
-              (PP
-                (PP (IN between)
-                  (NP
-                    (NP (DT the) (JJ federal) (NN government))
-                    (CC and)
-                    (NP (DT the) (NNS states))))
-                (, ,)
-                (CC and)
-                (PP (IN between)
-                  (NP
-                    (NP (NNP Congress))
-                    (CC and)
-                    (NP (JJ federal) (JJ regulatory) (NNS agencies))))))))))
+              (NP (DT the) (JJ federal) (NN government))
+              (CC and)
+              (NP (DT the) (NNS states))))
+          (, ,)
+          (CC and)
+          (PP (IN between)
+            (NP
+              (NP (NNP Congress))
+              (CC and)
+              (NP (JJ federal) (JJ regulatory) (NNS agencies)))))))
     (. .)))
 
 (ROOT

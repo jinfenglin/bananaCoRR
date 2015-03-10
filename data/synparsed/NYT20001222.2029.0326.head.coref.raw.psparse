@@ -60,24 +60,26 @@
     (: ;)))
 
 (ROOT
-  (S
+  (X
     (NP (NNP TORONTO))
-    (VP (VBZ Unwilling)
-      (S
-        (VP (TO to)
-          (VP (VB fight)
-            (NP
-              (NP (DT a) (NN counterbid))
-              (SBAR
-                (WHNP (WDT that))
-                (S
-                  (ADVP (RB so) (RB far))
-                  (VP (VBZ is)
-                    (ADVP (RB only))
-                    (NP
-                      (NP (NN speculation))
-                      (, ,)
-                      (NP (NNP C.I.) (NNP Fund) (NNP Management) (NNP Inc)))))))))))
+    (: -)
+    (FRAG
+      (ADJP (JJ Unwilling)
+        (S
+          (VP (TO to)
+            (VP (VB fight)
+              (NP
+                (NP (DT a) (NN counterbid))
+                (SBAR
+                  (WHNP (WDT that))
+                  (S
+                    (ADVP (RB so) (RB far))
+                    (VP (VBZ is)
+                      (ADVP (RB only))
+                      (NP
+                        (NP (NN speculation))
+                        (, ,)
+                        (NP (NNP C.I.) (NNP Fund) (NNP Management) (NNP Inc))))))))))))
     (. .)))
 
 (ROOT

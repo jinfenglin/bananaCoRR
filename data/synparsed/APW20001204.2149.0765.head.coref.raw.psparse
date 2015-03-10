@@ -17,25 +17,28 @@
     (. .)))
 
 (ROOT
-  (S
-    (NP (NNP (AP) (NNP )) (NNP Georgia))
-    (VP (VBD fired)
-      (NP (NN football) (NN coach) (NNP Jim) (NNP Donnan) (NNP Monday))
-      (PP (IN after)
-        (NP
-          (NP (DT a)
-            (ADJP (JJ disappointing)
-              (NP (CD 7-4)))
-            (NN season))
-          (SBAR
-            (WHNP (WDT that))
-            (S
-              (VP (VBD started)
-                (SBAR (IN with)
-                  (S
-                    (NP (DT the) (NNPS Bulldogs))
-                    (VP (VBD ranked)
-                      (INTJ (UH No)))))))))))
+  (FRAG
+    (NP (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP (NNP Georgia))
+      (VP (VBD fired)
+        (NP (NN football) (NN coach) (NNP Jim) (NNP Donnan) (NNP Monday))
+        (PP (IN after)
+          (NP
+            (NP (DT a)
+              (ADJP (JJ disappointing)
+                (NP (CD 7-4)))
+              (NN season))
+            (SBAR
+              (WHNP (WDT that))
+              (S
+                (VP (VBD started)
+                  (SBAR (IN with)
+                    (S
+                      (NP (DT the) (NNPS Bulldogs))
+                      (VP (VBD ranked)
+                        (INTJ (UH No))))))))))))
     (. .)))
 
 (ROOT

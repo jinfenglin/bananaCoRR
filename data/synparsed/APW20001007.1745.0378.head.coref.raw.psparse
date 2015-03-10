@@ -10,29 +10,30 @@
   (NP (NNP Milosesvic) (NNP May) (NNP Undermine) (NNPS Reforms)))
 
 (ROOT
-  (S
-    (ADVP (RB BELGRADE))
-    (, ,)
-    (NP
-      (NP (NNP Yugoslavia) (NNP (AP) (NNP )) (NNP Slobodan) (NNP Milosevic) (POS 's))
-      (NNS plans)
-      (S
-        (VP (TO to)
-          (VP (VB remain)
-            (ADJP (JJ active))
-            (PP (IN in)
-              (NP (NNS politics)))))))
-    (VP (MD could)
-      (VP (VB spell)
-        (NP (NN trouble))
-        (PP (IN for)
-          (NP
+  (NP
+    (NP (NNP BELGRADE) (, ,) (NNP Yugoslavia) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP
+        (NP (NNP Slobodan) (NNP Milosevic) (POS 's))
+        (NNS plans)
+        (S
+          (VP (TO to)
+            (VP (VB remain)
+              (ADJP (JJ active))
+              (PP (IN in)
+                (NP (NNS politics)))))))
+      (VP (MD could)
+        (VP (VB spell)
+          (NP (NN trouble))
+          (PP (IN for)
             (NP
-              (NP (NNP Yugoslavia) (POS 's))
-              (ADJP (RB newly) (VBN elected))
-              (NN president))
-            (CC and)
-            (NP (DT the) (JJ victorious) (JJ pro-democracy) (NN coalition))))))
+              (NP
+                (NP (NNP Yugoslavia) (POS 's))
+                (ADJP (RB newly) (VBN elected))
+                (NN president))
+              (CC and)
+              (NP (DT the) (JJ victorious) (JJ pro-democracy) (NN coalition)))))))
     (. .)))
 
 (ROOT
@@ -146,30 +147,35 @@
         (VP (TO to)
           (VP (VB retain)
             (NP (JJ enough) (JJ residual) (NN power))
-            (UCP
-              (S
-                (VP (TO to)
-                  (VP (VB block)
-                    (NP
-                      (NP (NNP Kostunica) (POS 's))
-                      (NNS reforms)))))
-              (CC and)
-              (PP (IN through)
-                (NP
-                  (NP (NNS proxies))
+            (S
+              (VP (TO to)
+                (VP (VB block)
                   (SBAR
-                    (WHNP (WP who))
                     (S
-                      (ADVP (RB still))
-                      (VP (VBP control)
-                        (S
-                          (NP (NNP Serbia) (POS 's))
-                          (VP (VB police)
+                      (NP (NNP Kostunica))
+                      (VP (VBZ 's)
+                        (UCP
+                          (NP (NNS reforms))
+                          (CC and)
+                          (PRN (: -)
+                            (PP (IN through)
+                              (NP
+                                (NP (NNS proxies))
+                                (SBAR
+                                  (WHNP (WP who))
+                                  (S
+                                    (ADVP (RB still))
+                                    (VP (VBP control)
+                                      (NP
+                                        (NP (NNP Serbia) (POS 's))
+                                        (NN police)))))))
+                            (: -))
+                          (PP
                             (NP
                               (NP (NNP Yugoslavia) (POS 's))
                               (NN reintegration))
-                            (PP (IN into)
-                              (NP (DT the) (NN world)))))))))))))))
+                            (IN into)
+                            (NP (DT the) (NN world))))))))))))))
     (. .)))
 
 (ROOT
@@ -194,11 +200,11 @@
                     (SBAR
                       (S
                         (NP (DT the) (NN police))
-                        (VP (VBD (and)
+                        (VP (VBD [and)
                           (SBAR
                             (S
                               (NP
-                                (NP (NNP )) (NNP creating) (NN chaos) (NNP ,'') (NNP Zoran) (NNP Djindjic))
+                                (NP (NNP ]) (NNP creating) (NN chaos) (NNP ,'') (NNP Zoran) (NNP Djindjic))
                                 (, ,)
                                 (NP
                                   (NP (NN head))

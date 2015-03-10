@@ -55,33 +55,35 @@
     (: ;)))
 
 (ROOT
-  (S
-    (ADVP (RB JERUSALEM))
-    (NP
-      (NP (DT The) (NN commander))
-      (PP (IN of)
-        (NP
-          (NP (JJ Israeli) (NNS troops))
-          (PP (IN in)
-            (NP (DT the) (NNP West) (NNP Bank))))))
-    (VP (VBD said)
-      (SBAR
-        (S
-          (NP (EX there))
-          (VP (VBD was)
-            (NP
-              (NP (DT a) (JJ simple) (NN goal))
-              (PP (TO to)
-                (NP
-                  (NP (DT the) (NN helicopter) (NN assassination))
-                  (PP (IN on)
-                    (NP
-                      (NP (NNP Thursday))
-                      (PP (IN of)
-                        (NP
-                          (NP (DT a) (NN gun))
-                          (VP (VBG -wielding)
-                            (NP (JJ local) (JJ Palestinian) (NN leader))))))))))))))
+  (FRAG
+    (NP (NNP JERUSALEM))
+    (: -)
+    (S
+      (NP
+        (NP (DT The) (NN commander))
+        (PP (IN of)
+          (NP
+            (NP (JJ Israeli) (NNS troops))
+            (PP (IN in)
+              (NP (DT the) (NNP West) (NNP Bank))))))
+      (VP (VBD said)
+        (SBAR
+          (S
+            (NP (EX there))
+            (VP (VBD was)
+              (NP
+                (NP (DT a) (JJ simple) (NN goal))
+                (PP (TO to)
+                  (NP
+                    (NP (DT the) (NN helicopter) (NN assassination))
+                    (PP (IN on)
+                      (NP
+                        (NP (NNP Thursday))
+                        (PP (IN of)
+                          (NP
+                            (NP (DT a) (NN gun))
+                            (VP (VBG -wielding)
+                              (NP (JJ local) (JJ Palestinian) (NN leader)))))))))))))))
     (. .)))
 
 (ROOT
@@ -693,32 +695,35 @@
 (ROOT
   (S
     (S
-      (NP (NNP Shaked))
-      (VP (VBD added)))
-    (: :)
+      (S
+        (NP (NNP Shaked))
+        (VP (VBD added)))
+      (: :)
+      (S
+        (NP (NN ``In))
+        (NP (DT the) (JJ short) (NN term)))
+      (: -)
+      (CC and)
+      (S
+        (NP (DT this))
+        (VP (VBD was)
+          (ADVP (RB also))
+          (NP
+            (NP (DT the) (NN assessment))
+            (PP (IN of)
+              (NP (DT the) (NNP General) (NNP Staff)))))))
+    (: -)
     (S
-      (NP
-        (NP (JJ ``In) (DT the) (JJ short) (NN term))
-        (CC and)
-        (NP (DT this)))
-      (VP (VBD was)
-        (ADVP (RB also))
-        (NP
-          (NP (DT the) (NN assessment))
-          (PP (IN of)
-            (NP (DT the) (NNP General) (NNP Staff)))
-          (SBAR
-            (S
-              (NP (DT the) (NNPS Palestinians))
-              (VP (MD will)
-                (VP (VB step)
-                  (PRT (RP up))
-                  (NP
-                    (NP (PRP$ their) (NNS hostilities))
-                    (PP (IN in)
-                      (NP (NN response))))
-                  (PP (TO to)
-                    (NP (DT the) (NN slaying))))))))))
+      (NP (DT the) (NNPS Palestinians))
+      (VP (MD will)
+        (VP (VB step)
+          (PRT (RP up))
+          (NP
+            (NP (PRP$ their) (NNS hostilities))
+            (PP (IN in)
+              (NP (NN response))))
+          (PP (TO to)
+            (NP (DT the) (NN slaying))))))
     (. .)))
 
 (ROOT

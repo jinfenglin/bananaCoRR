@@ -20,36 +20,39 @@
         (NP (NNP Nerve) (NNP Gas) (NNP Plan))))))
 
 (ROOT
-  (S
-    (NP (NNP DENVER) (NNP (AP) (CD )) (NNP State)
-      (CC and)
-      (NNP Army) (NNS officials))
-    (VP (VBD agreed)
-      (NP (NNP Friday))
-      (PP (IN on)
-        (NP (DT a) (NN plan)
-          (S
-            (VP (TO to)
-              (VP (VB destroy)
-                (NP
-                  (NP (CD six) (NNS ``bomblets))
-                  (VP (VBG ,'')
-                    (NP
-                      (QP (IN at) (JJS least) (PDT half)))
-                    (S
-                      (VP (VBG containing)
-                        (NP
-                          (NP (JJ deadly) (NN sarin) (NN nerve) (NN gas))
-                          (, ,)
-                          (SBAR
-                            (WHNP (WDT that))
-                            (S
-                              (VP (VBD were)
-                                (VP (VBN found)
-                                  (PP (IN in)
-                                    (NP (DT a) (NN scrap) (NN metal) (NN heap)))
-                                  (PP (IN at)
-                                    (NP (DT the) (NNP Rocky) (NNP Mountain) (NNP Arsenal))))))))))))))))))
+  (FRAG
+    (NP (NNP DENVER) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP (NNP State)
+        (CC and)
+        (NNP Army) (NNS officials))
+      (VP (VBD agreed)
+        (NP (NNP Friday))
+        (PP (IN on)
+          (NP (DT a) (NN plan)
+            (S
+              (VP (TO to)
+                (VP (VB destroy)
+                  (NP
+                    (NP (CD six) (NNS ``bomblets))
+                    (VP (VBG ,'')
+                      (NP
+                        (QP (IN at) (JJS least) (PDT half)))
+                      (S
+                        (VP (VBG containing)
+                          (NP
+                            (NP (JJ deadly) (NN sarin) (NN nerve) (NN gas))
+                            (, ,)
+                            (SBAR
+                              (WHNP (WDT that))
+                              (S
+                                (VP (VBD were)
+                                  (VP (VBN found)
+                                    (PP (IN in)
+                                      (NP (DT a) (NN scrap) (NN metal) (NN heap)))
+                                    (PP (IN at)
+                                      (NP (DT the) (NNP Rocky) (NNP Mountain) (NNP Arsenal)))))))))))))))))))
     (. .)))
 
 (ROOT

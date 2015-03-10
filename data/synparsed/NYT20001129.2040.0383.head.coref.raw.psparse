@@ -29,16 +29,16 @@
         (VP (VBG &QL)))
       (: ;)
       (S
-        (VP (VBG (Repeating)
+        (VP (VBG [Repeating)
           (S (: ;)
             (S
               (NP (DT this))
               (VP (VBZ is)
                 (ADVP (RB now))
                 (NP
-                  (NP (DT a) (NNP New) (NNP York) (NNPS Times) (JJ front-page) (NN story) (NN )) (NN &QL))
+                  (NP (DT a) (NNP New) (NNP York) (NNPS Times) (JJ front-page) (NN story) (NN ]) (NN &QL))
                   (: ;)
-                  (NP (NNP (ART) (NNP ADV)))))
+                  (NP (NNP [ART) (NNP ADV)))))
             (: :)
             (S
               (NP (NNP Graphic))
@@ -65,7 +65,7 @@
                   (CC or)
                   (CD 888-346-9867))
                 (NP
-                  (NP (NNP .)) (NNP &QL))
+                  (NP (NNP .]) (NNP &QL))
                   (: ;)
                   (NP (NNP &UR))
                   (: ;))
@@ -90,61 +90,62 @@
     (: ;)))
 
 (ROOT
-  (S
-    (ADVP (RB TALLAHASSEE))
-    (, ,)
-    (NP
-      (NP (NNP Fla.) (NNP Lawyers))
-      (PP (IN for)
-        (NP (NNP Vice) (NNP President) (NNP Al) (NNP Gore))))
-    (VP (VBD said)
-      (NP (NNP Wednesday))
-      (SBAR
-        (S
-          (S
-            (NP
-              (NP (PRP$ their) (JJ only) (NN chance))
-              (PP (IN for)
-                (NP
-                  (NP (NN victory))
-                  (PP (IN in)
-                    (NP
-                      (NP (PRP$ his) (NN contest))
-                      (PP (IN of)
-                        (NP (DT the) (NNP Florida) (NN election))))))))
-            (VP (MD would)
-              (VP (VB be)
-                (VP (VBN shattered)
-                  (SBAR (IN if)
-                    (S
-                      (NP (PRP they))
-                      (VP (VBP have)
-                        (S
-                          (VP (TO to)
-                            (VP (VB wait)
-                              (PP (IN until)
-                                (NP (NNP Saturday))))))
-                        (S
-                          (VP (TO to)
-                            (VP (VB begin)
-                              (S
-                                (VP (VBG counting)
-                                  (NP (JJ disputed) (NNS ballots))))))))))))))
-          (, ,)
-          (CC and)
-          (S
-            (NP (PRP they))
-            (VP (VBD began)
-              (NP (DT an) (NN appeal))
-              (PP (TO to)
-                (NP (DT the) (NNP Florida) (NNP Supreme) (NNP Court)))
-              (S
-                (VP (TO to)
-                  (VP (VB do)
-                    (NP (DT the) (NN counting))
-                    (NP (PRP itself)))))))))
+  (NP
+    (NP (NNP TALLAHASSEE) (, ,) (NNP Fla.))
+    (: -)
+    (S
+      (S
+        (NP
+          (NP (NNS Lawyers))
+          (PP (IN for)
+            (NP (NNP Vice) (NNP President) (NNP Al) (NNP Gore))))
+        (VP (VBD said)
+          (NP (NNP Wednesday))
+          (SBAR
+            (S
+              (NP
+                (NP (PRP$ their) (JJ only) (NN chance))
+                (PP (IN for)
+                  (NP
+                    (NP (NN victory))
+                    (PP (IN in)
+                      (NP
+                        (NP (PRP$ his) (NN contest))
+                        (PP (IN of)
+                          (NP (DT the) (NNP Florida) (NN election))))))))
+              (VP (MD would)
+                (VP (VB be)
+                  (VP (VBN shattered)
+                    (SBAR (IN if)
+                      (S
+                        (NP (PRP they))
+                        (VP (VBP have)
+                          (S
+                            (VP (TO to)
+                              (VP (VB wait)
+                                (PP (IN until)
+                                  (NP (NNP Saturday))))))
+                          (S
+                            (VP (TO to)
+                              (VP (VB begin)
+                                (S
+                                  (VP (VBG counting)
+                                    (NP (JJ disputed) (NNS ballots)))))))))))))))))
       (, ,)
-      (ADVP (RB immediately)))
+      (CC and)
+      (S
+        (NP (PRP they))
+        (VP (VBD began)
+          (NP (DT an) (NN appeal))
+          (PP (TO to)
+            (NP (DT the) (NNP Florida) (NNP Supreme) (NNP Court)))
+          (S
+            (VP (TO to)
+              (VP (VB do)
+                (NP (DT the) (NN counting))
+                (NP (PRP itself))))))
+        (, ,)
+        (ADVP (RB immediately))))
     (. .)))
 
 (ROOT
@@ -251,29 +252,30 @@
         (NP (NNP Circuit) (NNP Judge) (NNP N.) (NNP Sanders) (NNP Sauls))
         (VP (TO to)
           (VP (VB order)
-            (NP
+            (S
               (NP
-                (QP (CD 1.1) (CD million))
-                (NNS ballots))
-              (SBAR
-                (S
-                  (NP
-                    (NP (DT every) (NN vote) (NN cast))
-                    (PP (IN in)
-                      (NP (NNP Miami-Dade)
-                        (CC and)
-                        (NNP Palm) (NNP Beach) (NNS counties))))
-                  (VP
-                    (VP (VBD brought)
-                      (PRT (RP up))
-                      (PP (IN from)
-                        (NP (JJ south) (NNP Florida))))
-                    (CC and)
-                    (VP (VBD placed)
-                      (PP (IN in)
-                        (NP
-                          (NP (DT the) (NN court) (POS 's))
-                          (NN custody))))))))))))
+                (NP
+                  (QP (CD 1.1) (CD million))
+                  (NNS ballots))
+                (: -)
+                (NP
+                  (NP (DT every) (NN vote) (NN cast))
+                  (PP (IN in)
+                    (NP (NNP Miami-Dade)
+                      (CC and)
+                      (NNP Palm) (NNP Beach) (NNS counties))))
+                (: -))
+              (VP
+                (VP (VBN brought)
+                  (PRT (RP up))
+                  (PP (IN from)
+                    (NP (JJ south) (NNP Florida))))
+                (CC and)
+                (VP (VBN placed)
+                  (PP (IN in)
+                    (NP
+                      (NP (DT the) (NN court) (POS 's))
+                      (NN custody))))))))))
     (. .)))
 
 (ROOT

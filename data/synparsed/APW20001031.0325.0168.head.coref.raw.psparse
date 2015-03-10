@@ -15,36 +15,38 @@
       (NP (NN Growth)))))
 
 (ROOT
-  (S
-    (NP
+  (FRAG
+    (NP (NNP TOKYO) (NNP [AP) (NNP ]))
+    (: -)
+    (S
       (NP
-        (NP (NNP TOKYO) (NNP (AP) (NNP )) (NNP Japan) (POS 's))
-        (JJ central) (NN bank))
-      (PP (IN on)
-        (NP (NNP Tuesday))))
-    (VP (VBP forecast)
-      (S
         (NP
-          (NP (JJ strong) (JJ economic) (NN growth))
-          (PP (IN of)
-            (NP
+          (NP (NNP Japan) (POS 's))
+          (JJ central) (NN bank))
+        (PP (IN on)
+          (NP (NNP Tuesday))))
+      (VP (VBD forecast)
+        (NP
+          (NP
+            (NP (JJ strong) (JJ economic) (NN growth))
+            (PP (IN of)
               (NP
                 (QP (IN between) (CD 1.9))
-                (NN percent))
-              (CC and)
-              (NP
-                (NP (CD 2.3) (NN percent))
-                (PP (IN for)
-                  (NP
-                    (NP (DT the) (JJ current) (JJ fiscal) (NN year))
-                    (ADVP
-                      (NP (DT a) (NN prediction))
-                      (RB far))))))))
-        (ADJP (RBR more) (JJ optimistic)
-          (PP (IN than)
+                (NN percent))))
+          (CC and)
+          (NP
             (NP
-              (NP (DT the) (NN government) (POS 's))
-              (NNS expectations))))))
+              (NP (CD 2.3) (NN percent))
+              (PP (IN for)
+                (NP (DT the) (JJ current) (JJ fiscal) (NN year))))
+            (: -)
+            (NP
+              (NP (DT a) (NN prediction))
+              (ADJP (RB far) (RBR more) (JJ optimistic)))))
+        (PP (IN than)
+          (NP
+            (NP (DT the) (NN government) (POS 's))
+            (NNS expectations)))))
     (. .)))
 
 (ROOT

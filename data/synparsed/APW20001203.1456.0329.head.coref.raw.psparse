@@ -17,7 +17,11 @@
     (. .)))
 
 (ROOT
-  (NP (NNP (AP) (NNP )) (NNP Republican) (NNP Rep) (. .)))
+  (NP
+    (NP (NNP [AP) (NNP ]))
+    (: -)
+    (NP (NNP Republican) (NNP Rep))
+    (. .)))
 
 (ROOT
   (S

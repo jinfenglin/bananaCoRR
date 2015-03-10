@@ -45,7 +45,7 @@ with open(YAGO_PATH, "r") as f, open("log.txt", "w") as log:
         entry = name[1:-1].lower()
         # remove parenthesized explanation at the end of entry name
         if entry.endswith(")"):
-            log.write("paren: " + entry + "\n")
+            # log.write("paren: " + entry + "\n")
             entry = re.sub(r'_?\([^)]+\)$', '', entry)
         #try:
             #if re.search(entry, r'^\.+'):

@@ -58,55 +58,58 @@
     (: ;)))
 
 (ROOT
-  (S
+  (NP
+    (NP (NNP MIAMI))
+    (: -)
     (S
-      (NP (NNP MIAMI))
-      (VP (VBG Seeking)
-        (S
-          (VP (TO to)
-            (VP (VB mend)
-              (NP (JJ tattered) (NNS relations))
-              (PP (IN with)
-                (NP
-                  (NP (PRP$ his) (NN opposition))
-                  (CC and)
-                  (NP (DT the) (JJ international) (NN community)))))))))
-    (, ,)
-    (NP
-      (NP
-        (NP (NNP Haiti) (POS 's))
-        (NN president-elect))
-      (, ,)
-      (NP (NNP Jean-Bertrand) (NNP Aristide))
-      (, ,))
-    (VP (VBZ has)
-      (VP (VBN assured)
-        (NP (NNP President) (NNP Clinton))
-        (SBAR (IN that)
+      (S
+        (VP (VBG Seeking)
           (S
-            (NP (PRP he))
-            (VP (VBZ is)
-              (ADJP (VBN committed)
-                (PP (TO to)
-                  (NP
-                    (NP (DT a) (JJ broad) (NN range))
-                    (PP (IN of)
-                      (NP (JJ governmental)
-                        (CC and)
-                        (JJ political) (NNS reforms)))
-                    (, ,)
-                    (PP (VBG including)
+            (VP (TO to)
+              (VP (VB mend)
+                (NP (JJ tattered) (NNS relations))
+                (PP (IN with)
+                  (NP (PRP$ his) (NN opposition))))))))
+      (CC and)
+      (S
+        (NP
+          (NP (DT the) (JJ international) (NN community))
+          (, ,)
+          (NP
+            (NP
+              (NP (NNP Haiti) (POS 's))
+              (NN president-elect))
+            (, ,)
+            (NP (NNP Jean-Bertrand) (NNP Aristide)))
+          (, ,))
+        (VP (VBZ has)
+          (VP (VBN assured)
+            (NP (NNP President) (NNP Clinton))
+            (SBAR (IN that)
+              (S
+                (NP (PRP he))
+                (VP (VBZ is)
+                  (ADJP (VBN committed)
+                    (PP (TO to)
                       (NP
-                        (NP (DT a) (NN runoff))
-                        (PP (IN for)
+                        (NP (DT a) (JJ broad) (NN range))
+                        (PP (IN of)
+                          (NP (JJ governmental)
+                            (CC and)
+                            (JJ political) (NNS reforms)))
+                        (, ,)
+                        (PP (VBG including)
                           (NP
-                            (NP (CD 10) (NNP contested) (NNP Senate) (NNS seats))
-                            (SBAR
-                              (WHNP (WDT that))
-                              (S
-                                (VP (VBD had)
-                                  (VP (VBN caused)
-                                    (NP (DT an) (JJ electoral) (NN crisis))))))))))))))))))
+                            (NP (DT a) (NN runoff))
+                            (PP (IN for)
+                              (NP
+                                (NP (CD 10) (NNP contested) (NNP Senate) (NNS seats))
+                                (SBAR
+                                  (WHNP (WDT that))
+                                  (S
+                                    (VP (VBD had)
+                                      (VP (VBN caused)
+                                        (NP (DT an) (JJ electoral) (NN crisis))))))))))))))))))))
     (. .)))
 
 (ROOT

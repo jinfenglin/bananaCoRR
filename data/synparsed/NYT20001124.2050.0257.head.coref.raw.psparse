@@ -59,14 +59,14 @@
 
 (ROOT
   (S
-    (PP
-      (NP (NNP HONG) (NNP KONG))
-      (IN For)
-      (NP
-        (NP (JJS most))
-        (PP (IN of)
-          (NP (DT this) (NN year)))))
-    (, ,)
+    (NP (NNP HONG) (NNP KONG))
+    (PRN (, -)
+      (PP (IN For)
+        (NP
+          (NP (JJS most))
+          (PP (IN of)
+            (NP (DT this) (NN year)))))
+      (, ,))
     (NP
       (NP (NNP Asia) (POS 's))
       (NNS economies))
@@ -76,24 +76,27 @@
           (NP (DT a) (NN sort))
           (PP (IN of)
             (S
-              (VP (VBG levitating)
-                (NP (NN act) (VBG growing))
-                (PP (IN by)
-                  (NP (JJ double-digit) (NNS rates)))
-                (NP (NN month))
-                (PP (IN after)
-                  (NP (NN month)))))))
-        (SBAR (RB even) (IN as)
-          (S
-            (NP (NNS economists))
-            (VP (VBD predicted)
-              (SBAR
-                (S
-                  (NP (PRP they))
-                  (VP (MD would)
-                    (VP (VB fall)
-                      (PP (TO to)
-                        (NP (NN earth))))))))))))
+              (VP
+                (VP (VBG levitating)
+                  (NP (NN act)))
+                (: -)
+                (VP (VBG growing)
+                  (PP (IN by)
+                    (NP (JJ double-digit) (NNS rates)))
+                  (NP (NN month))
+                  (PP (IN after)
+                    (NP (NN month))))
+                (SBAR (RB even) (IN as)
+                  (S
+                    (NP (NNS economists))
+                    (VP (VBD predicted)
+                      (SBAR
+                        (S
+                          (NP (PRP they))
+                          (VP (MD would)
+                            (VP (VB fall)
+                              (PP (TO to)
+                                (NP (NN earth))))))))))))))))
     (. .)))
 
 (ROOT
@@ -232,7 +235,7 @@
   (S
     (NP
       (NP (JJ Several) (JJ Asian) (NNS countries))
-      (RRC
+      (PRN (: -)
         (ADVP (RB notably))
         (NP
           (NP (DT the) (NNPS Philippines))
@@ -240,7 +243,8 @@
           (NP (NNP Taiwan))
           (, ,)
           (CC and)
-          (NP (NNP Indonesia)))))
+          (NP (NNP Indonesia)))
+        (: -)))
     (VP (VBP have)
       (VP (VBN been)
         (VP (VBN gripped)
@@ -362,27 +366,29 @@
 
 (ROOT
   (S
-    (PP (IN On)
-      (NP (NNP Tuesday)))
-    (, ,)
-    (NP (NNP South) (NNP Korea))
-    (VP (VBD reported)
-      (NP (DT a) (JJ 9.2) (NN percent) (NN increase))
-      (PP (IN in)
-        (NP (PRP$ its) (JJ third-quarter) (NN output)))
-      (S
-        (VP
-          (VP (VBG beating)
-            (NP
-              (NP (DT the) (NNS estimates))
-              (PP (IN of)
-                (NP (JJS most) (NNS analysts)))))
-          (CC and)
-          (VP (VBG extending)
-            (NP
-              (NP (DT a) (NN string))
-              (PP (IN of)
-                (NP (JJ powerful) (NNS quarters))))))))
+    (S
+      (PP (IN On)
+        (NP (NNP Tuesday)))
+      (, ,)
+      (NP (NNP South) (NNP Korea))
+      (VP (VBD reported)
+        (NP (DT a) (JJ 9.2) (NN percent) (NN increase))
+        (PP (IN in)
+          (NP (PRP$ its) (JJ third-quarter) (NN output)))))
+    (: -)
+    (S
+      (VP
+        (VP (VBG beating)
+          (NP
+            (NP (DT the) (NNS estimates))
+            (PP (IN of)
+              (NP (JJS most) (NNS analysts)))))
+        (CC and)
+        (VP (VBG extending)
+          (NP
+            (NP (DT a) (NN string))
+            (PP (IN of)
+              (NP (JJ powerful) (NNS quarters)))))))
     (. .)))
 
 (ROOT
@@ -817,16 +823,16 @@
           (WHNP (WP who))
           (S
             (VP (VBP predict)
+              (ADVP (RB dramatically))
               (S
-                (VP
-                  (ADVP (RB dramatically))
-                  (VBG slowing)
-                  (S
+                (VP (VBG slowing)
+                  (NP
                     (NP (NN growth))
-                    (NP
-                      (NP (DT the) (JJ so-called) (JJ hard) (NN landing))
-                      (PP (IN for)
-                        (NP (DT the) (JJ American) (NN economy))))))))))))
+                    (: -)
+                    (NP (DT the) (JJ so-called) (JJ hard) (NN landing))
+                    (: -))
+                  (PP (IN for)
+                    (NP (DT the) (JJ American) (NN economy))))))))))
     (. .)))
 
 (ROOT

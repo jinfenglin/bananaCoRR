@@ -31,7 +31,7 @@
 
 (ROOT
   (NP
-    (NP (NNP (ART) (NNP ADV))
+    (NP (NNP [ART) (NNP ADV))
     (: :)
     (S
       (NP (NNP Photo) (NNP NYT21))
@@ -55,17 +55,17 @@
                 (CC or)
                 (CD 888-346-9867))
               (NP
-                (NP (NNP .)) (NNP &QL))
+                (NP (NNP .]) (NNP &QL))
                 (: ;)
                 (S
                   (S
-                    (VP (VBG (EDS)))
+                    (VP (VBG [EDS)))
                   (: :)
                   (S
                     (NP (NNP Story))
                     (VP (MD may)
                       (VP (VB update)
-                        (NP (JJ )) (NNS &QL)))))
+                        (NP (JJ ]) (NNS &QL)))))
                   (: ;)
                   (S
                     (VP (VBG &UR)))
@@ -375,47 +375,42 @@
     (. .)))
 
 (ROOT
-  (S
-    (PP (IN In)
-      (NP (NN addition)))
-    (, ,)
-    (NP (CD three) (NN series))
-    (VP (VBP ``The)
-      (NP
-        (NP (NNP West) (NNP Wing) (NNP ,'') (NNP ``Law))
+  (FRAG
+    (PP (IN In))
+    (NP
+      (NP (NN addition))
+      (, ,)
+      (NP (CD three) (NN series))
+      (: -)
+      (NP (JJ ``The) (NNP West) (NNP Wing) (NNP ,'') (NN ``Law)
         (CC and)
-        (NP (NNP Order) (NNP S.V.U) (NNP .''))))))
+        (NNP Order) (NNP S.V.U) (NNP .'')))))
 
 (ROOT
-  (S
-    (NP (NNP and))
-    (VP (VBD ``Third)
-      (NP
-        (NP (NNP Watch))
-        ('' '')
-        (SBAR
-          (S
-            (NP (DT all))
-            (VP (VBD added)
-              (SBAR
-                (S
-                  (NP
-                    (NP (JJ last) (NN fall))
-                    (, ,)
-                    (NP
-                      (NP
-                        (NP (NNP Ancier) (POS 's))
-                        (JJ first))
-                      (PP (IN at)
-                        (NP (NNP NBC))))
-                    (, ,))
-                  (VP (VBP have)
-                    (ADVP (IN since))
-                    (VP (VBN become)
-                      (NP
-                        (NP (JJ significant) (NNS hits))
-                        (PP (IN for)
-                          (NP (DT the) (NN network)))))))))))))
+  (S (CC and)
+    (NP
+      (NP (JJ ``Third) (NNS Watch))
+      ('' '')
+      (PRN (: -)
+        (S
+          (NP (DT all))
+          (VP (VBD added)
+            (NP (JJ last) (NN fall))))
+        (, ,)
+        (NP
+          (NP
+            (NP (NNP Ancier) (POS 's))
+            (JJ first))
+          (PP (IN at)
+            (NP (NNP NBC)))))
+      (, ,))
+    (VP (VBP have)
+      (ADVP (IN since))
+      (VP (VBN become)
+        (NP
+          (NP (JJ significant) (NNS hits))
+          (PP (IN for)
+            (NP (DT the) (NN network))))))
     (. .)))
 
 (ROOT

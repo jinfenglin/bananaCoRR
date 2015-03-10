@@ -15,23 +15,26 @@
       (NP (CD 40)))))
 
 (ROOT
-  (S
-    (NP (NNP NEW) (NNP YORK) (NNP (AP) (NN )) (NNS Stocks))
-    (VP (VBD were)
-      (ADJP (JJ mixed))
-      (NP (NNP Tuesday))
-      (SBAR (IN as)
-        (S
-          (NP
-            (NP (NN anxiety))
-            (PP (IN about)
-              (NP
-                (NP (JJ high-tech) (NNS earnings))
-                (CC and)
-                (NP (DT the) (NN election) (NN deadlock)))))
-          (VP (VBD resurfaced)
-            (PP (IN on)
-              (NP (NNP Wall) (NNP Street)))))))
+  (FRAG
+    (NP (JJ NEW) (NNP YORK) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP (NNS Stocks))
+      (VP (VBD were)
+        (ADJP (JJ mixed))
+        (NP (NNP Tuesday))
+        (SBAR (IN as)
+          (S
+            (NP
+              (NP (NN anxiety))
+              (PP (IN about)
+                (NP
+                  (NP (JJ high-tech) (NNS earnings))
+                  (CC and)
+                  (NP (DT the) (NN election) (NN deadlock)))))
+            (VP (VBD resurfaced)
+              (PP (IN on)
+                (NP (NNP Wall) (NNP Street))))))))
     (. .)))
 
 (ROOT
@@ -579,6 +582,9 @@
               (NP (NNP Monday's))
               (QP (CD 522.67) (CD million)))))))
     (. .)))
+
+(ROOT
+  (INTJ (UH -)))
 
 (ROOT
   (PP (IN On)

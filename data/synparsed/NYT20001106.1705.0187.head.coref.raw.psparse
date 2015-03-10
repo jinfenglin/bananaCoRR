@@ -25,7 +25,7 @@
 (ROOT
   (FRAG
     (FRAG
-      (NP (NNP (EDS))
+      (NP (NNP [EDS))
       (: :)
       (S
         (NP (DT This) (JJ early) (NN version))
@@ -37,9 +37,9 @@
     (, ,)
     (FRAG
       (NP
-        (NP (NNP Iowa) (NNP .)) (NNP &QL))
+        (NP (NNP Iowa) (NNP .]) (NNP &QL))
         (: ;)
-        (NP (NNP (ART) (NNP ADV)))
+        (NP (NNP [ART) (NNP ADV)))
       (: :)
       (S
         (NP
@@ -67,7 +67,7 @@
                   (CC or)
                   (CD 888-346-9867))
                 (NP
-                  (NP (NNP .)) (NNP &QL))
+                  (NP (NNP .]) (NNP &QL))
                   (: ;)
                   (NP (NNP &UR))
                   (: ;))
@@ -92,51 +92,52 @@
     (: ;)))
 
 (ROOT
-  (S
+  (NP
     (NP (NNP CHATTANOOGA) (, ,) (NNP Tenn.))
-    (SBAR
+    (: -)
+    (NP
       (NP
         (QP (RB Nearly) (CD 17))
         (NNS months))
-      (IN after)
-      (S
-        (NP (PRP he))
-        (ADVP (RB first))
-        (VP (VBD issued)
-          (NP (PRP$ his) (NN call))
-          (PP (IN for)
-            (NP (DT a) (JJ ``fresh) (NN start)))
-          (PP (IN after)
-            (NP
-              (NP (DT a) (NN season))
-              (PP (IN of)
-                (NP (NN cynicism))))))))
-    (NP (NNP ,'') (NNP Gov.) (NNP George) (NNP W.) (NNP Bush))
-    (VP (VBD ended)
-      (NP (PRP$ his) (NN quest))
-      (PP (IN for)
-        (NP (DT the) (NN presidency)))
-      (NP (NNP Monday))
-      (PP (IN on)
-        (NP
-          (NP (DT a)
-            (ADJP (RB nearly) (JJ identical))
-            (NN note))
-          (, ,)
-          (VP (VBG pledging)
-            (S
-              (VP (TO to)
-                (VP (VB purge)
-                  (NP
-                    (NP (NNP Washington))
-                    (PP (IN of)
-                      (SBAR
-                        (WHNP (WP what))
+      (SBAR (IN after)
+        (S
+          (NP (PRP he))
+          (ADVP (RB first))
+          (VP (VBD issued)
+            (NP (PRP$ his) (NN call))
+            (PP (IN for)
+              (NP (DT a) (JJ ``fresh) (NN start)))
+            (SBAR (IN after)
+              (S
+                (NP
+                  (NP (DT a) (NN season))
+                  (PP (IN of)
+                    (NP (NN cynicism) (NN ,'') (NNP Gov.) (NNP George) (NNP W.) (NNP Bush))))
+                (VP (VBD ended)
+                  (NP (PRP$ his) (NN quest))
+                  (PP (IN for)
+                    (NP (DT the) (NN presidency)))
+                  (NP (NNP Monday))
+                  (PP (IN on)
+                    (NP
+                      (NP (DT a)
+                        (ADJP (RB nearly) (JJ identical))
+                        (NN note))
+                      (, ,)
+                      (VP (VBG pledging)
                         (S
-                          (NP (PRP he))
-                          (VP (VBD cast)
-                            (PP (IN as)
-                              (NP (DT a) (JJ crippling) (NN discord)))))))))))))))
+                          (VP (TO to)
+                            (VP (VB purge)
+                              (NP
+                                (NP (NNP Washington))
+                                (PP (IN of)
+                                  (SBAR
+                                    (WHNP (WP what))
+                                    (S
+                                      (NP (PRP he))
+                                      (VP (VBD cast)
+                                        (PP (IN as)
+                                          (NP (DT a) (JJ crippling) (NN discord)))))))))))))))))))))
     (. .)))
 
 (ROOT

@@ -21,11 +21,9 @@
 
 (ROOT
   (NP
-    (NP (NNP JAKARTA))
-    (, ,)
-    (NP
-      (NP (NNP Indonesia) (NNP (AP) (NNP )))
-      (NP (DT The) (NNP U.S)))
+    (NP (NNP JAKARTA) (, ,) (NNP Indonesia) (NNP [AP) (NNP ]))
+    (: -)
+    (NP (DT The) (NNP U.S))
     (. .)))
 
 (ROOT
@@ -109,42 +107,43 @@
 
 (ROOT
   (S
-    (NP (DT The) (NN problem))
-    (VP (VBZ has)
-      (VP (VBN been)
-        (VP (VBN compounded)
-          (PP (IN by)
-            (NP (NN anger)))
-          (PP (IN in)
-            (NP
-              (NP (NNP Indonesia))
-              (, ,)
+    (S
+      (NP (DT The) (NN problem))
+      (VP (VBZ has)
+        (VP (VBN been)
+          (VP (VBN compounded)
+            (PP (IN by)
               (NP
-                (NP (DT the) (NN world) (POS 's))
-                (ADJP (RBS most) (JJ populous))
-                (JJ Muslim) (NN country))
-              (, ,)
-              (PP (IN over)
-                (NP
+                (NP (NN anger))
+                (PP (IN in)
                   (NP
-                    (NP (NNP Washington) (POS 's))
-                    (NN stance))
-                  (PP (IN on)
+                    (NP (NNP Indonesia))
+                    (, ,)
                     (NP
-                      (NP (DT the) (JJ Israeli) (JJ -Palestinian) (NN violence))
-                      (SBAR
-                        (WHNP (DT many))
-                        (S
-                          (ADVP (RB here))
-                          (VP (VBP say)
-                            (SBAR
-                              (S
-                                (NP (DT the) (NNP United) (NNPS States))
-                                (VP (VBZ has)
-                                  (VP (VBN taken)
-                                    (NP
-                                      (NP (NNP Israel) (POS 's))
-                                      (NN side))))))))))))))))))
+                      (NP (DT the) (NN world) (POS 's))
+                      (ADJP (RBS most) (JJ populous))
+                      (JJ Muslim) (NN country))
+                    (, ,)))))
+            (PP (IN over)
+              (NP
+                (NP
+                  (NP (NNP Washington) (POS 's))
+                  (NN stance))
+                (PP (IN on)
+                  (NP (DT the) (JJ Israeli) (JJ -Palestinian) (NN violence)))))))))
+    (: -)
+    (S
+      (NP (DT many))
+      (ADVP (RB here))
+      (VP (VBP say)
+        (SBAR
+          (S
+            (NP (DT the) (NNP United) (NNPS States))
+            (VP (VBZ has)
+              (VP (VBN taken)
+                (NP
+                  (NP (NNP Israel) (POS 's))
+                  (NN side))))))))
     (. .)))
 
 (ROOT

@@ -13,28 +13,27 @@
       (NP (NNP Copley) (NNP Newspaper) (NNP Delayed)))))
 
 (ROOT
-  (S
-    (NP (NNP CHICAGO) (NNP (AP))
-    (VP (VBD ))
-      (SBAR
-        (S
-          (NP (DT A) (JJ federal) (NN judge))
-          (VP (VBZ has)
-            (VP (VBN issued)
-              (NP (DT a) (JJ temporary) (NN restraining) (NN order))
-              (PP (IN against)
+  (FRAG
+    (NP (NNP CHICAGO) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP (DT A) (JJ federal) (NN judge))
+      (VP (VBZ has)
+        (VP (VBN issued)
+          (NP (DT a) (JJ temporary) (NN restraining) (NN order))
+          (PP (IN against)
+            (NP
+              (NP (NNP Copley) (NNP Press) (NNP Inc.))
+              (VP (VBG blocking)
                 (NP
-                  (NP (NNP Copley) (NNP Press) (NNP Inc.))
-                  (VP (VBG blocking)
+                  (NP (DT the) (NN sale))
+                  (PP (IN of)
                     (NP
-                      (NP (DT the) (NN sale))
-                      (PP (IN of)
-                        (NP
-                          (NP (DT The) (NNP News) (NNP Sun))
-                          (PP (IN in)
-                            (NP (NNP Waukegan))))))
-                    (PP (TO to)
-                      (NP (NNP Hollinger) (NNP International)))))))))))
+                      (NP (DT The) (NNP News) (NNP Sun))
+                      (PP (IN in)
+                        (NP (NNP Waukegan))))))
+                (PP (TO to)
+                  (NP (NNP Hollinger) (NNP International)))))))))
     (. .)))
 
 (ROOT
@@ -151,8 +150,8 @@
               (S
                 (VP (VBG having)
                   (S
-                    (NP (DT the) (NN (agreement))
-                    (ADJP (JJ )))
+                    (NP (DT the) (NN [agreement))
+                    (ADJP (JJ ]))
                     (S
                       (VP (VBG being)
                         (VP (VBN rendered)

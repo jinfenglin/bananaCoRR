@@ -7,6 +7,7 @@ Use various feature functions to train a MALLET MaxEnt model to classify whether
 entities in a text are coreferent or not.
 """
 import collections
+import pprint
 import subprocess
 import sys
 import cPickle as pickle
@@ -26,14 +27,7 @@ import document_reader
 
 PROJECT_PATH = os.getcwd()
 DATA_PATH = os.path.join(PROJECT_PATH, "data")
-POS_DATA_PATH = os.path.join(DATA_PATH, "postagged")
-RAW_DATA_PATH = os.path.join(DATA_PATH, "rawtext")
-DEPPARSE_DATA_PATH = os.path.join(DATA_PATH, "depparsed")
-
 RES_PATH = os.path.join(PROJECT_PATH, "resources")
-DICT_PATH = os.path.join(RES_PATH, "dicts")
-FREQ_PATH = os.path.join(RES_PATH, "freqCounts")
-CLUSTER_PATH = os.path.join(RES_PATH, "clusters")
 YAGO_PATH = os.path.join(RES_PATH, "yago")
 
 
@@ -80,13 +74,26 @@ class FeatureTagger():
                                    self.word_overlap,
                                    self.i_proper_noun,
                                    self.j_proper_noun,
-                                   # self.i_proper_j_pronoun,               # hurts
+                                   self.i_proper_j_pronoun,
                                    self.both_proper,
                                    self.both_diff_proper,
                                    self.ner_tag_match,
                                    self.distance_sent,
+                                   self.in_same_sent,
                                    self.i_precedes_j,
-                                   self.number_agree
+                                   self.number_agree,
+                                   self.i_object,
+                                   self.j_object,
+                                   self.both_object,
+                                   self.i_subject,
+                                   self.j_subject,
+                                   self.both_subject,
+                                   self.distance_tree,
+                                   self.distance_tree_sum,
+                                   self.share_governing_verb,
+                                   # self.governing_verbs_share_synset,
+                                   # self.syn_verb_same_role,
+                                   # self.appositive
                                    ]
 
     def read_data(self, input_filename):
@@ -108,15 +115,15 @@ class FeatureTagger():
                 i_pos = r.get_pos(i_line, i_start, i_end)
                 j_pos = r.get_pos(j_line, j_start, j_end)
                 pair = [
-                    # info on i
-                    (i_words,                   # list
-                     i_pos,                     # list
-                     i_ner,                     # str
-                     int(i_line),
-                     (int(i_start), int(i_end))),  # idx 0
-                    # info on j
+                    # info on i                                         # idx 0
+                    (i_words,                       # 0: list
+                     i_pos,                         # 1: list
+                     i_ner,                         # 2: str
+                     int(i_line),                   # 3: int
+                     (int(i_start), int(i_end))),   # 4: tuple(int, int)
+                    # info on j                                         # 1
                     (j_words, j_pos, j_ner, int(j_line),
-                     (int(j_start), int(j_end))),  # 1
+                     (int(j_start), int(j_end))),
                     # additional info
                     coref.strip(),                                      # 2
                     i_line == j_line,                                   # 3
@@ -136,7 +143,7 @@ class FeatureTagger():
                         r.get_words(i_line, i_start, i_end), i_words)
                 self.pairs.append(pair)
 
-        print self.pairs[0]
+        #print self.pairs[0]
         # self.populate_freq(300)
 
     def is_coref(self):
@@ -176,6 +183,23 @@ class FeatureTagger():
 
     def get_i_j_words(self):
         return zip(self.get_i_words(), self.get_j_words())
+
+
+    def get_i_head_idx(self):
+        return self.get_head_idx(0)
+
+    def get_j_head_idx(self):
+        return self.get_head_idx(1)
+
+    def get_head_idx(self, i_or_j):
+        idxs = []
+        for pair in self.pairs:
+            words = pair[i_or_j][0]
+            tags = pair[i_or_j][1]
+            start = pair[i_or_j][4][0]
+            idxs.append(self.get_head(words, tags)[2] + start)
+        return idxs
+
 
     def feature_matrix(self, out_filename, train=True):
         """use this method to get all feature values and printed out as a file"""
@@ -703,6 +727,17 @@ class FeatureTagger():
             values.append(name + str(dist))
         return values
 
+    def in_same_sent(self):
+        """Returns true if two mentions are in a same sentence"""
+        name = "in_same_sent="
+        values = []
+        for pair in self.pairs:
+            if pair[3]:
+                values.append(name + self.T)
+            else:
+                values.append(name + self.F)
+        return values
+
     def i_precedes_j(self):
         """True if i precedes j in document"""
         name = "i_precedes="
@@ -729,24 +764,18 @@ class FeatureTagger():
 
     @staticmethod
     def get_head(words, tags):
-        print words, tags
         cur = ()
-        for word, tag in zip(words, tags):
-            print word, tag
+        for i, (word, tag) in enumerate(zip(words, tags)):
             if tag.startswith(("NN", "PR", "CD", "JJ")):
-                cur = (word, tag)
+                cur = (word, tag, i)
             elif tag == "IN":
                 if cur == ():
-                    print cur
-                    return (word, tag)
+                    return word, tag, i
                 else:
-                    print cur
                     return cur
         if cur == ():
-            print cur
-            return (words[-1], tags[-1])
+            return words[-1], tags[-1], len(words) - 1
         else:
-            print cur
             return cur
 
     def number_agree(self):
@@ -771,52 +800,253 @@ class FeatureTagger():
                            "ourselves", "our", "ours", "their")
 
         for num in range(len(i_words)):
-            if is_plural(self.get_head(i_words[num], i_tags[num]))\
-                    == is_plural(self.get_head(j_words[num], j_tags[num])):
+            if is_plural(self.get_head(i_words[num], i_tags[num])[0:2])\
+                    == is_plural(self.get_head(j_words[num], j_tags[num])[0:2]):
                 values.append(name + self.T)
             else:
                 values.append(name + self.F)
         return values
 
-'''
-    def num_agr(tuple1, tuple2):
-        pass
+    def distance_tree(self):
+        """Returns the length of path between two mentions in phrase structure parse.
+        If they are not in a same sentence, return 10000"""
+        name = "distance_tree="
+        values = []
+
+        cur_filename = None
+        for pair in self.pairs:
+            if not pair[3]:
+                values.append(name + "10000")
+            else:
+                filename = pair[4]
+                if cur_filename != filename:
+                    r = document_reader.reader(pair[4])
+                    cur_filename = filename
+                # print pair[4], pair[0][0], pair[1][0]
+                # print pair[0][4] + pair[1][4]
+                preceding = min(pair[0][4] + pair[1][4])
+                following = max(pair[0][4] + pair[1][4]) - 1
+                path = r.compute_tree_path(pair[0][3], preceding, following)
+                values.append(name + "u" + str(path[0]) + "d" + str(path[1]))
+        return values
+
+    def distance_tree_sum(self):
+        """Returns the length of path between two mentions in phrase structure parse.
+        If they are not in a same sentence, return 10000"""
+        name = "distance_tree_sum="
+        values = []
+
+        cur_filename = None
+        for pair in self.pairs:
+            if not pair[3]:
+                values.append(name + "10000")
+            else:
+                filename = pair[4]
+                if cur_filename != filename:
+                    r = document_reader.reader(pair[4])
+                    cur_filename = filename
+                # print pair[4], pair[0][0], pair[1][0]
+                # print pair[0][4] + pair[1][4]
+                preceding = min(pair[0][4] + pair[1][4])
+                following = max(pair[0][4] + pair[1][4]) - 1
+                path = r.compute_tree_path(pair[0][3], preceding, following)
+                values.append(name + str(sum(path)))
+        return values
+
+    def i_subject(self):
+        """returns true if i mention is subject of its sentence"""
+        name = "i_subject="
+        values = []
+        for val in self.is_subject(0):
+            if val:
+                values.append(name + self.T)
+            else:
+                values.append(name + self.F)
+        return values
+
+    def j_subject(self):
+        """returns true if j mention is subject of its sentence"""
+        name = "j_subject="
+        values = []
+        for val in self.is_subject(1):
+            if val:
+                values.append(name + self.T)
+            else:
+                values.append(name + self.F)
+        return values
+
+    def both_subject(self):
+        """return true if both i and j mentions are subject of their sentences"""
+        name = "both_subject="
+        values = []
+        for val in zip(self.is_subject(0), self.is_subject(1)):
+            if val[0] and val[1]:
+                values.append(name + self.T)
+            else:
+                values.append(name + self.F)
+        return values
+
+    def is_subject(self, i_or_j):
+        """helper function for i_subject, j_subject, both_subject"""
+        values = []
+        r = None
+        cur_filename = None
+        head_idxs = self.get_head_idx(i_or_j)
+        for i, pair in enumerate(self.pairs):
+            sent = pair[i_or_j][3]
+            filename = pair[4]
+            if cur_filename != filename:
+                r = document_reader.reader(filename)
+                cur_filename = filename
+            values.append(r.is_subject(sent, head_idxs[i]))
+        return values
+
+    def i_object(self):
+        """returns true if i mention is object of its sentence"""
+        name = "i_object="
+        values = []
+        for val in self.is_object(0):
+            if val:
+                values.append(name + self.T)
+            else:
+                values.append(name + self.F)
+        return values
+
+    def j_object(self):
+        """returns true if j mention is object of its sentence"""
+        name = "j_object="
+        values = []
+        for val in self.is_object(1):
+            if val:
+                values.append(name + self.T)
+            else:
+                values.append(name + self.F)
+        return values
+
+    def both_object(self):
+        """return true if both i and j mentions are object of their sentences"""
+        name = "both_object="
+        values = []
+        for val in zip(self.is_object(0), self.is_object(1)):
+            if val[0] and val[1]:
+                values.append(name + self.T)
+            else:
+                values.append(name + self.F)
+        return values
+
+    def is_object(self, i_or_j):
+        """helper function for i_object, j_object, both_object"""
+        values = []
+        r = None
+        cur_filename = None
+        head_idxs = self.get_head_idx(i_or_j)
+        for i, pair in enumerate(self.pairs):
+            sent = pair[i_or_j][3]
+            filename = pair[4]
+            if cur_filename != filename:
+                r = document_reader.reader(filename)
+                cur_filename = filename
+            values.append(r.is_object(sent, head_idxs[i]))
+        return values
+
+    def appositive(self):
+        """return true if two mentions are in appositive construction"""
+        name = "appositive="
+        values = []
+
+        # return [name + self.F] * len(self.pairs)
+
+        r = None
+        cur_filename = None
+        i_head_idxs = self.get_i_head_idx()
+        j_head_idxs = self.get_j_head_idx()
+        for i, pair in enumerate(self.pairs):
+            i_sent = pair[0][3]
+            j_sent = pair[1][3]
+            if i_sent != j_sent:
+                values.append(name + self.F)
+            else:
+                filename = pair[4]
+                if cur_filename != filename:
+                    r = document_reader.reader(filename)
+                    cur_filename = filename
+                if r.get_dep_relation(i_sent, i_head_idxs[i], j_head_idxs[i]) == "appos":
+                    values.append(name + self.T)
+                else:
+                    values.append(name + self.F)
+        return values
+
+    def share_governing_verb(self):
+        """return true if two mention has a shared verb as their governor"""
+        name = "share_verb="
+        values = []
+
+        cur_filename = None
+        i_head_idxs = self.get_i_head_idx()
+        j_head_idxs = self.get_j_head_idx()
+        for i, pair in enumerate(self.pairs):
+            i_sent = pair[0][3]
+            j_sent = pair[1][3]
+            filename = pair[4]
+            if cur_filename != filename:
+                r = document_reader.reader(filename)
+                cur_filename = filename
+            i_verb = r.get_deprel_verb(i_sent, i_head_idxs[i])[1]
+            j_verb = r.get_deprel_verb(j_sent, j_head_idxs[i])[1]
+            if i_verb == j_verb and i_verb is not None:
+                values.append(name + self.T)
+            else:
+                values.append(name + self.F)
+        return values
+
+    def governing_verbs_share_synset(self):
+        """return true if two verbs governing two mentions are in a same wordnet synset"""
+        name = "share_verb_synset="
+        values = []
+
+        cur_filename = None
+        i_head_idxs = self.get_i_head_idx()
+        j_head_idxs = self.get_j_head_idx()
+        for i, pair in enumerate(self.pairs):
+            i_sent = pair[0][3]
+            j_sent = pair[1][3]
+            filename = pair[4]
+            if cur_filename != filename:
+                r = document_reader.reader(filename)
+                cur_filename = filename
+            i_verb = r.get_deprel_verb(i_sent, i_head_idxs[i])[1]
+            j_verb = r.get_deprel_verb(j_sent, j_head_idxs[i])[1]
+            if r.in_same_synsets(i_verb, j_verb):
+                values.append(name + self.T)
+            else:
+                values.append(name + self.F)
+        return values
+
+    def syn_verb_same_role(self):
+        """return true if two verbs governing two mentions are in a same wordnet synset"""
+        name = "share_verb_synset_role="
+        values = []
+
+        cur_filename = None
+        i_head_idxs = self.get_i_head_idx()
+        j_head_idxs = self.get_j_head_idx()
+        for i, pair in enumerate(self.pairs):
+            i_sent = pair[0][3]
+            j_sent = pair[1][3]
+            filename = pair[4]
+            if cur_filename != filename:
+                r = document_reader.reader(filename)
+                cur_filename = filename
+            i_rel, i_verb = r.get_deprel_verb(i_sent, i_head_idxs[i])
+            j_rel, j_verb = r.get_deprel_verb(j_sent, j_head_idxs[i])
+            if r.in_same_synsets(i_verb, j_verb) and i_rel == j_rel:
+                values.append(name + self.T)
+            else:
+                values.append(name + self.F)
+        return values
 
 
-    def gen_agr(tuple1, tuple2):
-        pass
 
-    def alias_date(tuple1, tuple2):
-        pass
-
-
-    def alias_person(tuple1, tuple2):
-        pass
-
-
-    def alias_org(tuple1, tuple2):
-        pass
-
-
-    def words_substr(tuple1, tuple2):
-        pass
-
-
-    def both_pronouns(tuple1, tuple2):
-        pass
-
-
-    def gen_num_agr(tuple1, tuple2):
-        pass
-
-
-    def span(tuple1, tuple2):
-        pass
-
-
-    def contains_pn(tuple1, tuple2):
-        pass
-'''
 
 
 class CoreferenceResolver(object):

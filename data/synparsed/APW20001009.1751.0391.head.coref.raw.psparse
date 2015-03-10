@@ -10,20 +10,23 @@
   (NP (NNP Rabanne) (NNP Fashion) (NNP Has) (NNP Silver) (NNP Lining)))
 
 (ROOT
-  (S
-    (NP
+  (FRAG
+    (NP (NNP PARIS) (NNP [AP) (NNP ]))
+    (: -)
+    (S
       (NP
-        (NP (NNP PARIS) (NNP (AP) (NNP )) (NNP Paco) (NNP Rabanne) (POS 's))
-        (NNP Monday) (NN show))
-      (PP (IN of)
         (NP
-          (NP (JJ ready-to-wear))
-          (PP (IN for)
-            (NP (NN summer) (CD 2001))))))
-    (VP (VBD was)
-      (ADJP (JJ shiny) (, ,) (JJ young)
-        (CC and)
-        (JJ happy)))
+          (NP (NNP Paco) (NNP Rabanne) (POS 's))
+          (NNP Monday) (NN show))
+        (PP (IN of)
+          (NP
+            (NP (JJ ready-to-wear))
+            (PP (IN for)
+              (NP (NN summer) (CD 2001))))))
+      (VP (VBD was)
+        (ADJP (JJ shiny) (, ,) (JJ young)
+          (CC and)
+          (JJ happy))))
     (. .)))
 
 (ROOT
@@ -34,10 +37,12 @@
         (S
           (NP (NN fashion))
           (VP (VBZ has)
-            (NP (DT a) (JJ silver) (NN lining)
+            (NP
+              (NP (DT a) (JJ silver) (NN lining))
+              (: -)
               (CC and)
-              (NN exterior))
-            (, ,)
+              (NP (NN exterior))
+              (, ,))
             (ADVP (RB as) (RB well))))))
     (. .)))
 
@@ -117,14 +122,18 @@
 (ROOT
   (S
     (NP
-      (NP (DT The) (JJ smooth) (JJ caramel) (NN imitation) (NN leather) (NNS outfits))
-      (PP (IN with)
-        (NP
-          (NP (JJ nailheads) (NNS jackets))
-          (, ,)
-          (NP (JJ flared) (NNS pants))
-          (CC and)
-          (NP (JJR more)))))
+      (NP
+        (NP (DT The) (JJ smooth) (JJ caramel) (NN imitation) (NN leather) (NNS outfits))
+        (PP (IN with)
+          (NP (NNS nailheads))))
+      (: -)
+      (NP
+        (NP (NNS jackets))
+        (, ,)
+        (NP (JJ flared) (NNS pants))
+        (CC and)
+        (NP (JJR more)))
+      (: -))
     (VP (VBD were)
       (ADJP (JJ remarkable)))
     (. .)))
@@ -248,19 +257,20 @@
         (S
           (NP (DT the) (NNS sandals))
           (VP (VBD were)
-            (NP (JJ interesting) (NNS heels))
-            (ADVP (RB only))
-            (, ,)
-            (S
-              (VP (VBG clinging)
+            (ADJP
+              (ADJP (JJ interesting))
+              (: -)
+              (ADJP (RB heels) (JJ only))
+              (, ,)
+              (ADJP (JJ clinging)
                 (PP (TO to)
-                  (NP (DT the) (NN foot)))
-                (, ,)
-                (PP (IN with)
-                  (NP
-                    (NP (DT a) (NN ring))
-                    (PP (IN on)
-                      (NP (DT a) (NN toe)))))))))))
+                  (NP (DT the) (NN foot))))
+              (, ,))
+            (PP (IN with)
+              (NP
+                (NP (DT a) (NN ring))
+                (PP (IN on)
+                  (NP (DT a) (NN toe)))))))))
     (. .)))
 
 (ROOT

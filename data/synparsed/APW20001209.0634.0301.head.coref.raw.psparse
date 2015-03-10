@@ -13,11 +13,12 @@
       (NP (NNP Court) (NNP Setback)))))
 
 (ROOT
-  (S
+  (NP
     (NP
       (NAC (NNP AUSTIN) (, ,) (NNP Texas))
-      (NNP (AP) (NNP )))
-    (VP (VBN Gov))
+      (NNP [AP) (NNP ]))
+    (: -)
+    (NP (NNP Gov))
     (. .)))
 
 (ROOT
@@ -270,7 +271,7 @@
   (S
     (ADVP (RB ``Obviously))
     (, ,)
-    (NP (NN (Bush) (NNS )))
+    (NP (NN [Bush) (NNS ]))
     (VP (VBD was)
       (ADJP
         (NP (DT a) (JJ good) (NN bit))
@@ -418,7 +419,7 @@
                 (NP (PRP$ our) (NN case))
                 (PRT (RP back))
                 (PP (TO to)
-                  (NP (DT the) (NNP (U.S) (NNP .)) (NNP Supreme) (NNP Court) (NNP ,'')))))))))
+                  (NP (DT the) (NNP [U.S) (NNP .]) (NNP Supreme) (NNP Court) (NNP ,'')))))))))
     (NP (PRP he))
     (VP (VBD told)
       (NP (NNS reporters)))
@@ -522,10 +523,10 @@
 
 (ROOT
   (S
-    (PP (IN By)
-      (NP (NN nightfall)))
-    (, ,)
     (S
+      (PP (IN By)
+        (NP (NN nightfall)))
+      (, ,)
       (ADVP (RB however))
       (, ,)
       (NP (DT the) (NNS demonstrators))
@@ -535,13 +536,14 @@
     (S
       (NP (DT the) (NN mansion))
       (VP (VBD was)
-        (ADJP (JJ quiet))
-        (SBAR (RB even) (IN though)
-          (S
-            (NP (DT the) (NN party))
-            (VP (VBD was)
-              (VP (VBG going)
-                (PRT (RP on))
-                (ADVP (RB inside))))))))
+        (ADJP (JJ quiet))))
+    (: -)
+    (SBAR (RB even) (IN though)
+      (S
+        (NP (DT the) (NN party))
+        (VP (VBD was)
+          (VP (VBG going)
+            (PRT (RP on))
+            (ADVP (RB inside))))))
     (. .)))
 

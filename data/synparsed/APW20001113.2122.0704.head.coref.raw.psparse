@@ -14,40 +14,43 @@
       (VBN Unsettled))))
 
 (ROOT
-  (S
+  (FRAG
+    (NP (NNP WASHINGTON) (NNP [AP) (NNP ]))
+    (: -)
     (S
-      (NP (NNP WASHINGTON) (NNP (AP) (NNP )) (NNS Doubts))
-      (VP (VBP remain)
-        (PP (IN in)
+      (S
+        (NP (NNS Doubts))
+        (VP (VBP remain)
+          (PP (IN in)
+            (NP
+              (NP (CD five) (NNS races))
+              (PP (IN for)
+                (NP
+                  (NP (DT the) (NNP House))
+                  (PP (IN of)
+                    (NP (NNPS Representatives)))))))))
+      (, ,)
+      (CC and)
+      (S
+        (SBAR (IN while)
+          (S
+            (NP (NNP recounts))
+            (VP (VBP are)
+              (ADJP (JJ likely)
+                (S
+                  (VP (TO to)
+                    (VP (VB extend)
+                      (NP (DT the) (NN indecision)))))))))
+        (NP (PRP they))
+        (VP (VBP have)
           (NP
-            (NP (CD five) (NNS races))
-            (PP (IN for)
-              (NP
-                (NP (DT the) (NNP House))
-                (PP (IN of)
-                  (NP (NNPS Representatives)))))))))
-    (, ,)
-    (CC and)
-    (S
-      (SBAR (IN while)
-        (S
-          (NP (NNP recounts))
-          (VP (VBP are)
-            (ADJP (JJ likely)
+            (NP (DT no) (NN chance))
+            (PP (IN of)
               (S
-                (VP (TO to)
-                  (VP (VB extend)
-                    (NP (DT the) (NN indecision)))))))))
-      (NP (PRP they))
-      (VP (VBP have)
-        (NP
-          (NP (DT no) (NN chance))
-          (PP (IN of)
-            (S
-              (VP (VBG erasing)
-                (NP (DT the) (JJ Republican) (NN majority))
-                (PP (IN for)
-                  (NP (DT the) (JJ incoming) (JJ 107th) (NNP Congress)))))))))
+                (VP (VBG erasing)
+                  (NP (DT the) (JJ Republican) (NN majority))
+                  (PP (IN for)
+                    (NP (DT the) (JJ incoming) (JJ 107th) (NNP Congress))))))))))
     (. .)))
 
 (ROOT

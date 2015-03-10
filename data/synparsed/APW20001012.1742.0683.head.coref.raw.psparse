@@ -10,33 +10,36 @@
   (NP (NNP Clinton) (NNP Urges) (NNP Mideast) (NNP Cease-Fire)))
 
 (ROOT
-  (S
-    (NP (NNP WASHINGTON) (NNP (AP) (NNP )) (NNP President) (NNP Clinton))
-    (VP
-      (VP (VBD urged)
-        (S
-          (NP (NNPS Israelis)
-            (CC and)
-            (NNPS Palestinians))
-          (VP (TO to)
-            (VP (VB undertake)
-              (NP (DT an) (JJ immediate) (NN cease-fire))
-              (PP (IN after)
+  (FRAG
+    (NP (NNP WASHINGTON) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP (NNP President) (NNP Clinton))
+      (VP
+        (VP (VBD urged)
+          (S
+            (NP (NNPS Israelis)
+              (CC and)
+              (NNPS Palestinians))
+            (VP (TO to)
+              (VP (VB undertake)
+                (NP (DT an) (JJ immediate) (NN cease-fire))
+                (PP (IN after)
+                  (NP
+                    (NP (DT a) (JJ new) (NN outbreak))
+                    (PP (IN of)
+                      (NP (NN bloodshed)))))))))
+        (CC and)
+        (VP (VBD called)
+          (PP (IN on)
+            (NP (DT both) (NNS sides)))
+          (S
+            (VP (TO to)
+              (VP (VB condemn)
                 (NP
-                  (NP (DT a) (JJ new) (NN outbreak))
+                  (NP (DT all) (NNS acts))
                   (PP (IN of)
-                    (NP (NN bloodshed)))))))))
-      (CC and)
-      (VP (VBD called)
-        (PP (IN on)
-          (NP (DT both) (NNS sides)))
-        (S
-          (VP (TO to)
-            (VP (VB condemn)
-              (NP
-                (NP (DT all) (NNS acts))
-                (PP (IN of)
-                  (NP (NN violence)))))))))
+                    (NP (NN violence))))))))))
     (. .)))
 
 (ROOT

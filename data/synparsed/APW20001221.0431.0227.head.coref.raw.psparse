@@ -13,27 +13,28 @@
       (NP (NNP Plane) (NNP Mishap)))))
 
 (ROOT
-  (S
-    (ADVP (RB JACKSON))
-    (, ,)
-    (NP (NNP Wyo.) (NNP (AP))
-    (VP (VBZ ))
-      (NP
-        (NP (DT A) (NN plane) (VBG carrying) (NN actress))
-        (SBAR
-          (S
-            (NP
-              (NP (NNP Sandra) (NNP Bullock))
-              (CC and)
-              (NP (CD three) (JJ other) (NNS people)))
-            (VP
-              (VP (VBD missed)
-                (NP (DT a) (NN runway)))
-              (CC and)
-              (VP (VBD crashed)
-                (PP (IN at)
-                  (NP (DT the) (NNP Jackson) (NNP Hole) (NNP Airport)))
-                (NP (JJ early) (NNP Wednesday))))))))
+  (NP
+    (NP (NNP JACKSON) (, ,) (NNP Wyo.) (NNP [AP) (NNP ]))
+    (: -)
+    (NP
+      (NP (DT A) (NN plane))
+      (VP (VBG carrying)
+        (NP
+          (NP (NN actress))
+          (SBAR
+            (S
+              (NP
+                (NP (NNP Sandra) (NNP Bullock))
+                (CC and)
+                (NP (CD three) (JJ other) (NNS people)))
+              (VP
+                (VP (VBD missed)
+                  (NP (DT a) (NN runway)))
+                (CC and)
+                (VP (VBD crashed)
+                  (PP (IN at)
+                    (NP (DT the) (NNP Jackson) (NNP Hole) (NNP Airport)))
+                  (NP (JJ early) (NNP Wednesday)))))))))
     (. .)))
 
 (ROOT

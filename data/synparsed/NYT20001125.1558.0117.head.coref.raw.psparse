@@ -38,35 +38,33 @@
 
 (ROOT
   (NP
-    (NP (NNP GROSSE) (NNP POINTE) (NNP PARK))
-    (, ,)
-    (NP
-      (NP
-        (NP (NNP Mich.))
-        (SBAR
-          (S
-            (NP (PRP It))
-            (VP (VBZ is)
-              (NP
-                (NP (JJ deer) (NN hunting) (NN season))
-                (PP (IN in)
-                  (NP (NNP Michigan))))))))
+    (NP (NNP GROSSE) (NNP POINTE) (NNP PARK) (, ,) (NNP Mich.))
+    (: -)
+    (S
+      (S
+        (NP (PRP It))
+        (VP (VBZ is)
+          (NP
+            (NP (JJ deer) (NN hunting) (NN season))
+            (PP (IN in)
+              (NP (NNP Michigan))))))
       (, ,)
       (CC and)
-      (NP
-        (NP (NNS hunters))
-        (SBAR
-          (WHNP (WP who))
-          (S
-            (NP
-              (NP (NN climb) (NNS trees))
-              (PP (IN with)
-                (NP (JJ loaded) (NNS shotguns))))
-            (VP (VBP have)
-              (NP
-                (NP (NN state) (NNS officials))
-                (VP (VBG redoubling)
-                  (NP (NN safety) (NN education) (NNS efforts)))))))))
+      (S
+        (NP
+          (NP (NNS hunters))
+          (SBAR
+            (WHNP (WP who))
+            (S
+              (VP (VB climb)
+                (NP (NNS trees))
+                (PP (IN with)
+                  (NP (JJ loaded) (NNS shotguns)))))))
+        (VP (VBP have)
+          (NP
+            (NP (NN state) (NNS officials))
+            (VP (VBG redoubling)
+              (NP (NN safety) (NN education) (NNS efforts)))))))
     (. .)))
 
 (ROOT
@@ -98,25 +96,27 @@
 
 (ROOT
   (S
-    (NP (DT All) (CD three) (NNS accidents))
-    (VP (VBD involved)
-      (S
-        (NP
-          (NP (NNS shotguns))
-          (, ,)
-          (NP (JJ elevated) (NNS platforms))
-          (CC and)
-          (NP (DT a) (NN practice)))
-        (ADJP (RB relatively) (JJ new)
-          (PP (TO to)
-            (NP
-              (NP (JJ Michigan) (NNS hunters))
-              (VP (VBG shooting)
-                (PP (IN at)
-                  (NP
-                    (NP (NNS deer))
-                    (PP (IN from)
-                      (NP (NNS trees)))))))))))
+    (S
+      (NP (DT All) (CD three) (NNS accidents))
+      (VP (VBD involved)
+        (S
+          (NP
+            (NP (NNS shotguns))
+            (, ,)
+            (NP (JJ elevated) (NNS platforms))
+            (CC and)
+            (NP (DT a) (NN practice)))
+          (ADJP (RB relatively) (JJ new)
+            (PP (TO to)
+              (NP (NNP Michigan) (NNS hunters)))))))
+    (: -)
+    (S
+      (VP (VBG shooting)
+        (PP (IN at)
+          (NP
+            (NP (NNS deer))
+            (PP (IN from)
+              (NP (NNS trees)))))))
     (. .)))
 
 (ROOT

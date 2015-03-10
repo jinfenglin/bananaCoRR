@@ -13,32 +13,31 @@
       (NP (NNP Smoke)))))
 
 (ROOT
-  (S
-    (NP (NNP WASHINGTON) (NNP (AP))
-    (VP (VBD ))
-      (SBAR
+  (FRAG
+    (NP (NNP WASHINGTON) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP (DT The) (NNP Supreme) (NNP Court))
+      (VP (VBP let)
         (S
-          (NP (DT The) (NNP Supreme) (NNP Court))
-          (VP (VBP let)
-            (S
-              (NP (DT a) (NN flight) (NN attendant))
-              (VP (VB sue)
-                (NP
-                  (NP (NNP Northwest) (NNPS Airlines))
-                  (PP (IN on)
-                    (NP (PRP$ her) (NN claim))))
-                (SBAR (IN that)
-                  (S
-                    (NP (PRP she))
-                    (VP (VBD was)
-                      (VP (VBN harmed)
-                        (PP (IN by)
-                          (NP (JJ secondhand) (NN smoke)))
-                        (PP (IN during)
-                          (NP
-                            (NP (NNS flights))
-                            (PP (TO to)
-                              (NP (NNP Asia)))))))))))))))
+          (NP (DT a) (NN flight) (NN attendant))
+          (VP (VB sue)
+            (NP
+              (NP (NNP Northwest) (NNPS Airlines))
+              (PP (IN on)
+                (NP (PRP$ her) (NN claim))))
+            (SBAR (IN that)
+              (S
+                (NP (PRP she))
+                (VP (VBD was)
+                  (VP (VBN harmed)
+                    (PP (IN by)
+                      (NP (JJ secondhand) (NN smoke)))
+                    (PP (IN during)
+                      (NP
+                        (NP (NNS flights))
+                        (PP (TO to)
+                          (NP (NNP Asia)))))))))))))
     (. .)))
 
 (ROOT
@@ -425,6 +424,9 @@
     (, ,)
     (NP (CD 00-404))
     (. .)))
+
+(ROOT
+  (INTJ (UH -)))
 
 (ROOT
   (PP (IN On)

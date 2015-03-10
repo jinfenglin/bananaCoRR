@@ -17,31 +17,34 @@
     (. .)))
 
 (ROOT
-  (S
+  (NP
+    (NP (NNP [AP) (NNP ]))
+    (: -)
     (S
-      (NP (NNP (AP) (NNP )) (NNP Tornadoes))
-      (VP
-        (VP (VBD destroyed)
-          (NP (NNS homes)))
-        (CC and)
-        (VP (VBD overturned)
-          (NP (NNS cars))
-          (PP (IN in)
-            (NP
-              (NP (JJ several) (NNS areas))
-              (PP (IN of)
-                (NP (NNP Alabama)))))
-          (PP (IN on)
-            (NP (NNP Saturday))))))
-    (CC and)
-    (S
-      (NP
-        (QP (JJR more) (IN than) (CD two) (NN dozen))
-        (NNS people))
-      (VP (VBD were)
-        (VP (VBN reported)
-          (S
-            (VP (VBN injured))))))
+      (S
+        (NP (NNP Tornadoes))
+        (VP
+          (VP (VBD destroyed)
+            (NP (NNS homes)))
+          (CC and)
+          (VP (VBD overturned)
+            (NP (NNS cars))
+            (PP (IN in)
+              (NP
+                (NP (JJ several) (NNS areas))
+                (PP (IN of)
+                  (NP (NNP Alabama)))))
+            (PP (IN on)
+              (NP (NNP Saturday))))))
+      (CC and)
+      (S
+        (NP
+          (QP (JJR more) (IN than) (CD two) (NN dozen))
+          (NNS people))
+        (VP (VBD were)
+          (VP (VBN reported)
+            (S
+              (VP (VBN injured)))))))
     (. .)))
 
 (ROOT

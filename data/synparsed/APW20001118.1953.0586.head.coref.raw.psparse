@@ -10,30 +10,33 @@
   (NP (NNP Arab) (NNP Women) (NNP Leaders) (NNP Meet)))
 
 (ROOT
-  (S
-    (NP
-      (NP (NNP CAIRO) (, ,) (NNP Egypt) (NNP (AP) (NNP )) (CD Ten))
-      (PP (IN of)
-        (NP
-          (NP (DT the) (JJ Arab) (NN world) (POS 's))
-          (JJ first) (NNS ladies))))
-    (VP (VBD joined)
+  (NP
+    (NP (NNP CAIRO) (, ,) (NNP Egypt) (NNP [AP) (NNP ]))
+    (: -)
+    (S
       (NP
-        (NP (NNS activists))
-        (PP (IN in)
-          (NP (DT an) (JJ unusual) (NN gathering))))
-      (NP (NNP Saturday))
-      (S
-        (VP (TO to)
-          (VP (VB push)
-            (PP (IN for)
-              (NP
-                (NP (DT the) (VBN improved) (NN status))
-                (PP (IN of)
-                  (NP
-                    (NP (NNS women))
-                    (PP (IN in)
-                      (NP (PRP$ their) (JJ male-dominated) (NNS societies)))))))))))
+        (NP (CD Ten))
+        (PP (IN of)
+          (NP
+            (NP (DT the) (JJ Arab) (NN world) (POS 's))
+            (JJ first) (NNS ladies))))
+      (VP (VBD joined)
+        (NP
+          (NP (NNS activists))
+          (PP (IN in)
+            (NP (DT an) (JJ unusual) (NN gathering))))
+        (NP (NNP Saturday))
+        (S
+          (VP (TO to)
+            (VP (VB push)
+              (PP (IN for)
+                (NP
+                  (NP (DT the) (VBN improved) (NN status))
+                  (PP (IN of)
+                    (NP
+                      (NP (NNS women))
+                      (PP (IN in)
+                        (NP (PRP$ their) (JJ male-dominated) (NNS societies))))))))))))
     (. .)))
 
 (ROOT

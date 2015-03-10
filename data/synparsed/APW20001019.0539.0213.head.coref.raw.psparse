@@ -13,20 +13,20 @@
     (NP (NNP Behind))))
 
 (ROOT
-  (S
+  (NP
+    (NP (NNP SEPANG) (, ,) (NNP Malaysia) (NNP [AP) (NNP ]))
+    (: -)
     (S
-      (VP (VBG SEPANG)))
-    (, ,)
-    (NP (NNP Malaysia) (NNP (AP) (NNP )) (NNP Michael) (NNP Schumacher))
-    (VP (VBZ is)
-      (ADVP (RB still))
-      (VP (VBG celebrating)
-        (NP
+      (NP (NNP Michael) (NNP Schumacher))
+      (VP (VBZ is)
+        (ADVP (RB still))
+        (VP (VBG celebrating)
           (NP
-            (NP (NNP Ferrari) (POS 's))
-            (JJ first) (NNP Formula) (CD One) (NN title))
-          (PP (IN since)
-            (NP (CD 1979))))))
+            (NP
+              (NP (NNP Ferrari) (POS 's))
+              (JJ first) (NNP Formula) (CD One) (NN title))
+            (PP (IN since)
+              (NP (CD 1979)))))))
     (. .)))
 
 (ROOT
@@ -353,7 +353,7 @@
             (PP (TO to)
               (NP (NNP Alain) (NNP Prost))))
           (NP
-            (NP (CD (53) (NNS )))
+            (NP (CD [53) (NNS ]))
             (PP (IN on)
               (NP (DT the) (NN career) (NN list)))))))
     (. .)))

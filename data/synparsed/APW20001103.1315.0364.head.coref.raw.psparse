@@ -23,10 +23,12 @@
     (. .)))
 
 (ROOT
-  (S
+  (FRAG
+    (NP (NNP [AP) (NNP ]))
+    (: -)
     (S
       (NP
-        (NP (NNP (AP) (NNP )) (NNP Terry) (NNP Shea))
+        (NP (NNP Terry) (NNP Shea))
         (, ,)
         (SBAR
           (WHNP (WP who))
@@ -46,21 +48,24 @@
       (VP (MD will)
         (VP (VB step)
           (PRT (RP down))
-          (PP (IN as)
-            (NP (NN coach)))
-          (PP (IN at)
-            (NP
-              (NP (DT the) (NN end))
-              (PP (IN of)
-                (NP (DT this) (NN season))))))))
-    (, ,)
-    (NP (DT a) (NN source))
-    (ADVP (RB close)
-      (PP (TO to)
-        (NP (DT the) (NN school))))
-    (VP (VBD told)
-      (NP (DT The) (NNP Associated) (NNP Press))
-      (NP (NNP Friday)))
+          (SBAR (IN as)
+            (S
+              (NP
+                (NP (NN coach))
+                (PP (IN at)
+                  (NP
+                    (NP (DT the) (NN end))
+                    (PP (IN of)
+                      (NP
+                        (NP (DT this) (NN season))
+                        (, ,)
+                        (NP
+                          (NP (DT a) (NN source) (NN close))
+                          (PP (TO to)
+                            (NP (DT the) (NN school)))))))))
+              (VP (VBD told)
+                (NP (DT The) (NNP Associated) (NNP Press))
+                (NP (NNP Friday))))))))
     (. .)))
 
 (ROOT
@@ -501,6 +506,7 @@
               (CC and)
               (NP
                 (NP (CD two) (NNS coordinators))
+                (: -)
                 (NP
                   (NP (NNP Miami) (JJ defensive) (NN coordinator) (NNP Greg) (NNP Schiano))
                   (CC and)

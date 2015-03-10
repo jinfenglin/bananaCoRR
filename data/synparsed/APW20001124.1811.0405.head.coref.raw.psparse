@@ -16,9 +16,9 @@
 
 (ROOT
   (NP
-    (NP (NNP FRANKFURT))
-    (, ,)
-    (NP (NNP Germany) (NNP (AP) (NNP )) (NNP Computer) (NN giant) (NNP Hewlett-Packard) (NNP Corp))
+    (NP (NNP FRANKFURT) (, ,) (NNP Germany) (NNP [AP) (NNP ]))
+    (: -)
+    (NP (NNP Computer) (NN giant) (NNP Hewlett-Packard) (NNP Corp))
     (. .)))
 
 (ROOT
@@ -410,7 +410,7 @@
                   (VP (VB pay)
                     (NP (CD 30) (NNS marks))
                     (NP
-                      (QP (CD ($12.90) (CD ))))
+                      (QP (CD [$12.90) (CD ])))
                     (PP (IN for)
                       (NP
                         (NP (DT each) (NN CD) (NN burner))
@@ -441,7 +441,7 @@
                       (NP (NNP Hewlett-Packard))
                       (VP (VB pay)
                         (NP (CD 3.60) (NNS marks))
-                        (NP (CD ($1.54) (NNS )))
+                        (NP (CD [$1.54) (NNS ]))
                         (PP (IN for)
                           (NP
                             (NP (DT each) (NN unit))
@@ -455,7 +455,7 @@
                                         (VP (VB pay)
                                           (NP (CD 12) (NNS marks))
                                           (NP
-                                            (QP (CD ($5.16) (CD ))))
+                                            (QP (CD [$5.16) (CD ])))
                                           (PP (IN for)
                                             (NP
                                               (NP (DT each) (NN one))
@@ -608,14 +608,14 @@
     (NP (NN equipment) (NNS manufacturers))
     (VP (VBP pay)
       (NP (CD 2.50) (NNS marks)
-        (QP (CD ($1.07) (CD ))))
+        (QP (CD [$1.07) (CD ])))
       (PP (IN for)
         (NP
           (NP (DT each) (NN cassette) (NN recorder))
           (CC and)
           (NP (CD 18) (NNS marks))))
       (NP
-        (NP (CD ($7.74) (NNS )))
+        (NP (CD [$7.74) (NNS ]))
         (PP (IN for)
           (NP
             (NP (DT each) (JJ video) (NN recorder))

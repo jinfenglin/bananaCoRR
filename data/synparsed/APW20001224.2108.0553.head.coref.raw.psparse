@@ -19,11 +19,14 @@
         (NP (NNP TEHRAN))
         (, ,)
         (NP
+          (NP (NNP Iran) (NNP [AP) (NNP ]))
+          (: -)
           (NP
-            (NP (NNP Iran) (NNP (AP) (NNP )) (NNP Iran) (POS 's))
-            (JJ only) (JJ Jewish) (NN legislator))
-          (PP (IN on)
-            (NP (NNP Sunday)))))
+            (NP
+              (NP (NNP Iran) (POS 's))
+              (JJ only) (JJ Jewish) (NN legislator))
+            (PP (IN on)
+              (NP (NNP Sunday))))))
       (VP (VBD criticized)
         (NP
           (NP (DT the) (NN treatment))
@@ -97,14 +100,20 @@
       (NP
         (NP
           (QP (RB twice) (RB as) (JJ much))
-          (NN blood) (NN money) (JJ financial) (NN compensation))
-        (PP (TO to)
-          (NP
-            (NP (DT a) (NN murder) (NN victim) (POS 's))
-            (NN family))))
-      (PP (TO to)
+          (NN blood) (NN money))
+        (: -)
         (NP
-          (QP (CD Muslims) (IN than) (TO to) (CD non-Muslims)))))
+          (NP (JJ financial) (NN compensation))
+          (PP (TO to)
+            (NP
+              (NP (DT a) (NN murder) (NN victim) (POS 's))
+              (NN family))))
+        (: -))
+      (PP (TO to)
+        (NP (NNPS Muslims)))
+      (PP (IN than)
+        (PP (TO to)
+          (NP (NNS non-Muslims)))))
     (. .)))
 
 (ROOT

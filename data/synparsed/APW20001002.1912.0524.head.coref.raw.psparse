@@ -23,34 +23,33 @@
     (. .)))
 
 (ROOT
-  (S
-    (NP (NNP (AP))
-    (VP (VBD ))
-      (SBAR
-        (S
-          (NP (DT A) (NN teen-ager))
-          (VP (VBD entered)
+  (FRAG
+    (NP (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP (DT A) (NN teen-ager))
+      (VP (VBD entered)
+        (NP
+          (NP (JJ dual) (NNS pleas))
+          (PP (IN of)
             (NP
-              (NP (JJ dual) (NNS pleas))
-              (PP (IN of)
-                (NP
-                  (ADJP
-                    (ADJP (JJ guilty)
-                      (CC and)
-                      (JJ guilty))
-                    (CC but)
-                    (ADJP (RB mentally) (JJ ill)))
-                  (NNP Monday))))
-            (PP (IN in)
-              (NP
-                (NP (DT a) (CD 1999) (NN school) (NN shooting))
-                (SBAR
-                  (WHNP (WDT that))
-                  (S
-                    (VP (VBD left)
-                      (NP
-                        (NP (CD six) (JJ fellow) (NNS students))
-                        (VP (VBN wounded))))))))))))
+              (ADJP
+                (ADJP (JJ guilty)
+                  (CC and)
+                  (JJ guilty))
+                (CC but)
+                (ADJP (RB mentally) (JJ ill)))
+              (NNP Monday))))
+        (PP (IN in)
+          (NP
+            (NP (DT a) (CD 1999) (NN school) (NN shooting))
+            (SBAR
+              (WHNP (WDT that))
+              (S
+                (VP (VBD left)
+                  (NP
+                    (NP (CD six) (JJ fellow) (NNS students))
+                    (VP (VBN wounded))))))))))
     (. .)))
 
 (ROOT

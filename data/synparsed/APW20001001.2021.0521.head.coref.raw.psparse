@@ -13,36 +13,35 @@
       (NP (NNP Egypt)))))
 
 (ROOT
-  (S
-    (NP (NNP CAIRO))
-    (, ,)
-    (PP
-      (NP (NNP Egypt) (NNP (AP) (NNP )))
-      (IN In)
-      (NP
-        (NP (PRP$ his) (JJ foreign) (NN policy) (NN debut))
-        (PP (IN as)
-          (NP
-            (NP (NNP Syria) (POS 's))
-            (NN president)))))
-    (, ,)
-    (NP (NNP Bashar) (NNP Assad))
-    (VP (VBD met)
-      (NP (NNP Sunday))
-      (PP (IN with)
+  (NP
+    (NP (NNP CAIRO) (, ,) (NNP Egypt) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (PP (IN In)
         (NP
+          (NP (PRP$ his) (JJ foreign) (NN policy) (NN debut))
+          (PP (IN as)
+            (NP
+              (NP (NNP Syria) (POS 's))
+              (NN president)))))
+      (, ,)
+      (NP (NNP Bashar) (NNP Assad))
+      (VP (VBD met)
+        (NP (NNP Sunday))
+        (PP (IN with)
           (NP
-            (NP (NNP Egyptian) (NNP President) (NNP Hosni) (NNP Mubarak))
-            (PP (IN in)
-              (NP
-                (NP (NNS talks))
-                (PP (IN on)
-                  (NP (JJ Mideast) (NN peace))))))
-          (CC and)
-          (NP
-            (NP (DT the) (VBG escalating) (NN violence))
-            (PP (IN in)
-              (NP (DT the) (JJ Palestinian) (NNS territories)))))))
+            (NP
+              (NP (NNP Egyptian) (NNP President) (NNP Hosni) (NNP Mubarak))
+              (PP (IN in)
+                (NP
+                  (NP (NNS talks))
+                  (PP (IN on)
+                    (NP (JJ Mideast) (NN peace))))))
+            (CC and)
+            (NP
+              (NP (DT the) (VBG escalating) (NN violence))
+              (PP (IN in)
+                (NP (DT the) (JJ Palestinian) (NNS territories))))))))
     (. .)))
 
 (ROOT
@@ -118,11 +117,11 @@
     (VP (VBZ is)
       (UCP
         (S
-          (NP (JJ complete) (NN agreement) (NN (between))
+          (NP (JJ complete) (NN agreement) (NN [between))
           (NP
             (NP (NNP Mubarak)
               (CC and)
-              (NNP Assad) (NNP )))
+              (NNP Assad) (NNP ]))
             (PP (IN as)
               (PP (TO to)
                 (NP

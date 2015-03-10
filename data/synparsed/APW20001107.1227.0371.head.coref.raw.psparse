@@ -15,24 +15,29 @@
 (ROOT
   (S
     (S
-      (NP (NNP BEIJING) (NNP (AP) (NNP )) (NNP China))
-      (VP (MD will)
-        (VP (VB need)
-          (NP
-            (NP
-              (QP (RB almost) (CD 1,600))
-              (JJ new) (NNS aircraft))
-            (PP (IN over)
-              (NP (DT the) (JJ next) (CD two) (NNS decades))))
+      (VP (VBG BEIJING)
+        (NP
+          (NP (NNP [AP) (NNP ]))
+          (: -)
           (S
-            (VP (TO to)
-              (VP (VB meet)
-                (NP (PRP$ its) (NNS goals))
-                (PP (IN for)
+            (NP (NNP China))
+            (VP (MD will)
+              (VP (VB need)
+                (NP
                   (NP
-                    (NP (NN growth))
-                    (PP (IN in)
-                      (NP (NN air) (NN travel)))))))))))
+                    (QP (RB almost) (CD 1,600))
+                    (JJ new) (NNS aircraft))
+                  (PP (IN over)
+                    (NP (DT the) (JJ next) (CD two) (NNS decades))))
+                (S
+                  (VP (TO to)
+                    (VP (VB meet)
+                      (NP (PRP$ its) (NNS goals))
+                      (PP (IN for)
+                        (NP
+                          (NP (NN growth))
+                          (PP (IN in)
+                            (NP (NN air) (NN travel))))))))))))))
     (, ,)
     (NP (NNP Airbus) (NNP Industrie))
     (VP (VBD said)

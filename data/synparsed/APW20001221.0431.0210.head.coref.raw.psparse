@@ -10,32 +10,35 @@
   (NP (NNP Bush) (NNP Names) (NNP Inaugural) (NNP Committee)))
 
 (ROOT
-  (S
-    (NP (NNP WASHINGTON) (NNP (AP) (NNP )) (NNP President) (NNP -elect) (NNP Bush))
-    (VP (VBD named)
-      (NP (PRP$ his) (JJ nine-member) (JJ inaugural) (NN committee))
-      (NP (NNP Wednesday))
-      (, ,)
-      (S
-        (VP (VBG stacking)
-          (NP (PRP it))
-          (PP (IN with)
-            (NP
-              (NP (NNS individuals))
-              (SBAR
-                (WHNP (WP who))
-                (S
-                  (VP (VBD helped)
-                    (SBAR
-                      (S
-                        (NP (PRP him))
-                        (VP (VBP raise)
-                          (NP (DT a) (NN record))
-                          (NP
+  (NP
+    (NP (NNP WASHINGTON) (NNP [AP) (NNP ]))
+    (: -)
+    (NP
+      (NP (NNP President) (NNP -elect) (NNP Bush))
+      (VP (VBN named)
+        (NP (PRP$ his) (JJ nine-member) (JJ inaugural) (NN committee))
+        (NP (NNP Wednesday))
+        (, ,)
+        (S
+          (VP (VBG stacking)
+            (NP (PRP it))
+            (PP (IN with)
+              (NP
+                (NP (NNS individuals))
+                (SBAR
+                  (WHNP (WP who))
+                  (S
+                    (VP (VBD helped)
+                      (SBAR
+                        (S
+                          (NP (PRP him))
+                          (VP (VBP raise)
+                            (NP (DT a) (NN record))
                             (NP
-                              (QP (CD $100) (CD million)))
-                            (PP (IN for)
-                              (NP (PRP$ his) (JJ presidential) (NN race)))))))))))))))
+                              (NP
+                                (QP (CD $100) (CD million)))
+                              (PP (IN for)
+                                (NP (PRP$ his) (JJ presidential) (NN race))))))))))))))))
     (. .)))
 
 (ROOT

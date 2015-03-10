@@ -11,48 +11,49 @@
 
 (ROOT
   (S
-    (ADVP (RB BELGRADE))
-    (, ,)
-    (NP (NNP Yugoslavia) (NNP (AP))
-    (VP (VBD ))
-      (SBAR
-        (S
-          (PP (IN With)
+    (S
+      (ADVP (RB BELGRADE))
+      (, ,)
+      (NP (NNP Yugoslavia) (NNP [AP))
+      (VP (VBZ ])))
+    (: -)
+    (S
+      (PP (IN With)
+        (NP
+          (NP (NNP Vojislav) (NNP Kostunica))
+          (PP (IN in)
             (NP
-              (NP (NNP Vojislav) (NNP Kostunica))
-              (PP (IN in)
-                (NP
-                  (NP (NN office))
-                  (PP (IN as)
-                    (NP (NN president)))))))
-          (, ,)
+              (NP (NN office))
+              (PP (IN as)
+                (NP (NN president)))))))
+      (, ,)
+      (NP
+        (NP (NNS backers))
+        (PP (IN of)
+          (NP (DT the) (JJ pro-democracy) (NN leader))))
+      (VP (VBD embarked)
+        (NP (NNP Sunday))
+        (PP (IN on)
           (NP
-            (NP (NNS backers))
+            (NP (DT the)
+              (ADJP (RB potentially) (JJ volatile))
+              (NN task))
             (PP (IN of)
-              (NP (DT the) (JJ pro-democracy) (NN leader))))
-          (VP (VBD embarked)
-            (NP (NNP Sunday))
-            (PP (IN on)
-              (NP
-                (NP (DT the)
-                  (ADJP (RB potentially) (JJ volatile))
-                  (NN task))
-                (PP (IN of)
-                  (S
-                    (VP (VBG forming)
-                      (NP
-                        (NP (DT a) (NN government))
-                        (SBAR
-                          (WHNP (WDT that))
+              (S
+                (VP (VBG forming)
+                  (NP
+                    (NP (DT a) (NN government))
+                    (SBAR
+                      (WHNP (WDT that))
+                      (S
+                        (VP (VBZ tries)
                           (S
-                            (VP (VBZ tries)
-                              (S
-                                (VP (TO to)
-                                  (VP (VB exclude)
-                                    (NP
-                                      (NP (NNS backers))
-                                      (PP (IN of)
-                                        (NP (JJ former) (NN leader) (NNP Slobodan) (NNP Milosevic))))))))))))))))))))
+                            (VP (TO to)
+                              (VP (VB exclude)
+                                (NP
+                                  (NP (NNS backers))
+                                  (PP (IN of)
+                                    (NP (JJ former) (NN leader) (NNP Slobodan) (NNP Milosevic))))))))))))))))))
     (. .)))
 
 (ROOT
@@ -110,11 +111,13 @@
                   (VP (VBD helped)
                     (VP (VB manage)
                       (NP
-                        (NP (NNP Kostunica) (POS 's))
-                        (NN rise))
-                      (PP (TO to)
                         (NP
-                          (NP (NN power))
+                          (NP (NNP Kostunica) (POS 's))
+                          (NN rise))
+                        (PP
+                          (PP (TO to)
+                            (NP (NN power)))
+                          (: -)
                           (PP (IN from)
                             (NP (PRP$ his) (NN election) (NN campaign)))))
                       (PP (IN through)
@@ -205,12 +208,14 @@
                 (PP (VBG including)
                   (NP
                     (NP (NNP Serbian) (NNP President) (NNP Milan) (NNP Milutinovic))
+                    (: -)
                     (PP (IN like)
-                      (NP (NNP Milosevic)))
-                    (, ,)
-                    (VP (VBN indicted)
-                      (PP (IN by)
-                        (NP (DT the) (NN tribunal))))))))))))
+                      (NP
+                        (NP (NNP Milosevic))
+                        (, ,)
+                        (VP (VBN indicted)
+                          (PP (IN by)
+                            (NP (DT the) (NN tribunal))))))))))))))
     (. .)))
 
 (ROOT
@@ -433,36 +438,38 @@
     (VP (VBZ is)
       (VP (VBN blamed)
         (PP (IN by)
-          (NP (DT the)
-            (ADJP (JJ West)
-              (PP (IN for)
+          (NP
+            (NP (DT the)
+              (ADJP (JJ West)
+                (PP (IN for)
+                  (S
+                    (VP (VBG starting)
+                      (PRN (: -)
+                        (CC and)
+                        (ADVP (RB then)))))))
+              (NN losing))
+            (: -)
+            (NP
+              (NP (CD four) (JJ Balkan) (NNS wars))
+              (SBAR
+                (WHNP (WDT that))
                 (S
-                  (VP
-                    (VP (VBG starting))
-                    (CC and)
-                    (ADVP (RB then))
-                    (VP (VBG losing)
-                      (NP
-                        (NP (CD four) (JJ Balkan) (NNS wars))
-                        (SBAR
-                          (WHNP (WDT that))
+                  (VP (VBD broke)
+                    (PRT (RP out))
+                    (PP (IN in)
+                      (NP (DT the) (JJ last) (NN decade)))
+                    (SBAR
+                      (WHADVP (WRB when))
+                      (S
+                        (NP
+                          (NP (NNS parts))
+                          (PP (IN of)
+                            (NP (NNP Yugoslavia))))
+                        (VP (VBD began)
                           (S
-                            (VP (VBD broke)
-                              (PRT (RP out))
-                              (PP (IN in)
-                                (NP (DT the) (JJ last) (NN decade)))
-                              (SBAR
-                                (WHADVP (WRB when))
-                                (S
-                                  (NP
-                                    (NP (NNS parts))
-                                    (PP (IN of)
-                                      (NP (NNP Yugoslavia))))
-                                  (VP (VBD began)
-                                    (S
-                                      (VP (TO to)
-                                        (VP (VB seek))))))))))))))))
-            (NN independence)))))
+                            (VP (TO to)
+                              (VP (VB seek)
+                                (NP (NN independence))))))))))))))))
     (. .)))
 
 (ROOT
@@ -748,45 +755,45 @@
 
 (ROOT
   (S
-    (NP (DT That) (NN party))
-    (VP
-      (VP (VBD backed)
-        (NP (NNP Milosevic))
-        (PP (IN until)
-          (NP (PRP$ his) (NN downfall))))
-      (CC and)
-      (ADVP (RB now))
-      (VP (VBZ seeks)
-        (S
-          (VP (TO to)
-            (VP (VB have)
-              (NP
-                (NP (CD one))
-                (PP (IN of)
-                  (NP (PRP$ its) (JJ own)))
-                (VP (VBN appointed)
-                  (PP (IN as)
-                    (NP
+    (S
+      (NP (DT That) (NN party))
+      (VP
+        (VP (VBD backed)
+          (NP (NNP Milosevic))
+          (PP (IN until)
+            (NP (PRP$ his) (NN downfall))))
+        (CC and)
+        (ADVP (RB now))
+        (VP (VBZ seeks)
+          (S
+            (VP (TO to)
+              (VP (VB have)
+                (NP
+                  (NP (CD one))
+                  (PP (IN of)
+                    (NP (PRP$ its) (JJ own)))
+                  (VP (VBN appointed)
+                    (PP (IN as)
                       (NP
                         (NP (NNP Yugoslavia) (POS 's))
-                        (JJ prime) (NN minister))
-                      (SBAR
-                        (S
-                          (NP (DT the) (NN constitution))
-                          (VP (VBZ says)
-                            (SBAR (IN that)
-                              (S
-                                (SBAR (IN if)
-                                  (S
-                                    (NP (DT the) (NN president))
-                                    (VP (VBZ is)
-                                      (PP (IN from)
-                                        (NP (NNP Serbia))))))
-                                (, ,)
-                                (NP (DT the) (JJ prime) (NN minister))
-                                (VP (MD must)
-                                  (VP (VB be)
-                                    (NP (NNP Montenegrin))))))))))))))))))
+                        (JJ prime) (NN minister)))))))))))
+    (: -)
+    (S
+      (NP (DT the) (NN constitution))
+      (VP (VBZ says)
+        (SBAR (IN that)
+          (S
+            (SBAR (IN if)
+              (S
+                (NP (DT the) (NN president))
+                (VP (VBZ is)
+                  (PP (IN from)
+                    (NP (NNP Serbia))))))
+            (, ,)
+            (NP (DT the) (JJ prime) (NN minister))
+            (VP (MD must)
+              (VP (VB be)
+                (NP (NNP Montenegrin))))))))
     (. .)))
 
 (ROOT

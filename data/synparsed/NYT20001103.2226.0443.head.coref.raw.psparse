@@ -96,34 +96,35 @@
     (VP (VBD was)
       (VP (VBG working)
         (PP (IN in)
+          (NP (NNP London)))
+        (PP (IN as)
           (NP
-            (NP (NNP London))
-            (PP (IN as)
-              (NP
-                (NP (DT a) (NN film) (NN producer))
-                (ADVP (RBS most) (RB notably))
+            (NP (DT a) (NN film) (NN producer))
+            (PRN (: -)
+              (ADVP (RBS most) (RB notably)
                 (PP (IN of)
-                  (NP (JJ ``The) (NNP Mouse)))
-                (NP
-                  (NP (DT That) (NNP Roared) (NNP ,''))
-                  (PP (IN with)
-                    (NP (NNP Peter) (NNPS Sellers))))))))
-        (SBAR
-          (WHADVP (WRB when))
-          (S
-            (NP (PRP he))
-            (VP (VBD was)
-              (VP (VBN approached)
-                (PP (IN by)
-                  (NP (NNP United) (NNP Artists)))
-                (S
-                  (VP (TO to)
-                    (VP (VB oversee)
-                      (NP (DT the) (JJ first) (NN foray))
-                      (PP (IN into)
-                        (NP (NN cinema)))
-                      (PP (IN by)
-                        (NP (DT the) (NNPS Beatles))))))))))))
+                  (NP (NN ``The))))
+              (VP (VBG Mouse)
+                (NP (DT That) (NNP Roared) (NNP ,''))
+                (PP (IN with)
+                  (NP (NNP Peter) (NNPS Sellers))))
+              (: -))
+            (SBAR
+              (WHADVP (WRB when))
+              (S
+                (NP (PRP he))
+                (VP (VBD was)
+                  (VP (VBN approached)
+                    (PP (IN by)
+                      (NP (NNP United) (NNP Artists)))
+                    (S
+                      (VP (TO to)
+                        (VP (VB oversee)
+                          (NP (DT the) (JJ first) (NN foray))
+                          (PP (IN into)
+                            (NP (NN cinema)))
+                          (PP (IN by)
+                            (NP (DT the) (NNPS Beatles))))))))))))))
     (. .)))
 
 (ROOT
@@ -323,10 +324,15 @@
                               (NP (PRP it))
                               (VP (VBD spent)
                                 (PP (IN on)
-                                  (NP (DT the) (NN production)
-                                    (QP (RB about) (CD $600,000))))
-                                (PP (IN in)
-                                  (NP (RB just) (CD one) (NN day)))
+                                  (NP
+                                    (NP
+                                      (NP (DT the) (NN production))
+                                      (PRN (: -)
+                                        (NP
+                                          (QP (RB about) (CD $600,000)))
+                                        (: -)))
+                                    (PP (IN in)
+                                      (NP (RB just) (CD one) (NN day)))))
                                 (PP (IN after)
                                   (NP
                                     (NP

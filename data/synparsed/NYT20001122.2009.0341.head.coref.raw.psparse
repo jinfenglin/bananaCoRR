@@ -59,26 +59,26 @@
     (: ;)))
 
 (ROOT
-  (S
+  (NP
+    (NP (NNP SPRINGFIELD) (, ,) (NNP Mass.))
+    (: -)
     (S
-      (VP (VBN SPRINGFIELD)))
-    (, ,)
-    (NP (NNP Mass.) (NNP ``There))
-    (VP (VBD was)
-      (NP
-        (NP (DT a) (NNS coldness))
-        (PP (IN in)
-          (NP
-            (NP (NNP Ward) (NNP C) (NNP ,''))
-            (SBAR
-              (S
-                (NP (DT the) (NN prosecutor))
-                (VP (VBD began)
-                  (NP
-                    (NP (PRP$ his) (JJ wintry) (NN tale))
-                    (PP (IN of)
-                      (NP (JJ white-coated) (NN murder))))
-                  (NP (DT this) (NN week)))))))))
+      (NP (NN ``There))
+      (VP (VBD was)
+        (NP
+          (NP (DT a) (NNS coldness))
+          (PP (IN in)
+            (NP
+              (NP (NNP Ward) (NNP C) (NNP ,''))
+              (SBAR
+                (S
+                  (NP (DT the) (NN prosecutor))
+                  (VP (VBD began)
+                    (NP
+                      (NP (PRP$ his) (JJ wintry) (NN tale))
+                      (PP (IN of)
+                        (NP (JJ white-coated) (NN murder))))
+                    (NP (DT this) (NN week))))))))))
     (. .)))
 
 (ROOT
@@ -249,11 +249,13 @@
               (NP (DT the) (VBN alleged) (NNS crimes))
               (VP (VBD occurred)
                 (PP (IN on)
-                  (NP (JJ federal) (NN property)))
-                (NP
-                  (NP (DT the) (NNP Veterans) (NNP Affairs) (NNP Medical) (NNP Center))
-                  (PP (IN in)
-                    (NP (NNP Northampton) (, ,) (NNP Mass.)))))))
+                  (NP
+                    (NP (JJ federal) (NN property))
+                    (: -)
+                    (NP
+                      (NP (DT the) (NNP Veterans) (NNP Affairs) (NNP Medical) (NNP Center))
+                      (PP (IN in)
+                        (NP (NNP Northampton) (, ,) (NNP Mass.)))))))))
           (CC And)
           (SBAR (IN so)
             (S

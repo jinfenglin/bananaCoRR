@@ -13,27 +13,27 @@
       (NP (DT the) (NNP Stock) (NNP Market)))))
 
 (ROOT
-  (S
-    (NP (NNP NEW) (NNP YORK))
-    (VP (VBD (AP)
-      (NP
-        (NP (JJ )) (NNS Stocks))
-        (SBAR
-          (WHNP (WDT that))
-          (S
-            (VP (VBD were)
-              (VP
-                (VP (VBG moving)
-                  (ADVP (RB substantially)))
-                (CC or)
-                (VP (VBG trading)
-                  (ADVP (RB heavily))
-                  (NP (NNP Wednesday))))))))
-      (PP (IN on)
-        (NP
-          (NP (DT the) (NNP New) (NNP York) (NNP Stock) (NNP Exchange))
-          (CC and)
-          (NP (DT the) (NNP Nasdaq) (NNP Stock) (NNP Market)))))
+  (NP
+    (NP (NNP NEW) (NNP YORK) (NNP [AP) (NNP ]))
+    (: -)
+    (NP
+      (NP (NNS Stocks))
+      (SBAR
+        (WHNP (WDT that))
+        (S
+          (VP (VBD were)
+            (VP
+              (VP (VBG moving)
+                (ADVP (RB substantially)))
+              (CC or)
+              (VP (VBG trading)
+                (ADVP (RB heavily)
+                  (NP (NNP Wednesday))
+                  (PP (IN on)
+                    (NP
+                      (NP (DT the) (NNP New) (NNP York) (NNP Stock) (NNP Exchange))
+                      (CC and)
+                      (NP (DT the) (NNP Nasdaq) (NNP Stock) (NNP Market)))))))))))
     (. .)))
 
 (ROOT

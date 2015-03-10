@@ -19,15 +19,19 @@
     (NP
       (NP (NNS NABLUS))
       (, ,)
-      (NP (NNP West) (NNP Bank) (NNP (AP) (NNP )) (NNP Joseph's) (NNP Tomb))
-      (, ,)
       (NP
-        (NP (DT the) (NN flashpoint))
-        (PP (IN in)
+        (NP (NNP West) (NNP Bank) (NNP [AP) (NNP ]))
+        (: -)
+        (NP
+          (NP (NNP Joseph's) (NNP Tomb))
+          (, ,)
           (NP
-            (NP (DT a) (NN week))
-            (PP (IN of)
-              (NP (JJ bitter) (NNP West) (NNP Bank) (NNS clashes))))))
+            (NP (DT the) (NN flashpoint))
+            (PP (IN in)
+              (NP
+                (NP (DT a) (NN week))
+                (PP (IN of)
+                  (NP (JJ bitter) (NNP West) (NNP Bank) (NNS clashes))))))))
       (, ,))
     (VP (VBZ is)
       (ADVP (RB now))

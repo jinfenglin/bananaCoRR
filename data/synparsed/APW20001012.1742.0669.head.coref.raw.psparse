@@ -10,34 +10,34 @@
   (NP (NNP Clinton) (NNP Lifts) (NNP Yugoslavia) (NNPS Sanctions)))
 
 (ROOT
-  (S
+  (FRAG
+    (NP (NNP WASHINGTON) (NNP [AP) (NNP ]))
+    (: -)
     (S
-      (NP (NNP WASHINGTON) (NNP (AP))
-      (VP (VBZ ))
-        (S
-          (VP (VBG Celebrating)
-            (NP
-              (NP (DT the) (JJ political) (NN rebirth))
-              (PP (IN of)
-                (NP
-                  (NP (DT the) (NNS people))
-                  (PP (IN of)
-                    (NP (NNP Serbia))))))))))
-    (, ,)
-    (NP (NNP President) (NNP Clinton))
-    (VP (VBD lifted)
-      (NP (JJ key) (NN trade)
-        (CC and)
-        (JJ economic) (NNS sanctions))
       (S
-        (VP (TO to)
-          (VP (VB demonstrate)
-            (NP (NN support)
-              (PRT (RP for))
+        (VP (VBG Celebrating)
+          (NP
+            (NP (DT the) (JJ political) (NN rebirth))
+            (PP (IN of)
               (NP
-                (NP (NNP Belgrade) (POS 's))
-                (ADJP (RB newly) (VBN installed))
-                (NN government)))))))
+                (NP (DT the) (NNS people))
+                (PP (IN of)
+                  (NP (NNP Serbia))))))))
+      (, ,)
+      (NP (NNP President) (NNP Clinton))
+      (VP (VBD lifted)
+        (NP (JJ key) (NN trade)
+          (CC and)
+          (JJ economic) (NNS sanctions))
+        (S
+          (VP (TO to)
+            (VP (VB demonstrate)
+              (NP (NN support)
+                (PRT (RP for))
+                (NP
+                  (NP (NNP Belgrade) (POS 's))
+                  (ADJP (RB newly) (VBN installed))
+                  (NN government))))))))
     (. .)))
 
 (ROOT
@@ -482,23 +482,27 @@
     (. .)))
 
 (ROOT
-  (S
-    (ADVP (RB ``Thankfully))
-    (, ,)
-    (NP (DT that) (NN work))
-    (VP (MD can)
-      (ADVP (RB now))
-      (VP (VB begin)
-        (PP
-          (PP (IN without)
-            (NP
-              (NP (DT the) (NN burden))
-              (PP (IN of)
-                (NP (NN isolation)))))
-          (CC and)
-          (PP (IN with)
-            (NP
-              (NP (DT the) (NN friendship))
-              (PP (IN of)
-                (NP (DT the) (JJ American) (NNS people) (NN .''))))))))))
+  (NP
+    (NP
+      (ADVP (RB ``Thankfully))
+      (, ,)
+      (SBAR (IN that)
+        (S
+          (NP (NN work))
+          (VP (MD can)
+            (ADVP (RB now))
+            (VP (VB begin))))))
+    (: -)
+    (NP
+      (PP
+        (PP (IN without)
+          (NP
+            (NP (DT the) (NN burden))
+            (PP (IN of)
+              (NP (NN isolation)))))
+        (CC and)
+        (PP (IN with)
+          (NP (DT the) (NN friendship))))
+      (PP (IN of)
+        (NP (DT the) (JJ American) (NNS people) (NN .''))))))
 

@@ -10,18 +10,16 @@
   (NP (NNP Court) (NNP Blocks) (NNP Pinochet) (NNP House) (NNP Arrest)))
 
 (ROOT
-  (S
-    (ADVP (RB SANTIAGO))
-    (, ,)
-    (NP (NNP Chile) (NNP (AP))
-    (VP (VBZ ))
-      (NP
-        (NP (DT A) (NN court))
-        (PP (IN of)
-          (NP
-            (NP (NNS appeals))
-            (PP (IN on)
-              (NP (NNP Tuesday) (NNP suspended) (NNP Gen)))))))
+  (NP
+    (NP (NNP SANTIAGO) (, ,) (NNP Chile) (NNP [AP) (NNP ]))
+    (: -)
+    (NP
+      (NP (DT A) (NN court))
+      (PP (IN of)
+        (NP
+          (NP (NNS appeals))
+          (PP (IN on)
+            (NP (NNP Tuesday) (NNP suspended) (NNP Gen))))))
     (. .)))
 
 (ROOT
@@ -586,6 +584,7 @@
   (S
     (NP
       (NP (DT The) (NNP Supreme) (NNP Court))
+      (: -)
       (SBAR
         (WHNP (WDT which))
         (S
@@ -596,7 +595,8 @@
                   (VP (VB remove)
                     (NP (NNP Guzman))
                     (PP (IN from)
-                      (NP (DT the) (NN case)))))))))))
+                      (NP (DT the) (NN case))))))))))
+      (: -))
     (VP (VBZ has)
       (ADVP (RB also))
       (VP (VBN asked)

@@ -21,7 +21,7 @@
 
 (ROOT
   (NP
-    (NP (NNS (Eds))
+    (NP (NNS [Eds))
     (: :)
     (S
       (NP (JJ 2nd) (NN take))
@@ -33,7 +33,7 @@
 
 (ROOT
   (NP
-    (NP (NNP ET) (NNP .)) (NNP &QL))
+    (NP (NNP ET) (NNP .]) (NNP &QL))
     (: ;)
     (S
       (S
@@ -74,7 +74,7 @@
     (. .)))
 
 (ROOT
-  (S
+  (S (: -)
     (NP (DT The) (NNP Florida) (NNP Supreme) (NNP Court))
     (VP (VBD rejected)
       (NP (DT an) (NN appeal))
@@ -411,42 +411,44 @@
 
 (ROOT
   (S
-    (NP (DT Those) (NNS issues))
-    (VP (VBP include)
-      (SBAR (IN whether)
-        (S
-          (NP (NNP Gore))
-          (VP (VBZ is)
-            (ADVP (RB really))
-            (NP
+    (S
+      (NP (DT Those) (NNS issues))
+      (VP (VBP include)
+        (SBAR (IN whether)
+          (S
+            (NP (NNP Gore))
+            (VP (VBZ is)
+              (ADVP (RB really))
               (NP
                 (NP (DT a) (NN candidate))
                 (VP (VBN entitled)
                   (S
                     (VP (TO to)
                       (VP (VB bring)
-                        (NP (DT a) (NN contest) (NN lawsuit))
-                        (ADVP (RB technically)))))))
-              (, ,) (RB only)
-              (NP
-                (NP (DT the) (NNS electors))
-                (SBAR
-                  (SBAR (IN for)
-                    (S
-                      (NP (DT a) (NN candidate))
-                      (VP (VBP are)
-                        (PP (IN on)
-                          (NP (DT a) (JJ presidential) (NN ballot))))))
-                  (CC and)
-                  (SBAR (IN whether)
-                    (S
-                      (NP (DT any) (JJ presidential) (NN election))
-                      (VP (MD can)
-                        (ADVP (RB truly))
-                        (VP (VB be)
-                          (VP (VBN contested)
-                            (PP (IN under)
-                              (NP (NNP Florida) (NN law)))))))))))))))
+                        (NP (DT a) (NN contest) (NN lawsuit))))))))))))
+    (: -)
+    (S
+      (ADVP (RB technically))
+      (, ,)
+      (NP
+        (NP (RB only) (DT the) (NNS electors))
+        (PP (IN for)
+          (NP (DT a) (NN candidate))))
+      (VP (VBP are)
+        (UCP
+          (PP (IN on)
+            (NP (DT a) (JJ presidential) (NN ballot))
+            (: -))
+          (CC and)
+          (SBAR (IN whether)
+            (S
+              (NP (DT any) (JJ presidential) (NN election))
+              (VP (MD can)
+                (ADVP (RB truly))
+                (VP (VB be)
+                  (VP (VBN contested)
+                    (PP (IN under)
+                      (NP (NNP Florida) (NN law)))))))))))
     (. .)))
 
 (ROOT
@@ -648,7 +650,7 @@
     (. .)))
 
 (ROOT
-  (NP (NNP (MORE) (NNP ))))
+  (NP (NNP [MORE) (NNP ])))
 
 (ROOT
   (NP (NN NYT-12-01-00) (CD 2100EST)))

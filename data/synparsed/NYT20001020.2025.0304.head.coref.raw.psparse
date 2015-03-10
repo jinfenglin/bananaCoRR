@@ -29,14 +29,14 @@
 
 (ROOT
   (NP
-    (NP (NN (For) (NN release) (NNP Sunday))
+    (NP (NN [For) (NN release) (NNP Sunday))
     (, ,)
     (NP (NNP Oct))
     (. .)))
 
 (ROOT
   (NP
-    (NP (CD 22) (JJ )) (NNS &QL))
+    (NP (CD 22) (JJ ]) (NNS &QL))
     (: ;)
     (NP
       (NP (NNP &UR))
@@ -185,12 +185,14 @@
                   (PP (IN into)
                     (NP
                       (NP (JJR higher) (NN oil) (NNS prices))
+                      (: -)
                       (SBAR
                         (WHNP (WDT which))
                         (S
                           (NP (PRP it))
                           (VP (VBD did) (, ,)
-                            (ADVP (RB briefly)))))))))))
+                            (ADVP (RB briefly)))))
+                      (: -)))))))
           (CC and)
           (SBAR (IN that)
             (S
@@ -232,31 +234,33 @@
     (. .)))
 
 (ROOT
-  (S
+  (NP
+    (NP (CD 12))
+    (: -)
     (NP
-      (NP
-        (NP (CD 12))
-        (NP (DT the) (NN day)))
+      (NP (DT the) (NN day))
       (SBAR (IN that)
         (S
           (NP (DT a) (JJ Palestinian) (NN mob))
           (VP (VBD mauled)
-            (NP
-              (NP (CD two) (JJ Israeli) (NNS soldiers))
-              (, ,)
-              (NP
-                (NP (NNP Israel))
-                (VP (VBN retaliated)
-                  (PP (IN with)
-                    (NP (NN rocket) (NNS attacks)
-                      (CC and)
-                      (NNS terrorists))))))))))
-    (VP (VBD blew)
-      (NP (DT a) (NN hole))
-      (PP (IN in)
-        (NP (DT a) (NNP United) (NNPS States) (NN warship)))
-      (PP (IN in)
-        (NP (NNP Yemen))))
+            (SBAR
+              (S
+                (NP
+                  (NP (CD two) (JJ Israeli) (NNS soldiers))
+                  (, ,)
+                  (NP
+                    (NP (NNP Israel))
+                    (VP (VBN retaliated)
+                      (PP (IN with)
+                        (NP (NN rocket) (NNS attacks)
+                          (CC and)
+                          (NNS terrorists))))))
+                (VP (VBD blew)
+                  (NP (DT a) (NN hole))
+                  (PP (IN in)
+                    (NP (DT a) (NNP United) (NNPS States) (NN warship)))
+                  (PP (IN in)
+                    (NP (NNP Yemen))))))))))
     (. .)))
 
 (ROOT
@@ -431,14 +435,17 @@
           (NP (DT the) (NN region))))
       (VP (VBD was)
         (PP (IN among)
-          (NP (JJ several) (NNS factors)))
-        (PP (IN along) (IN with)
           (NP
-            (NP (DT a) (JJ general) (NN sell-off))
-            (PP (IN in)
-              (NP (NN technology)
-                (CC and)
-                (NN telecommunications) (NNS stocks)))
+            (NP (JJ several) (NNS factors))
+            (PRN (: -)
+              (PP (RB along) (IN with)
+                (NP
+                  (NP (DT a) (JJ general) (NN sell-off))
+                  (PP (IN in)
+                    (NP (NN technology)
+                      (CC and)
+                      (NN telecommunications) (NNS stocks)))))
+              (: -))
             (SBAR
               (WHNP (WDT that))
               (S

@@ -14,48 +14,51 @@
 
 (ROOT
   (S
-    (NP (NNP WASHINGTON) (NNP (AP) (NNP )) (NNPS Republicans))
-    (VP (VBP give)
-      (NP (NNP George) (NNP W.) (NNP Bush))
-      (NP
-        (NP (NN credit))
-        (PP (IN for)
-          (S
-            (VP (VBG promoting)
-              (NP (DT a) (JJ Russian) (NN role))
-              (PP (IN in)
-                (S
-                  (VP (VBG smoothing)
-                    (NP (DT the) (NN transition))
-                    (PP (IN from)
-                      (NP (NN despot)))
+    (S
+      (NP (NNP WASHINGTON) (NNP [AP))
+      (VP (VBZ ]) (: -)
+        (S
+          (NP (NNPS Republicans))
+          (VP (VB give)
+            (NP (NNP George) (NNP W.) (NNP Bush))
+            (NP (NN credit))
+            (PP (IN for)
+              (S
+                (VP (VBG promoting)
+                  (NP (DT a) (JJ Russian) (NN role))
+                  (PP (IN in)
                     (S
-                      (VP (TO to)
-                        (VP (VB democrat)
-                          (PP (IN in)
-                            (NP (NNP Yugoslavia)))
-                          (NP
-                            (NP (DT an) (NN idea))
-                            (VP (VBN dismissed)
+                      (VP (VBG smoothing)
+                        (NP (DT the) (NN transition))
+                        (PP (IN from)
+                          (NP (NN despot)))
+                        (S
+                          (VP (TO to)
+                            (VP (VB democrat)
                               (PP (IN in)
-                                (NP
-                                  (NP (NN debate))
-                                  (ADJP (RB as) (JJ risky))))
-                              (PP (IN by)
-                                (NP (NNP Al) (NNP Gore)))
-                              (SBAR (RB even) (IN as)
-                                (S
-                                  (NP (PRP$ his) (NN boss))
-                                  (VP (VBD was)
-                                    (VP (VBG trying)
-                                      (S
-                                        (VP (TO to)
-                                          (VP (VB get)
-                                            (S
-                                              (NP (NNP Moscow))
-                                              (VP (TO to)
-                                                (VP (VB step)
-                                                  (PRT (RP in)))))))))))))))))))))))))
+                                (NP (NNP Yugoslavia))))))))))))))))
+    (: -)
+    (S
+      (NP (DT an) (NN idea))
+      (VP (VBD dismissed)
+        (PP (IN in)
+          (NP (NN debate)))
+        (ADJP (RB as) (JJ risky))
+        (PP (IN by)
+          (NP (NNP Al) (NNP Gore)))
+        (SBAR (RB even) (IN as)
+          (S
+            (NP (PRP$ his) (NN boss))
+            (VP (VBD was)
+              (VP (VBG trying)
+                (S
+                  (VP (TO to)
+                    (VP (VB get)
+                      (S
+                        (NP (NNP Moscow))
+                        (VP (TO to)
+                          (VP (VB step)
+                            (PRT (RP in))))))))))))))
     (. .)))
 
 (ROOT

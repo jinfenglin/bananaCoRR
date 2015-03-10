@@ -65,9 +65,11 @@
     (: ;)))
 
 (ROOT
-  (S
+  (NP
+    (NP (NNP WASHINGTON))
+    (: -)
     (NP
-      (NP (NNP WASHINGTON) (NNP Advocates))
+      (NP (NNS Advocates))
       (PP (IN for)
         (NP
           (NP (JJR more) (JJ frequent) (NN disclosure))
@@ -77,20 +79,21 @@
               (S
                 (NP (JJ mutual) (NNS funds))
                 (VP (VBP hold)
-                  (PP (IN in)
-                    (NP (PRP$ their) (NNS portfolios))))))))))
-    (VP (VBD sparred)
-      (PP (IN with)
-        (NP (DT a) (JJ top) (NNP Securities)
-          (CC and)
-          (NNP Exchange) (NNP Commission) (NN official)))
-      (NP (NNP Thursday))
-      (PP (IN at)
-        (NP
-          (NP (DT a) (NN panel))
-          (VP (VBN sponsored)
-            (PP (IN by)
-              (NP (DT a) (NN fund) (NN shareholder) (NN advocacy) (NN group)))))))
+                  (SBAR (IN in)
+                    (S
+                      (NP (PRP$ their) (NNS portfolios))
+                      (VP (VBD sparred)
+                        (PP (IN with)
+                          (NP (DT a) (JJ top) (NNP Securities)
+                            (CC and)
+                            (NNP Exchange) (NNP Commission) (NN official)))
+                        (NP (NNP Thursday))
+                        (PP (IN at)
+                          (NP
+                            (NP (DT a) (NN panel))
+                            (VP (VBN sponsored)
+                              (PP (IN by)
+                                (NP (DT a) (NN fund) (NN shareholder) (NN advocacy) (NN group))))))))))))))))
     (. .)))
 
 (ROOT

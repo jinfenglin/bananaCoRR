@@ -54,34 +54,36 @@
     (: ;)))
 
 (ROOT
-  (S
+  (FRAG
+    (NP (NNP ROME))
+    (: -)
     (S
-      (ADVP (RB ROME))
-      (VP (VBG Fueling)
-        (NP (NN speculation))
-        (SBAR (IN that)
+      (S
+        (VP (VBG Fueling)
+          (NP (NN speculation))
+          (SBAR (IN that)
+            (S
+              (NP (NNP John) (NNP Paul) (NNP II))
+              (VP (MD might)
+                (VP (VB retire)
+                  (PP (IN at)
+                    (NP
+                      (NP (DT the) (NN end))
+                      (PP (IN of)
+                        (NP (DT this) (NN year)))))))))))
+      (, ,)
+      (NP (DT a) (JJ Belgian) (NN cardinal))
+      (VP (VBZ says)
+        (SBAR
           (S
-            (NP (NNP John) (NNP Paul) (NNP II))
-            (VP (MD might)
-              (VP (VB retire)
-                (PP (IN at)
-                  (NP
-                    (NP (DT the) (NN end))
-                    (PP (IN of)
-                      (NP (DT this) (NN year)))))))))))
-    (, ,)
-    (NP (DT a) (JJ Belgian) (NN cardinal))
-    (VP (VBZ says)
-      (SBAR
-        (S
-          (NP (PRP he))
-          (VP (VBZ believes)
-            (SBAR (IN that)
-              (S
-                (NP (DT the) (JJ frail) (, ,) (JJ ailing) (NN pope))
-                (VP (MD could)
-                  (VP (VB do)
-                    (NP (RB exactly) (DT that))))))))))
+            (NP (PRP he))
+            (VP (VBZ believes)
+              (SBAR (IN that)
+                (S
+                  (NP (DT the) (JJ frail) (, ,) (JJ ailing) (NN pope))
+                  (VP (MD could)
+                    (VP (VB do)
+                      (NP (RB exactly) (DT that)))))))))))
     (. .)))
 
 (ROOT

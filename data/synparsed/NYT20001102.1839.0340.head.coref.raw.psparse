@@ -24,11 +24,11 @@
 
 (ROOT
   (NP
-    (NP (CD &UR) (: ;) (CD (ATTN))
+    (NP (CD &UR) (: ;) (CD [ATTN))
     (: :)
     (S
       (S
-        (NP (NNP Fla) (NNP .)))
+        (NP (NNP Fla) (NNP .]))
         (ADJP (JJ &LR)))
       (: ;)
       (S
@@ -68,42 +68,45 @@
     (: ;)))
 
 (ROOT
-  (S
-    (PP
-      (NP (NNP TALLAHASSEE) (, ,) (NNP Fla.))
-      (IN After)
+  (NP
+    (NP (NNP TALLAHASSEE) (, ,) (NNP Fla.))
+    (: -)
+    (S
       (S
-        (VP (VBG throwing)
-          (NP (NNS barbs))
-          (PP (IN at)
-            (NP (PDT all) (DT the) (JJ other) (JJ presidential) (NNS candidates))))))
-    (, ,)
-    (NP
-      (NP (NNP Scott) (NNP Dailey))
-      (, ,)
-      (NP
-        (NP (DT a) (NN member))
-        (PP (IN of)
+        (PP (IN After)
+          (S
+            (VP (VBG throwing)
+              (NP (NNS barbs))
+              (PP (IN at)
+                (NP (PDT all) (DT the) (JJ other) (JJ presidential) (NNS candidates))))))
+        (, ,)
+        (NP
+          (NP (NNP Scott) (NNP Dailey))
+          (, ,)
           (NP
-            (NP (DT the) (NN school) (NN board))
-            (ADVP (RB here)))))
-      (, ,))
-    (VP (VBD introduced)
-      (NP (NNP Pat) (NNP Buchanan))
-      (PP (TO to)
-        (NP (DT a) (NN luncheon) (NN audience)))
-      (NP (NNP Thursday))
-      (PP (IN by)
-        (S
-          (VP (VBG joshing) (: :)
+            (NP (DT a) (NN member))
+            (PP (IN of)
+              (NP
+                (NP (DT the) (NN school) (NN board))
+                (ADVP (RB here)))))
+          (, ,))
+        (VP (VBD introduced)
+          (NP (NNP Pat) (NNP Buchanan))
+          (PP (TO to)
+            (NP (DT a) (NN luncheon) (NN audience)))
+          (NP (NNP Thursday))
+          (PP (IN by)
             (S
-              (NP (NN ``Pat))
-              (VP (VBZ says)
-                (SBAR
-                  (S
-                    (NP (PRP he))
-                    (VP (VBZ is)
-                      (NP (DT a) (JJ serious) (NN candidate)))))))))))
+              (VP (VBG joshing))))))
+      (: :)
+      (S
+        (NP (NN ``Pat))
+        (VP (VBZ says)
+          (SBAR
+            (S
+              (NP (PRP he))
+              (VP (VBZ is)
+                (NP (DT a) (JJ serious) (NN candidate))))))))
     (. .)))
 
 (ROOT
@@ -515,18 +518,17 @@
 
 (ROOT
   (S
-    (NP (NN ``We))
-    (VP (VBP want)
-      (S
-        (VP (TO to)
-          (VP (VB build)
-            (NP (DT a) (JJ new) (JJ third) (NN party))
-            (NP
-              (NP (DT a) (JJ conservative) (NN party))
-              (SBAR
-                (S
-                  (NP (NNP ,'') (NNP Buchanan))
-                  (VP (VBD said)))))))))
+    (S
+      (NP (NN ``We))
+      (VP (VBP want)
+        (S
+          (VP (TO to)
+            (VP (VB build)
+              (NP (DT a) (JJ new) (JJ third) (NN party)))))))
+    (: -)
+    (S
+      (NP (DT a) (JJ conservative) (NN party) (NNP ,'') (NNP Buchanan))
+      (VP (VBD said)))
     (. .)))
 
 (ROOT

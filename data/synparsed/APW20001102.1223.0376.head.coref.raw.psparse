@@ -10,32 +10,31 @@
   (NP (NNP Explosion) (NNP Rocks) (NNP Jerusalem) (NNP Market)))
 
 (ROOT
-  (S
+  (NP
+    (NP (NNP JERUSALEM) (NNP [AP) (NNP ]))
+    (: -)
     (S
-      (NP (NNP JERUSALEM) (NNP (AP))
-      (VP (VBD ))
-        (SBAR
-          (S
-            (NP (DT A) (NN car) (NN bomb))
-            (VP (VBD exploded)
-              (NP (NNP Thursday))
+      (S
+        (NP (DT A) (NN car) (NN bomb))
+        (VP (VBD exploded)
+          (NP (NNP Thursday))
+          (PP (IN in)
+            (NP
+              (NP (DT a) (JJ crowded) (JJ outdoor) (NN market))
               (PP (IN in)
                 (NP
-                  (NP (DT a) (JJ crowded) (JJ outdoor) (NN market))
-                  (PP (IN in)
-                    (NP
-                      (NP (DT the) (NN heart))
-                      (PP (IN of)
-                        (NP (NNP Jerusalem)))))))
-              (, ,)
-              (S
-                (VP (VBG killing)
-                  (NP
-                    (QP (IN at) (JJS least) (CD two))
-                    (NNS people)))))))))
-    (, ,)
-    (NP (NNS police))
-    (VP (VBD said))
+                  (NP (DT the) (NN heart))
+                  (PP (IN of)
+                    (NP (NNP Jerusalem)))))))
+          (, ,)
+          (S
+            (VP (VBG killing)
+              (NP
+                (QP (IN at) (JJS least) (CD two))
+                (NNS people))))))
+      (, ,)
+      (NP (NNS police))
+      (VP (VBD said)))
     (. .)))
 
 (ROOT

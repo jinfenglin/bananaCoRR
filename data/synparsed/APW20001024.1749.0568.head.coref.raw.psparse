@@ -11,33 +11,34 @@
 
 (ROOT
   (S
-    (ADVP (RB PALESTINE))
-    (, ,)
-    (NP (NNP Texas) (NNP (AP))
-    (VP (VBD ))
-      (SBAR
+    (S
+      (ADVP (RB PALESTINE))
+      (, ,)
+      (NP (NNP Texas) (NNP [AP))
+      (VP (VBZ ])))
+    (: -)
+    (S
+      (PP (IN With)
         (S
-          (PP (IN With)
-            (S
-              (NP (DT the) (NNPS Republicans))
-              (VP (VBG clinging)
-                (PP (TO to)
-                  (NP
-                    (NP (DT a) (JJ one-vote) (NN majority))
-                    (PP (IN in)
-                      (NP (DT the) (NN state) (NNP Senate))))))))
-          (, ,)
-          (NP
-            (NP (NN control))
-            (PP (IN of)
-              (NP (DT the) (NN chamber))))
-          (VP (MD could)
-            (VP (VB hinge)
-              (PP (IN on)
-                (NP
-                  (NP (DT a) (JJ single) (NN race))
-                  (PP (IN in)
-                    (NP (NNP East) (NNP Texas))))))))))
+          (NP (DT the) (NNPS Republicans))
+          (VP (VBG clinging)
+            (PP (TO to)
+              (NP
+                (NP (DT a) (JJ one-vote) (NN majority))
+                (PP (IN in)
+                  (NP (DT the) (NN state) (NNP Senate))))))))
+      (, ,)
+      (NP
+        (NP (NN control))
+        (PP (IN of)
+          (NP (DT the) (NN chamber))))
+      (VP (MD could)
+        (VP (VB hinge)
+          (PP (IN on)
+            (NP
+              (NP (DT a) (JJ single) (NN race))
+              (PP (IN in)
+                (NP (NNP East) (NNP Texas))))))))
     (. .)))
 
 (ROOT
@@ -209,8 +210,9 @@
     (VP (VBP hold)
       (NP
         (NP (DT the) (JJ slimmest) (NN majority))
-        (ADJP (JJ possible)
-          (NP (CD 16-15)))))
+        (ADJP (JJ possible)))
+      (: -)
+      (NP (CD 16-15)))
     (. .)))
 
 (ROOT
@@ -684,6 +686,9 @@
     (VP (VBD denied)
       (NP (PRP it)))
     (. .)))
+
+(ROOT
+  (INTJ (UH -)))
 
 (ROOT
   (PP (IN On)

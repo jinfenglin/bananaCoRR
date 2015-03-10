@@ -10,18 +10,18 @@
   (NP (NNP XFL) (NNP Has) (NNP First) (NNP Draft)))
 
 (ROOT
-  (S
-    (NP (NNP CHICAGO) (NNP (AP) (NNP )))
-    (VP (VBP ``Stone)
+  (NP
+    (NP (NNP CHICAGO) (NNP [AP) (NNP ]))
+    (: -)
+    (NP
+      (NP (NN ``Stone) (NNP Cold) ('' '') (NNP Steve) (NNP Austin))
+      (, ,)
       (NP
-        (NP (NNP Cold) ('' '') (NNP Steve) (NNP Austin))
-        (, ,)
-        (NP
-          (NP (DT The) (NNP Rock)
-            (CC and)
-            (NNP Triple) (NNP H) (NN weren't))
-          (PP (IN among)
-            (NP (DT the) (NNS selections))))))
+        (NP (DT The) (NNP Rock)
+          (CC and)
+          (NNP Triple) (NNP H) (NN weren't))
+        (PP (IN among)
+          (NP (DT the) (NNS selections)))))
     (. .)))
 
 (ROOT
@@ -91,24 +91,23 @@
             (CC and)
             (JJ white)))))
     (, ,)
-    (NP
-      (NP (DT no) (JJ fair) (NNS catches))
-      (PP (IN on)
-        (NP
-          (NP (NNS punts))
-          (, ,)
-          (NP (DT no) (NN quarterback) (NN -in-the-grasp) (NN rule))
-          (, ,))))
-    (VP (VBD miked)
-      (NP (NNS huddles)
-        (CC and)
-        (NNS cameras))
+    (NP (DT no) (NN fair))
+    (VP (VBZ catches)
       (PP
-        (ADVP (RB everywhere))
-        (IN on)
-        (NP (DT the) (NN sideline)))
-      (, ,)
-      (PP
+        (PP (IN on)
+          (NP
+            (NP (NNS punts))
+            (, ,)
+            (NP (DT no) (NN quarterback) (NN -in-the-grasp) (NN rule))
+            (, ,)
+            (NP (JJ miked) (NNS huddles))
+            (CC and)
+            (NP (NNS cameras)))
+          (ADVP (RB everywhere)))
+        (: -)
+        (PP (IN on)
+          (NP (DT the) (NN sideline)))
+        (, ,)
         (PP (IN in)
           (NP (NN locker) (NNS rooms)))
         (CC and)
@@ -510,7 +509,7 @@
             (VP (VBG being)
               (NP
                 (NP (DT the) (JJ first) (NNP XFL) (NN player))
-                (VP (VBN selected)
+                (VP (VBN selected) (: -)
                   (PP (IN by)
                     (NP (DT the) (NNP Xtreme))))))))))
     (. .)))
@@ -542,19 +541,23 @@
     (. .)))
 
 (ROOT
-  (S (CC And)
-    (PP (IN near)
-      (NP
-        (NP (DT the) (NN end))
-        (NP (DT the) (JJ first) (NN day))))
+  (S
     (S
+      (FRAG (CC And)
+        (PP (IN near)
+          (NP
+            (NP (DT the) (NN end))
+            (NP (DT the) (JJ first) (NN day)))
+          (: -)))
       (NP (DT the) (NN draft))
       (VP (VBZ continues)
-        (NP (NNP Sunday))))
-    (CC and)
+        (NP (NNP Sunday)
+          (CC and)
+          (NNP Monday))))
+    (: -)
     (S
       (NP
-        (NP (NNP Monday) (NN quarterback) (NNP Jim) (NNP Druckenmiller))
+        (NP (NNP quarterback) (NNP Jim) (NNP Druckenmiller))
         (, ,)
         (NP
           (NP (DT a) (JJ first-round) (NN choice))

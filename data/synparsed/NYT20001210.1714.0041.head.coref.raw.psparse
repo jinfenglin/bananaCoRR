@@ -464,10 +464,12 @@
 
 (ROOT
   (S
-    (NP
-      (NP (NNP GE) (NNS posts) (NN data))
-      (PP (IN on)
-        (NP (PRP$ its) (NNP Web) (NNS pages))))
+    (NP (NNP GE) (NNS posts)
+      (NX
+        (NP (NNS data))
+        (PP (IN on)
+          (NP (PRP$ its) (NNP Web) (NNS pages))
+          (: -))))
     (VP (VBD stripped) (, ,)
       (PP (IN of)
         (NP (NN course)))
@@ -475,35 +477,36 @@
       (PP (IN of)
         (NP
           (NP (NN identification))
-          (PP (IN on)
-            (SBAR
-              (WHADVP (WRB how))
-              (S
-                (NP (JJ efficiently) (NNS hospitals))
-                (VP (VBP use)
-                  (NP (PRP$ its) (NNP CAT) (NNS scanners))
-                  (PRN (, ,)
-                    (SBAR
-                      (WHADVP (WRB how) (RB often))
+          (: -)
+          (SBAR
+            (WHPP (IN on)
+              (WHNP (WRB how) (JJ efficiently)))
+            (S
+              (NP (NNS hospitals))
+              (VP (VBP use)
+                (NP (PRP$ its) (NNP CAT) (NNS scanners)))))
+          (, ,)
+          (SBAR
+            (WHADVP (WRB how) (RB often))
+            (S
+              (NP (NNS airlines))
+              (VP (VBP do)
+                (NP (JJ routine) (NN maintenance))
+                (PP (IN on)
+                  (NP (PRP$ its) (NNS engines)))
+                (, ,)
+                (SBAR
+                  (WHADVP (WRB how) (RB well))
+                  (S
+                    (NP (NNS utilities))
+                    (VP (VBP use)
+                      (NP (NN waste) (NN heat)
+                        (CC or)
+                        (NN water))
                       (S
-                        (NP (NNS airlines))
-                        (VP (VBP do)
-                          (NP (JJ routine) (NN maintenance))
-                          (PP (IN on)
-                            (NP (PRP$ its) (NNS engines))))))
-                    (, ,))
-                  (SBAR
-                    (WHADVP (WRB how) (RB well))
-                    (S
-                      (NP (NNS utilities))
-                      (VP (VBP use)
-                        (NP (NN waste) (NN heat)
-                          (CC or)
-                          (NN water))
-                        (S
-                          (VP (TO to)
-                            (VP (VB generate)
-                              (NP (JJR more) (NN electricity)))))))))))))))
+                        (VP (TO to)
+                          (VP (VB generate)
+                            (NP (JJR more) (NN electricity))))))))))))))
     (. .)))
 
 (ROOT
@@ -576,9 +579,10 @@
             (VP (VB use)
               (S
                 (NP (PRP it))
-                (ADJP (JJ free)
-                  (PP (IN for)
-                    (NP (CD 30) (NNS days))))))))))
+                (ADJP (JJ free)))
+              (: -)
+              (PP (IN for)
+                (NP (CD 30) (NNS days))))))))
     (. .)))
 
 (ROOT

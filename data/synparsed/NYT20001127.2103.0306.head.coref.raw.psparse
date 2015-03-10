@@ -56,17 +56,18 @@
 
 (ROOT
   (NP
-    (NP (NNP Times) (NNP News) (NNP Service) (NNP &QC))
-    (: ;)
     (NP
-      (NP (NNP &QL))
+      (NP (NNP Times) (NNP News) (NNP Service) (NNP &QC))
       (: ;)
-      (NP (NNP &LR)))
+      (NP (NNP &QL)))
     (: ;)
     (NP
-      (NP
-        (NP (NNP WASHINGTON))
-        (NP (DT The) (NN way)))
+      (NP (NNP &LR))
+      (: ;)
+      (NP (NNP WASHINGTON)))
+    (: -)
+    (NP
+      (NP (DT The) (NN way))
       (NP (NNP Andrew) (NNP H.) (NNP Card) (NNP Jr)))
     (. .)))
 

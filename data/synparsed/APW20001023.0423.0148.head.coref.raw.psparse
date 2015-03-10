@@ -11,32 +11,35 @@
 
 (ROOT
   (S
-    (NP (NNP VILLAHERMOSA))
-    (, ,)
-    (PP
-      (NP (NNP Mexico) (NNP (AP) (NNP )))
-      (IN In)
-      (NP
-        (NP (DT an) (JJ important) (NN victory))
-        (PP (IN for)
-          (NP
-            (NP (NNP Mexico) (POS 's))
-            (JJ embattled) (NN ruling) (NN party)))))
-    (, ,)
-    (NP
-      (NP (NNP Manuel) (NNP Andrade))
-      (PP (IN on)
-        (NP (NNP Sunday))))
-    (VP (VBD was)
-      (VP (VBN declared)
+    (S
+      (ADVP (RB VILLAHERMOSA))
+      (, ,)
+      (NP (NNP Mexico) (NNP [AP))
+      (VP (VBZ ])))
+    (: -)
+    (S
+      (PP (IN In)
         (NP
-          (NP (DT the) (NN winner))
-          (PP (IN of)
+          (NP (DT an) (JJ important) (NN victory))
+          (PP (IN for)
             (NP
-              (NP (DT the) (JJ disputed) (NN governor) (POS 's))
-              (NN race))))
-        (PP (IN for)
-          (NP (JJ oil-rich) (NNP Tabasco) (NN state)))))
+              (NP (NNP Mexico) (POS 's))
+              (JJ embattled) (NN ruling) (NN party)))))
+      (, ,)
+      (NP
+        (NP (NNP Manuel) (NNP Andrade))
+        (PP (IN on)
+          (NP (NNP Sunday))))
+      (VP (VBD was)
+        (VP (VBN declared)
+          (NP
+            (NP (DT the) (NN winner))
+            (PP (IN of)
+              (NP
+                (NP (DT the) (JJ disputed) (NN governor) (POS 's))
+                (NN race))))
+          (PP (IN for)
+            (NP (JJ oil-rich) (NNP Tabasco) (NN state))))))
     (. .)))
 
 (ROOT
@@ -288,13 +291,15 @@
       (, ,))
     (VP (VBZ has)
       (VP (VBN lost)
-        (NP
-          (NP (JJ several) (JJ gubernatorial) (NNS races))
-          (PP (IN in)
-            (NP (JJ recent) (NNS years))))
-        (ADVP (RBS most) (RB recently))
+        (NP (JJ several) (JJ gubernatorial) (NNS races))
         (PP (IN in)
-          (NP (VBG neighboring) (NNS Chiapas)))))
+          (NP
+            (NP (JJ recent) (NNS years))
+            (: -)
+            (ADJP
+              (ADVP (RBS most) (RB recently))
+              (PP (IN in)
+                (NP (VBG neighboring) (NNS Chiapas))))))))
     (. .)))
 
 (ROOT
@@ -512,13 +517,14 @@
             (VP (VBP believe)
               (SBAR (IN that)
                 (S
-                  (NP
-                    (NP (PRP I))
-                    (CC or)
-                    (NP
-                      (NP (DT the) (NN rest))
-                      (PP (IN of)
-                        (NP (DT the) (NNS advisers)))))
+                  (NP (PRP I)
+                    (PRN (: -)
+                      (CC or)
+                      (NP
+                        (NP (DT the) (NN rest))
+                        (PP (IN of)
+                          (NP (DT the) (NNS advisers))))
+                      (: -)))
                   (VP (VBP have)
                     (S
                       (NP (DT the) (NNS instruments))

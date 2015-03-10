@@ -13,24 +13,22 @@
       (NP (NNP Denmark)))))
 
 (ROOT
-  (S
-    (NP
-      (NP (NNP COPENHAGEN))
-      (, ,)
-      (NP
-        (NP (NNP Denmark) (NNP (AP) (NNP )))
-        (NP (DT A) (JJ Danish) (NN couple))))
-    (VP (VBD were)
-      (VP (VBN surprised)
-        (NP (DT this) (NN weekend))
-        (SBAR
-          (WHADVP (WRB when))
-          (S
-            (NP (CD two))
-            (VP (VBP absentee)
-              (NP (NNS ballots))
-              (PP (IN from)
-                (NP (DT the) (NNP U.S))))))))
+  (NP
+    (NP (NNP COPENHAGEN) (, ,) (NNP Denmark) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP (DT A) (JJ Danish) (NN couple))
+      (VP (VBD were)
+        (VP (VBN surprised)
+          (NP (DT this) (NN weekend))
+          (SBAR
+            (WHADVP (WRB when))
+            (S
+              (NP (CD two))
+              (VP (VBP absentee)
+                (NP (NNS ballots))
+                (PP (IN from)
+                  (NP (DT the) (NNP U.S)))))))))
     (. .)))
 
 (ROOT
@@ -162,14 +160,11 @@
                   (VP (VBD were)
                     (VP (VBN marked)
                       (PP (IN with)
-                        (NP
-                          (NP (DT the) (NNS words))
-                          (SBAR
-                            (S
-                              (NP (JJ ``Official) (NN ballot))
-                              (VP (VBP do) (RB not)
-                                (VP (VB delay)
-                                  (NP (NNS .'')))))))))))))))))))
+                        (NP (DT the) (NNS words) (NN ``Official) (NN ballot)))))))))))
+      (: -)
+      (VP (VBP do) (RB not)
+        (VP (VB delay)
+          (NP (NNS .'')))))))
 
 (ROOT
   (S

@@ -19,20 +19,23 @@
     (. .)))
 
 (ROOT
-  (S
-    (NP
-      (NP (NNP (AP) (NNP )) (NNP Joseph) (NNP Conrad) (NNP Parkhurst))
-      (, ,)
-      (SBAR
-        (WHNP (WP who))
-        (S
-          (VP (VBD founded)
-            (NP (DT the) (NN motorcycle) (NN magazine) (NNP Cycle) (NNP World))
-            (PP (IN in)
-              (NP (CD 1962))))))
-      (, ,))
-    (VP (VBZ has)
-      (VP (VBN died)))
+  (FRAG
+    (NP (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP
+        (NP (NNP Joseph) (NNP Conrad) (NNP Parkhurst))
+        (, ,)
+        (SBAR
+          (WHNP (WP who))
+          (S
+            (VP (VBD founded)
+              (NP (DT the) (NN motorcycle) (NN magazine) (NNP Cycle) (NNP World))
+              (PP (IN in)
+                (NP (CD 1962))))))
+        (, ,))
+      (VP (VBZ has)
+        (VP (VBN died))))
     (. .)))
 
 (ROOT
@@ -100,26 +103,28 @@
 
 (ROOT
   (S
-    (PP (IN In)
-      (NP (PRP$ its) (JJ first) (NN year)))
-    (, ,)
-    (NP (NNP Cycle) (NNP World))
-    (VP
-      (VP (VBD became))
-      (CC and)
-      (VP (VBZ remains)
-        (SBAR
-          (S
-            (NP
-              (NP (DT the) (JJS largest) (NN motorcycle) (NN magazine))
-              (PP (IN in)
-                (NP
-                  (NP (DT the) (NN world))
-                  (, ,)
-                  (NP (NNP Brown))
-                  (CC and)
-                  (NP (NNS others)))))
-            (VP (VBD said))))))
+    (S
+      (PP (IN In)
+        (NP (PRP$ its) (JJ first) (NN year)))
+      (, ,)
+      (NP (NNP Cycle) (NNP World))
+      (VP
+        (VP (VBD became))
+        (: -)
+        (CC and)
+        (VP (VBZ remains))))
+    (: -)
+    (S
+      (NP
+        (NP (DT the) (JJS largest) (NN motorcycle) (NN magazine))
+        (PP (IN in)
+          (NP
+            (NP (DT the) (NN world))
+            (, ,)
+            (NP (NNP Brown))
+            (CC and)
+            (NP (NNS others)))))
+      (VP (VBD said)))
     (. .)))
 
 (ROOT

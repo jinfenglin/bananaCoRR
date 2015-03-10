@@ -29,7 +29,7 @@
 
 (ROOT
   (NP
-    (NP (NNP (ART) (NNP ADV))
+    (NP (NNP [ART) (NNP ADV))
     (: :)
     (S
       (NP (NNP Photo) (NNP NYT1))
@@ -54,7 +54,7 @@
                   (CC or)
                   (CD 888-346-9867))
                 (NP
-                  (NP (NNP .)) (NNP &QL))
+                  (NP (NNP .]) (NNP &QL))
                   (: ;)
                   (NP (NNP &UR))
                   (: ;))

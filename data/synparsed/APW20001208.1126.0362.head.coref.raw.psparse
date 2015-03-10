@@ -12,45 +12,45 @@
       (NP (NNP Restore) (NNP Soviet) (NNP Anthem)))))
 
 (ROOT
-  (S
-    (NP
-      (NP (NNP MOSCOW) (NNP (AP))
-      (VP (VBG ))
-        (NP (JJ Russian) (NNS lawmakers))
-        (PP (IN on)
-          (NP (NNP Friday)))))
-    (ADVP (RB overwhelmingly))
-    (VP (VBD approved)
-      (SBAR
-        (S
-          (NP
-            (NP (DT the) (JJ Soviet) (NN anthem))
+  (NP
+    (NP (NNP MOSCOW) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (S
+        (NP
+          (NP (JJ Russian) (NNS lawmakers))
+          (PP (IN on)
+            (NP (NNP Friday))))
+        (ADVP (RB overwhelmingly))
+        (VP (VBD approved)
+          (NP (DT the) (JJ Soviet) (NN anthem))
+          (PP (IN as)
+            (NP
+              (NP (NNP Russia) (POS 's))
+              (JJ national) (NN hymn)))))
+      (: -)
+      (S
+        (NP (DT a) (NN move))
+        (VP
+          (VP (VBD praised)
+            (PP (IN by)
+              (NP (DT some)))
             (PP (IN as)
               (NP
-                (NP
-                  (NP (NNP Russia) (POS 's))
-                  (JJ national) (NN hymn))
-                (NP (DT a) (NN move)))))
-          (VP
-            (VP (VBD praised)
-              (PP (IN by)
-                (NP (DT some)))
-              (PP (IN as)
-                (NP
-                  (NP (DT a) (NN gesture))
-                  (PP (IN of)
-                    (NP (NN reconciliation))))))
-            (CC and)
-            (VP (VBD denounced)
-              (PP (IN by)
-                (NP (NNS others)))
-              (PP (IN as)
-                (NP
-                  (NP (DT a) (JJ symbolic) (NN approval))
-                  (PP (IN of)
-                    (NP
-                      (NP (DT the) (NN nation) (POS 's))
-                      (NN totalitarian) (NN past))))))))))
+                (NP (DT a) (NN gesture))
+                (PP (IN of)
+                  (NP (NN reconciliation))))))
+          (CC and)
+          (VP (VBD denounced)
+            (PP (IN by)
+              (NP (NNS others)))
+            (PP (IN as)
+              (NP
+                (NP (DT a) (JJ symbolic) (NN approval))
+                (PP (IN of)
+                  (NP
+                    (NP (DT the) (NN nation) (POS 's))
+                    (NN totalitarian) (NN past)))))))))
     (. .)))
 
 (ROOT
@@ -312,10 +312,10 @@
     (S
       (NP (DT this) (NN time) (NNS lawmakers))
       (VP (VBD skipped)
+        (NP (DT the) (NN debate))
+        (: -)
         (NP
-          (NP
-            (NP (DT the) (NN debate))
-            (NP (DT a) (NN move)))
+          (NP (DT a) (NN move))
           (SBAR
             (S
               (NP (DT the) (NNS liberals))

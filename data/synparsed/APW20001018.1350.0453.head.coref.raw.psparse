@@ -14,28 +14,29 @@
         (VP (VB Jump))))))
 
 (ROOT
-  (SINV
-    (S
-      (NP (NNP WASHINGTON) (NNP (AP))
-      (VP (VBZ ))
-        (NP
-          (NP (DT The)
-            (QP (CD 45.2) (CD million))
-            (NNPS Americans))
-          (VP (VBG getting)
-            (NP (NNP Social) (NNP Security) (NNS checks))))))
-    (VP (MD will)
-      (VP (VB see)
-        (S
-          (NP (PRP them))
-          (VP (VB grow)
-            (PP (IN by)
-              (NP (CD 3.5) (NN percent)))))))
+  (NP
+    (NP (NNP WASHINGTON) (NNP [AP) (NNP ]))
+    (: -)
     (NP
-      (NP (JJ next) (NN year))
-      (, ,)
-      (NP
-        (NP (DT the) (JJS biggest) (JJ cost-of-living) (NN increase))
+      (NP (DT The)
+        (QP (CD 45.2) (CD million))
+        (NNPS Americans))
+      (VP (VBG getting)
+        (NP
+          (NP (NNP Social) (NNP Security))
+          (SBAR
+            (S
+              (NP (NNS checks))
+              (VP (MD will)
+                (VP (VB see)
+                  (S
+                    (NP (PRP them))
+                    (VP (VB grow)
+                      (PP (IN by)
+                        (NP (CD 3.5) (NN percent)))
+                      (NP (JJ next) (NN year))
+                      (, ,)
+                      (NP (DT the) (JJS biggest) (JJ cost-of-living) (NN increase)))))))))
         (PP (IN in)
           (NP (RB almost) (DT a) (NN decade)))))
     (. .)))
@@ -115,15 +116,16 @@
 
 (ROOT
   (S
-    (NP
-      (NP (NNP Florida)
-        (CC and)
-        (NNP Pennsylvania))
+    (NP (NNP Florida)
+      (CC and)
+      (NNP Pennsylvania))
+    (PRN (: -)
       (PP (IN among)
         (NP
           (NP (DT the) (NN tossup) (NNS states))
           (PP (IN in)
-            (NP (DT the) (JJ presidential) (NN race))))))
+            (NP (DT the) (JJ presidential) (NN race)))))
+      (: -))
     (VP (VBP have)
       (NP
         (NP (DT a) (JJ large) (NN number))
@@ -499,24 +501,26 @@
         (PP (VBN based)
           (PP (IN on)
             (NP
-              (NP (NNS changes))
-              (PP (IN in)
-                (NP (DT the) (NNP Consumer) (NNP Price) (NNP Index)))))
-          (PP
-            (NP
-              (NP (DT the) (NN government) (POS 's))
-              (NN inflation) (NN yardstick))
-            (IN from)
-            (NP
-              (NP (DT the) (JJ third) (NN quarter))
-              (PP (IN of)
-                (NP
-                  (NP (CD one) (NN year))
-                  (PP (TO to)
-                    (NP
-                      (NP (DT the) (JJ corresponding) (NN quarter))
-                      (PP (IN of)
-                        (NP (DT the) (JJ next))))))))))))
+              (NP
+                (NP (NNS changes))
+                (PP (IN in)
+                  (NP (DT the) (NNP Consumer) (NNP Price) (NNP Index))))
+              (: -)
+              (NP
+                (NP (DT the) (NN government) (POS 's))
+                (NN inflation) (NN yardstick))
+              (: -))))
+        (PP (IN from)
+          (NP
+            (NP (DT the) (JJ third) (NN quarter))
+            (PP (IN of)
+              (NP
+                (NP (CD one) (NN year))
+                (PP (TO to)
+                  (NP
+                    (NP (DT the) (JJ corresponding) (NN quarter))
+                    (PP (IN of)
+                      (NP (DT the) (JJ next)))))))))))
     (. .)))
 
 (ROOT
@@ -661,6 +665,9 @@
         (PP (IN by)
           (NP (NN law)))))
     (. .)))
+
+(ROOT
+  (INTJ (UH -)))
 
 (ROOT
   (PP (IN On)

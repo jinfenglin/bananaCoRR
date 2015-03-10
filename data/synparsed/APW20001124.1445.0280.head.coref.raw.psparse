@@ -17,29 +17,33 @@
               (NP (NNP Hospital)))))))))
 
 (ROOT
-  (S
+  (NP
+    (NP (NNP WASHINGTON) (NNP [AP) (NNP ]))
+    (: -)
     (NP
-      (NP
-        (NP (NNP WASHINGTON) (NNP (AP) (NNP )) (NNP Republican) (NN vice))
-        (NP (JJ presidential) (NN candidate) (NNP Dick) (NNP Cheney)))
-      (, ,)
-      (VP (VBN said)
-        (PP (IN by)
-          (NP (PRP$ his) (NN doctor)
-            (S
-              (VP (TO to)
-                (VP (VB be)
-                  (VP (VBG recovering)
-                    (ADVP (RB well))
-                    (PP (IN from)
-                      (NP (DT a) (JJ mild) (NN heart) (NN attack))))))))))
-      (, ,))
-    (VP (VBD was)
-      (VP (VBG being)
-        (VP (VBN released)
-          (PP (IN from)
-            (NP (DT the) (NN hospital)))
-          (NP (NNP Friday)))))
+      (NP (JJ Republican) (NN vice))
+      (SBAR
+        (S
+          (NP
+            (NP (JJ presidential) (NN candidate) (NNP Dick) (NNP Cheney))
+            (, ,)
+            (VP (VBN said)
+              (PP (IN by)
+                (NP (PRP$ his) (NN doctor)
+                  (S
+                    (VP (TO to)
+                      (VP (VB be)
+                        (VP (VBG recovering)
+                          (ADVP (RB well))
+                          (PP (IN from)
+                            (NP (DT a) (JJ mild) (NN heart) (NN attack))))))))))
+            (, ,))
+          (VP (VBD was)
+            (VP (VBG being)
+              (VP (VBN released)
+                (PP (IN from)
+                  (NP (DT the) (NN hospital)))
+                (NP (NNP Friday))))))))
     (. .)))
 
 (ROOT

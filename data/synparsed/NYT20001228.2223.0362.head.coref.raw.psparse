@@ -110,14 +110,16 @@
   (S (CC But)
     (NP
       (NP
-        (NP
-          (NP (DT each) (NN man) (POS 's))
-          (JJ denouement) (NN one))
-        (ADJP (RB politically) (JJ scandalous)))
-      (, ,)
-      (NP (DT another) (JJ self-destructive))
-      (CC and)
-      (NP (DT the) (JJ third) (JJ evoking) (NN sympathy)))
+        (NP (DT each) (NN man) (POS 's))
+        (NN denouement))
+      (: -)
+      (NP
+        (NP (CD one) (JJ politically) (NNS scandalous))
+        (, ,)
+        (NP (DT another) (JJ self-destructive))
+        (CC and)
+        (NP (DT the) (JJ third) (JJ evoking) (NN sympathy)))
+      (: -))
     (VP (VBZ lingers)
       (ADJP (JJ large)
         (PP (IN in)
@@ -402,20 +404,21 @@
     (. .)))
 
 (ROOT
-  (S
+  (FRAG
     (NP
       (NP (NNP Mix))
       (PP (IN in)
-        (NP
-          (NP (DT the) (NN family) (NN angle))
-          (NP (PRP$ his) (JJ young) (NN son)))))
-    (VP (VBZ wants)
-      (S
-        (VP (TO to)
-          (VP (VB see)
-            (S
-              (NP (PRP him))
-              (VP (VB play)))))))
+        (NP (DT the) (NN family) (NN angle))))
+    (: -)
+    (S
+      (NP (PRP$ his) (JJ young) (NN son))
+      (VP (VBZ wants)
+        (S
+          (VP (TO to)
+            (VP (VB see)
+              (S
+                (NP (PRP him))
+                (VP (VB play))))))))
     (. !)))
 
 (ROOT

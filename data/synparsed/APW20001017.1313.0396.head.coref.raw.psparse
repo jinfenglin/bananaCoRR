@@ -13,33 +13,35 @@
       (NP (JJ Final) (NN Debate)))))
 
 (ROOT
-  (S
-    (NP (NNP ST.) (NNP LOUIS) (NNP (AP) (NNP )))
-    (PP (IN As)
-      (NP
-        (NP (NNP Republican) (NNP George) (NNP W.) (NNP Bush))
-        (CC and)
-        (NP (NNP Democrat) (NNP Al) (NNP Gore))))
-    (VP (VBD prepared)
-      (S
-        (VP (TO to)
-          (VP
-            (VP (VB perch)
-              (PP (IN on)
-                (NP (NNS stools))))
-            (CC and)
-            (VP (VB take)
-              (NP
-                (NP (NNS voters) (POS '))
-                (NNS questions))
-              (PP (IN in)
+  (FRAG
+    (NP (NNP ST.) (NNP LOUIS) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (PP (IN As)
+        (NP (NNP Republican) (NNP George) (NNP W.) (NNP Bush)
+          (CC and)
+          (NNP Democrat) (NNP Al)))
+      (NP (NNP Gore))
+      (VP (VBD prepared)
+        (S
+          (VP (TO to)
+            (VP
+              (VP (VB perch)
+                (PP (IN on)
+                  (NP (NNS stools))))
+              (CC and)
+              (VP (VB take)
                 (NP
-                  (NP (DT a) (JJ crucial) (JJ third) (NN debate))
-                  (, ,)
+                  (NP (NNS voters) (POS '))
+                  (NNS questions))
+                (PP (IN in)
                   (NP
-                    (NP (DT the) (JJ sudden) (NN death))
-                    (PP (IN of)
-                      (NP (NNP Missouri) (NNP Gov)))))))))))
+                    (NP (DT a) (JJ crucial) (JJ third) (NN debate))
+                    (, ,)
+                    (NP
+                      (NP (DT the) (JJ sudden) (NN death))
+                      (PP (IN of)
+                        (NP (NNP Missouri) (NNP Gov))))))))))))
     (. .)))
 
 (ROOT
@@ -508,14 +510,21 @@
                   (NNP Winston-Salem))))))))
     (, ,)
     (NP
-      (NP (NNP N.C) (NNP .,) (NNP debates) (NNP Jim) (NNP Lehrer))
-      (PP (IN of)
-        (NP (NNP PBS) (NNS questions))))
-    (NP (DT this) (NN time))
-    (VP (MD will)
-      (VP (VB come)
-        (PP (IN from)
-          (NP (DT the) (NN audience)))))
+      (NP (NNP N.C) (NNP .,) (NNS debates))
+      (: -)
+      (NP
+        (NP (NNP Jim) (NNP Lehrer))
+        (PP (IN of)
+          (NP (NNP PBS))))
+      (: -))
+    (VP (VBZ questions)
+      (SBAR
+        (S
+          (NP (DT this) (NN time))
+          (VP (MD will)
+            (VP (VB come)
+              (PP (IN from)
+                (NP (DT the) (NN audience))))))))
     (. .)))
 
 (ROOT
@@ -586,6 +595,7 @@
                         (NNP Gore)
                         (CC or)
                         (NNP Bush))
+                      (: -)
                       (SBAR (IN though)
                         (S
                           (NP (PRP they))

@@ -60,14 +60,16 @@
 
 (ROOT
   (S
-    (NP
-      (NP (NNP SAN) (NNP FRANCISCO) (NNP ReplayTV) (NNP Inc))
-      (VP (VBG .,)
-        (NP
-          (NP (DT a) (JJ pioneering) (NN maker))
-          (PP (IN of)
-            (NP (JJ digital) (NN video) (NNS recorders))))))
-    (, ,)
+    (NP (NNP SAN) (NNP FRANCISCO))
+    (PRN (, -)
+      (S
+        (NP (NNP ReplayTV) (NNP Inc))
+        (VP (VBZ .,)
+          (NP
+            (NP (DT a) (JJ pioneering) (NN maker))
+            (PP (IN of)
+              (NP (JJ digital) (NN video) (NNS recorders))))))
+      (, ,))
     (VP (VBD said)
       (NP (JJ late) (NNP Monday))
       (SBAR

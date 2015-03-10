@@ -10,25 +10,28 @@
   (NP (NNP Germans) (NNP Demonstrate) (NNP Against) (NNP Hate)))
 
 (ROOT
-  (S
+  (NP
+    (NP (NNP DORTMUND) (, ,) (NNP Germany) (NNP [AP) (NNP ]))
+    (: -)
     (NP
-      (NP (JJ DORTMUND) (, ,) (NNP Germany) (NNP (AP) (NNP )) (NNS Thousands))
+      (NP (NNS Thousands))
       (PP (IN of)
-        (NP (NNPS Germans))))
-    (VP (VBD joined)
-      (ADVP (RB together)
-        (PP (IN in)
-          (NP (DT this) (JJ western) (NN city))))
-      (NP (NNP Saturday))
-      (S
-        (VP (TO to)
-          (VP (VB protest)
-            (NP
-              (NP (NN foreigner) (NN hate))
-              (, ,)
-              (NP (DT the) (JJ extreme) (NN right))
-              (CC and)
-              (NP (DT a) (JJ neo-Nazi) (NN demonstration)))))))
+        (NP
+          (NP (NNS Germans))
+          (VP (VBN joined)
+            (ADVP (RB together)
+              (PP (IN in)
+                (NP (DT this) (JJ western) (NN city))
+                (NP (NNP Saturday))))
+            (S
+              (VP (TO to)
+                (VP (VB protest)
+                  (NP
+                    (NP (NN foreigner) (NN hate))
+                    (, ,)
+                    (NP (DT the) (JJ extreme) (NN right))
+                    (CC and)
+                    (NP (DT a) (JJ neo-Nazi) (NN demonstration))))))))))
     (. .)))
 
 (ROOT
@@ -269,13 +272,15 @@
         (S
           (NP
             (NP (DT the) (NN counter-demonstration))
+            (: -)
             (VP (VBN organized)
               (PP (IN by)
                 (NP
                   (NP (NNS citizens) (POS '))
                   (NNS groups) (, ,) (JJ political) (NNS parties) (, ,) (NN sport) (NNS clubs) (, ,) (NNS students)
                   (CC and)
-                  (NNS teachers)))))
+                  (NNS teachers))))
+            (: -))
           (VP (VBD was)
             (NP
               (NP (DT the) (NN kind))
@@ -395,32 +400,34 @@
         (PP (IN of)
           (S
             (VP (VBG seeking)
-              (NP (NNS bans))
-              (PP (IN about)
+              (NP
                 (NP
-                  (NP
+                  (NP (NNS bans))
+                  (PP (IN about)
                     (NP
                       (NP (NNP Germany) (POS 's))
-                      (JJ other) (JJ far-right) (NNS parties))
-                    (NP (DT the) (NNPS Republicans)))
-                  (CC and)
+                      (JJ other) (JJ far-right) (NNS parties))))
+                (PRN (: -)
                   (NP
-                    (NP (NNP German) (NNPS Peoples) (NNP Union))
-                    (SBAR
-                      (WHNP (DT both)
-                        (WHPP (IN of)
-                          (WHNP (WDT which))))
-                      (S
-                        (VP (VBP have)
-                          (VP (VBN had)
-                            (NP
-                              (NP
-                                (ADJP (RB far) (JJR more))
-                                (JJ electoral) (NN success))
-                              (PP (IN than)
-                                (NP (DT the)
-                                  (ADJP (RB politically) (JJ insignificant))
-                                  (NN NPD))))))))))))))))
+                    (NP (DT the) (NNPS Republicans))
+                    (CC and)
+                    (NP (NNP German) (NNPS Peoples) (NNP Union)))
+                  (: -))
+                (SBAR
+                  (WHNP (DT both)
+                    (WHPP (IN of)
+                      (WHNP (WDT which))))
+                  (S
+                    (VP (VBP have)
+                      (VP (VBN had)
+                        (NP
+                          (NP
+                            (ADJP (RB far) (JJR more))
+                            (JJ electoral) (NN success))
+                          (PP (IN than)
+                            (NP (DT the)
+                              (ADJP (RB politically) (JJ insignificant))
+                              (NN NPD))))))))))))))
     (. .)))
 
 (ROOT

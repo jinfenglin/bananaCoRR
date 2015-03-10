@@ -22,48 +22,47 @@
     (. .)))
 
 (ROOT
-  (S
-    (NP (NNP (AP))
-    (VP (VBD ))
-      (SBAR
-        (S
+  (FRAG
+    (NP (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP
+        (NP (DT The) (NN wife))
+        (PP (IN of)
           (NP
-            (NP (DT The) (NN wife))
-            (PP (IN of)
-              (NP
-                (NP (NNP Patrick) (NNP Roy))
-                (, ,)
-                (NP
-                  (NP (DT the) (NNP NHL) (POS 's))
-                  (JJ winningest) (NN goalie))
-                (, ,))))
-          (VP (VBD called)
-            (NP (CD 911))
-            (SBAR (IN because)
-              (S
-                (NP (PRP she))
-                (VP (VBD was)
-                  (ADJP (JJ afraid)
-                    (PP (IN of)
-                      (SBAR
-                        (WHNP (WP what))
-                        (S
-                          (NP (PRP$ her) (NN husband))
-                          (VP (MD would)
-                            (VP (VB do)
-                              (SBAR (IN as)
-                                (S
-                                  (NP (PRP they))
-                                  (VP (VBD argued)
+            (NP (NNP Patrick) (NNP Roy))
+            (, ,)
+            (NP
+              (NP (DT the) (NNP NHL) (POS 's))
+              (JJ winningest) (NN goalie))
+            (, ,))))
+      (VP (VBD called)
+        (NP (CD 911))
+        (SBAR (IN because)
+          (S
+            (NP (PRP she))
+            (VP (VBD was)
+              (ADJP (JJ afraid)
+                (PP (IN of)
+                  (SBAR
+                    (WHNP (WP what))
+                    (S
+                      (NP (PRP$ her) (NN husband))
+                      (VP (MD would)
+                        (VP (VB do)
+                          (SBAR (IN as)
+                            (S
+                              (NP (PRP they))
+                              (VP (VBD argued)
+                                (NP
+                                  (QP (RB about) (CD in-laws)))
+                                (, ,)
+                                (PP (VBG according)
+                                  (PP (TO to)
                                     (NP
-                                      (QP (RB about) (CD in-laws)))
-                                    (, ,)
-                                    (PP (VBG according)
-                                      (PP (TO to)
-                                        (NP
-                                          (NP (DT a) (NN police) (NN report))
-                                          (VP (VBN released)
-                                            (NP (NNP Monday))))))))))))))))))))))
+                                      (NP (DT a) (NN police) (NN report))
+                                      (VP (VBN released)
+                                        (NP (NNP Monday))))))))))))))))))))
     (. .)))
 
 (ROOT
@@ -346,7 +345,7 @@
                         (NP
                           (ADJP (JJ focused)
                             (PP (IN after)
-                              (NP (DT an) (JJ eight-game) (CD (6-0-2) (NNS )))))
+                              (NP (DT an) (JJ eight-game) (CD [6-0-2) (NNS ]))))
                           (NN unbeaten) (NN streak))
                         (S
                           (VP (TO to)

@@ -29,10 +29,10 @@
     (: ;)
     (S
       (S
-        (VP (VBG (ATTN)))
+        (VP (VBG [ATTN)))
       (: :)
       (S
-        (NP (NNP Mich) (NNP .)))
+        (NP (NNP Mich) (NNP .]))
         (VP (VBZ &LR)))
       (: ;)
       (S

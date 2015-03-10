@@ -13,29 +13,27 @@
       (NP (NNP Station)))))
 
 (ROOT
-  (S
-    (NP
-      (NP (NNP WARREN) (, ,) (NNP Mich.) (NNP (AP) (NNP )))
-      (SBAR
-        (S
-          (NP
-            (NP (DT A) (NN detective))
-            (CC and)
-            (NP (DT a) (NN drug)))
-          (VP (VBP suspect)))))
-    (VP (VBD were)
-      (ADVP (RB fatally))
-      (VP (VBN wounded)
-        (PP (IN during)
-          (NP (DT a) (NN struggle)))
-        (SBAR (IN while)
-          (S
-            (NP (DT the) (NN officer))
-            (VP (VBD was)
-              (VP (VBG booking)
-                (NP (PRP him))
-                (PP (IN at)
-                  (NP (NN police) (NNS headquarters)))))))))
+  (NP
+    (NP (NNP WARREN) (, ,) (NNP Mich.) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP
+        (NP (DT A) (NN detective))
+        (CC and)
+        (NP (DT a) (NN drug) (NN suspect)))
+      (VP (VBD were)
+        (ADVP (RB fatally))
+        (VP (VBN wounded)
+          (PP (IN during)
+            (NP (DT a) (NN struggle)))
+          (SBAR (IN while)
+            (S
+              (NP (DT the) (NN officer))
+              (VP (VBD was)
+                (VP (VBG booking)
+                  (NP (PRP him))
+                  (PP (IN at)
+                    (NP (NN police) (NNS headquarters))))))))))
     (. .)))
 
 (ROOT

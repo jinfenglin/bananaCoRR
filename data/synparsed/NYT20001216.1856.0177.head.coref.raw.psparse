@@ -24,7 +24,7 @@
 (ROOT
   (NP
     (NP
-      (ADJP (JJ (SUBS)
+      (ADJP (JJ [SUBS)
         (S
           (VP (TO to)
             (VP (VB add)
@@ -41,7 +41,7 @@
             (S
               (NP (NNP Haider))
               (VP (VBD left)
-                (NP (DT the) (NN area) (NN ...''))) (NN &QL)))))))
+                (NP (DT the) (NN area) (NN ...'']]) (NN &QL)))))))
       (: ;)
       (S
         (NP (NNP &UR))
@@ -70,40 +70,41 @@
     (: ;)))
 
 (ROOT
-  (S
-    (PP
-      (ADVP (RB ROME))
-      (IN In)
-      (NP
-        (NP (DT an) (NN encounter))
-        (VP (VBN bracketed)
-          (PP (IN by)
-            (NP
-              (NP (JJ political) (NNS clashes))
-              (CC and)
-              (NP (JJ public) (NN protest)))))))
-    (, ,)
-    (NP (NNP Pope) (NNP John) (NNP Paul) (NNP II))
-    (VP (VBD met)
-      (ADVP (NN briefly)
-        (PP (IN on)
-          (NP (NNP Saturday))))
-      (PP (IN at)
-        (NP (DT the) (NNP Vatican)))
-      (PP (IN with)
+  (NP
+    (NP (NNP ROME))
+    (: -)
+    (S
+      (PP (IN In)
         (NP
-          (NP (NNP Joerg) (NNP Haider))
-          (, ,)
-          (NP (DT the) (JJ far-right) (JJ Austrian) (NN politician))
-          (, ,)
-          (SBAR
-            (WHNP (WP who))
-            (S
-              (VP (VBZ is)
-                (NP
-                  (NP (NN persona) (NN non) (NN grata))
-                  (PP (TO to)
-                    (NP (JJ many) (NNS Europeans))))))))))
+          (NP (DT an) (NN encounter))
+          (VP (VBN bracketed)
+            (PP (IN by)
+              (NP
+                (NP (JJ political) (NNS clashes))
+                (CC and)
+                (NP (JJ public) (NN protest)))))))
+      (, ,)
+      (NP (NNP Pope) (NNP John) (NNP Paul) (NNP II))
+      (VP (VBD met)
+        (ADVP (NN briefly)
+          (PP (IN on)
+            (NP (NNP Saturday))))
+        (PP (IN at)
+          (NP (DT the) (NNP Vatican)))
+        (PP (IN with)
+          (NP
+            (NP (NNP Joerg) (NNP Haider))
+            (, ,)
+            (NP (DT the) (JJ far-right) (JJ Austrian) (NN politician))
+            (, ,)
+            (SBAR
+              (WHNP (WP who))
+              (S
+                (VP (VBZ is)
+                  (NP
+                    (NP (NN persona) (NN non) (NN grata))
+                    (PP (TO to)
+                      (NP (JJ many) (NNS Europeans)))))))))))
     (. .)))
 
 (ROOT
@@ -621,7 +622,7 @@
     (. .)))
 
 (ROOT
-  (NP (NNP (BEGIN) (NNP OPTIONAL) (NNP TRIM) (NNP ))))
+  (NP (NNP [BEGIN) (NNP OPTIONAL) (NNP TRIM) (NNP ])))
 
 (ROOT
   (S
@@ -798,11 +799,11 @@
             (NP
               (NP (PRP$ his) (NN friendship))
               (PP (IN with)
-                (NP (DT some) (JJ right-wing)
-                  (NX
-                    (NX (NNS mayors))
+                (NP
+                  (NP (DT some) (JJ right-wing) (NNS mayors))
+                  (PRN (: -)
                     (CC and)
-                    (NX
+                    (NP
                       (NP (NNS suggestions))
                       (SBAR (IN that)
                         (S
@@ -815,7 +816,8 @@
                           (VP (MD should)
                             (VP (VB merge)
                               (PP (IN into)
-                                (NP (DT a) (NN ``maxi-region) ('' ''))))))))))))
+                                (NP (DT a) (NN ``maxi-region) ('' ''))))))))
+                    (: -)))))
             (VP (VBP have)
               (NP
                 (NP (NNP enraged) (NNP Italy) (POS 's))
@@ -823,7 +825,7 @@
     (. .)))
 
 (ROOT
-  (NP (NNP (END) (NNP OPTIONAL) (NNP TRIM) (NNP ))))
+  (NP (NNP [END) (NNP OPTIONAL) (NNP TRIM) (NNP ])))
 
 (ROOT
   (S

@@ -57,44 +57,47 @@
     (: ;)))
 
 (ROOT
-  (S
+  (NP
+    (NP (NNP NEW) (NNP YORK))
+    (: -)
     (S
-      (NP (NNP NEW) (NNP YORK) (NNP Bread) (NNP pudding))
-      (VP (VBZ is)
+      (S
+        (NP (NNP Bread) (NNP pudding))
+        (VP (VBZ is)
+          (NP
+            (NP (CD one))
+            (PP (IN of)
+              (NP (DT the)
+                (ADJP (RBS most) (JJ traditional))
+                (JJ American) (NNS dishes))))))
+      (: ;)
+      (S
         (NP
-          (NP (CD one))
-          (PP (IN of)
-            (NP (DT the)
-              (ADJP (RBS most) (JJ traditional))
-              (JJ American) (NNS dishes))))))
-    (: ;)
-    (S
-      (NP
-        (NP (NNS cookbooks))
-        (PP (IN from)
-          (NP (DT the) (JJ 18th) (NN century))))
-      (VP (VBP have)
-        (NP
-          (NP (NNS recipes))
-          (PP (IN for)
-            (NP (PRP it)))
-          (SBAR
-            (WHNP (WDT that))
-            (S
-              (VP (VBP are)
-                (ADJP
+          (NP (NNS cookbooks))
+          (PP (IN from)
+            (NP (DT the) (JJ 18th) (NN century))))
+        (VP (VBP have)
+          (NP
+            (NP (NNS recipes))
+            (PP (IN for)
+              (NP (PRP it)))
+            (SBAR
+              (WHNP (WDT that))
+              (S
+                (VP (VBP are)
                   (ADJP
-                    (ADJP (JJR more)
-                      (CC or)
-                      (JJR less))
-                    (NP (DT the) (JJ same)))
-                  (PP (IN as)
-                    (SBAR
-                      (WHNP (WP what))
-                      (S
-                        (NP (PRP we))
-                        (VP (VBP make)
-                          (NP (NN today)))))))))))))
+                    (ADJP
+                      (ADJP (JJR more)
+                        (CC or)
+                        (JJR less))
+                      (NP (DT the) (JJ same)))
+                    (PP (IN as)
+                      (SBAR
+                        (WHNP (WP what))
+                        (S
+                          (NP (PRP we))
+                          (VP (VBP make)
+                            (NP (NN today))))))))))))))
     (. .)))
 
 (ROOT
@@ -195,7 +198,7 @@
             (ADVP (RB always))
             (VP (VBZ wants)
               (S
-                (VP (VB (but) (RB not)
+                (VP (VB [but) (RB not)
                   (VP (VB dry)
                     (SBAR (IN like)
                       (S
@@ -205,7 +208,7 @@
                             (NP (DT a) (NN turkey))))
                         (VP (MD can)
                           (VP (VB be)
-                            (ADJP (JJ ).))))))))))))))))
+                            (ADJP (JJ ].))))))))))))))))
 
 (ROOT
   (S
@@ -227,7 +230,7 @@
 (ROOT
   (S
     (NP
-      (NP (NN (If))
+      (NP (NN [If))
       (SBAR
         (S
           (NP (PRP you))
@@ -254,7 +257,7 @@
         (NP (PRP it))
         (PP (IN at)
           (NP
-            (NP (NN room) (NN temperature) (NNS .)))
+            (NP (NN room) (NN temperature) (NNS .]))
             (SBAR
               (S
                 (NP (PRP You))

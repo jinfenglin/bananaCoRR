@@ -24,7 +24,7 @@
 
 (ROOT
   (NP
-    (NP (JJ (Essay) (JJ )) (NNS &QL))
+    (NP (JJ [Essay) (JJ ]) (NNS &QL))
     (: ;)
     (S
       (S
@@ -58,49 +58,50 @@
     (: ;)))
 
 (ROOT
-  (S
+  (FRAG
+    (NP (NNP WASHINGTON))
+    (: -)
     (S
-      (VP (VBG WASHINGTON)
-        (SBAR
-          (WHADVP (WRB When))
-          (S
-            (NP
-              (NP (DT the) (NN leader))
-              (PP (IN of)
-                (NP
-                  (NP (DT the) (NNP Hezbollah))
-                  (PP (IN in)
-                    (NP (JJ Syrian) (JJ -occupied) (NNP Lebanon))))))
-            (VP (VBD came)
-              (PRT (RP up))
-              (PP (IN with)
-                (NP (DT a) (NN plan)))
-              (S
-                (VP (TO to)
-                  (VP (VB kidnap)
-                    (NP (CD three) (JJ Israeli) (NNS soldiers))
-                    (ADVP
-                      (NP (CD six) (NNS weeks))
-                      (RB ago))))))))))
-    (, ,)
-    (NP (PRP$ his) (JJ Iranian) (NNS sponsors))
-    (VP (VBD cautioned)
-      (S
-        (NP (PRP him))
-        (VP (TO to)
-          (VP
-            (ADVP (RB first))
-            (VB get)
-            (NP
-              (NP (DT the) (NN approval))
-              (PP (IN of)
-                (NP
-                  (NP (NNP Bashar) (NNP Assad))
-                  (, ,)
+      (SBAR
+        (WHADVP (WRB When))
+        (S
+          (NP
+            (NP (DT the) (NN leader))
+            (PP (IN of)
+              (NP
+                (NP (DT the) (NNP Hezbollah))
+                (PP (IN in)
+                  (NP (JJ Syrian) (JJ -occupied) (NNP Lebanon))))))
+          (VP (VBD came)
+            (PRT (RP up))
+            (PP (IN with)
+              (NP (DT a) (NN plan)))
+            (S
+              (VP (TO to)
+                (VP (VB kidnap)
+                  (NP (CD three) (JJ Israeli) (NNS soldiers))
+                  (ADVP
+                    (NP (CD six) (NNS weeks))
+                    (RB ago))))))))
+      (, ,)
+      (NP (PRP$ his) (JJ Iranian) (NNS sponsors))
+      (VP (VBD cautioned)
+        (S
+          (NP (PRP him))
+          (VP (TO to)
+            (VP
+              (ADVP (RB first))
+              (VB get)
+              (NP
+                (NP (DT the) (NN approval))
+                (PP (IN of)
                   (NP
-                    (NP (DT the) (JJ new) (NN president))
-                    (PP (IN of)
-                      (NP (NNP Syria)))))))))))
+                    (NP (NNP Bashar) (NNP Assad))
+                    (, ,)
+                    (NP
+                      (NP (DT the) (JJ new) (NN president))
+                      (PP (IN of)
+                        (NP (NNP Syria))))))))))))
     (. .)))
 
 (ROOT
@@ -650,26 +651,27 @@
             (PP (IN into)
               (S
                 (VP (VBG taking)
-                  (S
+                  (NP
                     (NP (NNS risks))
-                    (NP (PRP$ his) (NN dictator) (NN -father) (NN Hafez))
-                    (S
-                      (VP (VBG having)
-                        (VP (VBN learned)
-                          (NP
-                            (NP (DT a) (JJ bloody) (NN lesson))
-                            (SBAR
-                              (WHNP (WDT that))
-                              (S
-                                (VP (VBD cost)
-                                  (NP (PRP him))
-                                  (NP
-                                    (NP (DT the) (NNP Golan))
-                                    (SBAR
-                                      (S
-                                        (VP (MD would)
-                                          (VP (VB have)
-                                            (VP (VBN avoided))))))))))))))))))))))
+                    (SBAR
+                      (S
+                        (NP (PRP$ his) (NN dictator) (NN -father) (NN Hafez))
+                        (: -)
+                        (S
+                          (VP (VBG having)
+                            (VP (VBN learned)
+                              (NP
+                                (NP (DT a) (JJ bloody) (NN lesson))
+                                (SBAR
+                                  (WHNP (WDT that))
+                                  (S
+                                    (VP (VBD cost)
+                                      (NP (PRP him))
+                                      (NP (DT the) (NNP Golan)))))))))
+                        (: -)
+                        (VP (MD would)
+                          (VP (VB have)
+                            (VP (VBN avoided))))))))))))))
     (. .)))
 
 (ROOT

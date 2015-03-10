@@ -14,29 +14,28 @@
       (NP (NNP High) (NNP Marks)))))
 
 (ROOT
-  (S
-    (NP (NNP LOS) (NNP ANGELES) (NNP (AP))
-    (VP (VBD ))
-      (SBAR
-        (S
-          (NP (DT The) (NNP Dick) (NNP Cheney) (NNP -Joe) (NNP Lieberman) (NN debate))
-          (VP (VBD was)
-            (VP
-              (VP (VBN praised)
-                (PP (IN by)
-                  (NP (DT some) (NN TV) (NNS commentators)))
+  (FRAG
+    (NP (NNP LOS) (NNP ANGELES) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP (DT The) (NNP Dick) (NNP Cheney) (NNP -Joe) (NNP Lieberman) (NN debate))
+      (VP (VBD was)
+        (VP
+          (VP (VBN praised)
+            (PP (IN by)
+              (NP (DT some) (NN TV) (NNS commentators)))
+            (PP (IN as)
+              (NP
+                (NP (DT an) (NN exercise))
+                (PP (IN in)
+                  (NP (JJ good) (NNS manners))))))
+          (CC and)
+          (VP (VBN condemned)
+            (PP (IN by)
+              (NP
+                (NP (NNS others))
                 (PP (IN as)
-                  (NP
-                    (NP (DT an) (NN exercise))
-                    (PP (IN in)
-                      (NP (JJ good) (NNS manners))))))
-              (CC and)
-              (VP (VBN condemned)
-                (PP (IN by)
-                  (NP
-                    (NP (NNS others))
-                    (PP (IN as)
-                      (NP (JJ bad) (NNS politics)))))))))))
+                  (NP (JJ bad) (NNS politics)))))))))
     (. .)))
 
 (ROOT
@@ -332,42 +331,43 @@
 
 (ROOT
   (S
-    (NP
-      (NP (DT A) (NN group))
-      (PP (IN of)
-        (NP (JJ undecided) (NNS voters))))
-    (VP (VBD recruited)
-      (SBAR
-        (S
-          (S
-            (PP (IN by)
+    (S
+      (NP
+        (NP (DT A) (NN group))
+        (PP (IN of)
+          (NP (JJ undecided) (NNS voters))))
+      (VP (VBD recruited)
+        (PP (IN by)
+          (NP (NNP NBC)))
+        (PP (IN in)
+          (NP (NNP Tampa)))))
+    (, ,)
+    (NP (NNP Fla) (NNP .,))
+    (VP (VBD were)
+      (VP
+        (VP (VBN impressed)
+          (PP (IN with)
+            (NP (DT both) (NNS candidates))))
+        (: -)
+        (CC and)
+        (, ,)
+        (PP (IN with)
+          (NP
+            (NP (DT a) (NN non-show))
+            (PP (IN of)
               (NP
-                (NP (NNP NBC))
-                (PP (IN in)
-                  (NP (NNP Tampa)))))
-            (, ,)
-            (NP (NNP Fla) (NNP .,))
-            (VP (VBD were)
-              (VP (VBN impressed)
-                (PP (IN with)
-                  (NP (DT both) (NNS candidates))))))
-          (CC and)
-          (PRN (, ,)
-            (PP (IN with)
-              (NP
-                (NP (DT a) (NN non-show))
-                (PP (IN of)
-                  (NP (NNS hands)))))
-            (, ,))
-          (S
-            (NP (DT all))
-            (VP (VBD indicated)
-              (SBAR
-                (S
-                  (NP (PRP they))
-                  (VP (VBD remained)
-                    (PP (IN on)
-                      (NP (DT the) (NN fence)))))))))))
+                (NP (NNS hands))
+                (, ,)
+                (SBAR
+                  (WHNP (DT all))
+                  (S
+                    (VP (VBD indicated)
+                      (SBAR
+                        (S
+                          (NP (PRP they))
+                          (VP (VBD remained)
+                            (PP (IN on)
+                              (NP (DT the) (NN fence)))))))))))))))
     (. .)))
 
 (ROOT

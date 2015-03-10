@@ -15,28 +15,31 @@
         (NNP Aceh) (NNP Province)))))
 
 (ROOT
-  (S
-    (NP (NNP BANDA) (NNP ACEH) (, ,) (NNP Indonesia) (NNP (AP) (NNP )) (NNP Police))
-    (VP (VBD searched)
-      (PP (IN for)
-        (NP
-          (NP (JJ separatist) (NNS activists))
-          (PP (IN in)
-            (NP
-              (NP (NNP Indonesia) (POS 's))
-              (JJ war-torn) (JJ Aceh) (NN province)))))
-      (NP (NNP Sunday))
-      (SBAR (IN after)
-        (S
+  (NP
+    (NP (NNP BANDA) (NNP ACEH) (, ,) (NNP Indonesia) (NNP [AP) (NNP ]))
+    (: -)
+    (S
+      (NP (NNP Police))
+      (VP (VBD searched)
+        (PP (IN for)
           (NP
+            (NP (JJ separatist) (NNS activists))
+            (PP (IN in)
+              (NP
+                (NP (NNP Indonesia) (POS 's))
+                (JJ war-torn) (JJ Aceh) (NN province)))))
+        (NP (NNP Sunday))
+        (SBAR (IN after)
+          (S
             (NP
-              (QP (NNS tens) (IN of) (NNS thousands)))
-            (PP (IN of)
-              (NP (NNS people))))
-          (VP (VBD rallied)
-            (S
-              (VP (VBG demanding)
-                (NP (DT an) (NN independence) (NN referendum))))))))
+              (NP
+                (QP (NNS tens) (IN of) (NNS thousands)))
+              (PP (IN of)
+                (NP (NNS people))))
+            (VP (VBD rallied)
+              (S
+                (VP (VBG demanding)
+                  (NP (DT an) (NN independence) (NN referendum)))))))))
     (. .)))
 
 (ROOT

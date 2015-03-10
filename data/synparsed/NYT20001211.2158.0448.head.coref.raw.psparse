@@ -39,20 +39,22 @@
         (NP (NNP David) (NNP Cone))
         (VP (VBD heard)
           (PP (IN about)
-            (NP (DT the) (NNPS Mets)))
-          (S
-            (VP
-              (VP (VBG filling)
-                (PP (IN out)
-                  (NP (PRP$ their) (NN pitching) (NN rotation)))
-                (NP (NNP Monday)))
-              (CC and)
-              (VP (VBG ending)
-                (NP (PRP$ their) (NN interest))
-                (PP (IN in)
-                  (S
-                    (VP (VBG signing)
-                      (NP (PRP him)))))))))))
+            (NP
+              (NP (DT the) (NNPS Mets))
+              (VP
+                (VP (VBG filling)
+                  (PP (IN out)
+                    (NP (PRP$ their) (NN pitching) (NN rotation)))
+                  (NP (NNP Monday)))
+                (: -)
+                (CC and)
+                (VP (VBG ending)
+                  (NP (PRP$ their) (NN interest))
+                  (PP (IN in)
+                    (S
+                      (VP (VBG signing)
+                        (NP (PRP him))))))))))))
+    (: -)
     (NP (PRP he))
     (VP (VBD was)
       (ADVP (RB already))

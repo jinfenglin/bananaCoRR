@@ -24,7 +24,7 @@
 
 (ROOT
   (NP
-    (NP (NNP (ART) (NNP ADV))
+    (NP (NNP [ART) (NNP ADV))
     (: :)
     (S
       (NP (NNP Graphic))
@@ -51,7 +51,7 @@
                   (CC or)
                   (CD 888-346-9867))
                 (NP
-                  (NP (NNP .)) (NNP &QL))
+                  (NP (NNP .]) (NNP &QL))
                   (: ;)
                   (NP (NNP &UR))
                   (: ;))
@@ -76,25 +76,28 @@
     (: ;)))
 
 (ROOT
-  (S
-    (NP
+  (FRAG
+    (NP (NNP WASHINGTON))
+    (: -)
+    (S
       (NP
-        (NP (NNP WASHINGTON) (NNP Vice) (NNP President) (NNP Al) (NNP Gore) (POS 's))
-        (JJ nationwide) (NN lead))
-      (PP (IN in)
-        (NP (DT the) (JJ popular) (NN vote))))
-    (VP (VBZ has)
-      (VP (VBN grown)
-        (PP (IN by)
-          (NP
-            (QP (RB about) (CD 200,000))))
-        (, ,)
-        (PP (TO to)
-          (NP
-            (QP (JJR more) (IN than) (PDT half) (DT a) (CD million))))
-        (, ,)
-        (PP (IN since)
-          (NP (NNP Dec)))))
+        (NP
+          (NP (NNP Vice) (NNP President) (NNP Al) (NNP Gore) (POS 's))
+          (JJ nationwide) (NN lead))
+        (PP (IN in)
+          (NP (DT the) (JJ popular) (NN vote))))
+      (VP (VBZ has)
+        (VP (VBN grown)
+          (PP (IN by)
+            (NP
+              (QP (RB about) (CD 200,000))))
+          (, ,)
+          (PP (TO to)
+            (NP
+              (QP (JJR more) (IN than) (PDT half) (DT a) (CD million))))
+          (, ,)
+          (PP (IN since)
+            (NP (NNP Dec))))))
     (. .)))
 
 (ROOT
@@ -658,33 +661,35 @@
                     (NP (DT a) (NN landslide))))))))))
     (, ,) (IN so)
     (S
-      (NP (PRP it))
-      (VP (VBD was)
-        (VP (VBN expected)
-          (SBAR (IN that)
-            (S
-              (NP
-                (NP (DT the)
-                  (QP (RB nearly) (CD 1.5) (CD million))
-                  (JJ absentee) (NNS ballots))
-                (SBAR
-                  (WHNP (WDT that))
-                  (S
-                    (VP (VBD arrived)
-                      (PP (IN in)
-                        (NP (NN time)))
-                      (S
-                        (VP (TO to)
-                          (VP (VB be)
-                            (VP (VBN accepted)))))))))
-              (VP (MD would)
-                (ADVP (RB sharply))
-                (VP (VB augment)
-                  (NP (PRP$ his) (NN victory)))))))))
-    (CC and)
-    (S
-      (NP (PRP they))
-      (VP (VBD did)))
+      (S
+        (NP (PRP it))
+        (VP (VBD was)
+          (VP (VBN expected)
+            (SBAR (IN that)
+              (S
+                (NP
+                  (NP (DT the)
+                    (QP (RB nearly) (CD 1.5) (CD million))
+                    (JJ absentee) (NNS ballots))
+                  (SBAR
+                    (WHNP (WDT that))
+                    (S
+                      (VP (VBD arrived)
+                        (PP (IN in)
+                          (NP (NN time)))
+                        (S
+                          (VP (TO to)
+                            (VP (VB be)
+                              (VP (VBN accepted)))))))))
+                (VP (MD would)
+                  (ADVP (RB sharply))
+                  (VP (VB augment)
+                    (NP (PRP$ his) (NN victory)))))))))
+      (: -)
+      (CC and)
+      (S
+        (NP (PRP they))
+        (VP (VBD did))))
     (. .)))
 
 (ROOT
@@ -748,7 +753,7 @@
 
 (ROOT
   (S
-    (NP (NNS (Californians))
+    (NP (NNS [Californians))
     (, ,)
     (PP (IN unlike)
       (NP
@@ -777,7 +782,7 @@
             (VP (VB be)
               (VP (VBN counted)
                 (S
-                  (ADJP (JJ .))))))))))))
+                  (ADJP (JJ .])))))))))))
 
 (ROOT
   (NP (NN NYT-12-29-00) (CD 2114EST)))

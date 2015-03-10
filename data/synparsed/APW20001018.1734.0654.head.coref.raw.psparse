@@ -17,31 +17,32 @@
     (. .)))
 
 (ROOT
-  (S
-    (VP (VB (AP)
-      (NP
-        (NP (JJ )) (JJ Democratic) (NN vice))
-        (SBAR
-          (S
-            (NP (JJ presidential) (NN candidate) (NNP Joseph) (NNP Lieberman))
-            (VP (VBD said)
-              (NP (NNP Wednesday))
-              (SBAR (IN that)
+  (NP
+    (NP (NNP [AP) (NNP ]))
+    (: -)
+    (NP
+      (NP (JJ Democratic) (NN vice))
+      (SBAR
+        (S
+          (NP (JJ presidential) (NN candidate) (NNP Joseph) (NNP Lieberman))
+          (VP (VBD said)
+            (NP (NNP Wednesday))
+            (SBAR (IN that)
+              (S
+                (PP (TO to)
+                  (NP
+                    (NP (PRP him))
+                    (CC and)
+                    (NP (NNP Al) (NNP Gore))))
+                (, ,)
                 (S
-                  (PP (TO to)
-                    (NP
-                      (NP (PRP him))
-                      (CC and)
-                      (NP (NNP Al) (NNP Gore))))
-                  (, ,)
-                  (S
-                    (VP (VBG protecting)
-                      (NP (DT the) (NN environment))))
-                  (VP (VBZ is)
-                    (NP
-                      (NP (NN ``a) (NN matter))
-                      (PP (IN of)
-                        (NP (NN faith) (NNS .''))))))))))))))
+                  (VP (VBG protecting)
+                    (NP (DT the) (NN environment))))
+                (VP (VBZ is)
+                  (NP
+                    (NP (NN ``a) (NN matter))
+                    (PP (IN of)
+                      (NP (NN faith) (NNS .'')))))))))))))
 
 (ROOT
   (S

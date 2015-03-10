@@ -13,39 +13,43 @@
 
 (ROOT
   (S
-    (ADVP (RB BROWNSVILLE))
-    (, ,)
-    (NP (NNP Texas) (NNP (AP) (NNP )))
-    (PP (IN In)
-      (NP (NN speech)))
-    (PP (IN after)
-      (NP (NN speech)))
-    (, ,)
-    (NP (NNP Mexico) (NNP President) (NNP Vicente) (NNP Fox))
-    (VP (VBZ argues)
-      (PP (IN for)
-        (NP
-          (NP (PRP$ his) (NN dream))
-          (: :)
+    (S
+      (ADVP (RB BROWNSVILLE))
+      (, ,)
+      (NP (NNP Texas) (NNP [AP))
+      (VP (VBZ ])))
+    (: -)
+    (S
+      (PP (IN In)
+        (NP (NN speech)))
+      (PP (IN after)
+        (NP (NN speech)))
+      (, ,)
+      (NP (NNP Mexico) (NNP President) (NNP Vicente) (NNP Fox))
+      (VP (VBZ argues)
+        (PP (IN for)
           (NP
-            (NP (DT A) (JJ free) (NN flow))
-            (PP (IN of)
-              (NP
-                (NP (NNS workers))
-                (PP (IN across)
-                  (NP
-                    (NP (DT an) (JJ open) (NN border))
-                    (, ,)
+            (NP (PRP$ his) (NN dream))
+            (: :)
+            (NP
+              (NP (DT A) (JJ free) (NN flow))
+              (PP (IN of)
+                (NP
+                  (NP (NNS workers))
+                  (PP (IN across)
                     (NP
-                      (NP (DT an) (JJ international) (NN boundary))
-                      (SBAR
-                        (WHNP (WDT that))
-                        (S
-                          (VP (VBZ ceases)
-                            (S
-                              (VP (TO to)
-                                (VP (VB be)
-                                  (NP (DT a) (NN barrier)))))))))))))))))
+                      (NP (DT an) (JJ open) (NN border))
+                      (, ,)
+                      (NP
+                        (NP (DT an) (JJ international) (NN boundary))
+                        (SBAR
+                          (WHNP (WDT that))
+                          (S
+                            (VP (VBZ ceases)
+                              (S
+                                (VP (TO to)
+                                  (VP (VB be)
+                                    (NP (DT a) (NN barrier))))))))))))))))))
     (. .)))
 
 (ROOT
@@ -452,8 +456,8 @@
       (SBAR
         (S
           (NP
-            (NP (NN (Fox) (POS 's))
-            (ADJP (RB )) (JJ optimistic))
+            (NP (NN [Fox) (POS 's))
+            (ADJP (RB ]) (JJ optimistic))
             (NN vision) (NNP ,'') (NNP Bush))
           (VP (VBD said)))))
     (. .)))
@@ -715,6 +719,9 @@
         (VP (VBN changed)
           (S
             (ADJP (JJ .''))))))))
+
+(ROOT
+  (INTJ (UH -)))
 
 (ROOT
   (PP (IN On)

@@ -15,26 +15,29 @@
           (NP (NNP Go) (NNP Division)))))))
 
 (ROOT
-  (S
+  (NP
+    (NP (NNP LONDON) (NNP [AP) (NNP ]))
+    (: -)
     (S
-      (NP (NNP LONDON) (NNP (AP) (NNP )) (NNP British) (NNPS Airways) (NNP PLC))
-      (VP (VBZ plans)
-        (S
-          (VP (TO to)
-            (VP (VB sell)
-              (NP
-                (NP (NNP Go))
-                (, ,)
+      (S
+        (NP (NNP British) (NNPS Airways) (NNP PLC))
+        (VP (VBZ plans)
+          (S
+            (VP (TO to)
+              (VP (VB sell)
                 (NP
-                  (NP (PRP$ its) (JJ profitable) (JJ cut-price) (NN subsidiary))
-                  (VP (VBN launched)
-                    (ADVP
-                      (NP (CD two) (NNS years))
-                      (RB ago))))))))))
-    (, ,)
-    (NP (DT the) (NN company))
-    (VP (VBD said)
-      (NP (NNP Monday)))
+                  (NP (NNP Go))
+                  (, ,)
+                  (NP
+                    (NP (PRP$ its) (JJ profitable) (JJ cut-price) (NN subsidiary))
+                    (VP (VBN launched)
+                      (ADVP
+                        (NP (CD two) (NNS years))
+                        (RB ago))))))))))
+      (, ,)
+      (NP (DT the) (NN company))
+      (VP (VBD said)
+        (NP (NNP Monday))))
     (. .)))
 
 (ROOT
@@ -253,8 +256,8 @@
               (NP
                 (QP (CD 200) (CD million))
                 (NNS pounds)
-                (QP (CD ($290) (CD million)))))
-          (VP (VBZ ))
+                (QP (CD [$290) (CD million)))))
+          (VP (VBZ ])
             (PP (IN in)
               (NP
                 (NP (DT the) (JJ second) (NN quarter))
@@ -287,8 +290,8 @@
           (NNS pounds)
           (X
             (NP
-              (QP (CD ($523) (CD million))
-              (NN ))))))
+              (QP (CD [$523) (CD million))
+              (NN ])))))
       (PP (IN from)
         (NP
           (QP (CD 211) (CD million))
@@ -359,8 +362,8 @@
                       (NNS pounds)
                       (X
                         (NP
-                          (QP (CD ($7.05) (CD billion))
-                          (NN ).))))))))))))))
+                          (QP (CD [$7.05) (CD billion))
+                          (NN ].))))))))))))))
 
 (ROOT
   (S
@@ -481,7 +484,7 @@
     (VP (VBD jumped)
       (NP
         (NP
-          (QP (CD 7) (CD percent) (TO to) (CD 352) (CD pence) (CD ($5.10) (CD ))))
+          (QP (CD 7) (CD percent) (TO to) (CD 352) (CD pence) (CD [$5.10) (CD ])))
         (NP (DT each)))
       (PP (IN in)
         (NP (NN midday) (NN trading)))
@@ -524,8 +527,8 @@
           (NNS pounds))
         (PP
           (NP
-            (QP (CD ($75) (CD million))
-            (NNS )))
+            (QP (CD [$75) (CD million))
+            (NNS ]))
           (IN in)
           (NP (DT the) (JJ first) (NN quarter)))
         (, ,)
