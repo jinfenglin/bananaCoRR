@@ -8,8 +8,11 @@ import re
 import cPickle
 
 PROJECT_PATH = os.getcwd()
-YAGO_PATH = os.path.join("/home", "krim", "yagoTransitiveType.tsv")
-OUT_PATH = os.path.join("/home", "krim", "yago_split")
+
+# I can't do this on project directory...
+# too big for sharing through github or gDrive
+YAGO_PATH = os.path.join(os.path.expanduser("~"), "yagoTransitiveType.tsv")
+OUT_PATH = os.path.join(os.path.expanduser("~"), "yago_split")
 
 entity_set = set()
 count = 1
@@ -17,7 +20,12 @@ count = 1
 cur_entry = ""
 cur_subtype = set()
 
+
 def make_hash(string):
+    """
+    take a string and return its fist two letter
+    this length-2 string will be used as an index to split YAGO file
+    """
     hashed = ""
     for c in string:
         if len(hashed) > 1:
@@ -28,7 +36,6 @@ def make_hash(string):
     while len(hashed) < 2:
         hashed += "_"
     return hashed
-
 
 with open(YAGO_PATH, "r") as f, open("log.txt", "w") as log:
     print "loading complete"
@@ -77,7 +84,9 @@ with open(YAGO_PATH, "r") as f, open("log.txt", "w") as log:
         else:
             cur_subtype.add(subtypeOf)
 
-print len(entity_set)
+# print len(entity_set)
+
+# make a dict from each token of each YAGO entity to its full name for further lookup
 entity_dict = {}
 for entity in entity_set:
     if entity_dict.get(entity):
@@ -92,5 +101,6 @@ for entity in entity_set:
 
 print len(entity_dict.keys())
 
+# finally pickle out indexed hash dict
 with open('yago_entries.p', "wb") as picklejar:
     cPickle.dump(entity_dict, picklejar, protocol=cPickle.HIGHEST_PROTOCOL)
